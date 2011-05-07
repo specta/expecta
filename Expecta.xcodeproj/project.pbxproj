@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E9D519E11375D7DA00F9FB75 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D519E01375D7DA00F9FB75 /* Cocoa.framework */; };
+		E9D519EE1375D7DA00F9FB75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D519ED1375D7DA00F9FB75 /* main.m */; };
+		E9D519FE1375D7DA00F9FB75 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D519E01375D7DA00F9FB75 /* Cocoa.framework */; };
+		E9D51A281375DB1700F9FB75 /* EXExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D51A241375DB1700F9FB75 /* EXExpect.m */; };
+		E9D51A291375DB1700F9FB75 /* EXExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D51A241375DB1700F9FB75 /* EXExpect.m */; };
+		E9D51A2A1375DB1700F9FB75 /* EXExpect+BeNil.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D51A261375DB1700F9FB75 /* EXExpect+BeNil.m */; };
+		E9D51A2B1375DB1700F9FB75 /* EXExpect+BeNil.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D51A261375DB1700F9FB75 /* EXExpect+BeNil.m */; };
+		E9D51A2E1375DB5300F9FB75 /* ExpectaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D51A2D1375DB5300F9FB75 /* ExpectaTest.m */; };
+		E9D51A311375DDFD00F9FB75 /* FakeTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D51A301375DDFD00F9FB75 /* FakeTestCase.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E9D519FF1375D7DA00F9FB75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9D519D31375D7D900F9FB75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9D519DB1375D7DA00F9FB75;
+			remoteInfo = Expecta;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E9D519DC1375D7DA00F9FB75 /* Expecta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expecta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9D519E01375D7DA00F9FB75 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E9D519E31375D7DA00F9FB75 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E9D519E41375D7DA00F9FB75 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E9D519E51375D7DA00F9FB75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E9D519E81375D7DA00F9FB75 /* Expecta-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Expecta-Info.plist"; sourceTree = "<group>"; };
+		E9D519EC1375D7DA00F9FB75 /* Expecta-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Expecta-Prefix.pch"; sourceTree = "<group>"; };
+		E9D519ED1375D7DA00F9FB75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E9D519FD1375D7DA00F9FB75 /* ExpectaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpectaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9D51A031375D7DA00F9FB75 /* ExpectaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExpectaTests-Info.plist"; sourceTree = "<group>"; };
+		E9D51A071375D7DA00F9FB75 /* ExpectaTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExpectaTests-Prefix.pch"; sourceTree = "<group>"; };
+		E9D51A231375DB1700F9FB75 /* EXExpect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXExpect.h; sourceTree = "<group>"; };
+		E9D51A241375DB1700F9FB75 /* EXExpect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXExpect.m; sourceTree = "<group>"; };
+		E9D51A251375DB1700F9FB75 /* EXExpect+BeNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXExpect+BeNil.h"; sourceTree = "<group>"; };
+		E9D51A261375DB1700F9FB75 /* EXExpect+BeNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXExpect+BeNil.m"; sourceTree = "<group>"; };
+		E9D51A271375DB1700F9FB75 /* Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expecta.h; sourceTree = "<group>"; };
+		E9D51A2C1375DB5300F9FB75 /* ExpectaTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpectaTest.h; sourceTree = "<group>"; };
+		E9D51A2D1375DB5300F9FB75 /* ExpectaTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectaTest.m; sourceTree = "<group>"; };
+		E9D51A2F1375DDFD00F9FB75 /* FakeTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeTestCase.h; sourceTree = "<group>"; };
+		E9D51A301375DDFD00F9FB75 /* FakeTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeTestCase.m; sourceTree = "<group>"; };
+		E9D51A321375E55600F9FB75 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		E9D51A331375E7EE00F9FB75 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E9D519D91375D7DA00F9FB75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D519E11375D7DA00F9FB75 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9D519F91375D7DA00F9FB75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D519FE1375D7DA00F9FB75 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E9D519D11375D7D900F9FB75 = {
+			isa = PBXGroup;
+			children = (
+				E9D51A321375E55600F9FB75 /* README.md */,
+				E9D51A331375E7EE00F9FB75 /* LICENSE */,
+				E9D51A211375DAD300F9FB75 /* src */,
+				E9D51A151375DA0400F9FB75 /* test */,
+				E9D51A141375D93800F9FB75 /* boilerplate */,
+				E9D519DF1375D7DA00F9FB75 /* frameworks */,
+				E9D519DD1375D7DA00F9FB75 /* products */,
+			);
+			sourceTree = "<group>";
+		};
+		E9D519DD1375D7DA00F9FB75 /* products */ = {
+			isa = PBXGroup;
+			children = (
+				E9D519DC1375D7DA00F9FB75 /* Expecta.app */,
+				E9D519FD1375D7DA00F9FB75 /* ExpectaTests.octest */,
+			);
+			name = products;
+			sourceTree = "<group>";
+		};
+		E9D519DF1375D7DA00F9FB75 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9D519E01375D7DA00F9FB75 /* Cocoa.framework */,
+				E9D519E21375D7DA00F9FB75 /* Other Frameworks */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
+		E9D519E21375D7DA00F9FB75 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9D519E31375D7DA00F9FB75 /* AppKit.framework */,
+				E9D519E41375D7DA00F9FB75 /* CoreData.framework */,
+				E9D519E51375D7DA00F9FB75 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		E9D51A141375D93800F9FB75 /* boilerplate */ = {
+			isa = PBXGroup;
+			children = (
+				E9D519ED1375D7DA00F9FB75 /* main.m */,
+				E9D519E81375D7DA00F9FB75 /* Expecta-Info.plist */,
+				E9D519EC1375D7DA00F9FB75 /* Expecta-Prefix.pch */,
+				E9D51A031375D7DA00F9FB75 /* ExpectaTests-Info.plist */,
+				E9D51A071375D7DA00F9FB75 /* ExpectaTests-Prefix.pch */,
+			);
+			path = boilerplate;
+			sourceTree = "<group>";
+		};
+		E9D51A151375DA0400F9FB75 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				E9D51A2C1375DB5300F9FB75 /* ExpectaTest.h */,
+				E9D51A2D1375DB5300F9FB75 /* ExpectaTest.m */,
+				E9D51A2F1375DDFD00F9FB75 /* FakeTestCase.h */,
+				E9D51A301375DDFD00F9FB75 /* FakeTestCase.m */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		E9D51A211375DAD300F9FB75 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E9D51A231375DB1700F9FB75 /* EXExpect.h */,
+				E9D51A241375DB1700F9FB75 /* EXExpect.m */,
+				E9D51A251375DB1700F9FB75 /* EXExpect+BeNil.h */,
+				E9D51A261375DB1700F9FB75 /* EXExpect+BeNil.m */,
+				E9D51A271375DB1700F9FB75 /* Expecta.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E9D519DB1375D7DA00F9FB75 /* Expecta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9D51A0E1375D7DA00F9FB75 /* Build configuration list for PBXNativeTarget "Expecta" */;
+			buildPhases = (
+				E9D519D81375D7DA00F9FB75 /* Sources */,
+				E9D519D91375D7DA00F9FB75 /* Frameworks */,
+				E9D519DA1375D7DA00F9FB75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Expecta;
+			productName = Expecta;
+			productReference = E9D519DC1375D7DA00F9FB75 /* Expecta.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E9D519FC1375D7DA00F9FB75 /* ExpectaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9D51A111375D7DA00F9FB75 /* Build configuration list for PBXNativeTarget "ExpectaTests" */;
+			buildPhases = (
+				E9D519F81375D7DA00F9FB75 /* Sources */,
+				E9D519F91375D7DA00F9FB75 /* Frameworks */,
+				E9D519FA1375D7DA00F9FB75 /* Resources */,
+				E9D519FB1375D7DA00F9FB75 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9D51A001375D7DA00F9FB75 /* PBXTargetDependency */,
+			);
+			name = ExpectaTests;
+			productName = ExpectaTests;
+			productReference = E9D519FD1375D7DA00F9FB75 /* ExpectaTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E9D519D31375D7D900F9FB75 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = E9D519D61375D7D900F9FB75 /* Build configuration list for PBXProject "Expecta" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E9D519D11375D7D900F9FB75;
+			productRefGroup = E9D519DD1375D7DA00F9FB75 /* products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E9D519DB1375D7DA00F9FB75 /* Expecta */,
+				E9D519FC1375D7DA00F9FB75 /* ExpectaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E9D519DA1375D7DA00F9FB75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9D519FA1375D7DA00F9FB75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E9D519FB1375D7DA00F9FB75 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E9D519D81375D7DA00F9FB75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D519EE1375D7DA00F9FB75 /* main.m in Sources */,
+				E9D51A281375DB1700F9FB75 /* EXExpect.m in Sources */,
+				E9D51A2A1375DB1700F9FB75 /* EXExpect+BeNil.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9D519F81375D7DA00F9FB75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D51A291375DB1700F9FB75 /* EXExpect.m in Sources */,
+				E9D51A2B1375DB1700F9FB75 /* EXExpect+BeNil.m in Sources */,
+				E9D51A2E1375DB5300F9FB75 /* ExpectaTest.m in Sources */,
+				E9D51A311375DDFD00F9FB75 /* FakeTestCase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E9D51A001375D7DA00F9FB75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E9D519DB1375D7DA00F9FB75 /* Expecta */;
+			targetProxy = E9D519FF1375D7DA00F9FB75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E9D51A0C1375D7DA00F9FB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E9D51A0D1375D7DA00F9FB75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E9D51A0F1375D7DA00F9FB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "boilerplate/Expecta-Prefix.pch";
+				INFOPLIST_FILE = "boilerplate/Expecta-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E9D51A101375D7DA00F9FB75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "boilerplate/Expecta-Prefix.pch";
+				INFOPLIST_FILE = "boilerplate/Expecta-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E9D51A121375D7DA00F9FB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Expecta.app/Contents/MacOS/Expecta";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "boilerplate/ExpectaTests-Prefix.pch";
+				INFOPLIST_FILE = "boilerplate/ExpectaTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E9D51A131375D7DA00F9FB75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Expecta.app/Contents/MacOS/Expecta";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "boilerplate/ExpectaTests-Prefix.pch";
+				INFOPLIST_FILE = "boilerplate/ExpectaTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E9D519D61375D7D900F9FB75 /* Build configuration list for PBXProject "Expecta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9D51A0C1375D7DA00F9FB75 /* Debug */,
+				E9D51A0D1375D7DA00F9FB75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9D51A0E1375D7DA00F9FB75 /* Build configuration list for PBXNativeTarget "Expecta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9D51A0F1375D7DA00F9FB75 /* Debug */,
+				E9D51A101375D7DA00F9FB75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9D51A111375D7DA00F9FB75 /* Build configuration list for PBXNativeTarget "ExpectaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9D51A121375D7DA00F9FB75 /* Debug */,
+				E9D51A131375D7DA00F9FB75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E9D519D31375D7D900F9FB75 /* Project object */;
+}
