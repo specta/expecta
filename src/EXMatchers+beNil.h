@@ -1,7 +1,7 @@
+#import "EXMatchers.h"
 #import <Foundation/Foundation.h>
-#import "EXExpect.h"
 
-@interface EXExpect (BeNil)
+@interface EXMatchers (beNil)
 
 - (void)beNil;
 

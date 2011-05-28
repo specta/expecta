@@ -1,9 +1,6 @@
-#import "Expecta.h"
 #import "EXExpect.h"
-
-@interface NSObject (EXExpect_TestCase)
-- (void)failWithException:(NSException *)exception;
-@end
+#import "Expecta.h"
+#import "NSObject+TestCaseHack.h"
 
 @implementation EXExpect
 
@@ -44,7 +41,7 @@
                                                 self.lineNumber,
                                                 (self.negative ? @"not " : @""),
                                                 description,
-                                                self.actual == nil ? @"nil" : [self.actual description]];
+                                                EXDescribeObject(self.actual)];
   return [NSException exceptionWithName:ExpectaException reason:reason userInfo:nil];
 }
 
@@ -57,4 +54,3 @@
 }
 
 @end
-

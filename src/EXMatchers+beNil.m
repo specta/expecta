@@ -1,6 +1,6 @@
-#import "EXExpect+BeNil.h"
+#import "EXMatchers+beNil.h"
 
-@implementation EXExpect (BeNil)
+@implementation EXMatchers (beNil)
 
 - (void)beNil {
   [self match:^BOOL{ return self.actual == nil; }
