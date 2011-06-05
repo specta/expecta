@@ -1,18 +1,22 @@
 #import "TestHelper.h"
 
-@interface ExpectaTest : SenTestCase {
+@interface ExpectationTest : SenTestCase {
   NSNumber *n;
   NSValue *v;
 }
 @end
 
-@implementation ExpectaTest
+@implementation ExpectationTest
 
 - (void)testExpect {
   EXExpect *x = expect(@"foo");
   assertEquals(x.lineNumber, (__LINE__ - 1));
   assertTrue(strcmp(x.fileName, __FILE__) == 0);
   assertEquals(x.testCase, self);
+}
+
+- (void)testExpectNil {
+  assertNil(expect(nil).actual);
 }
 
 - (void)testExpectObject {

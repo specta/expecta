@@ -1,11 +1,21 @@
 #import "EXExpect.h"
-#import "Expecta.h"
-#import "NSObject+TestCaseHack.h"
+#import "NSObject+EXTestCase.h"
+
+@interface EXExpect (PrivateMethods)
+
+- (void)initializeMatcherFunctions;
+- (void)failWithMessage:(NSString *)message;
+
+@end
 
 @implementation EXExpect
 
-@synthesize actual=_actual, testCase=_testCase, negative=_negative, lineNumber=_lineNumber, fileName=_fileName;
-@dynamic to, notTo;
+@synthesize
+  actual=_actual,
+  testCase=_testCase,
+  negative=_negative,
+  lineNumber=_lineNumber,
+  fileName=_fileName;
 
 - (id)initWithActual:(id)actual testCase:(id)testCase lineNumber:(int)lineNumber fileName:(char *)fileName {
   self = [super init];
@@ -14,6 +24,7 @@
     self.testCase = testCase;
     self.lineNumber = lineNumber;
     self.fileName = fileName;
+    [self initializeMatcherFunctions];
   }
   return self;
 }
@@ -23,34 +34,63 @@
 }
 
 - (void)dealloc {
+  [_matchBlock release];
+  [_failureMessageForToBlock release];
+  [_failureMessageForNotToBlock release];
+  [match release];
+  [failureMessageForTo release];
+  [failureMessageForNotTo release];
   [super dealloc];
 }
 
-- (id)to {
+#pragma mark -
+
+- (EXExpect *)Not {
+  self.negative = !self.negative;
   return self;
 }
 
-- (id)notTo {
-  self.negative = YES;
-  return self;
+#pragma mark -
+
+- (void)initializeMatcherFunctions {
+  match = [^(EXBoolBlock block) {
+    [_matchBlock release];
+    _matchBlock = [block copy];
+  } copy];
+  failureMessageForTo = [^(EXStringBlock block) {
+    [_failureMessageForToBlock release];
+    _failureMessageForToBlock = [block copy];
+  } copy];
+  failureMessageForNotTo = [^(EXStringBlock block) {
+    [_failureMessageForNotToBlock release];
+    _failureMessageForNotToBlock = [block copy];
+  } copy];
 }
 
-- (NSException *)failureExceptionWithDescription:(NSString *)description {
-  NSString *reason = [NSString stringWithFormat:@"%s:%d expected: %@%@, got: %@",
-                                                self.fileName,
-                                                self.lineNumber,
-                                                (self.negative ? @"not " : @""),
-                                                description,
-                                                EXDescribeObject(self.actual)];
-  return [NSException exceptionWithName:ExpectaException reason:reason userInfo:nil];
+- (void)failWithMessage:(NSString *)message {
+  NSString *reason = [NSString stringWithFormat:@"%s:%d %@", self.fileName, self.lineNumber, message];
+  [self.testCase failWithException:[NSException exceptionWithName:@"Match Failed" reason:reason userInfo:nil]];
 }
 
-- (void)match:(BOOL(^)())predicate description:(NSString *)description {
-  BOOL result = predicate();
-  result = self.negative ? !result : result;
-  if(!result) {
-    [self.testCase failWithException:[self failureExceptionWithDescription:description]];
+- (void)applyMatcher {
+  if(_matchBlock) {
+    BOOL matchResult = _matchBlock();
+    BOOL failed = self.negative ? matchResult : !matchResult;
+    if(failed) {
+      NSString *message = @"Match Failed.";
+      if(self.negative) {
+        if(_failureMessageForNotToBlock) {
+          message = _failureMessageForNotToBlock();
+        }
+      } else {
+        if(_failureMessageForToBlock) {
+          message = _failureMessageForToBlock();
+        }
+      }
+      [self failWithMessage:message];
+    }
   }
+  self.negative = NO;
 }
 
 @end

@@ -8,9 +8,9 @@ Under development. Not quite usable at this point.
 
 ## USAGE
 
->`[expect(x).to beNil];` passes if `x` is `nil`
+>`expect(x).toBeNil();` passes if `x` is `nil`
 >
->`[expect(x).notTo beNil];` passes if `x` is not `nil`
+>`expect(x).Not.toBeNil();` passes if `x` is not `nil`
 
 ## LICENSE
 

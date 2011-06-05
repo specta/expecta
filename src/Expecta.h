@@ -1,7 +1,7 @@
-#import "EXSupport.h"
+#import <Foundation/Foundation.h>
+
 #import "EXExpect.h"
-#import "EXMatchers+beNil.h"
-#import "EXMatchers+equal.h"
+#define EXMatchers EXExpect
 
 #define expectObject(actual) ([EXExpect expectWithActual:(actual) testCase:self lineNumber:__LINE__ fileName:__FILE__])
 #define expectPointer(actual) ([EXExpect expectWithActual:[NSValue valueWithPointer:(actual)] testCase:self lineNumber:__LINE__ fileName:__FILE__])
@@ -26,4 +26,24 @@ EXExpect *EXExpectVariadic(id testCase, int lineNumber, char *fileName, const ch
 
 #define expect(actual) EXExpectVariadic(self, __LINE__, __FILE__, @encode(__typeof__(actual)), (actual))
 
-#define ExpectaException @"Expecta Error"
+#define EXMatcherInterface(matcherName, matcherArguments) \
+@interface EXExpect (matcherName##Matcher) \
+@property (nonatomic, readonly) void(^ matcherName) matcherArguments; \
+@end
+
+#define EXMatcherImplementationBegin(matcherName, matcherArguments) \
+@implementation EXExpect (matcherName##Matcher) \
+- (void(^) matcherArguments) matcherName { \
+  NSObject *actual = self.actual; \
+  void (^matcherBlock) matcherArguments = ^ matcherArguments { \
+
+#define EXMatcherImplementationEnd \
+    [self applyMatcher]; \
+  }; \
+  return [[matcherBlock copy] autorelease]; \
+} \
+@end
+
+NSString *EXDescribeObject(id obj);
+
+#import "EXMatchers.h"

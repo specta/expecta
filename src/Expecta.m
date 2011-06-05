@@ -1,5 +1,5 @@
 #import "Expecta.h"
-#import "NSObject+TestCaseHack.h"
+#import "NSObject+EXTestCase.h"
 
 EXExpect *EXExpectVariadic(id testCase, int lineNumber, char *fileName, const char *type, ...) {
   va_list v;
@@ -44,13 +44,31 @@ EXExpect *EXExpectVariadic(id testCase, int lineNumber, char *fileName, const ch
   } else if(strcmp(type, @encode(id)) == 0) {
     id actual = va_arg(v, id);
     exExpect = [EXExpect expectWithActual:actual testCase:testCase lineNumber:lineNumber fileName:fileName];
+  } else if(strcmp(type, @encode(__typeof__(nil))) == 0) {
+    exExpect = [EXExpect expectWithActual:nil testCase:testCase lineNumber:lineNumber fileName:fileName];
   } else if(type[0] == '{' || type[0] == '(') {
     NSString *reason = [NSString stringWithFormat:@"%s:%d expecting a %@ instance is not supported", fileName, lineNumber, type[0] == '{' ? @"struct" : @"union"];
-    [testCase failWithException:[NSException exceptionWithName:ExpectaException reason:reason userInfo:nil]];
+    [testCase failWithException:[NSException exceptionWithName:@"Expecta Error" reason:reason userInfo:nil]];
   } else {
     void *actual = va_arg(v, void *);
     exExpect = [EXExpect expectWithActual:[NSValue valueWithPointer:actual] testCase:testCase lineNumber:lineNumber fileName:fileName];
   }
   va_end(v);
   return exExpect;
+}
+
+NSString *EXDescribeObject(id obj) {
+  if(obj == nil) {
+    return @"nil";
+  } else if([obj isKindOfClass:[NSString class]]) {
+    return [NSString stringWithFormat:@"@\"%@\"", obj];
+  } else if([obj isKindOfClass:[NSNumber class]]) {
+    const char *type = [obj objCType];
+    if(strcmp(type, @encode(BOOL)) == 0) {
+      return [obj boolValue] ? @"YES" : @"NO";
+    } else if(strcmp(type, @encode(char)) == 0) {
+      return [NSString stringWithFormat:@"(char) %d", [obj charValue]];
+    }
+  }
+  return [NSString stringWithFormat:@"%@", obj];
 }
