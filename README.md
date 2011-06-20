@@ -8,9 +8,13 @@ Under development. Not quite usable at this point.
 
 ## USAGE
 
->`expect(x).toBeNil();` passes if `x` is `nil`
+>`expect(x).toEqual(y);` compares objects or primitives x and y and passes if they are equivalent
 >
->`expect(x).Not.toBeNil();` passes if `x` is not `nil`
+>`expect(x).toBeNil();` passes if `x` is `nil`
+
+Every matcher's criteria can be inverted by prepending `.Not`: (It is `Not` with a capital `N` because `not` is a keyword in C++.)
+
+>`expect(x).Not.toEqual(y);` compares objects or primitives `x` and `y` and passes if they are *not* equivalent
 
 ## LICENSE
 

@@ -5,9 +5,9 @@
 
 @implementation toBeNilTest
 
-- (void)test_to_beNil {
+- (void)test_toBeNil {
   assertPass(test_expect(nil).toBeNil());
-  assertFail(test_expect(@"foo").toBeNil(), @"foo.m:123 expected: nil, got: @\"foo\"");
+  assertFail(test_expect(@"foo").toBeNil(), @"foo.m:123 expected: nil, got: foo");
 }
 
 - (void)test_Not_toBeNil {

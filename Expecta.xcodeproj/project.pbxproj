@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E913975F138A476800E4612D /* Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = E913975E138A476800E4612D /* Expecta.m */; };
 		E9139760138A476800E4612D /* Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = E913975E138A476800E4612D /* Expecta.m */; };
 		E9B33915139165DD0046A8AD /* ExpectationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B33914139165DD0046A8AD /* ExpectationTest.m */; };
 		E9B33931139168360046A8AD /* toBeNilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B3392F139168360046A8AD /* toBeNilTest.m */; };
 		E9B33947139169250046A8AD /* EXExpect+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B33944139169250046A8AD /* EXExpect+Test.m */; };
 		E9B33948139169250046A8AD /* FakeTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B33946139169250046A8AD /* FakeTestCase.m */; };
-		E9D4C9A11392C67B00A648D5 /* EXMatchers+toBeNil.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D4C99F1392C67B00A648D5 /* EXMatchers+toBeNil.m */; };
+		E9CD515813AF54FA004AEED9 /* EXUnsupportedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D4DBBB13AB017200F8FC23 /* EXUnsupportedObject.m */; };
+		E9CD515A13AF5506004AEED9 /* NSValue+Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D4DBC413AB265300F8FC23 /* NSValue+Expecta.m */; };
+		E9CD515B13AF550C004AEED9 /* EXMatchers+toEqual.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D4DBB813AAFB9800F8FC23 /* EXMatchers+toEqual.m */; };
 		E9D4C9A31392C67B00A648D5 /* EXMatchers+toBeNil.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D4C99F1392C67B00A648D5 /* EXMatchers+toBeNil.m */; };
+		E9D4DBB513AAF9AF00F8FC23 /* toEqualTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D4DBB413AAF9AF00F8FC23 /* toEqualTest.m */; };
+		E9D4DBC713AB2FA300F8FC23 /* NSValue+ExpectaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D4DBC613AB2FA300F8FC23 /* NSValue+ExpectaTest.m */; };
 		E9D519E11375D7DA00F9FB75 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D519E01375D7DA00F9FB75 /* Cocoa.framework */; };
 		E9D519EE1375D7DA00F9FB75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D519ED1375D7DA00F9FB75 /* main.m */; };
 		E9D519FE1375D7DA00F9FB75 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D519E01375D7DA00F9FB75 /* Cocoa.framework */; };
 		E9D51A281375DB1700F9FB75 /* EXExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D51A241375DB1700F9FB75 /* EXExpect.m */; };
-		E9D51A291375DB1700F9FB75 /* EXExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D51A241375DB1700F9FB75 /* EXExpect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,14 @@
 		E9D4C99B1392C67B00A648D5 /* EXMatchers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXMatchers.h; sourceTree = "<group>"; };
 		E9D4C99F1392C67B00A648D5 /* EXMatchers+toBeNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeNil.m"; sourceTree = "<group>"; };
 		E9D4C9B61392C81700A648D5 /* EXMatchers+toBeNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeNil.h"; sourceTree = "<group>"; };
+		E9D4DBB413AAF9AF00F8FC23 /* toEqualTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toEqualTest.m; sourceTree = "<group>"; };
+		E9D4DBB713AAFB9800F8FC23 /* EXMatchers+toEqual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toEqual.h"; sourceTree = "<group>"; };
+		E9D4DBB813AAFB9800F8FC23 /* EXMatchers+toEqual.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toEqual.m"; sourceTree = "<group>"; };
+		E9D4DBBA13AB017200F8FC23 /* EXUnsupportedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXUnsupportedObject.h; sourceTree = "<group>"; };
+		E9D4DBBB13AB017200F8FC23 /* EXUnsupportedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXUnsupportedObject.m; sourceTree = "<group>"; };
+		E9D4DBC313AB265200F8FC23 /* NSValue+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+Expecta.h"; sourceTree = "<group>"; };
+		E9D4DBC413AB265300F8FC23 /* NSValue+Expecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+Expecta.m"; sourceTree = "<group>"; };
+		E9D4DBC613AB2FA300F8FC23 /* NSValue+ExpectaTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+ExpectaTest.m"; sourceTree = "<group>"; };
 		E9D519DC1375D7DA00F9FB75 /* Expecta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expecta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D519E01375D7DA00F9FB75 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E9D519E31375D7DA00F9FB75 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -87,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				E9B3392F139168360046A8AD /* toBeNilTest.m */,
+				E9D4DBB413AAF9AF00F8FC23 /* toEqualTest.m */,
 			);
 			path = Matchers;
 			sourceTree = "<group>";
@@ -109,6 +120,8 @@
 				E9D4C99B1392C67B00A648D5 /* EXMatchers.h */,
 				E9D4C9B61392C81700A648D5 /* EXMatchers+toBeNil.h */,
 				E9D4C99F1392C67B00A648D5 /* EXMatchers+toBeNil.m */,
+				E9D4DBB713AAFB9800F8FC23 /* EXMatchers+toEqual.h */,
+				E9D4DBB813AAFB9800F8FC23 /* EXMatchers+toEqual.m */,
 			);
 			path = Matchers;
 			sourceTree = "<group>";
@@ -172,6 +185,7 @@
 				E9B3393B139168F50046A8AD /* Support */,
 				E9B33924139166AE0046A8AD /* Matchers */,
 				E9B33914139165DD0046A8AD /* ExpectationTest.m */,
+				E9D4DBC613AB2FA300F8FC23 /* NSValue+ExpectaTest.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -182,9 +196,13 @@
 				E9D4C9901392C61500A648D5 /* Matchers */,
 				E9D51A271375DB1700F9FB75 /* Expecta.h */,
 				E913975E138A476800E4612D /* Expecta.m */,
+				E9D4DBBA13AB017200F8FC23 /* EXUnsupportedObject.h */,
+				E9D4DBBB13AB017200F8FC23 /* EXUnsupportedObject.m */,
 				E9D51A231375DB1700F9FB75 /* EXExpect.h */,
 				E9D51A241375DB1700F9FB75 /* EXExpect.m */,
 				E9D4C7241391906500A648D5 /* NSObject+EXTestCase.h */,
+				E9D4DBC313AB265200F8FC23 /* NSValue+Expecta.h */,
+				E9D4DBC413AB265300F8FC23 /* NSValue+Expecta.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -293,6 +311,9 @@
 				E9D51A281375DB1700F9FB75 /* EXExpect.m in Sources */,
 				E9139760138A476800E4612D /* Expecta.m in Sources */,
 				E9D4C9A31392C67B00A648D5 /* EXMatchers+toBeNil.m in Sources */,
+				E9CD515813AF54FA004AEED9 /* EXUnsupportedObject.m in Sources */,
+				E9CD515A13AF5506004AEED9 /* NSValue+Expecta.m in Sources */,
+				E9CD515B13AF550C004AEED9 /* EXMatchers+toEqual.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,13 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9D51A291375DB1700F9FB75 /* EXExpect.m in Sources */,
-				E913975F138A476800E4612D /* Expecta.m in Sources */,
 				E9B33915139165DD0046A8AD /* ExpectationTest.m in Sources */,
 				E9B33931139168360046A8AD /* toBeNilTest.m in Sources */,
 				E9B33947139169250046A8AD /* EXExpect+Test.m in Sources */,
 				E9B33948139169250046A8AD /* FakeTestCase.m in Sources */,
-				E9D4C9A11392C67B00A648D5 /* EXMatchers+toBeNil.m in Sources */,
+				E9D4DBB513AAF9AF00F8FC23 /* toEqualTest.m in Sources */,
+				E9D4DBC713AB2FA300F8FC23 /* NSValue+ExpectaTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

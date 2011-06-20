@@ -13,6 +13,7 @@ STAssertThrowsSpecificNamed((expr), NSException, (message), nil)
 #define assertEquals(a, b) STAssertEquals((a), (b), nil)
 #define assertEqualObjects(a, b) STAssertEqualObjects((a), (b), nil)
 #define assertTrue(a) STAssertTrue((a), nil)
+#define assertFalse(a) STAssertFalse((a), nil)
 #define assertNil(a) STAssertNil((a), nil)
 
-#define test_expect(a) expect(a).test
+#define test_expect(a) [expect(a) test]
