@@ -3,6 +3,7 @@
 #import "Expecta.h"
 #import "FakeTestCase.h"
 #import "EXExpect+Test.h"
+#import "Fixtures.h"
 
 #define assertPass(expr) \
 STAssertNoThrow((expr), nil)

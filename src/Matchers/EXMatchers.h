@@ -1,2 +1,5 @@
 #import "EXMatchers+toBeNil.h"
 #import "EXMatchers+toEqual.h"
+#import "EXMatchers+toBeInstanceOf.h"
+#import "EXMatchers+toBeKindOf.h"
+#import "EXMatchers+toBeSubclassOf.h"
