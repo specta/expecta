@@ -30,6 +30,11 @@ expect(baz).toEqual(3.14159);
 
 Still under heavy development, but usable.
 
+## USAGE
+
+Clone from Github, add `expecta/src` folder to your Xcode project and then add `#import "Expecta.h"` to your test code.
+Works best with [Cedar BDD Framework](http://pivotal.github.com/cedar/).
+
 ## BUILT-IN MATCHERS
 
 >`expect(x).toEqual(y);` compares objects or primitives x and y and passes if they are identical (==) or equivalent (isEqual:).
