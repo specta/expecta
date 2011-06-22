@@ -6,10 +6,10 @@
 #import "EXUnsupportedObject.h"
 
 id _EXObjectify(char *type, ...);
-#define EXObjectify(value) _EXObjectify(@encode(__typeof__(value)), (value))
+#define EXObjectify(value) _EXObjectify(@encode(__typeof__((value))), (value))
 
 EXExpect *_EX_expect(id testCase, int lineNumber, char *fileName, id actual);
-#define expect(actual) _EX_expect(self, __LINE__, __FILE__, EXObjectify(actual))
+#define expect(actual) _EX_expect(self, __LINE__, __FILE__, EXObjectify((actual)))
 
 #define EXMatcherInterface(matcherName, matcherArguments) \
 @interface EXExpect (matcherName##Matcher) \
