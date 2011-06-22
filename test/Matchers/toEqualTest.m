@@ -152,4 +152,11 @@
   assertFail(test_expect(0.1f).Not.toEqual(0.1), @"foo.m:123 expected: not 0.1, got: 0.1");
 }
 
+- (void)test_toEqual_pointer {
+  int num = 1, num2 = 1;
+  int *a = &num, *b = &num2;
+  assertPass(test_expect(a).toEqual(&num));
+  assertPass(test_expect(a).Not.toEqual(b));
+}
+
 @end
