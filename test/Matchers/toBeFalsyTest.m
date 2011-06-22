@@ -37,8 +37,8 @@
   assertFail(test_expect(NO).Not.toBeFalsy(), @"foo.m:123 expected: a non-falsy value, got: 0, which is falsy");
   assertFail(test_expect(FALSE).Not.toBeFalsy(), @"foo.m:123 expected: a non-falsy value, got: 0, which is falsy");
   assertFail(test_expect(0).Not.toBeFalsy(), @"foo.m:123 expected: a non-falsy value, got: 0, which is falsy");
-  assertFail(test_expect(nil).Not.toBeFalsy(), @"foo.m:123 expected: a non-falsy value, got: nil, which is falsy");
-  assertFail(test_expect(nullPointer).Not.toBeFalsy(), @"foo.m:123 expected: a non-falsy value, got: NULL, which is falsy");
+  assertFail(test_expect(nil).Not.toBeFalsy(), @"foo.m:123 expected: a non-falsy value, got: nil/null, which is falsy");
+  assertFail(test_expect(nullPointer).Not.toBeFalsy(), @"foo.m:123 expected: a non-falsy value, got: nil/null, which is falsy");
 }
 
 @end

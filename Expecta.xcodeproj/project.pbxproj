@@ -12,6 +12,7 @@
 		E91C5F6913B18D2E0069C061 /* EXMatchers+toBeTruthy.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C5F6813B18D2E0069C061 /* EXMatchers+toBeTruthy.m */; };
 		E91C5F7113B1BE500069C061 /* toBeFalsyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C5F7013B1BE4F0069C061 /* toBeFalsyTest.m */; };
 		E91C5F7413B1BEE40069C061 /* EXMatchers+toBeFalsy.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C5F7313B1BEE30069C061 /* EXMatchers+toBeFalsy.m */; };
+		E93871A313B1C89100DAC061 /* EXMatcherHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E93871A213B1C89100DAC061 /* EXMatcherHelpers.m */; };
 		E972E42913B08DEF00942633 /* toBeInstanceOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E42813B08DEF00942633 /* toBeInstanceOfTest.m */; };
 		E972E42C13B0933500942633 /* EXMatchers+toBeInstanceOf.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E42B13B0933500942633 /* EXMatchers+toBeInstanceOf.m */; };
 		E972E42E13B0982600942633 /* toBeKindOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E42D13B0982600942633 /* toBeKindOfTest.m */; };
@@ -52,6 +53,8 @@
 		E91C5F7013B1BE4F0069C061 /* toBeFalsyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeFalsyTest.m; sourceTree = "<group>"; };
 		E91C5F7213B1BEE30069C061 /* EXMatchers+toBeFalsy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeFalsy.h"; sourceTree = "<group>"; };
 		E91C5F7313B1BEE30069C061 /* EXMatchers+toBeFalsy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeFalsy.m"; sourceTree = "<group>"; };
+		E93871A113B1C89100DAC061 /* EXMatcherHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXMatcherHelpers.h; sourceTree = "<group>"; };
+		E93871A213B1C89100DAC061 /* EXMatcherHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXMatcherHelpers.m; sourceTree = "<group>"; };
 		E972E42813B08DEF00942633 /* toBeInstanceOfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeInstanceOfTest.m; sourceTree = "<group>"; };
 		E972E42A13B0933500942633 /* EXMatchers+toBeInstanceOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeInstanceOf.h"; sourceTree = "<group>"; };
 		E972E42B13B0933500942633 /* EXMatchers+toBeInstanceOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeInstanceOf.m"; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 				E91C5F6813B18D2E0069C061 /* EXMatchers+toBeTruthy.m */,
 				E91C5F7213B1BEE30069C061 /* EXMatchers+toBeFalsy.h */,
 				E91C5F7313B1BEE30069C061 /* EXMatchers+toBeFalsy.m */,
+				E93871A113B1C89100DAC061 /* EXMatcherHelpers.h */,
+				E93871A213B1C89100DAC061 /* EXMatcherHelpers.m */,
 			);
 			path = Matchers;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				E972E43913B09CFA00942633 /* EXMatchers+toBeSubclassOf.m in Sources */,
 				E91C5F6913B18D2E0069C061 /* EXMatchers+toBeTruthy.m in Sources */,
 				E91C5F7413B1BEE40069C061 /* EXMatchers+toBeFalsy.m in Sources */,
+				E93871A313B1C89100DAC061 /* EXMatcherHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,8 +1,5 @@
 #import "EXMatchers+toBeTruthy.h"
-
-static BOOL EXIsValuePointer(NSValue *value) {
-  return [value objCType][0] == @encode(void *)[0];
-}
+#import "EXMatcherHelpers.h"
 
 EXMatcherImplementationBegin(toBeTruthy, (void)) {
   match(^BOOL{

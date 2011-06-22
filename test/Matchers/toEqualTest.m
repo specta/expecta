@@ -8,12 +8,12 @@
 
 - (void)test_toEqual_nil {
   assertPass(test_expect(nil).toEqual(nil));
-  assertFail(test_expect(@"foo").toEqual(nil), @"foo.m:123 expected: nil, got: foo");
+  assertFail(test_expect(@"foo").toEqual(nil), @"foo.m:123 expected: nil/null, got: foo");
 }
 
 - (void)test_Not_toEqual_nil {
   assertPass(test_expect(@"foo").Not.toEqual(nil));
-  assertFail(test_expect(nil).Not.toEqual(nil), @"foo.m:123 expected: not nil, got: nil");
+  assertFail(test_expect(nil).Not.toEqual(nil), @"foo.m:123 expected: not nil/null, got: nil/null");
 }
 
 - (void)test_toEqual_object {
@@ -157,6 +157,11 @@
   int *a = &num, *b = &num2;
   assertPass(test_expect(a).toEqual(&num));
   assertPass(test_expect(a).Not.toEqual(b));
+}
+
+- (void)test_toEqual_nullPointer {
+  int *nullPointer = NULL;
+  assertPass(test_expect(nullPointer).toEqual(NULL));
 }
 
 @end

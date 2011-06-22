@@ -55,7 +55,7 @@ id _EXObjectify(char *type, ...) {
     obj = actual;
   } else {
     void *actual = va_arg(v, void *);
-    obj = [NSValue valueWithPointer:actual];
+    obj = (actual == NULL ? nil :[NSValue valueWithPointer:actual]);
   }
   if([obj isKindOfClass:[NSValue class]] && ![obj isKindOfClass:[NSNumber class]]) {
     [(NSValue *)obj set_EX_objCType:type];
@@ -75,15 +75,12 @@ EXExpect *_EX_expect(id testCase, int lineNumber, char *fileName, id actual) {
 
 NSString *EXDescribeObject(id obj) {
   if(obj == nil) {
-    return @"nil";
+    return @"nil/null";
   } else if([obj isKindOfClass:[NSString class]]) {
     return obj;
   } else if([obj isKindOfClass:[NSValue class]]) {
     if([obj isKindOfClass:[NSValue class]]) {
       void *pointerValue = [obj pointerValue];
-      if(pointerValue == NULL) {
-        return @"NULL";
-      }
       const char *type = [(NSValue *)obj _EX_objCType];
       if(type) {
         if(strcmp(type, @encode(SEL)) == 0) {

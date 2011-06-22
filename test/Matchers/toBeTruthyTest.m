@@ -22,8 +22,8 @@
   assertFail(test_expect(NO).toBeTruthy(), @"foo.m:123 expected: a truthy value, got: 0, which is falsy");
   assertFail(test_expect(FALSE).toBeTruthy(), @"foo.m:123 expected: a truthy value, got: 0, which is falsy");
   assertFail(test_expect(0).toBeTruthy(), @"foo.m:123 expected: a truthy value, got: 0, which is falsy");
-  assertFail(test_expect(nil).toBeTruthy(), @"foo.m:123 expected: a truthy value, got: nil, which is falsy");
-  assertFail(test_expect(nullPointer).toBeTruthy(), @"foo.m:123 expected: a truthy value, got: NULL, which is falsy");
+  assertFail(test_expect(nil).toBeTruthy(), @"foo.m:123 expected: a truthy value, got: nil/null, which is falsy");
+  assertFail(test_expect(nullPointer).toBeTruthy(), @"foo.m:123 expected: a truthy value, got: nil/null, which is falsy");
 }
 
 - (void)test_Not_toBeTruthy {

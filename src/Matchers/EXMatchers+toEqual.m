@@ -1,15 +1,16 @@
 #import "EXMatchers+toEqual.h"
-
-static BOOL EXIsNumberFloat(NSNumber *number) {
-  return strcmp([number objCType], @encode(float)) == 0;
-}
+#import "EXMatcherHelpers.h"
 
 EXMatcherImplementationBegin(_toEqual, (id expected)) {
   match(^BOOL{
-    return (actual == expected) || [actual isEqual:expected] ||
-           ([actual isKindOfClass:[NSNumber class]] && [expected isKindOfClass:[NSNumber class]] &&
-            (EXIsNumberFloat((NSNumber *)actual) || EXIsNumberFloat((NSNumber *)expected)) &&
-            ([(NSNumber *)actual floatValue] == [(NSNumber *)expected floatValue]));
+    if((actual == expected) || [actual isEqual:expected]) {
+      return YES;
+    } else if([actual isKindOfClass:[NSNumber class]] && [expected isKindOfClass:[NSNumber class]]) {
+      if(EXIsNumberFloat((NSNumber *)actual) || EXIsNumberFloat((NSNumber *)expected)) {
+        return [(NSNumber *)actual floatValue] == [(NSNumber *)expected floatValue];
+      }
+    }
+    return NO;
   });
 
   failureMessageForTo(^{

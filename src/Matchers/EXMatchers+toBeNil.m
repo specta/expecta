@@ -1,4 +1,5 @@
 #import "EXMatchers+toBeNil.h"
+#import "EXMatcherHelpers.h"
 
 EXMatcherImplementationBegin(toBeNil, (void)) {
   match(^BOOL{
@@ -6,11 +7,11 @@ EXMatcherImplementationBegin(toBeNil, (void)) {
   });
 
   failureMessageForTo(^{
-    return [NSString stringWithFormat:@"expected: nil, got: %@", EXDescribeObject(actual)];
+    return [NSString stringWithFormat:@"expected: nil/null, got: %@", EXDescribeObject(actual)];
   });
 
   failureMessageForNotTo(^{
-    return [NSString stringWithFormat:@"expected: not nil, got: %@", EXDescribeObject(actual)];
+    return [NSString stringWithFormat:@"expected: not nil/null, got: %@", EXDescribeObject(actual)];
   });
 }
 EXMatcherImplementationEnd
