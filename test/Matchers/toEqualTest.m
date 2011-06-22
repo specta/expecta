@@ -112,6 +112,16 @@
   assertFail(test_expect((int)0).Not.toEqual((unsigned int)0), @"foo.m:123 expected: not 0, got: 0");
 }
 
+- (void)test_toEqual_int_long_long {
+  assertPass(test_expect((int)0).toEqual(0ll));
+  assertFail(test_expect((int)0).toEqual(1ll), @"foo.m:123 expected: 1, got: 0");
+}
+
+- (void)test_Not_toEqual_int_long_long {
+  assertPass(test_expect((int)0).Not.toEqual(1ll));
+  assertFail(test_expect((int)0).Not.toEqual(0ll), @"foo.m:123 expected: not 0, got: 0");
+}
+
 - (void)test_toEqual_float {
   assertPass(test_expect(0.1f).toEqual(0.1f));
   assertFail(test_expect(0.1f).toEqual(0.2f), @"foo.m:123 expected: 0.2, got: 0.1");
@@ -120,6 +130,26 @@
 - (void)test_Not_toEqual_float {
   assertPass(test_expect(0.1f).Not.toEqual(0.2f));
   assertFail(test_expect(0.1f).Not.toEqual(0.1f), @"foo.m:123 expected: not 0.1, got: 0.1");
+}
+
+- (void)test_toEqual_double {
+  assertPass(test_expect(0.1).toEqual(0.1));
+  assertFail(test_expect(0.1).toEqual(0.2), @"foo.m:123 expected: 0.2, got: 0.1");
+}
+
+- (void)test_Not_toEqual_double {
+  assertPass(test_expect(0.1).Not.toEqual(0.2));
+  assertFail(test_expect(0.1).Not.toEqual(0.1), @"foo.m:123 expected: not 0.1, got: 0.1");
+}
+
+- (void)test_toEqual_float_double {
+  assertPass(test_expect(0.1f).toEqual(0.1));
+  assertFail(test_expect(0.1f).toEqual(0.2), @"foo.m:123 expected: 0.2, got: 0.1");
+}
+
+- (void)test_Not_toEqual_float_double {
+  assertPass(test_expect(0.1f).Not.toEqual(0.2));
+  assertFail(test_expect(0.1f).Not.toEqual(0.1), @"foo.m:123 expected: not 0.1, got: 0.1");
 }
 
 @end
