@@ -5,11 +5,11 @@ EXMatcherImplementationBegin(toBeKindOf, (Class expected)) {
     return [actual isKindOfClass:expected];
   });
 
-  failureMessageForTo(^{
+  failureMessageForTo(^NSString *{
     return [NSString stringWithFormat:@"expected: a kind of %@, got: an instance of %@, which is not a kind of %@", [expected class], [actual class], [expected class]];
   });
 
-  failureMessageForNotTo(^{
+  failureMessageForNotTo(^NSString *{
     return [NSString stringWithFormat:@"expected: not a kind of %@, got: an instance of %@, which is a kind of %@", [expected class], [actual class], [expected class]];
   });
 }

@@ -5,11 +5,11 @@ EXMatcherImplementationBegin(toBeInstanceOf, (Class expected)) {
     return [actual isMemberOfClass:expected];
   });
 
-  failureMessageForTo(^{
+  failureMessageForTo(^NSString *{
     return [NSString stringWithFormat:@"expected: an instance of %@, got: an instance of %@", [expected class], [actual class]];
   });
 
-  failureMessageForNotTo(^{
+  failureMessageForNotTo(^NSString *{
     return [NSString stringWithFormat:@"expected: not an instance of %@, got: an instance of %@", [expected class], [actual class]];
   });
 }

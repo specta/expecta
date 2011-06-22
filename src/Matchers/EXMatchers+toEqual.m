@@ -13,11 +13,11 @@ EXMatcherImplementationBegin(_toEqual, (id expected)) {
     return NO;
   });
 
-  failureMessageForTo(^{
+  failureMessageForTo(^NSString *{
     return [NSString stringWithFormat:@"expected: %@, got: %@", EXDescribeObject(expected), EXDescribeObject(actual)];
   });
 
-  failureMessageForNotTo(^{
+  failureMessageForNotTo(^NSString *{
     return [NSString stringWithFormat:@"expected: not %@, got: %@", EXDescribeObject(expected), EXDescribeObject(actual)];
   });
 }

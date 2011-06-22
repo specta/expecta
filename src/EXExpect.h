@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
-typedef BOOL (^EXBoolBlock)(void);
-typedef NSString *(^EXStringBlock)(void);
+typedef BOOL (^EXBoolBlock)();
+typedef NSString *(^EXStringBlock)();
 
 @interface EXExpect : NSObject {
   id _actual;

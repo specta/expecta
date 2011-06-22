@@ -445,6 +445,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boilerplate/Expecta-Prefix.pch";
+				GCC_VERSION = 4.2;
 				INFOPLIST_FILE = "boilerplate/Expecta-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -460,6 +461,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boilerplate/Expecta-Prefix.pch";
+				GCC_VERSION = 4.2;
 				INFOPLIST_FILE = "boilerplate/Expecta-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -477,6 +479,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boilerplate/ExpectaTests-Prefix.pch";
+				GCC_VERSION = 4.2;
 				INFOPLIST_FILE = "boilerplate/ExpectaTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -499,6 +502,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "boilerplate/ExpectaTests-Prefix.pch";
+				GCC_VERSION = 4.2;
 				INFOPLIST_FILE = "boilerplate/ExpectaTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",

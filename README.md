@@ -83,14 +83,14 @@ EXMatcherImplementationBegin(toBeKindOf, (Class expected)) {
     // Please note that primitive values will be wrapped in NSNumber/NSValue.
   });
 
-  failureMessageForTo(^{
+  failureMessageForTo(^NSString *{
     return [NSString stringWithFormat:@"expected: a kind of %@, "
                                        "got: an instance of %@, which is not a kind of %@",
                                        [expected class], [actual class], [expected class]];
     // Return the message to be displayed when the match function returns `YES`.
   });
 
-  failureMessageForNotTo(^{
+  failureMessageForNotTo(^NSString *{
     return [NSString stringWithFormat:@"expected: not a kind of %@, "
                                        "got: an instance of %@, which is a kind of %@",
                                        [expected class], [actual class], [expected class]];

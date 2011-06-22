@@ -13,11 +13,11 @@ EXMatcherImplementationBegin(toBeTruthy, (void)) {
     return !!actual;
   });
 
-  failureMessageForTo(^{
+  failureMessageForTo(^NSString *{
     return [NSString stringWithFormat:@"expected: a truthy value, got: %@, which is falsy", EXDescribeObject(actual)];
   });
 
-  failureMessageForNotTo(^{
+  failureMessageForNotTo(^NSString *{
     return [NSString stringWithFormat:@"expected: a non-truthy value, got: %@, which is truthy", EXDescribeObject(actual)];
   });
 }

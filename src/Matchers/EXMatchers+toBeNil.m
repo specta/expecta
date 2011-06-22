@@ -5,11 +5,11 @@ EXMatcherImplementationBegin(toBeNil, (void)) {
     return actual == nil;
   });
 
-  failureMessageForTo(^{
+  failureMessageForTo(^NSString *{
     return [NSString stringWithFormat:@"expected: nil/null, got: %@", EXDescribeObject(actual)];
   });
 
-  failureMessageForNotTo(^{
+  failureMessageForNotTo(^NSString *{
     return [NSString stringWithFormat:@"expected: not nil/null, got: %@", EXDescribeObject(actual)];
   });
 }
