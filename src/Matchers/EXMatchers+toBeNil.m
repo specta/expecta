@@ -1,5 +1,4 @@
 #import "EXMatchers+toBeNil.h"
-#import "EXMatcherHelpers.h"
 
 EXMatcherImplementationBegin(toBeNil, (void)) {
   match(^BOOL{
