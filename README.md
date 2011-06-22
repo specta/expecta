@@ -12,6 +12,10 @@ Under development. Not quite usable at this point.
 >
 >`expect(x).toBeNil();` passes if x is nil.
 >
+>`expect(x).toBeTruthy();` passes if x evaluates to true (non-zero).
+>
+>`expect(x).toBeFalsy();` passes if x evaluates to false (zero).
+>
 >`expect(x).toBeInstanceOf([Foo class]);` passes if x is an instance of a class Foo.
 >
 >`expect(x).toBeKindOf([Foo class]);` passes if x is an instance of a class Foo or if x is an instance of any class that inherits from the class Foo.

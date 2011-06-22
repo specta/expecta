@@ -80,8 +80,11 @@ NSString *EXDescribeObject(id obj) {
     return obj;
   } else if([obj isKindOfClass:[NSValue class]]) {
     if([obj isKindOfClass:[NSValue class]]) {
-      const char *type = [(NSValue *)obj _EX_objCType];
       void *pointerValue = [obj pointerValue];
+      if(pointerValue == NULL) {
+        return @"NULL";
+      }
+      const char *type = [(NSValue *)obj _EX_objCType];
       if(type) {
         if(strcmp(type, @encode(SEL)) == 0) {
           return [NSString stringWithFormat:@"@selector(%@)", NSStringFromSelector([obj pointerValue])];

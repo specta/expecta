@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		E9139760138A476800E4612D /* Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = E913975E138A476800E4612D /* Expecta.m */; };
+		E91C5F6613B18D150069C061 /* toBeTruthyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E46813B18A6400942633 /* toBeTruthyTest.m */; };
+		E91C5F6913B18D2E0069C061 /* EXMatchers+toBeTruthy.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C5F6813B18D2E0069C061 /* EXMatchers+toBeTruthy.m */; };
+		E91C5F7113B1BE500069C061 /* toBeFalsyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C5F7013B1BE4F0069C061 /* toBeFalsyTest.m */; };
+		E91C5F7413B1BEE40069C061 /* EXMatchers+toBeFalsy.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C5F7313B1BEE30069C061 /* EXMatchers+toBeFalsy.m */; };
 		E972E42913B08DEF00942633 /* toBeInstanceOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E42813B08DEF00942633 /* toBeInstanceOfTest.m */; };
 		E972E42C13B0933500942633 /* EXMatchers+toBeInstanceOf.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E42B13B0933500942633 /* EXMatchers+toBeInstanceOf.m */; };
 		E972E42E13B0982600942633 /* toBeKindOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E42D13B0982600942633 /* toBeKindOfTest.m */; };
@@ -43,6 +47,11 @@
 
 /* Begin PBXFileReference section */
 		E913975E138A476800E4612D /* Expecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expecta.m; sourceTree = "<group>"; };
+		E91C5F6713B18D2E0069C061 /* EXMatchers+toBeTruthy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeTruthy.h"; sourceTree = "<group>"; };
+		E91C5F6813B18D2E0069C061 /* EXMatchers+toBeTruthy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeTruthy.m"; sourceTree = "<group>"; };
+		E91C5F7013B1BE4F0069C061 /* toBeFalsyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeFalsyTest.m; sourceTree = "<group>"; };
+		E91C5F7213B1BEE30069C061 /* EXMatchers+toBeFalsy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeFalsy.h"; sourceTree = "<group>"; };
+		E91C5F7313B1BEE30069C061 /* EXMatchers+toBeFalsy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeFalsy.m"; sourceTree = "<group>"; };
 		E972E42813B08DEF00942633 /* toBeInstanceOfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeInstanceOfTest.m; sourceTree = "<group>"; };
 		E972E42A13B0933500942633 /* EXMatchers+toBeInstanceOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeInstanceOf.h"; sourceTree = "<group>"; };
 		E972E42B13B0933500942633 /* EXMatchers+toBeInstanceOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeInstanceOf.m"; sourceTree = "<group>"; };
@@ -54,6 +63,7 @@
 		E972E43513B09C0500942633 /* toBeSubclassOfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeSubclassOfTest.m; sourceTree = "<group>"; };
 		E972E43713B09CF900942633 /* EXMatchers+toBeSubclassOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeSubclassOf.h"; sourceTree = "<group>"; };
 		E972E43813B09CFA00942633 /* EXMatchers+toBeSubclassOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeSubclassOf.m"; sourceTree = "<group>"; };
+		E972E46813B18A6400942633 /* toBeTruthyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeTruthyTest.m; sourceTree = "<group>"; };
 		E9B33914139165DD0046A8AD /* ExpectationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectationTest.m; sourceTree = "<group>"; };
 		E9B3392F139168360046A8AD /* toBeNilTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeNilTest.m; sourceTree = "<group>"; };
 		E9B33943139169250046A8AD /* EXExpect+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXExpect+Test.h"; sourceTree = "<group>"; };
@@ -119,6 +129,8 @@
 				E972E42813B08DEF00942633 /* toBeInstanceOfTest.m */,
 				E972E42D13B0982600942633 /* toBeKindOfTest.m */,
 				E972E43513B09C0500942633 /* toBeSubclassOfTest.m */,
+				E972E46813B18A6400942633 /* toBeTruthyTest.m */,
+				E91C5F7013B1BE4F0069C061 /* toBeFalsyTest.m */,
 			);
 			path = Matchers;
 			sourceTree = "<group>";
@@ -151,6 +163,10 @@
 				E972E43313B09AFB00942633 /* EXMatchers+toBeKindOf.m */,
 				E972E43713B09CF900942633 /* EXMatchers+toBeSubclassOf.h */,
 				E972E43813B09CFA00942633 /* EXMatchers+toBeSubclassOf.m */,
+				E91C5F6713B18D2E0069C061 /* EXMatchers+toBeTruthy.h */,
+				E91C5F6813B18D2E0069C061 /* EXMatchers+toBeTruthy.m */,
+				E91C5F7213B1BEE30069C061 /* EXMatchers+toBeFalsy.h */,
+				E91C5F7313B1BEE30069C061 /* EXMatchers+toBeFalsy.m */,
 			);
 			path = Matchers;
 			sourceTree = "<group>";
@@ -346,6 +362,8 @@
 				E972E42C13B0933500942633 /* EXMatchers+toBeInstanceOf.m in Sources */,
 				E972E43413B09AFC00942633 /* EXMatchers+toBeKindOf.m in Sources */,
 				E972E43913B09CFA00942633 /* EXMatchers+toBeSubclassOf.m in Sources */,
+				E91C5F6913B18D2E0069C061 /* EXMatchers+toBeTruthy.m in Sources */,
+				E91C5F7413B1BEE40069C061 /* EXMatchers+toBeFalsy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +381,8 @@
 				E972E42E13B0982600942633 /* toBeKindOfTest.m in Sources */,
 				E972E43113B098A100942633 /* Fixtures.m in Sources */,
 				E972E43613B09C0500942633 /* toBeSubclassOfTest.m in Sources */,
+				E91C5F6613B18D150069C061 /* toBeTruthyTest.m in Sources */,
+				E91C5F7113B1BE500069C061 /* toBeFalsyTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
