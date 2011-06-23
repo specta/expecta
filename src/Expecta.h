@@ -1,5 +1,9 @@
 #import <Foundation/Foundation.h>
 
+#define EXFixCategoriesBug(name) \
+@interface EXFixCategoriesBug##name; @end \
+@implementation EXFixCategoriesBug##name; @end
+
 #import "EXExpect.h"
 #define EXMatchers EXExpect
 
@@ -17,6 +21,8 @@ EXExpect *_EX_expect(id testCase, int lineNumber, char *fileName, id actual);
 @end
 
 #define EXMatcherImplementationBegin(matcherName, matcherArguments) \
+EXFixCategoriesBug(EXMatcher##matcherName##Matcher); \
+\
 @implementation EXExpect (matcherName##Matcher) \
 - (void(^) matcherArguments) matcherName { \
   NSObject *actual = self.actual; \

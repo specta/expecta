@@ -1,5 +1,8 @@
 #import "NSValue+Expecta.h"
 #import <objc/runtime.h>
+#import "Expecta.h"
+
+EXFixCategoriesBug(NSValue_Expecta);
 
 @implementation NSValue (Expecta)
 

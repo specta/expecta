@@ -7,266 +7,427 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E9139760138A476800E4612D /* Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = E913975E138A476800E4612D /* Expecta.m */; };
-		E91C5F6613B18D150069C061 /* toBeTruthyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E46813B18A6400942633 /* toBeTruthyTest.m */; };
-		E91C5F6913B18D2E0069C061 /* EXMatchers+toBeTruthy.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C5F6813B18D2E0069C061 /* EXMatchers+toBeTruthy.m */; };
-		E91C5F7113B1BE500069C061 /* toBeFalsyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C5F7013B1BE4F0069C061 /* toBeFalsyTest.m */; };
-		E91C5F7413B1BEE40069C061 /* EXMatchers+toBeFalsy.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C5F7313B1BEE30069C061 /* EXMatchers+toBeFalsy.m */; };
-		E93871A313B1C89100DAC061 /* EXMatcherHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E93871A213B1C89100DAC061 /* EXMatcherHelpers.m */; };
-		E972E42913B08DEF00942633 /* toBeInstanceOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E42813B08DEF00942633 /* toBeInstanceOfTest.m */; };
-		E972E42C13B0933500942633 /* EXMatchers+toBeInstanceOf.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E42B13B0933500942633 /* EXMatchers+toBeInstanceOf.m */; };
-		E972E42E13B0982600942633 /* toBeKindOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E42D13B0982600942633 /* toBeKindOfTest.m */; };
-		E972E43113B098A100942633 /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E43013B098A100942633 /* Fixtures.m */; };
-		E972E43413B09AFC00942633 /* EXMatchers+toBeKindOf.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E43313B09AFB00942633 /* EXMatchers+toBeKindOf.m */; };
-		E972E43613B09C0500942633 /* toBeSubclassOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E43513B09C0500942633 /* toBeSubclassOfTest.m */; };
-		E972E43913B09CFA00942633 /* EXMatchers+toBeSubclassOf.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E43813B09CFA00942633 /* EXMatchers+toBeSubclassOf.m */; };
-		E9B33915139165DD0046A8AD /* ExpectationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B33914139165DD0046A8AD /* ExpectationTest.m */; };
-		E9B33931139168360046A8AD /* toBeNilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B3392F139168360046A8AD /* toBeNilTest.m */; };
-		E9B33947139169250046A8AD /* EXExpect+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B33944139169250046A8AD /* EXExpect+Test.m */; };
-		E9B33948139169250046A8AD /* FakeTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B33946139169250046A8AD /* FakeTestCase.m */; };
-		E9CD515813AF54FA004AEED9 /* EXUnsupportedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D4DBBB13AB017200F8FC23 /* EXUnsupportedObject.m */; };
-		E9CD515A13AF5506004AEED9 /* NSValue+Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D4DBC413AB265300F8FC23 /* NSValue+Expecta.m */; };
-		E9CD515B13AF550C004AEED9 /* EXMatchers+toEqual.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D4DBB813AAFB9800F8FC23 /* EXMatchers+toEqual.m */; };
-		E9D4C9A31392C67B00A648D5 /* EXMatchers+toBeNil.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D4C99F1392C67B00A648D5 /* EXMatchers+toBeNil.m */; };
-		E9D4DBB513AAF9AF00F8FC23 /* toEqualTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D4DBB413AAF9AF00F8FC23 /* toEqualTest.m */; };
-		E9D4DBC713AB2FA300F8FC23 /* NSValue+ExpectaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D4DBC613AB2FA300F8FC23 /* NSValue+ExpectaTest.m */; };
-		E9D519E11375D7DA00F9FB75 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D519E01375D7DA00F9FB75 /* Cocoa.framework */; };
-		E9D519EE1375D7DA00F9FB75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D519ED1375D7DA00F9FB75 /* main.m */; };
-		E9D519FE1375D7DA00F9FB75 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D519E01375D7DA00F9FB75 /* Cocoa.framework */; };
-		E9D51A281375DB1700F9FB75 /* EXExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D51A241375DB1700F9FB75 /* EXExpect.m */; };
+		E930679B13B2E24100EA26FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E930679913B2E22A00EA26FF /* Foundation.framework */; };
+		E930679C13B2E24B00EA26FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E930679913B2E22A00EA26FF /* Foundation.framework */; };
+		E93067D113B2E6D100EA26FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93067D013B2E6D100EA26FF /* Foundation.framework */; };
+		E93067DD13B2E6D100EA26FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93067D013B2E6D100EA26FF /* Foundation.framework */; };
+		E93067E213B2E6D100EA26FF /* libExpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E93067CE13B2E6D100EA26FF /* libExpecta-iOS.a */; };
+		E93067F513B2E7D900EA26FF /* ExpectationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7313B2DEB70010F4D7 /* ExpectationTest.m */; };
+		E93067F613B2E7DC00EA26FF /* NSValue+ExpectaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7C13B2DEB70010F4D7 /* NSValue+ExpectaTest.m */; };
+		E93067F713B2E7E100EA26FF /* toBeFalsyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7513B2DEB70010F4D7 /* toBeFalsyTest.m */; };
+		E93067F813B2E7E500EA26FF /* toBeInstanceOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7613B2DEB70010F4D7 /* toBeInstanceOfTest.m */; };
+		E93067F913B2E7EA00EA26FF /* toBeKindOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7713B2DEB70010F4D7 /* toBeKindOfTest.m */; };
+		E93067FA13B2E7EC00EA26FF /* toBeNilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7813B2DEB70010F4D7 /* toBeNilTest.m */; };
+		E93067FB13B2E7EE00EA26FF /* toBeSubclassOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7913B2DEB70010F4D7 /* toBeSubclassOfTest.m */; };
+		E93067FC13B2E7F000EA26FF /* toBeTruthyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7A13B2DEB70010F4D7 /* toBeTruthyTest.m */; };
+		E93067FD13B2E7F300EA26FF /* toEqualTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7B13B2DEB70010F4D7 /* toEqualTest.m */; };
+		E93067FE13B2E7FD00EA26FF /* EXExpect+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF9813B2E0BB0010F4D7 /* EXExpect+Test.m */; };
+		E93067FF13B2E80000EA26FF /* FakeTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF9A13B2E0BB0010F4D7 /* FakeTestCase.m */; };
+		E930680013B2E80200EA26FF /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF9C13B2E0BB0010F4D7 /* Fixtures.m */; };
+		E930680113B2E80F00EA26FF /* Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4013B2DDC60010F4D7 /* Expecta.m */; };
+		E930680213B2E81500EA26FF /* Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF3F13B2DDC60010F4D7 /* Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E930680313B2E81800EA26FF /* EXExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF3D13B2DDC60010F4D7 /* EXExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E930680413B2E81C00EA26FF /* EXExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF3E13B2DDC60010F4D7 /* EXExpect.m */; };
+		E930680513B2E81E00EA26FF /* EXUnsupportedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF4113B2DDC60010F4D7 /* EXUnsupportedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E930680613B2E82100EA26FF /* EXUnsupportedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4213B2DDC60010F4D7 /* EXUnsupportedObject.m */; };
+		E930680713B2E82400EA26FF /* NSValue+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF5613B2DDC60010F4D7 /* NSValue+Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E930680813B2E82500EA26FF /* NSValue+Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF5713B2DDC60010F4D7 /* NSValue+Expecta.m */; };
+		E930680913B2E82800EA26FF /* NSObject+EXTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF5513B2DDC60010F4D7 /* NSObject+EXTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E930680A13B2E83500EA26FF /* EXMatchers.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF5413B2DDC60010F4D7 /* EXMatchers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E930680B13B2E83800EA26FF /* EXMatcherHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF4413B2DDC60010F4D7 /* EXMatcherHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E930680C13B2E83A00EA26FF /* EXMatcherHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4513B2DDC60010F4D7 /* EXMatcherHelpers.m */; };
+		E930680D13B2E83E00EA26FF /* EXMatchers+toBeFalsy.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF4613B2DDC60010F4D7 /* EXMatchers+toBeFalsy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E930680E13B2E84100EA26FF /* EXMatchers+toBeFalsy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4713B2DDC60010F4D7 /* EXMatchers+toBeFalsy.m */; };
+		E930680F13B2E84400EA26FF /* EXMatchers+toBeInstanceOf.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF4813B2DDC60010F4D7 /* EXMatchers+toBeInstanceOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E930681013B2E84700EA26FF /* EXMatchers+toBeInstanceOf.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4913B2DDC60010F4D7 /* EXMatchers+toBeInstanceOf.m */; };
+		E930681113B2E84900EA26FF /* EXMatchers+toBeKindOf.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF4A13B2DDC60010F4D7 /* EXMatchers+toBeKindOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E930681213B2E84B00EA26FF /* EXMatchers+toBeKindOf.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4B13B2DDC60010F4D7 /* EXMatchers+toBeKindOf.m */; };
+		E930681313B2E84E00EA26FF /* EXMatchers+toBeNil.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF4C13B2DDC60010F4D7 /* EXMatchers+toBeNil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E930681413B2E85100EA26FF /* EXMatchers+toBeNil.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4D13B2DDC60010F4D7 /* EXMatchers+toBeNil.m */; };
+		E930681513B2E85400EA26FF /* EXMatchers+toBeSubclassOf.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF4E13B2DDC60010F4D7 /* EXMatchers+toBeSubclassOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E930681613B2E85700EA26FF /* EXMatchers+toBeSubclassOf.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4F13B2DDC60010F4D7 /* EXMatchers+toBeSubclassOf.m */; };
+		E930681713B2E85900EA26FF /* EXMatchers+toBeTruthy.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF5013B2DDC60010F4D7 /* EXMatchers+toBeTruthy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E930681813B2E85B00EA26FF /* EXMatchers+toBeTruthy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF5113B2DDC60010F4D7 /* EXMatchers+toBeTruthy.m */; };
+		E930681913B2E85E00EA26FF /* EXMatchers+toEqual.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF5313B2DDC60010F4D7 /* EXMatchers+toEqual.m */; };
+		E930681A13B2E86000EA26FF /* EXMatchers+toEqual.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF5213B2DDC60010F4D7 /* EXMatchers+toEqual.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF2113B2DD520010F4D7 /* libExpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */; };
+		E9ACDF5813B2DDC60010F4D7 /* EXExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF3D13B2DDC60010F4D7 /* EXExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF5913B2DDC60010F4D7 /* EXExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF3E13B2DDC60010F4D7 /* EXExpect.m */; };
+		E9ACDF5A13B2DDC60010F4D7 /* Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF3F13B2DDC60010F4D7 /* Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF5B13B2DDC60010F4D7 /* Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4013B2DDC60010F4D7 /* Expecta.m */; };
+		E9ACDF5C13B2DDC60010F4D7 /* EXUnsupportedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF4113B2DDC60010F4D7 /* EXUnsupportedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF5D13B2DDC60010F4D7 /* EXUnsupportedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4213B2DDC60010F4D7 /* EXUnsupportedObject.m */; };
+		E9ACDF5E13B2DDC60010F4D7 /* EXMatcherHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF4413B2DDC60010F4D7 /* EXMatcherHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF5F13B2DDC60010F4D7 /* EXMatcherHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4513B2DDC60010F4D7 /* EXMatcherHelpers.m */; };
+		E9ACDF6013B2DDC60010F4D7 /* EXMatchers+toBeFalsy.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF4613B2DDC60010F4D7 /* EXMatchers+toBeFalsy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF6113B2DDC60010F4D7 /* EXMatchers+toBeFalsy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4713B2DDC60010F4D7 /* EXMatchers+toBeFalsy.m */; };
+		E9ACDF6213B2DDC60010F4D7 /* EXMatchers+toBeInstanceOf.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF4813B2DDC60010F4D7 /* EXMatchers+toBeInstanceOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF6313B2DDC60010F4D7 /* EXMatchers+toBeInstanceOf.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4913B2DDC60010F4D7 /* EXMatchers+toBeInstanceOf.m */; };
+		E9ACDF6413B2DDC60010F4D7 /* EXMatchers+toBeKindOf.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF4A13B2DDC60010F4D7 /* EXMatchers+toBeKindOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF6513B2DDC60010F4D7 /* EXMatchers+toBeKindOf.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4B13B2DDC60010F4D7 /* EXMatchers+toBeKindOf.m */; };
+		E9ACDF6613B2DDC60010F4D7 /* EXMatchers+toBeNil.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF4C13B2DDC60010F4D7 /* EXMatchers+toBeNil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF6713B2DDC60010F4D7 /* EXMatchers+toBeNil.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4D13B2DDC60010F4D7 /* EXMatchers+toBeNil.m */; };
+		E9ACDF6813B2DDC60010F4D7 /* EXMatchers+toBeSubclassOf.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF4E13B2DDC60010F4D7 /* EXMatchers+toBeSubclassOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF6913B2DDC60010F4D7 /* EXMatchers+toBeSubclassOf.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF4F13B2DDC60010F4D7 /* EXMatchers+toBeSubclassOf.m */; };
+		E9ACDF6A13B2DDC60010F4D7 /* EXMatchers+toBeTruthy.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF5013B2DDC60010F4D7 /* EXMatchers+toBeTruthy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF6B13B2DDC60010F4D7 /* EXMatchers+toBeTruthy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF5113B2DDC60010F4D7 /* EXMatchers+toBeTruthy.m */; };
+		E9ACDF6C13B2DDC60010F4D7 /* EXMatchers+toEqual.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF5213B2DDC60010F4D7 /* EXMatchers+toEqual.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF6D13B2DDC60010F4D7 /* EXMatchers+toEqual.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF5313B2DDC60010F4D7 /* EXMatchers+toEqual.m */; };
+		E9ACDF6E13B2DDC60010F4D7 /* EXMatchers.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF5413B2DDC60010F4D7 /* EXMatchers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF6F13B2DDC60010F4D7 /* NSObject+EXTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF5513B2DDC60010F4D7 /* NSObject+EXTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF7013B2DDC60010F4D7 /* NSValue+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF5613B2DDC60010F4D7 /* NSValue+Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9ACDF7113B2DDC60010F4D7 /* NSValue+Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF5713B2DDC60010F4D7 /* NSValue+Expecta.m */; };
+		E9ACDF8713B2DEB70010F4D7 /* ExpectationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7313B2DEB70010F4D7 /* ExpectationTest.m */; };
+		E9ACDF8813B2DEB70010F4D7 /* toBeFalsyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7513B2DEB70010F4D7 /* toBeFalsyTest.m */; };
+		E9ACDF8913B2DEB70010F4D7 /* toBeInstanceOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7613B2DEB70010F4D7 /* toBeInstanceOfTest.m */; };
+		E9ACDF8A13B2DEB70010F4D7 /* toBeKindOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7713B2DEB70010F4D7 /* toBeKindOfTest.m */; };
+		E9ACDF8B13B2DEB70010F4D7 /* toBeNilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7813B2DEB70010F4D7 /* toBeNilTest.m */; };
+		E9ACDF8C13B2DEB70010F4D7 /* toBeSubclassOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7913B2DEB70010F4D7 /* toBeSubclassOfTest.m */; };
+		E9ACDF8D13B2DEB70010F4D7 /* toBeTruthyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7A13B2DEB70010F4D7 /* toBeTruthyTest.m */; };
+		E9ACDF8E13B2DEB70010F4D7 /* toEqualTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7B13B2DEB70010F4D7 /* toEqualTest.m */; };
+		E9ACDF8F13B2DEB70010F4D7 /* NSValue+ExpectaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7C13B2DEB70010F4D7 /* NSValue+ExpectaTest.m */; };
+		E9ACDF9E13B2E0BB0010F4D7 /* EXExpect+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF9813B2E0BB0010F4D7 /* EXExpect+Test.m */; };
+		E9ACDF9F13B2E0BB0010F4D7 /* FakeTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF9A13B2E0BB0010F4D7 /* FakeTestCase.m */; };
+		E9ACDFA013B2E0BB0010F4D7 /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF9C13B2E0BB0010F4D7 /* Fixtures.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E9D519FF1375D7DA00F9FB75 /* PBXContainerItemProxy */ = {
+		E93067E013B2E6D100EA26FF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E9D519D31375D7D900F9FB75 /* Project object */;
+			containerPortal = E9ACDF0313B2DD520010F4D7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E9D519DB1375D7DA00F9FB75;
+			remoteGlobalIDString = E93067CD13B2E6D100EA26FF;
+			remoteInfo = "Expecta-iOS";
+		};
+		E9ACDF1F13B2DD520010F4D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9ACDF0313B2DD520010F4D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9ACDF0B13B2DD520010F4D7;
 			remoteInfo = Expecta;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E913975E138A476800E4612D /* Expecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expecta.m; sourceTree = "<group>"; };
-		E91C5F6713B18D2E0069C061 /* EXMatchers+toBeTruthy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeTruthy.h"; sourceTree = "<group>"; };
-		E91C5F6813B18D2E0069C061 /* EXMatchers+toBeTruthy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeTruthy.m"; sourceTree = "<group>"; };
-		E91C5F7013B1BE4F0069C061 /* toBeFalsyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeFalsyTest.m; sourceTree = "<group>"; };
-		E91C5F7213B1BEE30069C061 /* EXMatchers+toBeFalsy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeFalsy.h"; sourceTree = "<group>"; };
-		E91C5F7313B1BEE30069C061 /* EXMatchers+toBeFalsy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeFalsy.m"; sourceTree = "<group>"; };
-		E93871A113B1C89100DAC061 /* EXMatcherHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXMatcherHelpers.h; sourceTree = "<group>"; };
-		E93871A213B1C89100DAC061 /* EXMatcherHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXMatcherHelpers.m; sourceTree = "<group>"; };
-		E972E42813B08DEF00942633 /* toBeInstanceOfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeInstanceOfTest.m; sourceTree = "<group>"; };
-		E972E42A13B0933500942633 /* EXMatchers+toBeInstanceOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeInstanceOf.h"; sourceTree = "<group>"; };
-		E972E42B13B0933500942633 /* EXMatchers+toBeInstanceOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeInstanceOf.m"; sourceTree = "<group>"; };
-		E972E42D13B0982600942633 /* toBeKindOfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeKindOfTest.m; sourceTree = "<group>"; };
-		E972E42F13B098A100942633 /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
-		E972E43013B098A100942633 /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
-		E972E43213B09AFB00942633 /* EXMatchers+toBeKindOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeKindOf.h"; sourceTree = "<group>"; };
-		E972E43313B09AFB00942633 /* EXMatchers+toBeKindOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeKindOf.m"; sourceTree = "<group>"; };
-		E972E43513B09C0500942633 /* toBeSubclassOfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeSubclassOfTest.m; sourceTree = "<group>"; };
-		E972E43713B09CF900942633 /* EXMatchers+toBeSubclassOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeSubclassOf.h"; sourceTree = "<group>"; };
-		E972E43813B09CFA00942633 /* EXMatchers+toBeSubclassOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeSubclassOf.m"; sourceTree = "<group>"; };
-		E972E46813B18A6400942633 /* toBeTruthyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeTruthyTest.m; sourceTree = "<group>"; };
-		E9B33914139165DD0046A8AD /* ExpectationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectationTest.m; sourceTree = "<group>"; };
-		E9B3392F139168360046A8AD /* toBeNilTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeNilTest.m; sourceTree = "<group>"; };
-		E9B33943139169250046A8AD /* EXExpect+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXExpect+Test.h"; sourceTree = "<group>"; };
-		E9B33944139169250046A8AD /* EXExpect+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXExpect+Test.m"; sourceTree = "<group>"; };
-		E9B33945139169250046A8AD /* FakeTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeTestCase.h; sourceTree = "<group>"; };
-		E9B33946139169250046A8AD /* FakeTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeTestCase.m; sourceTree = "<group>"; };
-		E9B3394A139169D50046A8AD /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
-		E9D4C7241391906500A648D5 /* NSObject+EXTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EXTestCase.h"; sourceTree = "<group>"; };
-		E9D4C99B1392C67B00A648D5 /* EXMatchers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXMatchers.h; sourceTree = "<group>"; };
-		E9D4C99F1392C67B00A648D5 /* EXMatchers+toBeNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeNil.m"; sourceTree = "<group>"; };
-		E9D4C9B61392C81700A648D5 /* EXMatchers+toBeNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeNil.h"; sourceTree = "<group>"; };
-		E9D4DBB413AAF9AF00F8FC23 /* toEqualTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toEqualTest.m; sourceTree = "<group>"; };
-		E9D4DBB713AAFB9800F8FC23 /* EXMatchers+toEqual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toEqual.h"; sourceTree = "<group>"; };
-		E9D4DBB813AAFB9800F8FC23 /* EXMatchers+toEqual.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toEqual.m"; sourceTree = "<group>"; };
-		E9D4DBBA13AB017200F8FC23 /* EXUnsupportedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXUnsupportedObject.h; sourceTree = "<group>"; };
-		E9D4DBBB13AB017200F8FC23 /* EXUnsupportedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXUnsupportedObject.m; sourceTree = "<group>"; };
-		E9D4DBC313AB265200F8FC23 /* NSValue+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+Expecta.h"; sourceTree = "<group>"; };
-		E9D4DBC413AB265300F8FC23 /* NSValue+Expecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+Expecta.m"; sourceTree = "<group>"; };
-		E9D4DBC613AB2FA300F8FC23 /* NSValue+ExpectaTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+ExpectaTest.m"; sourceTree = "<group>"; };
-		E9D519DC1375D7DA00F9FB75 /* Expecta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expecta.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9D519E01375D7DA00F9FB75 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		E9D519E31375D7DA00F9FB75 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		E9D519E41375D7DA00F9FB75 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		E9D519E51375D7DA00F9FB75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E9D519E81375D7DA00F9FB75 /* Expecta-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Expecta-Info.plist"; sourceTree = "<group>"; };
-		E9D519EC1375D7DA00F9FB75 /* Expecta-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Expecta-Prefix.pch"; sourceTree = "<group>"; };
-		E9D519ED1375D7DA00F9FB75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E9D519FD1375D7DA00F9FB75 /* ExpectaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpectaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9D51A031375D7DA00F9FB75 /* ExpectaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExpectaTests-Info.plist"; sourceTree = "<group>"; };
-		E9D51A071375D7DA00F9FB75 /* ExpectaTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExpectaTests-Prefix.pch"; sourceTree = "<group>"; };
-		E9D51A231375DB1700F9FB75 /* EXExpect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXExpect.h; sourceTree = "<group>"; };
-		E9D51A241375DB1700F9FB75 /* EXExpect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXExpect.m; sourceTree = "<group>"; };
-		E9D51A271375DB1700F9FB75 /* Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expecta.h; sourceTree = "<group>"; };
-		E9D51A321375E55600F9FB75 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		E9D51A331375E7EE00F9FB75 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E930679913B2E22A00EA26FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E93067CE13B2E6D100EA26FF /* libExpecta-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libExpecta-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E93067D013B2E6D100EA26FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E93067DA13B2E6D100EA26FF /* Expecta-iOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Expecta-iOSTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E93067DB13B2E6D100EA26FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E93067DE13B2E6D100EA26FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpecta.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9ACDF1713B2DD520010F4D7 /* Expecta-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Expecta-Prefix.pch"; sourceTree = "<group>"; };
+		E9ACDF1D13B2DD520010F4D7 /* ExpectaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpectaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9ACDF3D13B2DDC60010F4D7 /* EXExpect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXExpect.h; sourceTree = "<group>"; };
+		E9ACDF3E13B2DDC60010F4D7 /* EXExpect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXExpect.m; sourceTree = "<group>"; };
+		E9ACDF3F13B2DDC60010F4D7 /* Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expecta.h; sourceTree = "<group>"; };
+		E9ACDF4013B2DDC60010F4D7 /* Expecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expecta.m; sourceTree = "<group>"; };
+		E9ACDF4113B2DDC60010F4D7 /* EXUnsupportedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXUnsupportedObject.h; sourceTree = "<group>"; };
+		E9ACDF4213B2DDC60010F4D7 /* EXUnsupportedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXUnsupportedObject.m; sourceTree = "<group>"; };
+		E9ACDF4413B2DDC60010F4D7 /* EXMatcherHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXMatcherHelpers.h; sourceTree = "<group>"; };
+		E9ACDF4513B2DDC60010F4D7 /* EXMatcherHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXMatcherHelpers.m; sourceTree = "<group>"; };
+		E9ACDF4613B2DDC60010F4D7 /* EXMatchers+toBeFalsy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeFalsy.h"; sourceTree = "<group>"; };
+		E9ACDF4713B2DDC60010F4D7 /* EXMatchers+toBeFalsy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeFalsy.m"; sourceTree = "<group>"; };
+		E9ACDF4813B2DDC60010F4D7 /* EXMatchers+toBeInstanceOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeInstanceOf.h"; sourceTree = "<group>"; };
+		E9ACDF4913B2DDC60010F4D7 /* EXMatchers+toBeInstanceOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeInstanceOf.m"; sourceTree = "<group>"; };
+		E9ACDF4A13B2DDC60010F4D7 /* EXMatchers+toBeKindOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeKindOf.h"; sourceTree = "<group>"; };
+		E9ACDF4B13B2DDC60010F4D7 /* EXMatchers+toBeKindOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeKindOf.m"; sourceTree = "<group>"; };
+		E9ACDF4C13B2DDC60010F4D7 /* EXMatchers+toBeNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeNil.h"; sourceTree = "<group>"; };
+		E9ACDF4D13B2DDC60010F4D7 /* EXMatchers+toBeNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeNil.m"; sourceTree = "<group>"; };
+		E9ACDF4E13B2DDC60010F4D7 /* EXMatchers+toBeSubclassOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeSubclassOf.h"; sourceTree = "<group>"; };
+		E9ACDF4F13B2DDC60010F4D7 /* EXMatchers+toBeSubclassOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeSubclassOf.m"; sourceTree = "<group>"; };
+		E9ACDF5013B2DDC60010F4D7 /* EXMatchers+toBeTruthy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toBeTruthy.h"; sourceTree = "<group>"; };
+		E9ACDF5113B2DDC60010F4D7 /* EXMatchers+toBeTruthy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toBeTruthy.m"; sourceTree = "<group>"; };
+		E9ACDF5213B2DDC60010F4D7 /* EXMatchers+toEqual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXMatchers+toEqual.h"; sourceTree = "<group>"; };
+		E9ACDF5313B2DDC60010F4D7 /* EXMatchers+toEqual.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXMatchers+toEqual.m"; sourceTree = "<group>"; };
+		E9ACDF5413B2DDC60010F4D7 /* EXMatchers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXMatchers.h; sourceTree = "<group>"; };
+		E9ACDF5513B2DDC60010F4D7 /* NSObject+EXTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EXTestCase.h"; sourceTree = "<group>"; };
+		E9ACDF5613B2DDC60010F4D7 /* NSValue+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+Expecta.h"; sourceTree = "<group>"; };
+		E9ACDF5713B2DDC60010F4D7 /* NSValue+Expecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+Expecta.m"; sourceTree = "<group>"; };
+		E9ACDF7313B2DEB70010F4D7 /* ExpectationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectationTest.m; sourceTree = "<group>"; };
+		E9ACDF7513B2DEB70010F4D7 /* toBeFalsyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeFalsyTest.m; sourceTree = "<group>"; };
+		E9ACDF7613B2DEB70010F4D7 /* toBeInstanceOfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeInstanceOfTest.m; sourceTree = "<group>"; };
+		E9ACDF7713B2DEB70010F4D7 /* toBeKindOfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeKindOfTest.m; sourceTree = "<group>"; };
+		E9ACDF7813B2DEB70010F4D7 /* toBeNilTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeNilTest.m; sourceTree = "<group>"; };
+		E9ACDF7913B2DEB70010F4D7 /* toBeSubclassOfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeSubclassOfTest.m; sourceTree = "<group>"; };
+		E9ACDF7A13B2DEB70010F4D7 /* toBeTruthyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toBeTruthyTest.m; sourceTree = "<group>"; };
+		E9ACDF7B13B2DEB70010F4D7 /* toEqualTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toEqualTest.m; sourceTree = "<group>"; };
+		E9ACDF7C13B2DEB70010F4D7 /* NSValue+ExpectaTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+ExpectaTest.m"; sourceTree = "<group>"; };
+		E9ACDF9413B2DEF30010F4D7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E9ACDF9513B2DEF30010F4D7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		E9ACDF9713B2E0BB0010F4D7 /* EXExpect+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXExpect+Test.h"; sourceTree = "<group>"; };
+		E9ACDF9813B2E0BB0010F4D7 /* EXExpect+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXExpect+Test.m"; sourceTree = "<group>"; };
+		E9ACDF9913B2E0BB0010F4D7 /* FakeTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeTestCase.h; sourceTree = "<group>"; };
+		E9ACDF9A13B2E0BB0010F4D7 /* FakeTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeTestCase.m; sourceTree = "<group>"; };
+		E9ACDF9B13B2E0BB0010F4D7 /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
+		E9ACDF9C13B2E0BB0010F4D7 /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
+		E9ACDF9D13B2E0BB0010F4D7 /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
+		E9ACDFA213B2E0CC0010F4D7 /* Test-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
+		E9ACDFA313B2E0CC0010F4D7 /* Test-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Test-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E9D519D91375D7DA00F9FB75 /* Frameworks */ = {
+		E93067CB13B2E6D100EA26FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9D519E11375D7DA00F9FB75 /* Cocoa.framework in Frameworks */,
+				E93067D113B2E6D100EA26FF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9D519F91375D7DA00F9FB75 /* Frameworks */ = {
+		E93067D613B2E6D100EA26FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9D519FE1375D7DA00F9FB75 /* Cocoa.framework in Frameworks */,
+				E93067DD13B2E6D100EA26FF /* Foundation.framework in Frameworks */,
+				E93067E213B2E6D100EA26FF /* libExpecta-iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9ACDF0913B2DD520010F4D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E930679C13B2E24B00EA26FF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9ACDF1913B2DD520010F4D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E930679B13B2E24100EA26FF /* Foundation.framework in Frameworks */,
+				E9ACDF2113B2DD520010F4D7 /* libExpecta.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E9B33924139166AE0046A8AD /* Matchers */ = {
+		E93067CF13B2E6D100EA26FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E9B3392F139168360046A8AD /* toBeNilTest.m */,
-				E9D4DBB413AAF9AF00F8FC23 /* toEqualTest.m */,
-				E972E42813B08DEF00942633 /* toBeInstanceOfTest.m */,
-				E972E42D13B0982600942633 /* toBeKindOfTest.m */,
-				E972E43513B09C0500942633 /* toBeSubclassOfTest.m */,
-				E972E46813B18A6400942633 /* toBeTruthyTest.m */,
-				E91C5F7013B1BE4F0069C061 /* toBeFalsyTest.m */,
+				E93067D013B2E6D100EA26FF /* Foundation.framework */,
+				E93067DB13B2E6D100EA26FF /* UIKit.framework */,
+				E93067DE13B2E6D100EA26FF /* CoreGraphics.framework */,
 			);
-			path = Matchers;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E9B3393B139168F50046A8AD /* Support */ = {
+		E9ACDF0113B2DD520010F4D7 = {
 			isa = PBXGroup;
 			children = (
-				E9B3394A139169D50046A8AD /* TestHelper.h */,
-				E9B33943139169250046A8AD /* EXExpect+Test.h */,
-				E9B33944139169250046A8AD /* EXExpect+Test.m */,
-				E9B33945139169250046A8AD /* FakeTestCase.h */,
-				E9B33946139169250046A8AD /* FakeTestCase.m */,
-				E972E42F13B098A100942633 /* Fixtures.h */,
-				E972E43013B098A100942633 /* Fixtures.m */,
-			);
-			path = Support;
-			sourceTree = "<group>";
-		};
-		E9D4C9901392C61500A648D5 /* Matchers */ = {
-			isa = PBXGroup;
-			children = (
-				E9D4C99B1392C67B00A648D5 /* EXMatchers.h */,
-				E9D4C9B61392C81700A648D5 /* EXMatchers+toBeNil.h */,
-				E9D4C99F1392C67B00A648D5 /* EXMatchers+toBeNil.m */,
-				E9D4DBB713AAFB9800F8FC23 /* EXMatchers+toEqual.h */,
-				E9D4DBB813AAFB9800F8FC23 /* EXMatchers+toEqual.m */,
-				E972E42A13B0933500942633 /* EXMatchers+toBeInstanceOf.h */,
-				E972E42B13B0933500942633 /* EXMatchers+toBeInstanceOf.m */,
-				E972E43213B09AFB00942633 /* EXMatchers+toBeKindOf.h */,
-				E972E43313B09AFB00942633 /* EXMatchers+toBeKindOf.m */,
-				E972E43713B09CF900942633 /* EXMatchers+toBeSubclassOf.h */,
-				E972E43813B09CFA00942633 /* EXMatchers+toBeSubclassOf.m */,
-				E91C5F6713B18D2E0069C061 /* EXMatchers+toBeTruthy.h */,
-				E91C5F6813B18D2E0069C061 /* EXMatchers+toBeTruthy.m */,
-				E91C5F7213B1BEE30069C061 /* EXMatchers+toBeFalsy.h */,
-				E91C5F7313B1BEE30069C061 /* EXMatchers+toBeFalsy.m */,
-				E93871A113B1C89100DAC061 /* EXMatcherHelpers.h */,
-				E93871A213B1C89100DAC061 /* EXMatcherHelpers.m */,
-			);
-			path = Matchers;
-			sourceTree = "<group>";
-		};
-		E9D519D11375D7D900F9FB75 = {
-			isa = PBXGroup;
-			children = (
-				E9D51A321375E55600F9FB75 /* README.md */,
-				E9D51A331375E7EE00F9FB75 /* LICENSE */,
-				E9D51A211375DAD300F9FB75 /* src */,
-				E9D51A151375DA0400F9FB75 /* test */,
-				E9D51A141375D93800F9FB75 /* boilerplate */,
-				E9D519DF1375D7DA00F9FB75 /* frameworks */,
-				E9D519DD1375D7DA00F9FB75 /* products */,
+				E9ACDF9413B2DEF30010F4D7 /* LICENSE */,
+				E9ACDF9513B2DEF30010F4D7 /* README.md */,
+				E9ACDF3C13B2DDB00010F4D7 /* src */,
+				E9ACDF7213B2DEB70010F4D7 /* test */,
+				E9ACDF0E13B2DD520010F4D7 /* frameworks */,
+				E9ACDF0D13B2DD520010F4D7 /* products */,
+				E93067CF13B2E6D100EA26FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		E9D519DD1375D7DA00F9FB75 /* products */ = {
+		E9ACDF0D13B2DD520010F4D7 /* products */ = {
 			isa = PBXGroup;
 			children = (
-				E9D519DC1375D7DA00F9FB75 /* Expecta.app */,
-				E9D519FD1375D7DA00F9FB75 /* ExpectaTests.octest */,
+				E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */,
+				E9ACDF1D13B2DD520010F4D7 /* ExpectaTests.octest */,
+				E93067CE13B2E6D100EA26FF /* libExpecta-iOS.a */,
+				E93067DA13B2E6D100EA26FF /* Expecta-iOSTests.octest */,
 			);
 			name = products;
 			sourceTree = "<group>";
 		};
-		E9D519DF1375D7DA00F9FB75 /* frameworks */ = {
+		E9ACDF0E13B2DD520010F4D7 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E9D519E01375D7DA00F9FB75 /* Cocoa.framework */,
-				E9D519E21375D7DA00F9FB75 /* Other Frameworks */,
+				E930679913B2E22A00EA26FF /* Foundation.framework */,
 			);
 			name = frameworks;
 			sourceTree = "<group>";
 		};
-		E9D519E21375D7DA00F9FB75 /* Other Frameworks */ = {
+		E9ACDF3C13B2DDB00010F4D7 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				E9D519E31375D7DA00F9FB75 /* AppKit.framework */,
-				E9D519E41375D7DA00F9FB75 /* CoreData.framework */,
-				E9D519E51375D7DA00F9FB75 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		E9D51A141375D93800F9FB75 /* boilerplate */ = {
-			isa = PBXGroup;
-			children = (
-				E9D519ED1375D7DA00F9FB75 /* main.m */,
-				E9D519E81375D7DA00F9FB75 /* Expecta-Info.plist */,
-				E9D519EC1375D7DA00F9FB75 /* Expecta-Prefix.pch */,
-				E9D51A031375D7DA00F9FB75 /* ExpectaTests-Info.plist */,
-				E9D51A071375D7DA00F9FB75 /* ExpectaTests-Prefix.pch */,
-			);
-			path = boilerplate;
-			sourceTree = "<group>";
-		};
-		E9D51A151375DA0400F9FB75 /* test */ = {
-			isa = PBXGroup;
-			children = (
-				E9B3393B139168F50046A8AD /* Support */,
-				E9B33924139166AE0046A8AD /* Matchers */,
-				E9B33914139165DD0046A8AD /* ExpectationTest.m */,
-				E9D4DBC613AB2FA300F8FC23 /* NSValue+ExpectaTest.m */,
-			);
-			path = test;
-			sourceTree = "<group>";
-		};
-		E9D51A211375DAD300F9FB75 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				E9D4C9901392C61500A648D5 /* Matchers */,
-				E9D51A271375DB1700F9FB75 /* Expecta.h */,
-				E913975E138A476800E4612D /* Expecta.m */,
-				E9D4DBBA13AB017200F8FC23 /* EXUnsupportedObject.h */,
-				E9D4DBBB13AB017200F8FC23 /* EXUnsupportedObject.m */,
-				E9D51A231375DB1700F9FB75 /* EXExpect.h */,
-				E9D51A241375DB1700F9FB75 /* EXExpect.m */,
-				E9D4C7241391906500A648D5 /* NSObject+EXTestCase.h */,
-				E9D4DBC313AB265200F8FC23 /* NSValue+Expecta.h */,
-				E9D4DBC413AB265300F8FC23 /* NSValue+Expecta.m */,
+				E9ACDF1713B2DD520010F4D7 /* Expecta-Prefix.pch */,
+				E9ACDF3F13B2DDC60010F4D7 /* Expecta.h */,
+				E9ACDF4013B2DDC60010F4D7 /* Expecta.m */,
+				E9ACDF3D13B2DDC60010F4D7 /* EXExpect.h */,
+				E9ACDF3E13B2DDC60010F4D7 /* EXExpect.m */,
+				E9ACDF4113B2DDC60010F4D7 /* EXUnsupportedObject.h */,
+				E9ACDF4213B2DDC60010F4D7 /* EXUnsupportedObject.m */,
+				E9ACDF5613B2DDC60010F4D7 /* NSValue+Expecta.h */,
+				E9ACDF5713B2DDC60010F4D7 /* NSValue+Expecta.m */,
+				E9ACDF5513B2DDC60010F4D7 /* NSObject+EXTestCase.h */,
+				E9ACDF4313B2DDC60010F4D7 /* matchers */,
 			);
 			path = src;
 			sourceTree = "<group>";
 		};
+		E9ACDF4313B2DDC60010F4D7 /* matchers */ = {
+			isa = PBXGroup;
+			children = (
+				E9ACDF5413B2DDC60010F4D7 /* EXMatchers.h */,
+				E9ACDF4413B2DDC60010F4D7 /* EXMatcherHelpers.h */,
+				E9ACDF4513B2DDC60010F4D7 /* EXMatcherHelpers.m */,
+				E9ACDF4613B2DDC60010F4D7 /* EXMatchers+toBeFalsy.h */,
+				E9ACDF4713B2DDC60010F4D7 /* EXMatchers+toBeFalsy.m */,
+				E9ACDF4813B2DDC60010F4D7 /* EXMatchers+toBeInstanceOf.h */,
+				E9ACDF4913B2DDC60010F4D7 /* EXMatchers+toBeInstanceOf.m */,
+				E9ACDF4A13B2DDC60010F4D7 /* EXMatchers+toBeKindOf.h */,
+				E9ACDF4B13B2DDC60010F4D7 /* EXMatchers+toBeKindOf.m */,
+				E9ACDF4C13B2DDC60010F4D7 /* EXMatchers+toBeNil.h */,
+				E9ACDF4D13B2DDC60010F4D7 /* EXMatchers+toBeNil.m */,
+				E9ACDF4E13B2DDC60010F4D7 /* EXMatchers+toBeSubclassOf.h */,
+				E9ACDF4F13B2DDC60010F4D7 /* EXMatchers+toBeSubclassOf.m */,
+				E9ACDF5013B2DDC60010F4D7 /* EXMatchers+toBeTruthy.h */,
+				E9ACDF5113B2DDC60010F4D7 /* EXMatchers+toBeTruthy.m */,
+				E9ACDF5213B2DDC60010F4D7 /* EXMatchers+toEqual.h */,
+				E9ACDF5313B2DDC60010F4D7 /* EXMatchers+toEqual.m */,
+			);
+			path = matchers;
+			sourceTree = "<group>";
+		};
+		E9ACDF7213B2DEB70010F4D7 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				E9ACDF7313B2DEB70010F4D7 /* ExpectationTest.m */,
+				E9ACDF7C13B2DEB70010F4D7 /* NSValue+ExpectaTest.m */,
+				E9ACDF7413B2DEB70010F4D7 /* matchers */,
+				E9ACDF9613B2E0BB0010F4D7 /* helpers */,
+				E9ACDFA113B2E0CC0010F4D7 /* support */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		E9ACDF7413B2DEB70010F4D7 /* matchers */ = {
+			isa = PBXGroup;
+			children = (
+				E9ACDF7513B2DEB70010F4D7 /* toBeFalsyTest.m */,
+				E9ACDF7613B2DEB70010F4D7 /* toBeInstanceOfTest.m */,
+				E9ACDF7713B2DEB70010F4D7 /* toBeKindOfTest.m */,
+				E9ACDF7813B2DEB70010F4D7 /* toBeNilTest.m */,
+				E9ACDF7913B2DEB70010F4D7 /* toBeSubclassOfTest.m */,
+				E9ACDF7A13B2DEB70010F4D7 /* toBeTruthyTest.m */,
+				E9ACDF7B13B2DEB70010F4D7 /* toEqualTest.m */,
+			);
+			path = matchers;
+			sourceTree = "<group>";
+		};
+		E9ACDF9613B2E0BB0010F4D7 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E9ACDF9713B2E0BB0010F4D7 /* EXExpect+Test.h */,
+				E9ACDF9813B2E0BB0010F4D7 /* EXExpect+Test.m */,
+				E9ACDF9913B2E0BB0010F4D7 /* FakeTestCase.h */,
+				E9ACDF9A13B2E0BB0010F4D7 /* FakeTestCase.m */,
+				E9ACDF9B13B2E0BB0010F4D7 /* Fixtures.h */,
+				E9ACDF9C13B2E0BB0010F4D7 /* Fixtures.m */,
+				E9ACDF9D13B2E0BB0010F4D7 /* TestHelper.h */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		E9ACDFA113B2E0CC0010F4D7 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				E9ACDFA213B2E0CC0010F4D7 /* Test-Info.plist */,
+				E9ACDFA313B2E0CC0010F4D7 /* Test-Prefix.pch */,
+			);
+			path = support;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		E93067CC13B2E6D100EA26FF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E930680213B2E81500EA26FF /* Expecta.h in Headers */,
+				E930680313B2E81800EA26FF /* EXExpect.h in Headers */,
+				E930680513B2E81E00EA26FF /* EXUnsupportedObject.h in Headers */,
+				E930680713B2E82400EA26FF /* NSValue+Expecta.h in Headers */,
+				E930680913B2E82800EA26FF /* NSObject+EXTestCase.h in Headers */,
+				E930680A13B2E83500EA26FF /* EXMatchers.h in Headers */,
+				E930680B13B2E83800EA26FF /* EXMatcherHelpers.h in Headers */,
+				E930680D13B2E83E00EA26FF /* EXMatchers+toBeFalsy.h in Headers */,
+				E930680F13B2E84400EA26FF /* EXMatchers+toBeInstanceOf.h in Headers */,
+				E930681113B2E84900EA26FF /* EXMatchers+toBeKindOf.h in Headers */,
+				E930681313B2E84E00EA26FF /* EXMatchers+toBeNil.h in Headers */,
+				E930681513B2E85400EA26FF /* EXMatchers+toBeSubclassOf.h in Headers */,
+				E930681713B2E85900EA26FF /* EXMatchers+toBeTruthy.h in Headers */,
+				E930681A13B2E86000EA26FF /* EXMatchers+toEqual.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9ACDF0A13B2DD520010F4D7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9ACDF5A13B2DDC60010F4D7 /* Expecta.h in Headers */,
+				E9ACDF5813B2DDC60010F4D7 /* EXExpect.h in Headers */,
+				E9ACDF5C13B2DDC60010F4D7 /* EXUnsupportedObject.h in Headers */,
+				E9ACDF5E13B2DDC60010F4D7 /* EXMatcherHelpers.h in Headers */,
+				E9ACDF6013B2DDC60010F4D7 /* EXMatchers+toBeFalsy.h in Headers */,
+				E9ACDF6213B2DDC60010F4D7 /* EXMatchers+toBeInstanceOf.h in Headers */,
+				E9ACDF6413B2DDC60010F4D7 /* EXMatchers+toBeKindOf.h in Headers */,
+				E9ACDF6613B2DDC60010F4D7 /* EXMatchers+toBeNil.h in Headers */,
+				E9ACDF6813B2DDC60010F4D7 /* EXMatchers+toBeSubclassOf.h in Headers */,
+				E9ACDF6A13B2DDC60010F4D7 /* EXMatchers+toBeTruthy.h in Headers */,
+				E9ACDF6C13B2DDC60010F4D7 /* EXMatchers+toEqual.h in Headers */,
+				E9ACDF6E13B2DDC60010F4D7 /* EXMatchers.h in Headers */,
+				E9ACDF6F13B2DDC60010F4D7 /* NSObject+EXTestCase.h in Headers */,
+				E9ACDF7013B2DDC60010F4D7 /* NSValue+Expecta.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		E9D519DB1375D7DA00F9FB75 /* Expecta */ = {
+		E93067CD13B2E6D100EA26FF /* Expecta-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E9D51A0E1375D7DA00F9FB75 /* Build configuration list for PBXNativeTarget "Expecta" */;
+			buildConfigurationList = E93067F213B2E6D100EA26FF /* Build configuration list for PBXNativeTarget "Expecta-iOS" */;
 			buildPhases = (
-				E9D519D81375D7DA00F9FB75 /* Sources */,
-				E9D519D91375D7DA00F9FB75 /* Frameworks */,
-				E9D519DA1375D7DA00F9FB75 /* Resources */,
+				E93067CA13B2E6D100EA26FF /* Sources */,
+				E93067CB13B2E6D100EA26FF /* Frameworks */,
+				E93067CC13B2E6D100EA26FF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Expecta-iOS";
+			productName = "Expecta-iOS";
+			productReference = E93067CE13B2E6D100EA26FF /* libExpecta-iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E93067D913B2E6D100EA26FF /* Expecta-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E93067F313B2E6D100EA26FF /* Build configuration list for PBXNativeTarget "Expecta-iOSTests" */;
+			buildPhases = (
+				E93067D513B2E6D100EA26FF /* Sources */,
+				E93067D613B2E6D100EA26FF /* Frameworks */,
+				E93067D713B2E6D100EA26FF /* Resources */,
+				E93067D813B2E6D100EA26FF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E93067E113B2E6D100EA26FF /* PBXTargetDependency */,
+			);
+			name = "Expecta-iOSTests";
+			productName = "Expecta-iOSTests";
+			productReference = E93067DA13B2E6D100EA26FF /* Expecta-iOSTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		E9ACDF0B13B2DD520010F4D7 /* Expecta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9ACDF2F13B2DD520010F4D7 /* Build configuration list for PBXNativeTarget "Expecta" */;
+			buildPhases = (
+				E9ACDF0813B2DD520010F4D7 /* Sources */,
+				E9ACDF0913B2DD520010F4D7 /* Frameworks */,
+				E9ACDF0A13B2DD520010F4D7 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -274,60 +435,62 @@
 			);
 			name = Expecta;
 			productName = Expecta;
-			productReference = E9D519DC1375D7DA00F9FB75 /* Expecta.app */;
-			productType = "com.apple.product-type.application";
+			productReference = E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */;
+			productType = "com.apple.product-type.library.static";
 		};
-		E9D519FC1375D7DA00F9FB75 /* ExpectaTests */ = {
+		E9ACDF1C13B2DD520010F4D7 /* ExpectaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E9D51A111375D7DA00F9FB75 /* Build configuration list for PBXNativeTarget "ExpectaTests" */;
+			buildConfigurationList = E9ACDF3213B2DD520010F4D7 /* Build configuration list for PBXNativeTarget "ExpectaTests" */;
 			buildPhases = (
-				E9D519F81375D7DA00F9FB75 /* Sources */,
-				E9D519F91375D7DA00F9FB75 /* Frameworks */,
-				E9D519FA1375D7DA00F9FB75 /* Resources */,
-				E9D519FB1375D7DA00F9FB75 /* ShellScript */,
+				E9ACDF1813B2DD520010F4D7 /* Sources */,
+				E9ACDF1913B2DD520010F4D7 /* Frameworks */,
+				E9ACDF1A13B2DD520010F4D7 /* Resources */,
+				E9ACDF1B13B2DD520010F4D7 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E9D51A001375D7DA00F9FB75 /* PBXTargetDependency */,
+				E9ACDF2013B2DD520010F4D7 /* PBXTargetDependency */,
 			);
 			name = ExpectaTests;
 			productName = ExpectaTests;
-			productReference = E9D519FD1375D7DA00F9FB75 /* ExpectaTests.octest */;
+			productReference = E9ACDF1D13B2DD520010F4D7 /* ExpectaTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E9D519D31375D7D900F9FB75 /* Project object */ = {
+		E9ACDF0313B2DD520010F4D7 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = E9D519D61375D7D900F9FB75 /* Build configuration list for PBXProject "Expecta" */;
+			buildConfigurationList = E9ACDF0613B2DD520010F4D7 /* Build configuration list for PBXProject "Expecta" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = E9D519D11375D7D900F9FB75;
-			productRefGroup = E9D519DD1375D7DA00F9FB75 /* products */;
+			mainGroup = E9ACDF0113B2DD520010F4D7;
+			productRefGroup = E9ACDF0D13B2DD520010F4D7 /* products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E9D519DB1375D7DA00F9FB75 /* Expecta */,
-				E9D519FC1375D7DA00F9FB75 /* ExpectaTests */,
+				E9ACDF0B13B2DD520010F4D7 /* Expecta */,
+				E93067CD13B2E6D100EA26FF /* Expecta-iOS */,
+				E9ACDF1C13B2DD520010F4D7 /* ExpectaTests */,
+				E93067D913B2E6D100EA26FF /* Expecta-iOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E9D519DA1375D7DA00F9FB75 /* Resources */ = {
+		E93067D713B2E6D100EA26FF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9D519FA1375D7DA00F9FB75 /* Resources */ = {
+		E9ACDF1A13B2DD520010F4D7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -337,7 +500,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E9D519FB1375D7DA00F9FB75 /* ShellScript */ = {
+		E93067D813B2E6D100EA26FF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		E9ACDF1B13B2DD520010F4D7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -353,57 +529,187 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E9D519D81375D7DA00F9FB75 /* Sources */ = {
+		E93067CA13B2E6D100EA26FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9D519EE1375D7DA00F9FB75 /* main.m in Sources */,
-				E9D51A281375DB1700F9FB75 /* EXExpect.m in Sources */,
-				E9139760138A476800E4612D /* Expecta.m in Sources */,
-				E9D4C9A31392C67B00A648D5 /* EXMatchers+toBeNil.m in Sources */,
-				E9CD515813AF54FA004AEED9 /* EXUnsupportedObject.m in Sources */,
-				E9CD515A13AF5506004AEED9 /* NSValue+Expecta.m in Sources */,
-				E9CD515B13AF550C004AEED9 /* EXMatchers+toEqual.m in Sources */,
-				E972E42C13B0933500942633 /* EXMatchers+toBeInstanceOf.m in Sources */,
-				E972E43413B09AFC00942633 /* EXMatchers+toBeKindOf.m in Sources */,
-				E972E43913B09CFA00942633 /* EXMatchers+toBeSubclassOf.m in Sources */,
-				E91C5F6913B18D2E0069C061 /* EXMatchers+toBeTruthy.m in Sources */,
-				E91C5F7413B1BEE40069C061 /* EXMatchers+toBeFalsy.m in Sources */,
-				E93871A313B1C89100DAC061 /* EXMatcherHelpers.m in Sources */,
+				E930680113B2E80F00EA26FF /* Expecta.m in Sources */,
+				E930680413B2E81C00EA26FF /* EXExpect.m in Sources */,
+				E930680613B2E82100EA26FF /* EXUnsupportedObject.m in Sources */,
+				E930680813B2E82500EA26FF /* NSValue+Expecta.m in Sources */,
+				E930680C13B2E83A00EA26FF /* EXMatcherHelpers.m in Sources */,
+				E930680E13B2E84100EA26FF /* EXMatchers+toBeFalsy.m in Sources */,
+				E930681013B2E84700EA26FF /* EXMatchers+toBeInstanceOf.m in Sources */,
+				E930681213B2E84B00EA26FF /* EXMatchers+toBeKindOf.m in Sources */,
+				E930681413B2E85100EA26FF /* EXMatchers+toBeNil.m in Sources */,
+				E930681613B2E85700EA26FF /* EXMatchers+toBeSubclassOf.m in Sources */,
+				E930681813B2E85B00EA26FF /* EXMatchers+toBeTruthy.m in Sources */,
+				E930681913B2E85E00EA26FF /* EXMatchers+toEqual.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9D519F81375D7DA00F9FB75 /* Sources */ = {
+		E93067D513B2E6D100EA26FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9B33915139165DD0046A8AD /* ExpectationTest.m in Sources */,
-				E9B33931139168360046A8AD /* toBeNilTest.m in Sources */,
-				E9B33947139169250046A8AD /* EXExpect+Test.m in Sources */,
-				E9B33948139169250046A8AD /* FakeTestCase.m in Sources */,
-				E9D4DBB513AAF9AF00F8FC23 /* toEqualTest.m in Sources */,
-				E9D4DBC713AB2FA300F8FC23 /* NSValue+ExpectaTest.m in Sources */,
-				E972E42913B08DEF00942633 /* toBeInstanceOfTest.m in Sources */,
-				E972E42E13B0982600942633 /* toBeKindOfTest.m in Sources */,
-				E972E43113B098A100942633 /* Fixtures.m in Sources */,
-				E972E43613B09C0500942633 /* toBeSubclassOfTest.m in Sources */,
-				E91C5F6613B18D150069C061 /* toBeTruthyTest.m in Sources */,
-				E91C5F7113B1BE500069C061 /* toBeFalsyTest.m in Sources */,
+				E93067F513B2E7D900EA26FF /* ExpectationTest.m in Sources */,
+				E93067F613B2E7DC00EA26FF /* NSValue+ExpectaTest.m in Sources */,
+				E93067F713B2E7E100EA26FF /* toBeFalsyTest.m in Sources */,
+				E93067F813B2E7E500EA26FF /* toBeInstanceOfTest.m in Sources */,
+				E93067F913B2E7EA00EA26FF /* toBeKindOfTest.m in Sources */,
+				E93067FA13B2E7EC00EA26FF /* toBeNilTest.m in Sources */,
+				E93067FB13B2E7EE00EA26FF /* toBeSubclassOfTest.m in Sources */,
+				E93067FC13B2E7F000EA26FF /* toBeTruthyTest.m in Sources */,
+				E93067FD13B2E7F300EA26FF /* toEqualTest.m in Sources */,
+				E93067FE13B2E7FD00EA26FF /* EXExpect+Test.m in Sources */,
+				E93067FF13B2E80000EA26FF /* FakeTestCase.m in Sources */,
+				E930680013B2E80200EA26FF /* Fixtures.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9ACDF0813B2DD520010F4D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9ACDF5913B2DDC60010F4D7 /* EXExpect.m in Sources */,
+				E9ACDF5B13B2DDC60010F4D7 /* Expecta.m in Sources */,
+				E9ACDF5D13B2DDC60010F4D7 /* EXUnsupportedObject.m in Sources */,
+				E9ACDF5F13B2DDC60010F4D7 /* EXMatcherHelpers.m in Sources */,
+				E9ACDF6113B2DDC60010F4D7 /* EXMatchers+toBeFalsy.m in Sources */,
+				E9ACDF6313B2DDC60010F4D7 /* EXMatchers+toBeInstanceOf.m in Sources */,
+				E9ACDF6513B2DDC60010F4D7 /* EXMatchers+toBeKindOf.m in Sources */,
+				E9ACDF6713B2DDC60010F4D7 /* EXMatchers+toBeNil.m in Sources */,
+				E9ACDF6913B2DDC60010F4D7 /* EXMatchers+toBeSubclassOf.m in Sources */,
+				E9ACDF6B13B2DDC60010F4D7 /* EXMatchers+toBeTruthy.m in Sources */,
+				E9ACDF6D13B2DDC60010F4D7 /* EXMatchers+toEqual.m in Sources */,
+				E9ACDF7113B2DDC60010F4D7 /* NSValue+Expecta.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9ACDF1813B2DD520010F4D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9ACDF8713B2DEB70010F4D7 /* ExpectationTest.m in Sources */,
+				E9ACDF8813B2DEB70010F4D7 /* toBeFalsyTest.m in Sources */,
+				E9ACDF8913B2DEB70010F4D7 /* toBeInstanceOfTest.m in Sources */,
+				E9ACDF8A13B2DEB70010F4D7 /* toBeKindOfTest.m in Sources */,
+				E9ACDF8B13B2DEB70010F4D7 /* toBeNilTest.m in Sources */,
+				E9ACDF8C13B2DEB70010F4D7 /* toBeSubclassOfTest.m in Sources */,
+				E9ACDF8D13B2DEB70010F4D7 /* toBeTruthyTest.m in Sources */,
+				E9ACDF8E13B2DEB70010F4D7 /* toEqualTest.m in Sources */,
+				E9ACDF8F13B2DEB70010F4D7 /* NSValue+ExpectaTest.m in Sources */,
+				E9ACDF9E13B2E0BB0010F4D7 /* EXExpect+Test.m in Sources */,
+				E9ACDF9F13B2E0BB0010F4D7 /* FakeTestCase.m in Sources */,
+				E9ACDFA013B2E0BB0010F4D7 /* Fixtures.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E9D51A001375D7DA00F9FB75 /* PBXTargetDependency */ = {
+		E93067E113B2E6D100EA26FF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E9D519DB1375D7DA00F9FB75 /* Expecta */;
-			targetProxy = E9D519FF1375D7DA00F9FB75 /* PBXContainerItemProxy */;
+			target = E93067CD13B2E6D100EA26FF /* Expecta-iOS */;
+			targetProxy = E93067E013B2E6D100EA26FF /* PBXContainerItemProxy */;
+		};
+		E9ACDF2013B2DD520010F4D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E9ACDF0B13B2DD520010F4D7 /* Expecta */;
+			targetProxy = E9ACDF1F13B2DD520010F4D7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		E9D51A0C1375D7DA00F9FB75 /* Debug */ = {
+		E93067EE13B2E6D100EA26FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/Expecta_iOS.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
+				GCC_VERSION = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E93067EF13B2E6D100EA26FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/Expecta_iOS.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E93067F013B2E6D100EA26FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "test/support/Test-Prefix.pch";
+				GCC_VERSION = 4.2;
+				INFOPLIST_FILE = "test/support/Test-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E93067F113B2E6D100EA26FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "test/support/Test-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "test/support/Test-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		E9ACDF2D13B2DD520010F4D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -411,7 +717,6 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -422,7 +727,7 @@
 			};
 			name = Debug;
 		};
-		E9D51A0D1375D7DA00F9FB75 /* Release */ = {
+		E9ACDF2E13B2DD520010F4D7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -436,7 +741,7 @@
 			};
 			name = Release;
 		};
-		E9D51A0F1375D7DA00F9FB75 /* Debug */ = {
+		E9ACDF3013B2DD520010F4D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -444,15 +749,15 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "boilerplate/Expecta-Prefix.pch";
+				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
 				GCC_VERSION = 4.2;
-				INFOPLIST_FILE = "boilerplate/Expecta-Info.plist";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 			};
 			name = Debug;
 		};
-		E9D51A101375D7DA00F9FB75 /* Release */ = {
+		E9ACDF3113B2DD520010F4D7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -460,56 +765,52 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "boilerplate/Expecta-Prefix.pch";
-				GCC_VERSION = 4.2;
-				INFOPLIST_FILE = "boilerplate/Expecta-Info.plist";
+				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 			};
 			name = Release;
 		};
-		E9D51A121375D7DA00F9FB75 /* Debug */ = {
+		E9ACDF3313B2DD520010F4D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Expecta.app/Contents/MacOS/Expecta";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "boilerplate/ExpectaTests-Prefix.pch";
-				GCC_VERSION = 4.2;
-				INFOPLIST_FILE = "boilerplate/ExpectaTests-Info.plist";
+				GCC_PREFIX_HEADER = "test/support/Test-Prefix.pch";
+				INFOPLIST_FILE = "test/support/Test-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
+					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
-		E9D51A131375D7DA00F9FB75 /* Release */ = {
+		E9ACDF3413B2DD520010F4D7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Expecta.app/Contents/MacOS/Expecta";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "boilerplate/ExpectaTests-Prefix.pch";
-				GCC_VERSION = 4.2;
-				INFOPLIST_FILE = "boilerplate/ExpectaTests-Info.plist";
+				GCC_PREFIX_HEADER = "test/support/Test-Prefix.pch";
+				INFOPLIST_FILE = "test/support/Test-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
+					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -517,34 +818,52 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E9D519D61375D7D900F9FB75 /* Build configuration list for PBXProject "Expecta" */ = {
+		E93067F213B2E6D100EA26FF /* Build configuration list for PBXNativeTarget "Expecta-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E9D51A0C1375D7DA00F9FB75 /* Debug */,
-				E9D51A0D1375D7DA00F9FB75 /* Release */,
+				E93067EE13B2E6D100EA26FF /* Debug */,
+				E93067EF13B2E6D100EA26FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9D51A0E1375D7DA00F9FB75 /* Build configuration list for PBXNativeTarget "Expecta" */ = {
+		E93067F313B2E6D100EA26FF /* Build configuration list for PBXNativeTarget "Expecta-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E9D51A0F1375D7DA00F9FB75 /* Debug */,
-				E9D51A101375D7DA00F9FB75 /* Release */,
+				E93067F013B2E6D100EA26FF /* Debug */,
+				E93067F113B2E6D100EA26FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9D51A111375D7DA00F9FB75 /* Build configuration list for PBXNativeTarget "ExpectaTests" */ = {
+		E9ACDF0613B2DD520010F4D7 /* Build configuration list for PBXProject "Expecta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E9D51A121375D7DA00F9FB75 /* Debug */,
-				E9D51A131375D7DA00F9FB75 /* Release */,
+				E9ACDF2D13B2DD520010F4D7 /* Debug */,
+				E9ACDF2E13B2DD520010F4D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9ACDF2F13B2DD520010F4D7 /* Build configuration list for PBXNativeTarget "Expecta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9ACDF3013B2DD520010F4D7 /* Debug */,
+				E9ACDF3113B2DD520010F4D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9ACDF3213B2DD520010F4D7 /* Build configuration list for PBXNativeTarget "ExpectaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9ACDF3313B2DD520010F4D7 /* Debug */,
+				E9ACDF3413B2DD520010F4D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E9D519D31375D7D900F9FB75 /* Project object */;
+	rootObject = E9ACDF0313B2DD520010F4D7 /* Project object */;
 }

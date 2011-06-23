@@ -32,8 +32,15 @@ Still under heavy development, but usable.
 
 ## USAGE
 
-Clone from Github, add `expecta/src` folder to your Xcode project and then add `#import "Expecta.h"` to your test code.
-Works best with [Cedar BDD Framework](http://pivotal.github.com/cedar/).
+1. Clone from Github.
+2. Run `rake` in project root to build.
+3. Copy and add all header files in `products` folder to the Spec/Test target in your Xcode project.
+4. For OS X projects, copy and add `libExpecta-macosx.a` in `products` folder to the Spec/Test target in your Xcode project.
+   For iOS projects, copy and add `libExpecta-ios-universal.a` in `products` folder to the Spec/Test target in your Xcode project.
+5. Add `-ObjC` to the "Other Linker Flags" build setting for the Spec/Test target in your Xcode project.
+6. Add `#import "Expecta.h"` to your test code.
+
+Expecta works best with [Cedar BDD Framework](http://pivotal.github.com/cedar/).
 
 ## BUILT-IN MATCHERS
 
