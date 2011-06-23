@@ -1,40 +1,44 @@
+// Expecta - Expecta.h
+// Copyright (c) 2011 Peter Jihoon Kim
+// Licensed under the MIT License.
+
 #import <Foundation/Foundation.h>
 
-#define EXFixCategoriesBug(name) \
-@interface EXFixCategoriesBug##name; @end \
-@implementation EXFixCategoriesBug##name; @end
+#define EXPFixCategoriesBug(name) \
+@interface EXPFixCategoriesBug##name; @end \
+@implementation EXPFixCategoriesBug##name; @end
 
-#import "EXExpect.h"
-#define EXMatchers EXExpect
+#import "EXPExpect.h"
+#define EXPMatchers EXPExpect
 
-#import "EXUnsupportedObject.h"
+#import "EXPUnsupportedObject.h"
 
 id _EXObjectify(char *type, ...);
-#define EXObjectify(value) _EXObjectify(@encode(__typeof__((value))), (value))
+#define EXPObjectify(value) _EXObjectify(@encode(__typeof__((value))), (value))
 
-EXExpect *_EX_expect(id testCase, int lineNumber, char *fileName, id actual);
-#define expect(actual) _EX_expect(self, __LINE__, __FILE__, EXObjectify((actual)))
+EXPExpect *_EX_expect(id testCase, int lineNumber, char *fileName, id actual);
+#define expect(actual) _EX_expect(self, __LINE__, __FILE__, EXPObjectify((actual)))
 
-#define EXMatcherInterface(matcherName, matcherArguments) \
-@interface EXExpect (matcherName##Matcher) \
+#define EXPMatcherInterface(matcherName, matcherArguments) \
+@interface EXPExpect (matcherName##Matcher) \
 @property (nonatomic, readonly) void(^ matcherName) matcherArguments; \
 @end
 
-#define EXMatcherImplementationBegin(matcherName, matcherArguments) \
-EXFixCategoriesBug(EXMatcher##matcherName##Matcher); \
+#define EXPMatcherImplementationBegin(matcherName, matcherArguments) \
+EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
 \
-@implementation EXExpect (matcherName##Matcher) \
+@implementation EXPExpect (matcherName##Matcher) \
 - (void(^) matcherArguments) matcherName { \
   NSObject *actual = self.actual; \
   void (^matcherBlock) matcherArguments = ^ matcherArguments { \
 
-#define EXMatcherImplementationEnd \
+#define EXPMatcherImplementationEnd \
     [self applyMatcher]; \
   }; \
   return [[matcherBlock copy] autorelease]; \
 } \
 @end
 
-NSString *EXDescribeObject(id obj);
+NSString *EXPDescribeObject(id obj);
 
-#import "EXMatchers.h"
+#import "EXPMatchers.h"

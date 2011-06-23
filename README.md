@@ -69,12 +69,12 @@ Every matcher's criteria can be inverted by prepending `.Not`: (It is `.Not` wit
 
 Writing a new matcher is easy with special macros provided by Expecta. Take a look at how `.toBeKindOf()` matcher is defined:
 
-`EXMatchers+toBeKindOf.h`
+`EXPMatchers+toBeKindOf.h`
 
 ```objective-c
 #import "Expecta.h"
 
-EXMatcherInterface(toBeKindOf, (Class expected));
+EXPMatcherInterface(toBeKindOf, (Class expected));
 // 1st argument is the name of the matcher function
 // 2nd argument is the list of arguments that may be passed in the function call.
 // Multiple arguments are fine. (e.g. (int foo, float bar))
@@ -82,12 +82,12 @@ EXMatcherInterface(toBeKindOf, (Class expected));
 #define toBeAKindOf toBeKindOf
 ```
 
-`EXMatchers+toBeKindOf.m`
+`EXPMatchers+toBeKindOf.m`
 
 ```objective-c
-#import "EXMatchers+toBeKindOf.h"
+#import "EXPMatchers+toBeKindOf.h"
 
-EXMatcherImplementationBegin(toBeKindOf, (Class expected)) {
+EXPMatcherImplementationBegin(toBeKindOf, (Class expected)) {
   match(^BOOL{
     return [actual isKindOfClass:expected];
     // Return `YES` if the matcher should pass, `NO` if it should not.
@@ -109,7 +109,7 @@ EXMatcherImplementationBegin(toBeKindOf, (Class expected)) {
     // Return the message to be displayed when the match function returns `NO`.
   });
 }
-EXMatcherImplementationEnd
+EXPMatcherImplementationEnd
 ```
 
 ## LICENSE

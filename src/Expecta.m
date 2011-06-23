@@ -1,6 +1,10 @@
+// Expecta - Expecta.m
+// Copyright (c) 2011 Peter Jihoon Kim
+// Licensed under the MIT License.
+
 #import "Expecta.h"
 #import "NSValue+Expecta.h"
-#import "NSObject+EXTestCase.h"
+#import "NSObject+Expecta.h"
 
 id _EXObjectify(char *type, ...) {
   va_list v;
@@ -48,10 +52,10 @@ id _EXObjectify(char *type, ...) {
   } else if(strcmp(type, @encode(__typeof__(nil))) == 0) {
     obj = nil;
   } else if(type[0] == '{') {
-    EXUnsupportedObject *actual = [[[EXUnsupportedObject alloc] initWithType:@"struct"] autorelease];
+    EXPUnsupportedObject *actual = [[[EXPUnsupportedObject alloc] initWithType:@"struct"] autorelease];
     obj = actual;
   } else if(type[0] == '(') {
-    EXUnsupportedObject *actual = [[[EXUnsupportedObject alloc] initWithType:@"union"] autorelease];
+    EXPUnsupportedObject *actual = [[[EXPUnsupportedObject alloc] initWithType:@"union"] autorelease];
     obj = actual;
   } else {
     void *actual = va_arg(v, void *);
@@ -64,16 +68,16 @@ id _EXObjectify(char *type, ...) {
   return obj;
 }
 
-EXExpect *_EX_expect(id testCase, int lineNumber, char *fileName, id actual) {
-  if([actual isKindOfClass:[EXUnsupportedObject class]]) {
-    NSString *reason = [NSString stringWithFormat:@"%s:%d expecting a %@ is not supported", fileName, lineNumber, ((EXUnsupportedObject *)actual).type];
+EXPExpect *_EX_expect(id testCase, int lineNumber, char *fileName, id actual) {
+  if([actual isKindOfClass:[EXPUnsupportedObject class]]) {
+    NSString *reason = [NSString stringWithFormat:@"%s:%d expecting a %@ is not supported", fileName, lineNumber, ((EXPUnsupportedObject *)actual).type];
     [testCase failWithException:[NSException exceptionWithName:@"Expecta Error" reason:reason userInfo:nil]];
     return nil;
   }
-  return [EXExpect expectWithActual:actual testCase:testCase lineNumber:lineNumber fileName:fileName];
+  return [EXPExpect expectWithActual:actual testCase:testCase lineNumber:lineNumber fileName:fileName];
 }
 
-NSString *EXDescribeObject(id obj) {
+NSString *EXPDescribeObject(id obj) {
   if(obj == nil) {
     return @"nil/null";
   } else if([obj isKindOfClass:[NSString class]]) {

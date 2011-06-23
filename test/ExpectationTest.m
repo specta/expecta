@@ -1,8 +1,12 @@
+// Expecta - ExpectationTest.m
+// Copyright (c) 2011 Peter Jihoon Kim
+// Licensed under the MIT License.
+
 #import "TestHelper.h"
 #import "NSValue+Expecta.h"
 
 @interface ExpectationTest : SenTestCase {
-  EXExpect *x;
+  EXPExpect *x;
   NSNumber *n;
   NSValue *v;
 }
@@ -33,8 +37,8 @@
 }
 
 - (void)test_expect_Class {
-  v = [NSValue valueWithPointer:[EXExpect class]];
-  assertEqualObjects(expect([EXExpect class]).actual, v);
+  v = [NSValue valueWithPointer:[EXPExpect class]];
+  assertEqualObjects(expect([EXPExpect class]).actual, v);
 }
 
 - (void)test_expect_pointer {
@@ -153,7 +157,7 @@
     int a;
     float b;
   } u;
-  assertFail(_EX_expect(f, 123, "foo.m", EXObjectify(u)), @"foo.m:123 expecting a union is not supported");
+  assertFail(_EX_expect(f, 123, "foo.m", EXPObjectify(u)), @"foo.m:123 expecting a union is not supported");
   [f release];
 }
 
@@ -163,7 +167,7 @@
     int a;
     float b;
   } s;
-  assertFail(_EX_expect(f, 123, "foo.m", EXObjectify(s)), @"foo.m:123 expecting a struct is not supported");
+  assertFail(_EX_expect(f, 123, "foo.m", EXPObjectify(s)), @"foo.m:123 expecting a struct is not supported");
   [f release];
 }
 

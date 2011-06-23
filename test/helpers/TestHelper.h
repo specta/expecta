@@ -1,8 +1,12 @@
+// Expecta - TestHelper.h
+// Copyright (c) 2011 Peter Jihoon Kim
+// Licensed under the MIT License.
+
 #import <Foundation/Foundation.h>
 #import <SenTestingKit/SenTestingKit.h>
 #import "Expecta.h"
 #import "FakeTestCase.h"
-#import "EXExpect+Test.h"
+#import "EXPExpect+Test.h"
 #import "Fixtures.h"
 
 #define assertPass(expr) \
