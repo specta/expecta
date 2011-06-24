@@ -3,6 +3,7 @@
 // Licensed under the MIT License.
 
 #import "Expecta.h"
-#define toEqual(expected) _toEqual(EXPObjectify((expected)))
 
 EXPMatcherInterface(_toEqual, (id expected));
+EXPMatcherInterface(toEqual, (id expected)); // to aid code completion
+#define toEqual(expected) _toEqual(EXPObjectify((expected)))

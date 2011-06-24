@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		E930679B13B2E24100EA26FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E930679913B2E22A00EA26FF /* Foundation.framework */; };
 		E930679C13B2E24B00EA26FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E930679913B2E22A00EA26FF /* Foundation.framework */; };
-		E93067D113B2E6D100EA26FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93067D013B2E6D100EA26FF /* Foundation.framework */; };
-		E93067DD13B2E6D100EA26FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93067D013B2E6D100EA26FF /* Foundation.framework */; };
 		E93067E213B2E6D100EA26FF /* libExpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E93067CE13B2E6D100EA26FF /* libExpecta-iOS.a */; };
 		E93067F513B2E7D900EA26FF /* ExpectationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7313B2DEB70010F4D7 /* ExpectationTest.m */; };
 		E93067F613B2E7DC00EA26FF /* NSValue+ExpectaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7C13B2DEB70010F4D7 /* NSValue+ExpectaTest.m */; };
@@ -50,6 +48,8 @@
 		E930681813B2E85B00EA26FF /* EXPMatchers+toBeTruthy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF5113B2DDC60010F4D7 /* EXPMatchers+toBeTruthy.m */; };
 		E930681913B2E85E00EA26FF /* EXPMatchers+toEqual.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF5313B2DDC60010F4D7 /* EXPMatchers+toEqual.m */; };
 		E930681A13B2E86000EA26FF /* EXPMatchers+toEqual.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF5213B2DDC60010F4D7 /* EXPMatchers+toEqual.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E94296F113B42BF60038708B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E930679913B2E22A00EA26FF /* Foundation.framework */; };
+		E94296F213B42BFA0038708B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E930679913B2E22A00EA26FF /* Foundation.framework */; };
 		E9ACDF2113B2DD520010F4D7 /* libExpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */; };
 		E9ACDF5813B2DDC60010F4D7 /* EXPExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF3D13B2DDC60010F4D7 /* EXPExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9ACDF5913B2DDC60010F4D7 /* EXPExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF3E13B2DDC60010F4D7 /* EXPExpect.m */; };
@@ -111,10 +111,7 @@
 /* Begin PBXFileReference section */
 		E930679913B2E22A00EA26FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E93067CE13B2E6D100EA26FF /* libExpecta-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libExpecta-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E93067D013B2E6D100EA26FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E93067DA13B2E6D100EA26FF /* Expecta-iOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Expecta-iOSTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E93067DB13B2E6D100EA26FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		E93067DE13B2E6D100EA26FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpecta.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9ACDF1713B2DD520010F4D7 /* Expecta-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Expecta-Prefix.pch"; sourceTree = "<group>"; };
 		E9ACDF1D13B2DD520010F4D7 /* ExpectaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpectaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +152,7 @@
 		E9ACDF7C13B2DEB70010F4D7 /* NSValue+ExpectaTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+ExpectaTest.m"; sourceTree = "<group>"; };
 		E9ACDF9413B2DEF30010F4D7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E9ACDF9513B2DEF30010F4D7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		E9ACDF9713B2E0BB0010F4D7 /* EXPExpect+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "EXPExpect+Test.h"; sourceTree = "<group>"; };
+		E9ACDF9713B2E0BB0010F4D7 /* EXPExpect+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPExpect+Test.h"; sourceTree = "<group>"; };
 		E9ACDF9813B2E0BB0010F4D7 /* EXPExpect+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPExpect+Test.m"; sourceTree = "<group>"; };
 		E9ACDF9913B2E0BB0010F4D7 /* FakeTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeTestCase.h; sourceTree = "<group>"; };
 		E9ACDF9A13B2E0BB0010F4D7 /* FakeTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeTestCase.m; sourceTree = "<group>"; };
@@ -171,7 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E93067D113B2E6D100EA26FF /* Foundation.framework in Frameworks */,
+				E94296F113B42BF60038708B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E93067DD13B2E6D100EA26FF /* Foundation.framework in Frameworks */,
+				E94296F213B42BFA0038708B /* Foundation.framework in Frameworks */,
 				E93067E213B2E6D100EA26FF /* libExpecta-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,16 +201,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E93067CF13B2E6D100EA26FF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E93067D013B2E6D100EA26FF /* Foundation.framework */,
-				E93067DB13B2E6D100EA26FF /* UIKit.framework */,
-				E93067DE13B2E6D100EA26FF /* CoreGraphics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E9ACDF0113B2DD520010F4D7 = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +210,6 @@
 				E9ACDF7213B2DEB70010F4D7 /* test */,
 				E9ACDF0E13B2DD520010F4D7 /* frameworks */,
 				E9ACDF0D13B2DD520010F4D7 /* products */,
-				E93067CF13B2E6D100EA26FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
