@@ -9,3 +9,4 @@
 #import "EXPMatchers+toBeSubclassOf.h"
 #import "EXPMatchers+toBeTruthy.h"
 #import "EXPMatchers+toBeFalsy.h"
+#import "EXPMatchers+toContain.h"

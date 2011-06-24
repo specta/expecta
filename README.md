@@ -52,6 +52,8 @@ Expecta works best with [Cedar BDD Framework](http://pivotal.github.com/cedar/).
 >
 >`expect(x).toBeFalsy();` passes if x evaluates to false (zero).
 >
+>`expect(x).toContain(y);` passes if an instance of NSArray or NSString x contains y.
+>
 >`expect(x).toBeInstanceOf([Foo class]);` passes if x is an instance of a class Foo.
 >
 >`expect(x).toBeKindOf([Foo class]);` passes if x is an instance of a class Foo or if x is an instance of any class that inherits from the class Foo.
