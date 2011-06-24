@@ -10,3 +10,4 @@
 #import "EXPMatchers+toBeTruthy.h"
 #import "EXPMatchers+toBeFalsy.h"
 #import "EXPMatchers+toContain.h"
+#import "EXPMatchers+toBeIdenticalTo.h"

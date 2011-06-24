@@ -56,6 +56,12 @@
 		E94296F913B430DF0038708B /* EXPMatchers+toContain.h in Headers */ = {isa = PBXBuildFile; fileRef = E94296F613B430DE0038708B /* EXPMatchers+toContain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E94296FA13B430DF0038708B /* EXPMatchers+toContain.m in Sources */ = {isa = PBXBuildFile; fileRef = E94296F713B430DF0038708B /* EXPMatchers+toContain.m */; };
 		E94296FB13B430DF0038708B /* EXPMatchers+toContain.m in Sources */ = {isa = PBXBuildFile; fileRef = E94296F713B430DF0038708B /* EXPMatchers+toContain.m */; };
+		E942971213B45ADD0038708B /* EXPMatchers+toBeIdenticalToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E942971113B45ADD0038708B /* EXPMatchers+toBeIdenticalToTest.m */; };
+		E942971313B45ADD0038708B /* EXPMatchers+toBeIdenticalToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E942971113B45ADD0038708B /* EXPMatchers+toBeIdenticalToTest.m */; };
+		E942971613B45C8F0038708B /* EXPMatchers+toBeIdenticalTo.h in Headers */ = {isa = PBXBuildFile; fileRef = E942971413B45C8D0038708B /* EXPMatchers+toBeIdenticalTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E942971713B45C8F0038708B /* EXPMatchers+toBeIdenticalTo.h in Headers */ = {isa = PBXBuildFile; fileRef = E942971413B45C8D0038708B /* EXPMatchers+toBeIdenticalTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E942971813B45C8F0038708B /* EXPMatchers+toBeIdenticalTo.m in Sources */ = {isa = PBXBuildFile; fileRef = E942971513B45C8E0038708B /* EXPMatchers+toBeIdenticalTo.m */; };
+		E942971913B45C8F0038708B /* EXPMatchers+toBeIdenticalTo.m in Sources */ = {isa = PBXBuildFile; fileRef = E942971513B45C8E0038708B /* EXPMatchers+toBeIdenticalTo.m */; };
 		E9ACDF2113B2DD520010F4D7 /* libExpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */; };
 		E9ACDF5813B2DDC60010F4D7 /* EXPExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF3D13B2DDC60010F4D7 /* EXPExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9ACDF5913B2DDC60010F4D7 /* EXPExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF3E13B2DDC60010F4D7 /* EXPExpect.m */; };
@@ -121,6 +127,9 @@
 		E94296F313B42E160038708B /* EXPMatchers+toContainTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+toContainTest.m"; sourceTree = "<group>"; };
 		E94296F613B430DE0038708B /* EXPMatchers+toContain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toContain.h"; sourceTree = "<group>"; };
 		E94296F713B430DF0038708B /* EXPMatchers+toContain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+toContain.m"; sourceTree = "<group>"; };
+		E942971113B45ADD0038708B /* EXPMatchers+toBeIdenticalToTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+toBeIdenticalToTest.m"; sourceTree = "<group>"; };
+		E942971413B45C8D0038708B /* EXPMatchers+toBeIdenticalTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeIdenticalTo.h"; sourceTree = "<group>"; };
+		E942971513B45C8E0038708B /* EXPMatchers+toBeIdenticalTo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+toBeIdenticalTo.m"; sourceTree = "<group>"; };
 		E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpecta.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9ACDF1713B2DD520010F4D7 /* Expecta-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Expecta-Prefix.pch"; sourceTree = "<group>"; };
 		E9ACDF1D13B2DD520010F4D7 /* ExpectaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpectaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,6 +290,8 @@
 				E9ACDF5313B2DDC60010F4D7 /* EXPMatchers+toEqual.m */,
 				E94296F613B430DE0038708B /* EXPMatchers+toContain.h */,
 				E94296F713B430DF0038708B /* EXPMatchers+toContain.m */,
+				E942971413B45C8D0038708B /* EXPMatchers+toBeIdenticalTo.h */,
+				E942971513B45C8E0038708B /* EXPMatchers+toBeIdenticalTo.m */,
 			);
 			path = matchers;
 			sourceTree = "<group>";
@@ -300,6 +311,7 @@
 		E9ACDF7413B2DEB70010F4D7 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
+				E942971113B45ADD0038708B /* EXPMatchers+toBeIdenticalToTest.m */,
 				E9ACDF7613B2DEB70010F4D7 /* EXPMatchers+toBeInstanceOfTest.m */,
 				E9ACDF7713B2DEB70010F4D7 /* EXPMatchers+toBeKindOfTest.m */,
 				E9ACDF7813B2DEB70010F4D7 /* EXPMatchers+toBeNilTest.m */,
@@ -357,6 +369,7 @@
 				E930681713B2E85900EA26FF /* EXPMatchers+toBeTruthy.h in Headers */,
 				E930681A13B2E86000EA26FF /* EXPMatchers+toEqual.h in Headers */,
 				E94296F913B430DF0038708B /* EXPMatchers+toContain.h in Headers */,
+				E942971713B45C8F0038708B /* EXPMatchers+toBeIdenticalTo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +392,7 @@
 				E9ACDF6F13B2DDC60010F4D7 /* NSObject+Expecta.h in Headers */,
 				E9ACDF7013B2DDC60010F4D7 /* NSValue+Expecta.h in Headers */,
 				E94296F813B430DF0038708B /* EXPMatchers+toContain.h in Headers */,
+				E942971613B45C8F0038708B /* EXPMatchers+toBeIdenticalTo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +560,7 @@
 				E930681813B2E85B00EA26FF /* EXPMatchers+toBeTruthy.m in Sources */,
 				E930681913B2E85E00EA26FF /* EXPMatchers+toEqual.m in Sources */,
 				E94296FB13B430DF0038708B /* EXPMatchers+toContain.m in Sources */,
+				E942971913B45C8F0038708B /* EXPMatchers+toBeIdenticalTo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +581,7 @@
 				E93067FF13B2E80000EA26FF /* FakeTestCase.m in Sources */,
 				E930680013B2E80200EA26FF /* Fixtures.m in Sources */,
 				E94296F513B42E160038708B /* EXPMatchers+toContainTest.m in Sources */,
+				E942971313B45ADD0038708B /* EXPMatchers+toBeIdenticalToTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +602,7 @@
 				E9ACDF6D13B2DDC60010F4D7 /* EXPMatchers+toEqual.m in Sources */,
 				E9ACDF7113B2DDC60010F4D7 /* NSValue+Expecta.m in Sources */,
 				E94296FA13B430DF0038708B /* EXPMatchers+toContain.m in Sources */,
+				E942971813B45C8F0038708B /* EXPMatchers+toBeIdenticalTo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +623,7 @@
 				E9ACDF9F13B2E0BB0010F4D7 /* FakeTestCase.m in Sources */,
 				E9ACDFA013B2E0BB0010F4D7 /* Fixtures.m in Sources */,
 				E94296F413B42E160038708B /* EXPMatchers+toContainTest.m in Sources */,
+				E942971213B45ADD0038708B /* EXPMatchers+toBeIdenticalToTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,6 @@
 # Expecta
 
-An Objective-C/Cocoa Matcher Library
+A Matcher Framework for Objective-C/Cocoa
 
 ## HOW IS IT BETTER?
 
@@ -45,6 +45,8 @@ Expecta works best with [Cedar BDD Framework](http://pivotal.github.com/cedar/).
 ## BUILT-IN MATCHERS
 
 >`expect(x).toEqual(y);` compares objects or primitives x and y and passes if they are identical (==) or equivalent (isEqual:).
+>
+>`expect(x).toBeIdenticalTo(y);` compares objects x and y and passes if they are identical and have the same memory address.
 >
 >`expect(x).toBeNil();` passes if x is nil.
 >
