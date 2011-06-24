@@ -14,10 +14,12 @@ typedef NSString *(^EXPStringBlock)();
   char *_fileName;
   BOOL _negative;
 
+  EXPBoolBlock _prerequisiteBlock;
   EXPBoolBlock _matchBlock;
   EXPStringBlock _failureMessageForToBlock;
   EXPStringBlock _failureMessageForNotToBlock;
 
+  void (^prerequisite)(EXPBoolBlock block);
   void (^match)(EXPBoolBlock block);
   void (^failureMessageForTo)(EXPStringBlock block);
   void (^failureMessageForNotTo)(EXPStringBlock block);

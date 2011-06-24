@@ -29,7 +29,7 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
 \
 @implementation EXPExpect (matcherName##Matcher) \
 - (void(^) matcherArguments) matcherName { \
-  NSObject *actual = self.actual; \
+  id actual = self.actual; \
   void (^matcherBlock) matcherArguments = ^ matcherArguments { \
 
 #define EXPMatcherImplementationEnd \

@@ -20,6 +20,8 @@
 - (void)test_toBeInstanceOf {
   assertPass(test_expect(foo).toBeInstanceOf([Foo class]));
   assertPass(test_expect(bar).toBeInstanceOf([Bar class]));
+  assertFail(test_expect(nil).toBeInstanceOf([Foo class]), @"foo.m:123 the actual value is nil/null");
+  assertFail(test_expect(foo).toBeInstanceOf(nil), @"foo.m:123 the expected value is nil/null");
   assertFail(test_expect(foo).toBeInstanceOf([Bar class]), @"foo.m:123 expected: an instance of Bar, got: an instance of Foo");
   assertFail(test_expect(bar).toBeInstanceOf([Foo class]), @"foo.m:123 expected: an instance of Foo, got: an instance of Bar");
 }
@@ -27,6 +29,8 @@
 - (void)test_Not_toBeInstanceOf {
   assertPass(test_expect(foo).Not.toBeInstanceOf([Bar class]));
   assertPass(test_expect(bar).Not.toBeInstanceOf([Foo class]));
+  assertFail(test_expect(nil).Not.toBeInstanceOf([Foo class]), @"foo.m:123 the actual value is nil/null");
+  assertFail(test_expect(foo).Not.toBeInstanceOf(nil), @"foo.m:123 the expected value is nil/null");
   assertFail(test_expect(foo).Not.toBeInstanceOf([Foo class]), @"foo.m:123 expected: not an instance of Foo, got: an instance of Foo");
   assertFail(test_expect(bar).Not.toBeInstanceOf([Bar class]), @"foo.m:123 expected: not an instance of Bar, got: an instance of Bar");
 }

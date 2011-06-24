@@ -28,6 +28,10 @@
     self.testCase = testCase;
     self.lineNumber = lineNumber;
     self.fileName = fileName;
+    _prerequisiteBlock = nil;
+    _matchBlock = nil;
+    _failureMessageForToBlock = nil;
+    _failureMessageForNotToBlock = nil;
     [self initializeMatcherFunctions];
   }
   return self;
@@ -38,6 +42,7 @@
 }
 
 - (void)dealloc {
+  [_prerequisiteBlock release];
   [_matchBlock release];
   [_failureMessageForToBlock release];
   [_failureMessageForNotToBlock release];
@@ -57,6 +62,10 @@
 #pragma mark -
 
 - (void)initializeMatcherFunctions {
+  prerequisite = [^(EXPBoolBlock block) {
+    [_prerequisiteBlock release];
+    _prerequisiteBlock = [block copy];
+  } copy];
   match = [^(EXPBoolBlock block) {
     [_matchBlock release];
     _matchBlock = [block copy];
@@ -78,8 +87,13 @@
 
 - (void)applyMatcher {
   if(_matchBlock) {
-    BOOL matchResult = _matchBlock();
-    BOOL failed = self.negative ? matchResult : !matchResult;
+    BOOL failed;
+    if(_prerequisiteBlock && !_prerequisiteBlock()) {
+      failed = YES;
+    } else {
+      BOOL matchResult = _matchBlock();
+      failed = self.negative ? matchResult : !matchResult;
+    }
     if(failed) {
       NSString *message = @"Match Failed.";
       if(self.negative) {

@@ -57,7 +57,6 @@ Expecta works best with [Cedar BDD Framework](http://pivotal.github.com/cedar/).
 >`expect(x).toBeKindOf([Foo class]);` passes if x is an instance of a class Foo or if x is an instance of any class that inherits from the class Foo.
 >
 >`expect([Foo class]).toBeSubclassOf([Bar class]);` passes if the class Foo is a subclass of the class Bar or if it is identical to the class Bar.
->
 
 *More matchers are coming soon!*
 
@@ -88,6 +87,14 @@ EXPMatcherInterface(toBeKindOf, (Class expected));
 #import "EXPMatchers+toBeKindOf.h"
 
 EXPMatcherImplementationBegin(toBeKindOf, (Class expected)) {
+  BOOL actualIsNil = (actual == nil);
+  BOOL expectedIsNil = (expected == nil);
+
+  prerequisite(^BOOL{
+    return !(actualIsNil || expectedIsNil);
+    // Return `NO` if matcher should fail whether or not the result is inverted using `.Not`.
+  });
+
   match(^BOOL{
     return [actual isKindOfClass:expected];
     // Return `YES` if the matcher should pass, `NO` if it should not.
@@ -96,6 +103,8 @@ EXPMatcherImplementationBegin(toBeKindOf, (Class expected)) {
   });
 
   failureMessageForTo(^NSString *{
+    if(actualIsNil) return @"the actual value is nil/null";
+    if(expectedIsNil) return @"the expected value is nil/null";
     return [NSString stringWithFormat:@"expected: a kind of %@, "
                                        "got: an instance of %@, which is not a kind of %@",
                                        [expected class], [actual class], [expected class]];
@@ -103,6 +112,8 @@ EXPMatcherImplementationBegin(toBeKindOf, (Class expected)) {
   });
 
   failureMessageForNotTo(^NSString *{
+    if(actualIsNil) return @"the actual value is nil/null";
+    if(expectedIsNil) return @"the expected value is nil/null";
     return [NSString stringWithFormat:@"expected: not a kind of %@, "
                                        "got: an instance of %@, which is a kind of %@",
                                        [expected class], [actual class], [expected class]];
