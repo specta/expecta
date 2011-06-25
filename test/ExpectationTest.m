@@ -33,7 +33,7 @@
   v = [NSValue valueWithPointer:@selector(foo)];
   x = expect(@selector(foo));
   assertEqualObjects(x.actual, v);
-  assertTrue(strcmp([(NSValue *)x.actual _EX_objCType], @encode(SEL)) == 0);
+  assertTrue(strcmp([(NSValue *)x.actual _EXP_objCType], @encode(SEL)) == 0);
 }
 
 - (void)test_expect_Class {
@@ -157,7 +157,7 @@
     int a;
     float b;
   } u;
-  assertFail(_EX_expect(f, 123, "foo.m", EXPObjectify(u)), @"foo.m:123 expecting a union is not supported");
+  assertFail(_EXP_expect(f, 123, "foo.m", EXPObjectify(u)), @"foo.m:123 expecting a union is not supported");
   [f release];
 }
 
@@ -167,7 +167,7 @@
     int a;
     float b;
   } s;
-  assertFail(_EX_expect(f, 123, "foo.m", EXPObjectify(s)), @"foo.m:123 expecting a struct is not supported");
+  assertFail(_EXP_expect(f, 123, "foo.m", EXPObjectify(s)), @"foo.m:123 expecting a struct is not supported");
   [f release];
 }
 

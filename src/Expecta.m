@@ -6,7 +6,7 @@
 #import "NSValue+Expecta.h"
 #import "NSObject+Expecta.h"
 
-id _EXObjectify(char *type, ...) {
+id _EXPObjectify(char *type, ...) {
   va_list v;
   va_start(v, type);
   id obj = nil;
@@ -62,13 +62,13 @@ id _EXObjectify(char *type, ...) {
     obj = (actual == NULL ? nil :[NSValue valueWithPointer:actual]);
   }
   if([obj isKindOfClass:[NSValue class]] && ![obj isKindOfClass:[NSNumber class]]) {
-    [(NSValue *)obj set_EX_objCType:type];
+    [(NSValue *)obj set_EXP_objCType:type];
   }
   va_end(v);
   return obj;
 }
 
-EXPExpect *_EX_expect(id testCase, int lineNumber, char *fileName, id actual) {
+EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, id actual) {
   if([actual isKindOfClass:[EXPUnsupportedObject class]]) {
     NSString *reason = [NSString stringWithFormat:@"%s:%d expecting a %@ is not supported", fileName, lineNumber, ((EXPUnsupportedObject *)actual).type];
     [testCase failWithException:[NSException exceptionWithName:@"Expecta Error" reason:reason userInfo:nil]];
@@ -85,7 +85,7 @@ NSString *EXPDescribeObject(id obj) {
   } else if([obj isKindOfClass:[NSValue class]]) {
     if([obj isKindOfClass:[NSValue class]]) {
       void *pointerValue = [obj pointerValue];
-      const char *type = [(NSValue *)obj _EX_objCType];
+      const char *type = [(NSValue *)obj _EXP_objCType];
       if(type) {
         if(strcmp(type, @encode(SEL)) == 0) {
           return [NSString stringWithFormat:@"@selector(%@)", NSStringFromSelector([obj pointerValue])];

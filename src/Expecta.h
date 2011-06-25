@@ -13,11 +13,11 @@
 
 #import "EXPUnsupportedObject.h"
 
-id _EXObjectify(char *type, ...);
-#define EXPObjectify(value) _EXObjectify(@encode(__typeof__((value))), (value))
+id _EXPObjectify(char *type, ...);
+#define EXPObjectify(value) _EXPObjectify(@encode(__typeof__((value))), (value))
 
-EXPExpect *_EX_expect(id testCase, int lineNumber, char *fileName, id actual);
-#define expect(actual) _EX_expect(self, __LINE__, __FILE__, EXPObjectify((actual)))
+EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, id actual);
+#define expect(actual) _EXP_expect(self, __LINE__, __FILE__, EXPObjectify((actual)))
 
 #define EXPMatcherInterface(matcherName, matcherArguments) \
 @interface EXPExpect (matcherName##Matcher) \

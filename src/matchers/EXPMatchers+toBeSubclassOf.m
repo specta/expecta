@@ -6,7 +6,7 @@
 #import "NSValue+Expecta.h"
 
 EXPMatcherImplementationBegin(toBeSubclassOf, (Class expected)) {
-  BOOL actualIsClass = [actual isKindOfClass:[NSValue class]] && (strcmp([actual _EX_objCType], @encode(Class)) == 0);
+  BOOL actualIsClass = [actual isKindOfClass:[NSValue class]] && (strcmp([actual _EXP_objCType], @encode(Class)) == 0);
   Class actualClass = actualIsClass ? (Class)[(NSValue *)actual pointerValue] : NULL;
 
   prerequisite(^BOOL {
