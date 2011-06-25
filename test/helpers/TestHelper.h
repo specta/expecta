@@ -4,6 +4,7 @@
 
 #import <Foundation/Foundation.h>
 #import <SenTestingKit/SenTestingKit.h>
+#define EXP_SHORTHAND
 #import "Expecta.h"
 #import "FakeTestCase.h"
 #import "EXPExpect+Test.h"

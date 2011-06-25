@@ -3,42 +3,18 @@
 // Licensed under the MIT License.
 
 #import <Foundation/Foundation.h>
+#import "ExpectaSupport.h"
 
-#define EXPFixCategoriesBug(name) \
-@interface EXPFixCategoriesBug##name; @end \
-@implementation EXPFixCategoriesBug##name; @end
-
-#import "EXPExpect.h"
-#define EXPMatchers EXPExpect
-
-#import "EXPUnsupportedObject.h"
-
-id _EXPObjectify(char *type, ...);
 #define EXPObjectify(value) _EXPObjectify(@encode(__typeof__((value))), (value))
 
-EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, id actual);
-#define expect(actual) _EXP_expect(self, __LINE__, __FILE__, EXPObjectify((actual)))
+#define EXP_expect(actual) _EXP_expect(self, __LINE__, __FILE__, EXPObjectify((actual)))
 
-#define EXPMatcherInterface(matcherName, matcherArguments) \
-@interface EXPExpect (matcherName##Matcher) \
-@property (nonatomic, readonly) void(^ matcherName) matcherArguments; \
-@end
-
-#define EXPMatcherImplementationBegin(matcherName, matcherArguments) \
-EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
-\
-@implementation EXPExpect (matcherName##Matcher) \
-- (void(^) matcherArguments) matcherName { \
-  id actual = self.actual; \
-  void (^matcherBlock) matcherArguments = ^ matcherArguments { \
-
-#define EXPMatcherImplementationEnd \
-    [self applyMatcher]; \
-  }; \
-  return [[matcherBlock copy] autorelease]; \
-} \
-@end
-
-NSString *EXPDescribeObject(id obj);
+#define EXPMatcherInterface(matcherName, matcherArguments) _EXPMatcherInterface(matcherName, matcherArguments)
+#define EXPMatcherImplementationBegin(matcherName, matcherArguments) _EXPMatcherImplementationBegin(matcherName, matcherArguments)
+#define EXPMatcherImplementationEnd _EXPMatcherImplementationEnd
 
 #import "EXPMatchers.h"
+
+#ifdef EXP_SHORTHAND
+#  define expect(actual) EXP_expect((actual))
+#endif

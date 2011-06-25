@@ -6,7 +6,7 @@ A Matcher Framework for Objective-C/Cocoa
 
 The main advantage of using Expecta over other matcher frameworks is that you do not have to specify the data types. Also, the syntax of Expecta matchers is much more readable and does not suffer from parenthesitis. If you have used [Jasmine](http://pivotal.github.com/jasmine/) before, you will feel right at home!
 
-OCHamcrest
+**OCHamcrest**
 
 ```objective-c
 assertThat(@"foo", is(equalTo(@"foo")));
@@ -17,7 +17,7 @@ assertThatDouble(baz, is(equalToDouble(3.14159)));
 
 vs.
 
-Expecta
+**Expecta**
 
 ```objective-c
 expect(@"foo").toEqual(@"foo");
@@ -35,10 +35,17 @@ Still under heavy development, but usable.
 1. Clone from Github.
 2. Run `rake` in project root to build.
 3. Copy and add all header files in `products` folder to the Spec/Test target in your Xcode project.
-4. For OS X projects, copy and add `libExpecta-macosx.a` in `products` folder to the Spec/Test target in your Xcode project.
-   For iOS projects, copy and add `libExpecta-ios-universal.a` in `products` folder to the Spec/Test target in your Xcode project.
+4. For **OS X projects**, copy and add `libExpecta-macosx.a` in `products` folder to the Spec/Test target in your Xcode project.  
+   For **iOS projects**, copy and add `libExpecta-ios-universal.a` in `products` folder to the Spec/Test target in your Xcode project.
 5. Add `-ObjC` to the "Other Linker Flags" build setting for the Spec/Test target in your Xcode project.
-6. Add `#import "Expecta.h"` to your test code.
+6. Add the following to your test code.
+
+```objective-c
+#define EXP_SHORTHAND
+#import "Expecta.h"
+```
+
+If `EXP_SHORTHAND` is not defined, expectations must be written with `EXP_expect` instead of `expect`.
 
 Expecta works best with [Cedar BDD Framework](http://pivotal.github.com/cedar/).
 
@@ -62,7 +69,7 @@ Expecta works best with [Cedar BDD Framework](http://pivotal.github.com/cedar/).
 >
 >`expect([Foo class]).toBeSubclassOf([Bar class]);` passes if the class Foo is a subclass of the class Bar or if it is identical to the class Bar.
 
-*More matchers are coming soon!*
+**More matchers are coming soon!**
 
 Every matcher's criteria can be inverted by prepending `.Not`: (It is `.Not` with a capital `N` because `not` is a keyword in C++.)
 
