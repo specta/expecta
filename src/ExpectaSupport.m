@@ -5,6 +5,7 @@
 #import "ExpectaSupport.h"
 #import "NSValue+Expecta.h"
 #import "NSObject+Expecta.h"
+#import "EXPUnsupportedObject.h"
 
 id _EXPObjectify(char *type, ...) {
   va_list v;
@@ -70,18 +71,25 @@ id _EXPObjectify(char *type, ...) {
 
 EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, id actual) {
   if([actual isKindOfClass:[EXPUnsupportedObject class]]) {
-    NSString *reason = [NSString stringWithFormat:@"%s:%d expecting a %@ is not supported", fileName, lineNumber, ((EXPUnsupportedObject *)actual).type];
-    [testCase failWithException:[NSException exceptionWithName:@"Expecta Error" reason:reason userInfo:nil]];
+    EXPFail(testCase, lineNumber, fileName, [NSString stringWithFormat:@"expecting a %@ is not supported", ((EXPUnsupportedObject *)actual).type]);
     return nil;
   }
   return [EXPExpect expectWithActual:actual testCase:testCase lineNumber:lineNumber fileName:fileName];
 }
 
+void EXPFail(id testCase, int lineNumber, char *fileName, NSString *message) {
+  NSString *reason = [NSString stringWithFormat:@"%s:%d %@", fileName, lineNumber, message];
+  NSException *exception = [NSException exceptionWithName:@"Expecta Error" reason:reason userInfo:nil];
+  if(testCase && [testCase respondsToSelector:@selector(failWithException:)]) {
+    [testCase failWithException:exception];
+  } else {
+    [exception raise];
+  }
+}
+
 NSString *EXPDescribeObject(id obj) {
   if(obj == nil) {
     return @"nil/null";
-  } else if([obj isKindOfClass:[NSString class]]) {
-    return obj;
   } else if([obj isKindOfClass:[NSValue class]]) {
     if([obj isKindOfClass:[NSValue class]]) {
       void *pointerValue = [obj pointerValue];
@@ -95,5 +103,5 @@ NSString *EXPDescribeObject(id obj) {
       }
     }
   }
-  return [NSString stringWithFormat:@"%@", obj];
+  return [obj description];
 }

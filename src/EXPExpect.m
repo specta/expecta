@@ -4,15 +4,18 @@
 
 #import "EXPExpect.h"
 #import "NSObject+Expecta.h"
+#import "ExpectaSupport.h"
 
 @interface EXPExpect (PrivateMethods)
 
 - (void)initializeMatcherFunctions;
-- (void)failWithMessage:(NSString *)message;
 
 @end
 
 @implementation EXPExpect
+
+@dynamic
+  Not;
 
 @synthesize
   actual=_actual,
@@ -80,11 +83,6 @@
   } copy];
 }
 
-- (void)failWithMessage:(NSString *)message {
-  NSString *reason = [NSString stringWithFormat:@"%s:%d %@", self.fileName, self.lineNumber, message];
-  [self.testCase failWithException:[NSException exceptionWithName:@"Match Failed" reason:reason userInfo:nil]];
-}
-
 - (void)applyMatcher {
   if(_matchBlock) {
     BOOL failed;
@@ -105,7 +103,7 @@
           message = _failureMessageForToBlock();
         }
       }
-      [self failWithMessage:message];
+      EXPFail(self.testCase, self.lineNumber, self.fileName, message);
     }
   }
   self.negative = NO;
