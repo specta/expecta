@@ -137,6 +137,7 @@
 		E9685DBB13B5E39300ADF2D7 /* ExpectaSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpectaSupport.h; sourceTree = "<group>"; };
 		E9685DBE13B5E5DA00ADF2D7 /* ExpectaSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectaSupport.m; sourceTree = "<group>"; };
 		E969C52213B5FD02006BB8B1 /* EXPFailTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXPFailTest.m; sourceTree = "<group>"; };
+		E9A6BAAE13B7183100950250 /* RDD.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = RDD.md; sourceTree = "<group>"; };
 		E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpecta.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9ACDF1713B2DD520010F4D7 /* Expecta-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Expecta-Prefix.pch"; sourceTree = "<group>"; };
 		E9ACDF1D13B2DD520010F4D7 /* ExpectaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpectaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +231,7 @@
 			children = (
 				E9ACDF9413B2DEF30010F4D7 /* LICENSE */,
 				E9ACDF9513B2DEF30010F4D7 /* README.md */,
+				E9A6BAAE13B7183100950250 /* RDD.md */,
 				E9ACDF3C13B2DDB00010F4D7 /* src */,
 				E9ACDF7213B2DEB70010F4D7 /* test */,
 				E9ACDF0E13B2DD520010F4D7 /* frameworks */,
