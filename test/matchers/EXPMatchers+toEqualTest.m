@@ -168,4 +168,52 @@
   assertPass(test_expect(nullPointer).toEqual(NULL));
 }
 
+typedef struct SomeFloatPair {
+    float x;
+    float y;
+} SomeFloatPair;
+
+- (void)test_toEqual_SomeFloatPair {
+    SomeFloatPair a = {1.0f, 2.0f};
+    SomeFloatPair b = {1.0f, 2.0f};
+    assertPass(test_expect(a).toEqual(b));
+}
+
+typedef struct SomeFloatQuad {
+    float a;
+    float b;
+    float c;
+    float d;
+} SomeFloatQuad;
+
+- (void)test_toEqual_SomeFloatQuad {
+    SomeFloatQuad a = {1.0f, 2.0f, 3.0f, 4.0f};
+    SomeFloatQuad b = {1.0f, 2.0f, 3.0f, 4.0f};
+    assertPass(test_expect(a).toEqual(b));
+}
+
+typedef struct SomeDoublePair {
+    double x;
+    double y;
+} SomeDoublePair;
+
+- (void)test_toEqual_SomeDoublePair {
+    SomeDoublePair a = {1.0, 2.0};
+    SomeDoublePair b = {1.0, 2.0};
+    assertPass(test_expect(a).toEqual(b));
+}
+
+typedef struct SomeDoubleQuad {
+    double a;
+    double b;
+    double c;
+    double d;
+} SomeDoubleQuad;
+
+- (void)test_toEqual_SomeDoubleQuad {
+    SomeDoubleQuad a = {1.0, 2.0, 3.0, 4.0};
+    SomeDoubleQuad b = {1.0, 2.0, 3.0, 4.0};
+    assertPass(test_expect(a).toEqual(b));
+}
+
 @end

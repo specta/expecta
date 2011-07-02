@@ -6,6 +6,8 @@
 #import "NSValue+Expecta.h"
 #import "NSObject+Expecta.h"
 #import "EXPUnsupportedObject.h"
+#import "FloatTuple.h"
+#import "DoubleTuple.h"
 
 id _EXPObjectify(char *type, ...) {
   va_list v;
@@ -52,6 +54,14 @@ id _EXPObjectify(char *type, ...) {
     obj = actual;
   } else if(strcmp(type, @encode(__typeof__(nil))) == 0) {
     obj = nil;
+  } else if(strstr(type, "=ff}") != NULL) {
+      obj = [[[FloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[2]) size:2] autorelease];
+  } else if(strstr(type, "=ffff}") != NULL) {
+      obj = [[[FloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4] autorelease];
+  } else if(strstr(type, "=dd}") != NULL) {
+      obj = [[[DoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[2]) size:2] autorelease];
+  } else if(strstr(type, "=dddd}") != NULL) {
+      obj = [[[DoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[4]) size:4] autorelease];
   } else if(type[0] == '{') {
     EXPUnsupportedObject *actual = [[[EXPUnsupportedObject alloc] initWithType:@"struct"] autorelease];
     obj = actual;
