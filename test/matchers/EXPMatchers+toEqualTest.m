@@ -216,4 +216,26 @@ typedef struct SomeDoubleQuad {
     assertPass(test_expect(a).toEqual(b));
 }
 
+typedef struct SomeDoublePairPair {
+    SomeDoublePair firstly;
+    SomeDoublePair secondly;
+} SomeDoublePairPair;
+
+- (void)test_toEqual_SomeDoublePairPair {
+    SomeDoublePairPair a = {{1.0, 2.0}, {3.0, 4.0}};
+    SomeDoublePairPair b = {{1.0, 2.0}, {3.0, 4.0}};
+    assertPass(test_expect(a).toEqual(b));
+}
+
+typedef struct SomeFloatPairPair {
+    SomeFloatPair theOne;
+    SomeFloatPair theOtherOne;
+} SomeFloatPairPair;
+
+- (void)test_toEqual_SomeFloatPairPair {
+    SomeFloatPairPair a = {{1.0f, 2.0f}, {3.0f, 4.0f}};
+    SomeFloatPairPair b = {{1.0f, 2.0f}, {3.0f, 4.0f}};
+    assertPass(test_expect(a).toEqual(b));
+}
+
 @end

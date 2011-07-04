@@ -54,10 +54,14 @@ id _EXPObjectify(char *type, ...) {
     obj = actual;
   } else if(strcmp(type, @encode(__typeof__(nil))) == 0) {
     obj = nil;
+  } else if(strstr(type, "ff}{") != NULL) { //TODO: of course this only works for a 2x2 e.g. CGRect
+      obj = [[[FloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4] autorelease];
   } else if(strstr(type, "=ff}") != NULL) {
       obj = [[[FloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[2]) size:2] autorelease];
   } else if(strstr(type, "=ffff}") != NULL) {
       obj = [[[FloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4] autorelease];
+  } else if(strstr(type, "dd}{") != NULL) { //TODO: same here
+      obj = [[[DoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[4]) size:4] autorelease];
   } else if(strstr(type, "=dd}") != NULL) {
       obj = [[[DoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[2]) size:2] autorelease];
   } else if(strstr(type, "=dddd}") != NULL) {
