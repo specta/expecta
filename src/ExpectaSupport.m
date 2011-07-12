@@ -7,6 +7,8 @@
 #import "NSObject+Expecta.h"
 #import "EXPUnsupportedObject.h"
 
+typedef void (^EXPBasicBlock)();
+
 id _EXPObjectify(char *type, ...) {
   va_list v;
   va_start(v, type);
@@ -52,6 +54,9 @@ id _EXPObjectify(char *type, ...) {
     obj = actual;
   } else if(strcmp(type, @encode(__typeof__(nil))) == 0) {
     obj = nil;
+  } else if(strcmp(type, @encode(EXPBasicBlock)) == 0) {
+    EXPUnsupportedObject *actual = [[[EXPUnsupportedObject alloc] initWithType:@"block"] autorelease];
+    obj = actual;
   } else if(type[0] == '{') {
     EXPUnsupportedObject *actual = [[[EXPUnsupportedObject alloc] initWithType:@"struct"] autorelease];
     obj = actual;
@@ -69,12 +74,8 @@ id _EXPObjectify(char *type, ...) {
   return obj;
 }
 
-EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, id actual) {
-  if([actual isKindOfClass:[EXPUnsupportedObject class]]) {
-    EXPFail(testCase, lineNumber, fileName, [NSString stringWithFormat:@"expecting a %@ is not supported", ((EXPUnsupportedObject *)actual).type]);
-    return nil;
-  }
-  return [EXPExpect expectWithActual:actual testCase:testCase lineNumber:lineNumber fileName:fileName];
+EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, EXPIdBlock actualBlock) {
+  return [EXPExpect expectWithActualBlock:actualBlock testCase:testCase lineNumber:lineNumber fileName:fileName];
 }
 
 void EXPFail(id testCase, int lineNumber, char *fileName, NSString *message) {

@@ -71,9 +71,19 @@ Expecta works best with [Cedar BDD Framework](http://pivotal.github.com/cedar/).
 
 **More matchers are coming soon!**
 
-Every matcher's criteria can be inverted by prepending `.Not`: (It is `.Not` with a capital `N` because `not` is a keyword in C++.)
+## INVERTING MATCHERS
+
+Every matcher's criteria can be inverted by prepending `.Not`: (It is with a capital `N` because `not` is a keyword in C++.)
 
 >`expect(x).Not.toEqual(y);` compares objects or primitives x and y and passes if they are *not* equivalent.
+
+## ASYNCHRONOUS TESTING
+
+Every matcher can be made to perform asynchronous testing by prepending `.isGoing` or `.isNotGoing`:
+
+>`expect(x).isGoing.toBeNil();` passes if x eventually becomes nil within the timeout.
+
+Default timeout is 1.0 second. This setting can be changed by calling `[Expecta setAsynchronousTestTimeout:x]`, where x is the desired timeout.
 
 ## WRITING NEW MATCHERS
 

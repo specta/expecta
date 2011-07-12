@@ -67,6 +67,8 @@
 		E9685DC013B5E5DA00ADF2D7 /* ExpectaSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E9685DBE13B5E5DA00ADF2D7 /* ExpectaSupport.m */; };
 		E969C52513B60234006BB8B1 /* EXPFailTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E969C52213B5FD02006BB8B1 /* EXPFailTest.m */; };
 		E969C52613B60234006BB8B1 /* EXPFailTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E969C52213B5FD02006BB8B1 /* EXPFailTest.m */; };
+		E9AA7A5D13CC874F005884E8 /* Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AA7A5C13CC874F005884E8 /* Expecta.m */; };
+		E9AA7A5E13CC874F005884E8 /* Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AA7A5C13CC874F005884E8 /* Expecta.m */; };
 		E9ACDF2113B2DD520010F4D7 /* libExpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */; };
 		E9ACDF5813B2DDC60010F4D7 /* EXPExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF3D13B2DDC60010F4D7 /* EXPExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9ACDF5913B2DDC60010F4D7 /* EXPExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF3E13B2DDC60010F4D7 /* EXPExpect.m */; };
@@ -105,6 +107,8 @@
 		E9ACDF9E13B2E0BB0010F4D7 /* EXPExpect+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF9813B2E0BB0010F4D7 /* EXPExpect+Test.m */; };
 		E9ACDF9F13B2E0BB0010F4D7 /* FakeTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF9A13B2E0BB0010F4D7 /* FakeTestCase.m */; };
 		E9ACDFA013B2E0BB0010F4D7 /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF9C13B2E0BB0010F4D7 /* Fixtures.m */; };
+		E9AFC43A13C482D3006B4F2A /* AsynchronousTestingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AFC43913C482D3006B4F2A /* AsynchronousTestingTest.m */; };
+		E9AFC43B13C482D3006B4F2A /* AsynchronousTestingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AFC43913C482D3006B4F2A /* AsynchronousTestingTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +142,7 @@
 		E9685DBE13B5E5DA00ADF2D7 /* ExpectaSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectaSupport.m; sourceTree = "<group>"; };
 		E969C52213B5FD02006BB8B1 /* EXPFailTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXPFailTest.m; sourceTree = "<group>"; };
 		E9A6BAAE13B7183100950250 /* RDD.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = RDD.md; sourceTree = "<group>"; };
+		E9AA7A5C13CC874F005884E8 /* Expecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expecta.m; sourceTree = "<group>"; };
 		E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpecta.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9ACDF1713B2DD520010F4D7 /* Expecta-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Expecta-Prefix.pch"; sourceTree = "<group>"; };
 		E9ACDF1D13B2DD520010F4D7 /* ExpectaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpectaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +191,7 @@
 		E9ACDF9D13B2E0BB0010F4D7 /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
 		E9ACDFA213B2E0CC0010F4D7 /* Test-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
 		E9ACDFA313B2E0CC0010F4D7 /* Test-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Test-Prefix.pch"; sourceTree = "<group>"; };
+		E9AFC43913C482D3006B4F2A /* AsynchronousTestingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsynchronousTestingTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +270,7 @@
 				E9ACDF4313B2DDC60010F4D7 /* matchers */,
 				E9ACDF1713B2DD520010F4D7 /* Expecta-Prefix.pch */,
 				E9ACDF3F13B2DDC60010F4D7 /* Expecta.h */,
+				E9AA7A5C13CC874F005884E8 /* Expecta.m */,
 				E9685DBB13B5E39300ADF2D7 /* ExpectaSupport.h */,
 				E9685DBE13B5E5DA00ADF2D7 /* ExpectaSupport.m */,
 				E9ACDF3D13B2DDC60010F4D7 /* EXPExpect.h */,
@@ -314,6 +321,7 @@
 				E9ACDF7313B2DEB70010F4D7 /* ExpectationTest.m */,
 				E9ACDF7C13B2DEB70010F4D7 /* NSValue+ExpectaTest.m */,
 				E969C52213B5FD02006BB8B1 /* EXPFailTest.m */,
+				E9AFC43913C482D3006B4F2A /* AsynchronousTestingTest.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -576,6 +584,7 @@
 				E94296FB13B430DF0038708B /* EXPMatchers+toContain.m in Sources */,
 				E942971913B45C8F0038708B /* EXPMatchers+toBeIdenticalTo.m in Sources */,
 				E9685DC013B5E5DA00ADF2D7 /* ExpectaSupport.m in Sources */,
+				E9AA7A5E13CC874F005884E8 /* Expecta.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +607,7 @@
 				E94296F513B42E160038708B /* EXPMatchers+toContainTest.m in Sources */,
 				E942971313B45ADD0038708B /* EXPMatchers+toBeIdenticalToTest.m in Sources */,
 				E969C52613B60234006BB8B1 /* EXPFailTest.m in Sources */,
+				E9AFC43B13C482D3006B4F2A /* AsynchronousTestingTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +629,7 @@
 				E94296FA13B430DF0038708B /* EXPMatchers+toContain.m in Sources */,
 				E942971813B45C8F0038708B /* EXPMatchers+toBeIdenticalTo.m in Sources */,
 				E9685DBF13B5E5DA00ADF2D7 /* ExpectaSupport.m in Sources */,
+				E9AA7A5D13CC874F005884E8 /* Expecta.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +652,7 @@
 				E94296F413B42E160038708B /* EXPMatchers+toContainTest.m in Sources */,
 				E942971213B45ADD0038708B /* EXPMatchers+toBeIdenticalToTest.m in Sources */,
 				E969C52513B60234006BB8B1 /* EXPFailTest.m in Sources */,
+				E9AFC43A13C482D3006B4F2A /* AsynchronousTestingTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

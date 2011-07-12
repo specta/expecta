@@ -7,7 +7,7 @@
 
 #define EXPObjectify(value) _EXPObjectify(@encode(__typeof__((value))), (value))
 
-#define EXP_expect(actual) _EXP_expect(self, __LINE__, __FILE__, EXPObjectify((actual)))
+#define EXP_expect(actual) _EXP_expect(self, __LINE__, __FILE__, ^id{ return EXPObjectify((actual)); })
 
 #define EXPMatcherInterface(matcherName, matcherArguments) _EXPMatcherInterface(matcherName, matcherArguments)
 #define EXPMatcherImplementationBegin(matcherName, matcherArguments) _EXPMatcherImplementationBegin(matcherName, matcherArguments)
@@ -18,3 +18,10 @@
 #ifdef EXP_SHORTHAND
 #  define expect(actual) EXP_expect((actual))
 #endif
+
+@interface Expecta : NSObject
+
++ (NSTimeInterval)asynchronousTestTimeout;
++ (void)setAsynchronousTestTimeout:(NSTimeInterval)timeout;
+
+@end
