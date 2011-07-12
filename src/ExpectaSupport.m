@@ -91,7 +91,7 @@ NSString *EXPDescribeObject(id obj) {
   if(obj == nil) {
     return @"nil/null";
   } else if([obj isKindOfClass:[NSValue class]]) {
-    if([obj isKindOfClass:[NSValue class]]) {
+    if([obj isKindOfClass:[NSValue class]] && ![obj isKindOfClass:[NSNumber class]]) {
       void *pointerValue = [obj pointerValue];
       const char *type = [(NSValue *)obj _EXP_objCType];
       if(type) {
