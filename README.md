@@ -81,7 +81,7 @@ Every matcher's criteria can be inverted by prepending `.Not`: (It is with a cap
 
 Every matcher can be made to perform asynchronous testing by prepending `.isGoing` or `.isNotGoing`:
 
->`expect(x).isGoing.toBeNil();` passes if x eventually becomes nil within the timeout.
+>`expect(x).isGoing.toBeNil();` passes if x becomes nil before the timeout.
 
 Default timeout is 1.0 second. This setting can be changed by calling `[Expecta setAsynchronousTestTimeout:x]`, where x is the desired timeout.
 
@@ -146,7 +146,7 @@ EXPMatcherImplementationEnd
 
 ## CONTRIBUTION
 
-You can find a public Tracker project [here](https://www.pivotaltracker.com/projects/323267).
+You can find the public Tracker project [here](https://www.pivotaltracker.com/projects/323267).
 
 ### CONTRIBUTION GUIDELINES
 
