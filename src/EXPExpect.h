@@ -18,11 +18,6 @@ typedef NSString *(^EXPStringBlock)();
   EXPBoolBlock _matchBlock;
   EXPStringBlock _failureMessageForToBlock;
   EXPStringBlock _failureMessageForNotToBlock;
-
-  void (^prerequisite)(EXPBoolBlock block);
-  void (^match)(EXPBoolBlock block);
-  void (^failureMessageForTo)(EXPStringBlock block);
-  void (^failureMessageForNotTo)(EXPStringBlock block);
 }
 
 @property(nonatomic, assign) id actual;
@@ -37,5 +32,10 @@ typedef NSString *(^EXPStringBlock)();
 + (EXPExpect *)expectWithActual:(id)actual testCase:(id)testCase lineNumber:(int)lineNumber fileName:(char *)fileName;
 
 - (void)applyMatcher;
+
+- (void)setPrerequisite:(EXPBoolBlock)block;
+- (void)setMatch:(EXPBoolBlock)block;
+- (void)setFailureMessageForTo:(EXPStringBlock)block;
+- (void)setFailureMessageForNotTo:(EXPStringBlock)block;
 
 @end

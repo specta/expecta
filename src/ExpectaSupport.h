@@ -3,12 +3,18 @@
 // Licensed under the MIT License.
 
 #import "EXPExpect.h"
+extern id currentMatcher;
 
 id _EXPObjectify(char *type, ...);
 EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, id actual);
 
 void EXPFail(id testCase, int lineNumber, char *fileName, NSString *message);
 NSString *EXPDescribeObject(id obj);
+
+void prerequisite(EXPBoolBlock block);
+void match(EXPBoolBlock block);
+void failureMessageForTo(EXPStringBlock block);
+void failureMessageForNotTo(EXPStringBlock block);
 
 // workaround for the categories bug: http://developer.apple.com/library/mac/#qa/qa1490/_index.html
 #define EXPFixCategoriesBug(name) \
@@ -25,6 +31,7 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
 @implementation EXPExpect (matcherName##Matcher) \
 @dynamic matcherName;\
 - (void(^) matcherArguments) matcherName { \
+  currentMatcher = self; \
   id actual = self.actual; \
   void (^matcherBlock) matcherArguments = ^ matcherArguments { \
     {

@@ -9,6 +9,8 @@
 #import "FloatTuple.h"
 #import "DoubleTuple.h"
 
+id currentMatcher = nil;
+
 id _EXPObjectify(char *type, ...) {
   va_list v;
   va_start(v, type);
@@ -119,3 +121,17 @@ NSString *EXPDescribeObject(id obj) {
   }
   return [obj description];
 }
+
+void prerequisite(EXPBoolBlock block) {
+    [currentMatcher setPrerequisite:block];
+}
+void match(EXPBoolBlock block) {
+    [currentMatcher setMatch:block];
+}
+void failureMessageForTo(EXPStringBlock block) {
+    [currentMatcher setFailureMessageForTo:block];
+}
+void failureMessageForNotTo(EXPStringBlock block) {
+    [currentMatcher setFailureMessageForNotTo:block];
+}
+
