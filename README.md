@@ -71,9 +71,19 @@ Expecta works best with [Cedar BDD Framework](http://pivotal.github.com/cedar/).
 
 **More matchers are coming soon!**
 
-Every matcher's criteria can be inverted by prepending `.Not`: (It is `.Not` with a capital `N` because `not` is a keyword in C++.)
+## INVERTING MATCHERS
+
+Every matcher's criteria can be inverted by prepending `.Not`: (It is with a capital `N` because `not` is a keyword in C++.)
 
 >`expect(x).Not.toEqual(y);` compares objects or primitives x and y and passes if they are *not* equivalent.
+
+## ASYNCHRONOUS TESTING
+
+Every matcher can be made to perform asynchronous testing by prepending `.isGoing` or `.isNotGoing`:
+
+>`expect(x).isGoing.toBeNil();` passes if x becomes nil before the timeout.
+
+Default timeout is 1.0 second. This setting can be changed by calling `[Expecta setAsynchronousTestTimeout:x]`, where x is the desired timeout.
 
 ## WRITING NEW MATCHERS
 
@@ -133,6 +143,16 @@ EXPMatcherImplementationBegin(toBeKindOf, (Class expected)) {
 }
 EXPMatcherImplementationEnd
 ```
+
+## CONTRIBUTION
+
+You can find the public Tracker project [here](https://www.pivotaltracker.com/projects/323267).
+
+### CONTRIBUTION GUIDELINES
+
+* Please use only spaces and indent 2 spaces at a time.
+* Please prefix instance variable names with a single underscore (`_`).
+* Please prefix custom classes and functions defined in the global scope with `EXP`.
 
 ## LICENSE
 

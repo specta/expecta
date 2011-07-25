@@ -41,14 +41,10 @@
   assertEqualObjects(expect([EXPExpect class]).actual, v);
 }
 
-- (void)test_expect_pointer {
+- (void)test_expect_CString {
   char *foo = "foo";
   v = [NSValue valueWithPointer:foo];
   assertEqualObjects(expect(foo).actual, v);
-
-  int bar[] = {1,2,3};
-  v = [NSValue valueWithPointer:bar];
-  assertEqualObjects(expect(bar).actual, v);
 }
 
 - (void)test_expect_char {
@@ -157,7 +153,7 @@
     int a;
     float b;
   } u;
-  assertFail(_EXP_expect(f, 123, "foo.m", EXPObjectify(u)), @"foo.m:123 expecting a union is not supported");
+  assertFail(test_expect(u).toBeNil(), @"foo.m:123 expecting a union is not supported");
   [f release];
 }
 
@@ -167,7 +163,13 @@
     int a;
     float b;
   } s;
-  assertFail(_EXP_expect(f, 123, "foo.m", EXPObjectify(s)), @"foo.m:123 expecting a struct is not supported");
+  assertFail(test_expect(s).toBeNil(), @"foo.m:123 expecting a struct is not supported");
+  [f release];
+}
+
+- (void)test_expect_block {
+  FakeTestCase *f = [FakeTestCase new];
+  assertFail(test_expect(^BOOL { return NO; }).toBeNil(), @"foo.m:123 expecting a block is not supported");
   [f release];
 }
 

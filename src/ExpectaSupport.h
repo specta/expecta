@@ -3,10 +3,9 @@
 // Licensed under the MIT License.
 
 #import "EXPExpect.h"
-extern id currentMatcher;
 
 id _EXPObjectify(char *type, ...);
-EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, id actual);
+EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, EXPIdBlock actualBlock);
 
 void EXPFail(id testCase, int lineNumber, char *fileName, NSString *message);
 NSString *EXPDescribeObject(id obj);
@@ -31,14 +30,14 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
 @implementation EXPExpect (matcherName##Matcher) \
 @dynamic matcherName;\
 - (void(^) matcherArguments) matcherName { \
-  currentMatcher = self; \
-  id actual = self.actual; \
+  [[[NSThread currentThread] threadDictionary] setObject:self forKey:@"currentMatcher"]; \
+  __block id actual = self.actual; \
   void (^matcherBlock) matcherArguments = ^ matcherArguments { \
     {
 
 #define _EXPMatcherImplementationEnd \
     } \
-    [self applyMatcher]; \
+    [self applyMatcher:&actual]; \
   }; \
   return [[matcherBlock copy] autorelease]; \
 } \
