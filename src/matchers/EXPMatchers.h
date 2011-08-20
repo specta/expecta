@@ -11,3 +11,4 @@
 #import "EXPMatchers+toBeFalsy.h"
 #import "EXPMatchers+toContain.h"
 #import "EXPMatchers+toBeIdenticalTo.h"
+#import "EXPMatchers+toBeLessThan.h"
