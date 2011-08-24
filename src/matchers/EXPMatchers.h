@@ -12,3 +12,4 @@
 #import "EXPMatchers+toContain.h"
 #import "EXPMatchers+toBeIdenticalTo.h"
 #import "EXPMatchers+toBeLessThan.h"
+#import "EXPMatchers+toBeLessThanOrEqualTo.h"

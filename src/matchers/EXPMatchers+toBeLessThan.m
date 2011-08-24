@@ -3,7 +3,6 @@
 
 EXPMatcherImplementationBegin(_toBeLessThan, (id expected)) {
     match(^BOOL{
-        NSLog(@"%@", [expected class]);
         if ([actual respondsToSelector:@selector(compare:)]) {
             return [actual compare:expected] == NSOrderedAscending;            
         }
