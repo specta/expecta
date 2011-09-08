@@ -10,6 +10,11 @@ EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, EXPIdBlock a
 void EXPFail(id testCase, int lineNumber, char *fileName, NSString *message);
 NSString *EXPDescribeObject(id obj);
 
+void prerequisite(EXPBoolBlock block);
+void match(EXPBoolBlock block);
+void failureMessageForTo(EXPStringBlock block);
+void failureMessageForNotTo(EXPStringBlock block);
+
 // workaround for the categories bug: http://developer.apple.com/library/mac/#qa/qa1490/_index.html
 #define EXPFixCategoriesBug(name) \
 @interface EXPFixCategoriesBug##name; @end \
@@ -25,6 +30,7 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
 @implementation EXPExpect (matcherName##Matcher) \
 @dynamic matcherName;\
 - (void(^) matcherArguments) matcherName { \
+  [[[NSThread currentThread] threadDictionary] setObject:self forKey:@"currentMatcher"]; \
   __block id actual = self.actual; \
   void (^matcherBlock) matcherArguments = ^ matcherArguments { \
     {
