@@ -7,12 +7,6 @@
 #import "Expecta.h"
 #import "EXPUnsupportedObject.h"
 
-@interface EXPExpect (PrivateMethods)
-
-- (void)initializeMatcherFunctions;
-
-@end
-
 @implementation EXPExpect
 
 @dynamic

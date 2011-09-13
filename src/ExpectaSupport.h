@@ -10,10 +10,10 @@ EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, EXPIdBlock a
 void EXPFail(id testCase, int lineNumber, char *fileName, NSString *message);
 NSString *EXPDescribeObject(id obj);
 
-void prerequisite(EXPBoolBlock block);
-void match(EXPBoolBlock block);
-void failureMessageForTo(EXPStringBlock block);
-void failureMessageForNotTo(EXPStringBlock block);
+void EXP_prerequisite(EXPBoolBlock block);
+void EXP_match(EXPBoolBlock block);
+void EXP_failureMessageForTo(EXPStringBlock block);
+void EXP_failureMessageForNotTo(EXPStringBlock block);
 
 // workaround for the categories bug: http://developer.apple.com/library/mac/#qa/qa1490/_index.html
 #define EXPFixCategoriesBug(name) \
@@ -32,6 +32,11 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
 - (void(^) matcherArguments) matcherName { \
   [[[NSThread currentThread] threadDictionary] setObject:self forKey:@"currentMatcher"]; \
   __block id actual = self.actual; \
+  __block void (^prerequisite)(EXPBoolBlock block) = ^(EXPBoolBlock block) { EXP_prerequisite(block); }; \
+  __block void (^match)(EXPBoolBlock block) = ^(EXPBoolBlock block) { EXP_match(block); }; \
+  __block void (^failureMessageForTo)(EXPStringBlock block) = ^(EXPStringBlock block) { EXP_failureMessageForTo(block); }; \
+  __block void (^failureMessageForNotTo)(EXPStringBlock block) = ^(EXPStringBlock block) { EXP_failureMessageForNotTo(block); }; \
+  prerequisite(nil); match(nil); failureMessageForTo(nil); failureMessageForNotTo(nil); \
   void (^matcherBlock) matcherArguments = ^ matcherArguments { \
     {
 

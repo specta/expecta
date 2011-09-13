@@ -1,7 +1,7 @@
-#import "FloatTuple.h"
+#import "EXPFloatTuple.h"
 
 
-@implementation FloatTuple
+@implementation EXPFloatTuple
 
 @synthesize values = _values, size = _size;
 
@@ -20,8 +20,8 @@
 }
 
 - (BOOL)isEqual:(id)object {
-    if (![object isKindOfClass:[FloatTuple class]]) return NO;
-    FloatTuple *other = (FloatTuple *)object;
+    if (![object isKindOfClass:[EXPFloatTuple class]]) return NO;
+    EXPFloatTuple *other = (EXPFloatTuple *)object;
     if (self.size == other.size) {
         for (int i = 0; i < self.size; ++i) {
             if (self.values[i] != other.values[i]) return NO;
@@ -33,11 +33,11 @@
 
 - (NSString *)description {
     if (self.size == 2) {
-        return [NSString stringWithFormat:@"FloatTuple: {%f, %f}", self.values[0], self.values[1]];
+        return [NSString stringWithFormat:@"Float tuple: {%f, %f}", self.values[0], self.values[1]];
     } else if (self.size == 4) {
-        return [NSString stringWithFormat:@"FloatTuple: {%f, %f, %f, %f}", self.values[0], self.values[1], self.values[2], self.values[3]];        
+        return [NSString stringWithFormat:@"Float tuple: {%f, %f, %f, %f}", self.values[0], self.values[1], self.values[2], self.values[3]];
     }
-    return [NSString stringWithFormat:@"FloatTuple of unexpected size %d, sadly", self.size];
+    return [NSString stringWithFormat:@"Float tuple of unexpected size %d, sadly", self.size];
 }
 
 @end

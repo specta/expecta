@@ -6,8 +6,8 @@
 #import "NSValue+Expecta.h"
 #import "NSObject+Expecta.h"
 #import "EXPUnsupportedObject.h"
-#import "FloatTuple.h"
-#import "DoubleTuple.h"
+#import "EXPFloatTuple.h"
+#import "EXPDoubleTuple.h"
 
 typedef void (^EXPBasicBlock)();
 
@@ -60,17 +60,17 @@ id _EXPObjectify(char *type, ...) {
       EXPUnsupportedObject *actual = [[[EXPUnsupportedObject alloc] initWithType:@"block"] autorelease];
       obj = actual;
   } else if(strstr(type, "ff}{") != NULL) { //TODO: of course this only works for a 2x2 e.g. CGRect
-      obj = [[[FloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4] autorelease];
+      obj = [[[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4] autorelease];
   } else if(strstr(type, "=ff}") != NULL) {
-      obj = [[[FloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[2]) size:2] autorelease];
+      obj = [[[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[2]) size:2] autorelease];
   } else if(strstr(type, "=ffff}") != NULL) {
-      obj = [[[FloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4] autorelease];
+      obj = [[[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4] autorelease];
   } else if(strstr(type, "dd}{") != NULL) { //TODO: same here
-      obj = [[[DoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[4]) size:4] autorelease];
+      obj = [[[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[4]) size:4] autorelease];
   } else if(strstr(type, "=dd}") != NULL) {
-      obj = [[[DoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[2]) size:2] autorelease];
+      obj = [[[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[2]) size:2] autorelease];
   } else if(strstr(type, "=dddd}") != NULL) {
-      obj = [[[DoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[4]) size:4] autorelease];
+      obj = [[[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[4]) size:4] autorelease];
   } else if(type[0] == '{') {
     EXPUnsupportedObject *actual = [[[EXPUnsupportedObject alloc] initWithType:@"struct"] autorelease];
     obj = actual;
@@ -121,19 +121,19 @@ NSString *EXPDescribeObject(id obj) {
   return [obj description];
 }
 
-void prerequisite(EXPBoolBlock block) {
+void EXP_prerequisite(EXPBoolBlock block) {
   [[[[NSThread currentThread] threadDictionary] objectForKey:@"currentMatcher"] setPrerequisiteBlock:block];
 }
 
-void match(EXPBoolBlock block) {
+void EXP_match(EXPBoolBlock block) {
   [[[[NSThread currentThread] threadDictionary] objectForKey:@"currentMatcher"] setMatchBlock:block];
 }
 
-void failureMessageForTo(EXPStringBlock block) {
+void EXP_failureMessageForTo(EXPStringBlock block) {
   [[[[NSThread currentThread] threadDictionary] objectForKey:@"currentMatcher"] setFailureMessageForToBlock:block];
 }
 
-void failureMessageForNotTo(EXPStringBlock block) {
+void EXP_failureMessageForNotTo(EXPStringBlock block) {
   [[[[NSThread currentThread] threadDictionary] objectForKey:@"currentMatcher"] setFailureMessageForNotToBlock:block];
 }
 

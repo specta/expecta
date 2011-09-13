@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface DoubleTuple : NSObject {
+@interface EXPDoubleTuple : NSObject {
     double *_values;
     size_t _size;
 }
