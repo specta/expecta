@@ -27,7 +27,11 @@
   negative=_negative,
   asynchronous=_asynchronous,
   lineNumber=_lineNumber,
-  fileName=_fileName;
+  fileName=_fileName,
+  prerequisiteBlock=_prerequisiteBlock,
+  matchBlock=_matchBlock,
+  failureMessageForToBlock=_failureMessageForToBlock,
+  failureMessageForNotToBlock=_failureMessageForNotToBlock;
 
 - (id)initWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(char *)fileName {
   self = [super init];
@@ -38,11 +42,10 @@
     self.asynchronous = NO;
     self.lineNumber = lineNumber;
     self.fileName = fileName;
-    _prerequisiteBlock = nil;
-    _matchBlock = nil;
-    _failureMessageForToBlock = nil;
-    _failureMessageForNotToBlock = nil;
-    [self initializeMatcherFunctions];
+    self.prerequisiteBlock = nil;
+    self.matchBlock = nil;
+    self.failureMessageForToBlock = nil;
+    self.failureMessageForNotToBlock = nil;
   }
   return self;
 }
@@ -52,15 +55,10 @@
 }
 
 - (void)dealloc {
-  [_actualBlock release];
-  [_prerequisiteBlock release];
-  [_matchBlock release];
-  [_failureMessageForToBlock release];
-  [_failureMessageForNotToBlock release];
-  [prerequisite release];
-  [match release];
-  [failureMessageForTo release];
-  [failureMessageForNotTo release];
+  self.prerequisiteBlock = nil;
+  self.matchBlock = nil;
+  self.failureMessageForToBlock = nil;
+  self.failureMessageForNotToBlock = nil;
   [super dealloc];
 }
 
@@ -87,25 +85,6 @@
     return self.actualBlock();
   }
   return nil;
-}
-
-- (void)initializeMatcherFunctions {
-  prerequisite = [^(EXPBoolBlock block) {
-    [_prerequisiteBlock release];
-    _prerequisiteBlock = [block copy];
-  } copy];
-  match = [^(EXPBoolBlock block) {
-    [_matchBlock release];
-    _matchBlock = [block copy];
-  } copy];
-  failureMessageForTo = [^(EXPStringBlock block) {
-    [_failureMessageForToBlock release];
-    _failureMessageForToBlock = [block copy];
-  } copy];
-  failureMessageForNotTo = [^(EXPStringBlock block) {
-    [_failureMessageForNotToBlock release];
-    _failureMessageForNotToBlock = [block copy];
-  } copy];
 }
 
 - (void)applyMatcher:(NSObject **)actual {

@@ -20,11 +20,6 @@ typedef NSString *(^EXPStringBlock)();
   EXPBoolBlock _matchBlock;
   EXPStringBlock _failureMessageForToBlock;
   EXPStringBlock _failureMessageForNotToBlock;
-
-  void (^prerequisite)(EXPBoolBlock block);
-  void (^match)(EXPBoolBlock block);
-  void (^failureMessageForTo)(EXPStringBlock block);
-  void (^failureMessageForNotTo)(EXPStringBlock block);
 }
 
 @property(nonatomic, copy) EXPIdBlock actualBlock;
@@ -38,6 +33,11 @@ typedef NSString *(^EXPStringBlock)();
 @property(nonatomic, readonly) EXPExpect *Not;
 @property(nonatomic, readonly) EXPExpect *isGoing;
 @property(nonatomic, readonly) EXPExpect *isNotGoing;
+
+@property(nonatomic, copy) EXPBoolBlock prerequisiteBlock;
+@property(nonatomic, copy) EXPBoolBlock matchBlock;
+@property(nonatomic, copy) EXPStringBlock failureMessageForToBlock;
+@property(nonatomic, copy) EXPStringBlock failureMessageForNotToBlock;
 
 - (id)initWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(char *)fileName;
 + (EXPExpect *)expectWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(char *)fileName;
