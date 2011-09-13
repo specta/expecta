@@ -67,7 +67,15 @@ Expecta works best with [Cedar BDD Framework](http://pivotal.github.com/cedar/).
 >
 >`expect(x).toBeKindOf([Foo class]);` passes if x is an instance of a class Foo or if x is an instance of any class that inherits from the class Foo.
 >
->`expect([Foo class]).toBeSubclassOf([Bar class]);` passes if the class Foo is a subclass of the class Bar or if it is identical to the class Bar.
+>`expect([Foo class]).toBeSubclassOf([Bar class]);` passes if the class Foo is a subclass of the class Bar or if it is identical to the class Bar. Use toBeKindOf() for class clusters.
+>
+>`expect(x).toBeLessThan(y);`
+>
+>`expect(x).toBeLessThanOrEqualTo(y);`
+>
+>`expect(x).toBeGreaterThan(y);`
+>
+>`expect(x).toBeGreaterThanOrEqualTo(y);`
 
 **More matchers are coming soon!**
 
