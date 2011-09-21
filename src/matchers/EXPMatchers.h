@@ -15,3 +15,4 @@
 #import "EXPMatchers+toBeGreaterThanOrEqualTo.h"
 #import "EXPMatchers+toBeLessThan.h"
 #import "EXPMatchers+toBeLessThanOrEqualTo.h"
+#import "EXPMatchers+toBeInTheRangeOf.h"
