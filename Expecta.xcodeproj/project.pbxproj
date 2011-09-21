@@ -19,6 +19,12 @@
 		4913B4D61411E45800040ECB /* EXPMatchers+toBeGreaterThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4913B4D31411E45800040ECB /* EXPMatchers+toBeGreaterThanOrEqualTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4913B4D71411E45800040ECB /* EXPMatchers+toBeGreaterThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4913B4D41411E45800040ECB /* EXPMatchers+toBeGreaterThanOrEqualTo.m */; };
 		4913B4D81411E45800040ECB /* EXPMatchers+toBeGreaterThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4913B4D41411E45800040ECB /* EXPMatchers+toBeGreaterThanOrEqualTo.m */; };
+		61740D851425689A00091DDF /* EXPMatchers+toBeInTheRangeOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 61740D841425689A00091DDF /* EXPMatchers+toBeInTheRangeOfTest.m */; };
+		61740D861425689A00091DDF /* EXPMatchers+toBeInTheRangeOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 61740D841425689A00091DDF /* EXPMatchers+toBeInTheRangeOfTest.m */; };
+		61740D8A14256B2500091DDF /* EXPMatchers+toBeInTheRangeOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 61740D8814256B2500091DDF /* EXPMatchers+toBeInTheRangeOf.h */; };
+		61740D8B14256B2500091DDF /* EXPMatchers+toBeInTheRangeOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 61740D8814256B2500091DDF /* EXPMatchers+toBeInTheRangeOf.h */; };
+		617BC21A142579C500D6C27C /* EXPMatchers+toBeInTheRangeOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 61740D8914256B2500091DDF /* EXPMatchers+toBeInTheRangeOf.m */; };
+		617BC21B142579C600D6C27C /* EXPMatchers+toBeInTheRangeOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 61740D8914256B2500091DDF /* EXPMatchers+toBeInTheRangeOf.m */; };
 		AE0E76F813FF3732009AF5D8 /* EXPMatchers+toBeLessThan.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0E76F613FF3732009AF5D8 /* EXPMatchers+toBeLessThan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE0E76F913FF3732009AF5D8 /* EXPMatchers+toBeLessThan.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0E76F713FF3732009AF5D8 /* EXPMatchers+toBeLessThan.m */; };
 		AE0E76FC13FF37D6009AF5D8 /* EXPMatchers+toBeLessThanTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0E76FB13FF37D6009AF5D8 /* EXPMatchers+toBeLessThanTest.m */; };
@@ -167,6 +173,9 @@
 		4913B4D01411E2DA00040ECB /* EXPMatchers+toBeGreaterThanOrEqualToTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+toBeGreaterThanOrEqualToTest.m"; sourceTree = "<group>"; };
 		4913B4D31411E45800040ECB /* EXPMatchers+toBeGreaterThanOrEqualTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeGreaterThanOrEqualTo.h"; sourceTree = "<group>"; };
 		4913B4D41411E45800040ECB /* EXPMatchers+toBeGreaterThanOrEqualTo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+toBeGreaterThanOrEqualTo.m"; sourceTree = "<group>"; };
+		61740D841425689A00091DDF /* EXPMatchers+toBeInTheRangeOfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+toBeInTheRangeOfTest.m"; sourceTree = "<group>"; };
+		61740D8814256B2500091DDF /* EXPMatchers+toBeInTheRangeOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeInTheRangeOf.h"; sourceTree = "<group>"; };
+		61740D8914256B2500091DDF /* EXPMatchers+toBeInTheRangeOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+toBeInTheRangeOf.m"; sourceTree = "<group>"; };
 		AE0E76F613FF3732009AF5D8 /* EXPMatchers+toBeLessThan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeLessThan.h"; sourceTree = "<group>"; };
 		AE0E76F713FF3732009AF5D8 /* EXPMatchers+toBeLessThan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+toBeLessThan.m"; sourceTree = "<group>"; };
 		AE0E76FB13FF37D6009AF5D8 /* EXPMatchers+toBeLessThanTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+toBeLessThanTest.m"; sourceTree = "<group>"; };
@@ -339,6 +348,8 @@
 		E9ACDF4313B2DDC60010F4D7 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
+				61740D8814256B2500091DDF /* EXPMatchers+toBeInTheRangeOf.h */,
+				61740D8914256B2500091DDF /* EXPMatchers+toBeInTheRangeOf.m */,
 				E9ACDF5413B2DDC60010F4D7 /* EXPMatchers.h */,
 				E9ACDF4413B2DDC60010F4D7 /* EXPMatcherHelpers.h */,
 				E9ACDF4513B2DDC60010F4D7 /* EXPMatcherHelpers.m */,
@@ -389,6 +400,7 @@
 		E9ACDF7413B2DEB70010F4D7 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
+				61740D841425689A00091DDF /* EXPMatchers+toBeInTheRangeOfTest.m */,
 				E942971113B45ADD0038708B /* EXPMatchers+toBeIdenticalToTest.m */,
 				E9ACDF7613B2DEB70010F4D7 /* EXPMatchers+toBeInstanceOfTest.m */,
 				E9ACDF7713B2DEB70010F4D7 /* EXPMatchers+toBeKindOfTest.m */,
@@ -459,6 +471,7 @@
 				AEBA779B14055E9D001690B6 /* EXPMatchers+toBeLessThanOrEqualTo.h in Headers */,
 				4913B4CD1411E18A00040ECB /* EXPMatchers+toBeGreaterThan.h in Headers */,
 				4913B4D61411E45800040ECB /* EXPMatchers+toBeGreaterThanOrEqualTo.h in Headers */,
+				61740D8B14256B2500091DDF /* EXPMatchers+toBeInTheRangeOf.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +502,7 @@
 				AEBA779A14055E9D001690B6 /* EXPMatchers+toBeLessThanOrEqualTo.h in Headers */,
 				4913B4CC1411E18A00040ECB /* EXPMatchers+toBeGreaterThan.h in Headers */,
 				4913B4D51411E45800040ECB /* EXPMatchers+toBeGreaterThanOrEqualTo.h in Headers */,
+				61740D8A14256B2500091DDF /* EXPMatchers+toBeInTheRangeOf.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,6 +681,7 @@
 				AEBA779D14055E9D001690B6 /* EXPMatchers+toBeLessThanOrEqualTo.m in Sources */,
 				4913B4CF1411E18A00040ECB /* EXPMatchers+toBeGreaterThan.m in Sources */,
 				4913B4D81411E45800040ECB /* EXPMatchers+toBeGreaterThanOrEqualTo.m in Sources */,
+				617BC21B142579C600D6C27C /* EXPMatchers+toBeInTheRangeOf.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +709,7 @@
 				AEBA779614055CA2001690B6 /* EXPMatchers+toBeLessThanOrEqualToTest.m in Sources */,
 				4913B4C81411E01A00040ECB /* EXPMatchers+toBeGreaterThanTest.m in Sources */,
 				4913B4D21411E2DA00040ECB /* EXPMatchers+toBeGreaterThanOrEqualToTest.m in Sources */,
+				61740D861425689A00091DDF /* EXPMatchers+toBeInTheRangeOfTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +738,7 @@
 				AEBA779C14055E9D001690B6 /* EXPMatchers+toBeLessThanOrEqualTo.m in Sources */,
 				4913B4CE1411E18A00040ECB /* EXPMatchers+toBeGreaterThan.m in Sources */,
 				4913B4D71411E45800040ECB /* EXPMatchers+toBeGreaterThanOrEqualTo.m in Sources */,
+				617BC21A142579C500D6C27C /* EXPMatchers+toBeInTheRangeOf.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,6 +766,7 @@
 				AEBA779514055CA2001690B6 /* EXPMatchers+toBeLessThanOrEqualToTest.m in Sources */,
 				4913B4C71411E01A00040ECB /* EXPMatchers+toBeGreaterThanTest.m in Sources */,
 				4913B4D11411E2DA00040ECB /* EXPMatchers+toBeGreaterThanOrEqualToTest.m in Sources */,
+				61740D851425689A00091DDF /* EXPMatchers+toBeInTheRangeOfTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
