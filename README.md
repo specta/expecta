@@ -76,6 +76,8 @@ Expecta works best with [Cedar BDD Framework](http://pivotal.github.com/cedar/).
 >`expect(x).toBeGreaterThan(y);`
 >
 >`expect(x).toBeGreaterThanOrEqualTo(y);`
+>
+>`expect(x).toBeInTheRangeOf(y,z);`
 
 **More matchers are coming soon!**
 
@@ -161,6 +163,12 @@ You can find the public Tracker project [here](https://www.pivotaltracker.com/pr
 * Please use only spaces and indent 2 spaces at a time.
 * Please prefix instance variable names with a single underscore (`_`).
 * Please prefix custom classes and functions defined in the global scope with `EXP`.
+
+### CONTRIBUTORS
+
+* [kseebaldt](https://github.com/kseebaldt)
+* [akitchen](https://github.com/akitchen)
+* [joncooper](https://github.com/joncooper)
 
 ## LICENSE
 
