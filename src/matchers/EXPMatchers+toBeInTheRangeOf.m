@@ -18,11 +18,11 @@ EXPMatcherImplementationBegin(_toBeInTheRangeOf, (id expectedLowerBound, id expe
         }
         return NO;
     });
-    
+
     failureMessageForTo(^NSString *{
         return [NSString stringWithFormat:@"expected: %@ to be in the range [%@, %@] (inclusive)", EXPDescribeObject(actual), EXPDescribeObject(expectedLowerBound), EXPDescribeObject(expectedUpperBound)];
     });
-     
+
     failureMessageForNotTo(^NSString *{
         return [NSString stringWithFormat:@"expected: %@ not to be in the range [%@, %@] (inclusive)", EXPDescribeObject(actual), EXPDescribeObject(expectedLowerBound), EXPDescribeObject(expectedUpperBound)];
     });

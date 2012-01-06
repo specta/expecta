@@ -112,18 +112,18 @@ void EXPFail(id testCase, int lineNumber, char *fileName, NSString *message) {
 
 NSException* EXPOCUnitException(const char* fileName, int lineNumber, NSString *description) {
   NSException *exception = nil;
-  
+
   SEL selector = @selector(failureInFile:atLine:withDescription:);
   NSMethodSignature *signature = [[NSException class]->isa instanceMethodSignatureForSelector:selector];
   NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
   [invocation setTarget:[NSException class]];
   [invocation setSelector:selector];
-  
+
   id fileArg = [NSString stringWithUTF8String:fileName];
   [invocation setArgument:&fileArg atIndex:2];
   [invocation setArgument:&lineNumber atIndex:3];
   [invocation setArgument:&description atIndex:4];
-  
+
   [invocation invoke];
   [invocation getReturnValue:&exception];
   return exception;
