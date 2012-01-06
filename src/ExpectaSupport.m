@@ -60,20 +60,20 @@ id _EXPObjectify(char *type, ...) {
   } else if(strcmp(type, @encode(__typeof__(nil))) == 0) {
     obj = nil;
   } else if(strcmp(type, @encode(EXPBasicBlock)) == 0) {
-      EXPUnsupportedObject *actual = [[[EXPUnsupportedObject alloc] initWithType:@"block"] autorelease];
-      obj = actual;
+    id actual = va_arg(v, EXPBasicBlock);
+    obj = [[actual copy] autorelease];
   } else if(strstr(type, "ff}{") != NULL) { //TODO: of course this only works for a 2x2 e.g. CGRect
-      obj = [[[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4] autorelease];
+    obj = [[[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4] autorelease];
   } else if(strstr(type, "=ff}") != NULL) {
-      obj = [[[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[2]) size:2] autorelease];
+    obj = [[[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[2]) size:2] autorelease];
   } else if(strstr(type, "=ffff}") != NULL) {
-      obj = [[[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4] autorelease];
+    obj = [[[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4] autorelease];
   } else if(strstr(type, "dd}{") != NULL) { //TODO: same here
-      obj = [[[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[4]) size:4] autorelease];
+    obj = [[[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[4]) size:4] autorelease];
   } else if(strstr(type, "=dd}") != NULL) {
-      obj = [[[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[2]) size:2] autorelease];
+    obj = [[[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[2]) size:2] autorelease];
   } else if(strstr(type, "=dddd}") != NULL) {
-      obj = [[[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[4]) size:4] autorelease];
+    obj = [[[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[4]) size:4] autorelease];
   } else if(type[0] == '{') {
     EXPUnsupportedObject *actual = [[[EXPUnsupportedObject alloc] initWithType:@"struct"] autorelease];
     obj = actual;

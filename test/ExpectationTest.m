@@ -143,30 +143,27 @@
   assertEqualObjects(expect(a).actual, n);
 }
 
+- (void)test_expect_block {
+  void (^b)() = ^{};
+  void (^b2)(int a) = ^(int a) {};
+  assertEqualObjects(expect(b).actual, b);
+  assertEqualObjects(expect(b2).actual, b2);
+}
+
 - (void)test_expect_union {
-  FakeTestCase *f = [FakeTestCase new];
   union u {
     int a;
     float b;
   } u;
   assertFail(test_expect(u).toBeNil(), @"expecting a union is not supported");
-  [f release];
 }
 
 - (void)test_expect_struct {
-  FakeTestCase *f = [FakeTestCase new];
   struct s {
     int a;
     float b;
   } s;
   assertFail(test_expect(s).toBeNil(), @"expecting a struct is not supported");
-  [f release];
-}
-
-- (void)test_expect_block {
-  FakeTestCase *f = [FakeTestCase new];
-  assertFail(test_expect(^BOOL { return NO; }).toBeNil(), @"expecting a block is not supported");
-  [f release];
 }
 
 @end

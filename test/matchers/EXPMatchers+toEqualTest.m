@@ -164,6 +164,13 @@
   assertPass(test_expect(nullPointer).toEqual(NULL));
 }
 
+- (void)test_toEqual_block {
+  void (^block)() = ^{};
+  void (^block2)() = ^{};
+  assertPass(test_expect(block).toEqual(block));
+  assertPass(test_expect(block).Not.toEqual(block2));
+}
+
 typedef struct SomeFloatPair {
     float x;
     float y;
