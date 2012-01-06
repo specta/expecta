@@ -41,9 +41,9 @@ expect(baz).toEqual(3.14159);
 #import "Expecta.h"
 ```
 
-If `EXP_SHORTHAND` is not defined, expectations must be written with `EXP_expect` instead of `expect`.
+If `EXP\_SHORTHAND` is not defined, expectations must be written with `EXP\_expect` instead of `expect`.
 
-Expecta works best with [Cedar BDD Framework](http://pivotal.github.com/cedar/).
+Expecta works with OCUnit (SenTestingKit), [Cedar BDD Framework](http://pivotal.github.com/cedar/) and any other OCUnit-compatible test framework.
 
 ## BUILT-IN MATCHERS
 
@@ -165,6 +165,7 @@ You can find the public Tracker project [here](https://www.pivotaltracker.com/pr
 * [kseebaldt](https://github.com/kseebaldt)
 * [akitchen](https://github.com/akitchen)
 * [joncooper](https://github.com/joncooper)
+* [twobitlabs](https://github.com/twobitlabs)
 
 ## LICENSE
 
