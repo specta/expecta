@@ -60,8 +60,12 @@
   assertNil(testCase.exception);
   [testCase fail];
   NSException *exception = testCase.exception;
-  assertEqualObjects([exception name], @"Expecta Error");
-  assertEqualObjects([exception reason], @"test.m:777 epic fail");
+  assertEqualObjects([exception name], SenTestFailureException);
+  assertEqualObjects([exception reason], @"epic fail");
+  NSDictionary *exceptionUserInfo = [exception userInfo];
+  assertEqualObjects([exceptionUserInfo objectForKey:SenTestDescriptionKey], @"epic fail");
+  assertEqualObjects([exceptionUserInfo objectForKey:SenTestFilenameKey], @"test.m");
+  assertEqualObjects([exceptionUserInfo objectForKey:SenTestLineNumberKey], [NSNumber numberWithInt:777]);
   [testCase release];
 }
 

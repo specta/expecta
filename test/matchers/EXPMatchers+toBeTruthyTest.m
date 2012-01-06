@@ -23,11 +23,11 @@
   assertPass(test_expect(-123).toBeTruthy());
   assertPass(test_expect(0.1).toBeTruthy());
   assertPass(test_expect(@"hello").toBeTruthy());
-  assertFail(test_expect(NO).toBeTruthy(), @"foo.m:123 expected: a truthy value, got: 0, which is falsy");
-  assertFail(test_expect(FALSE).toBeTruthy(), @"foo.m:123 expected: a truthy value, got: 0, which is falsy");
-  assertFail(test_expect(0).toBeTruthy(), @"foo.m:123 expected: a truthy value, got: 0, which is falsy");
-  assertFail(test_expect(nil).toBeTruthy(), @"foo.m:123 expected: a truthy value, got: nil/null, which is falsy");
-  assertFail(test_expect(nullPointer).toBeTruthy(), @"foo.m:123 expected: a truthy value, got: nil/null, which is falsy");
+  assertFail(test_expect(NO).toBeTruthy(), @"expected: a truthy value, got: 0, which is falsy");
+  assertFail(test_expect(FALSE).toBeTruthy(), @"expected: a truthy value, got: 0, which is falsy");
+  assertFail(test_expect(0).toBeTruthy(), @"expected: a truthy value, got: 0, which is falsy");
+  assertFail(test_expect(nil).toBeTruthy(), @"expected: a truthy value, got: nil/null, which is falsy");
+  assertFail(test_expect(nullPointer).toBeTruthy(), @"expected: a truthy value, got: nil/null, which is falsy");
 }
 
 - (void)test_Not_toBeTruthy {
@@ -36,13 +36,13 @@
   assertPass(test_expect(0).Not.toBeTruthy());
   assertPass(test_expect(nil).Not.toBeTruthy());
   assertPass(test_expect(nullPointer).Not.toBeTruthy());
-  assertFail(test_expect(YES).Not.toBeTruthy(), @"foo.m:123 expected: a non-truthy value, got: 1, which is truthy");
-  assertFail(test_expect(TRUE).Not.toBeTruthy(), @"foo.m:123 expected: a non-truthy value, got: 1, which is truthy");
-  assertFail(test_expect(1).Not.toBeTruthy(), @"foo.m:123 expected: a non-truthy value, got: 1, which is truthy");
-  assertFail(test_expect(123).Not.toBeTruthy(), @"foo.m:123 expected: a non-truthy value, got: 123, which is truthy");
-  assertFail(test_expect(-123).Not.toBeTruthy(), @"foo.m:123 expected: a non-truthy value, got: -123, which is truthy");
-  assertFail(test_expect(0.1).Not.toBeTruthy(), @"foo.m:123 expected: a non-truthy value, got: 0.1, which is truthy");
-  assertFail(test_expect(@"hello").Not.toBeTruthy(), @"foo.m:123 expected: a non-truthy value, got: hello, which is truthy");
+  assertFail(test_expect(YES).Not.toBeTruthy(), @"expected: a non-truthy value, got: 1, which is truthy");
+  assertFail(test_expect(TRUE).Not.toBeTruthy(), @"expected: a non-truthy value, got: 1, which is truthy");
+  assertFail(test_expect(1).Not.toBeTruthy(), @"expected: a non-truthy value, got: 1, which is truthy");
+  assertFail(test_expect(123).Not.toBeTruthy(), @"expected: a non-truthy value, got: 123, which is truthy");
+  assertFail(test_expect(-123).Not.toBeTruthy(), @"expected: a non-truthy value, got: -123, which is truthy");
+  assertFail(test_expect(0.1).Not.toBeTruthy(), @"expected: a non-truthy value, got: 0.1, which is truthy");
+  assertFail(test_expect(@"hello").Not.toBeTruthy(), @"expected: a non-truthy value, got: hello, which is truthy");
 }
 
 @end

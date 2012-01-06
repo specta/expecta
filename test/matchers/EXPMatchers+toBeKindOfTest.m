@@ -23,20 +23,20 @@
   assertPass(test_expect(foo).toBeKindOf([Foo class]));
   assertPass(test_expect(bar).toBeKindOf([Bar class]));
   assertPass(test_expect(bar).toBeKindOf([Foo class]));
-  assertFail(test_expect(nil).toBeKindOf([Foo class]), @"foo.m:123 the actual value is nil/null");
-  assertFail(test_expect(foo).toBeKindOf(nil), @"foo.m:123 the expected value is nil/null");
-  assertFail(test_expect(foo).toBeKindOf([Bar class]), @"foo.m:123 expected: a kind of Bar, got: an instance of Foo, which is not a kind of Bar");
-  assertFail(test_expect(bar).toBeKindOf([Baz class]), @"foo.m:123 expected: a kind of Baz, got: an instance of Bar, which is not a kind of Baz");
+  assertFail(test_expect(nil).toBeKindOf([Foo class]), @"the actual value is nil/null");
+  assertFail(test_expect(foo).toBeKindOf(nil), @"the expected value is nil/null");
+  assertFail(test_expect(foo).toBeKindOf([Bar class]), @"expected: a kind of Bar, got: an instance of Foo, which is not a kind of Bar");
+  assertFail(test_expect(bar).toBeKindOf([Baz class]), @"expected: a kind of Baz, got: an instance of Bar, which is not a kind of Baz");
 }
 
 - (void)test_Not_toBeKindOf {
   assertPass(test_expect(foo).Not.toBeKindOf([Bar class]));
   assertPass(test_expect(bar).Not.toBeKindOf([Baz class]));
   assertPass(test_expect(baz).Not.toBeKindOf([Foo class]));
-  assertFail(test_expect(nil).Not.toBeKindOf([Foo class]), @"foo.m:123 the actual value is nil/null");
-  assertFail(test_expect(foo).Not.toBeKindOf(nil), @"foo.m:123 the expected value is nil/null");
-  assertFail(test_expect(foo).Not.toBeKindOf([Foo class]), @"foo.m:123 expected: not a kind of Foo, got: an instance of Foo, which is a kind of Foo");
-  assertFail(test_expect(bar).Not.toBeKindOf([Foo class]), @"foo.m:123 expected: not a kind of Foo, got: an instance of Bar, which is a kind of Foo");
+  assertFail(test_expect(nil).Not.toBeKindOf([Foo class]), @"the actual value is nil/null");
+  assertFail(test_expect(foo).Not.toBeKindOf(nil), @"the expected value is nil/null");
+  assertFail(test_expect(foo).Not.toBeKindOf([Foo class]), @"expected: not a kind of Foo, got: an instance of Foo, which is a kind of Foo");
+  assertFail(test_expect(bar).Not.toBeKindOf([Foo class]), @"expected: not a kind of Foo, got: an instance of Bar, which is a kind of Foo");
 }
 
 - (void)test_toBeAKindOf {

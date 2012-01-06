@@ -19,7 +19,7 @@
     foo = @"foo";
   } copy] autorelease] afterDelay:0.1];
   assertPass(test_expect(foo).isGoing.toEqual(@"foo"));
-  assertFail(test_expect(foo).isGoing.toEqual(@"bar"), @"foo.m:123 expected: bar, got: foo");
+  assertFail(test_expect(foo).isGoing.toEqual(@"bar"), @"expected: bar, got: foo");
 }
 
 - (void)test_isNotGoing {
@@ -28,7 +28,7 @@
     foo = @"foo";
   } copy] autorelease] afterDelay:0.1];
   assertPass(test_expect(foo).isNotGoing.toEqual(@"bar"));
-  assertFail(test_expect(foo).isNotGoing.toEqual(@"foo"), @"foo.m:123 expected: not foo, got: foo");
+  assertFail(test_expect(foo).isNotGoing.toEqual(@"foo"), @"expected: not foo, got: foo");
 }
 
 - (void)test_Expecta_setAsynchronousTestTimeout {

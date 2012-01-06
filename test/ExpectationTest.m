@@ -153,7 +153,7 @@
     int a;
     float b;
   } u;
-  assertFail(test_expect(u).toBeNil(), @"foo.m:123 expecting a union is not supported");
+  assertFail(test_expect(u).toBeNil(), @"expecting a union is not supported");
   [f release];
 }
 
@@ -163,13 +163,13 @@
     int a;
     float b;
   } s;
-  assertFail(test_expect(s).toBeNil(), @"foo.m:123 expecting a struct is not supported");
+  assertFail(test_expect(s).toBeNil(), @"expecting a struct is not supported");
   [f release];
 }
 
 - (void)test_expect_block {
   FakeTestCase *f = [FakeTestCase new];
-  assertFail(test_expect(^BOOL { return NO; }).toBeNil(), @"foo.m:123 expecting a block is not supported");
+  assertFail(test_expect(^BOOL { return NO; }).toBeNil(), @"expecting a block is not supported");
   [f release];
 }
 
