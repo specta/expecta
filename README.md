@@ -41,7 +41,7 @@ expect(baz).toEqual(3.14159);
 #import "Expecta.h"
 ```
 
-If `EXP\_SHORTHAND` is not defined, expectations must be written with `EXP\_expect` instead of `expect`.
+If `EXP_SHORTHAND` is not defined, expectations must be written with `EXP_expect` instead of `expect`.
 
 Expecta works with OCUnit (SenTestingKit), [Cedar BDD Framework](http://pivotal.github.com/cedar/) and any other OCUnit-compatible test framework.
 
