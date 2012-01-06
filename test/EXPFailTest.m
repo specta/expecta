@@ -1,7 +1,3 @@
-// Expecta - EXPFailTest.m
-// Copyright (c) 2011 Peter Jihoon Kim
-// Licensed under the MIT License.
-
 #import "TestHelper.h"
 
 // Test case class without failWithException: method

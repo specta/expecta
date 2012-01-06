@@ -1,7 +1,3 @@
-// Expecta - NSValue+Expecta.m
-// Copyright (c) 2011 Peter Jihoon Kim
-// Licensed under the MIT License.
-
 #import "NSValue+Expecta.h"
 #import <objc/runtime.h>
 #import "Expecta.h"

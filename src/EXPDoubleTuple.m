@@ -1,6 +1,5 @@
 #import "EXPDoubleTuple.h"
 
-
 @implementation EXPDoubleTuple
 
 @synthesize values = _values, size = _size;

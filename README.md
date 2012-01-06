@@ -26,10 +26,6 @@ expect([bar isBar]).toEqual(YES);
 expect(baz).toEqual(3.14159);
 ```
 
-## STATUS
-
-Still under heavy development, but usable.
-
 ## USAGE
 
 1. Clone from Github.

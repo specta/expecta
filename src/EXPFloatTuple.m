@@ -1,6 +1,5 @@
 #import "EXPFloatTuple.h"
 
-
 @implementation EXPFloatTuple
 
 @synthesize values = _values, size = _size;

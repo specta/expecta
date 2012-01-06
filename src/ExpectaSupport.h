@@ -1,7 +1,3 @@
-// Expecta - ExpectaSupport.h
-// Copyright (c) 2011 Peter Jihoon Kim
-// Licensed under the MIT License.
-
 #import "EXPExpect.h"
 
 id _EXPObjectify(char *type, ...);

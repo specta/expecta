@@ -1,7 +1,3 @@
-// Expecta - TestHelper.h
-// Copyright (c) 2011 Peter Jihoon Kim
-// Licensed under the MIT License.
-
 #import <Foundation/Foundation.h>
 #import <SenTestingKit/SenTestingKit.h>
 #define EXP_SHORTHAND

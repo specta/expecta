@@ -1,7 +1,3 @@
-// Expecta - EXPMatchers+toBeInstanceOf.m
-// Copyright (c) 2011 Peter Jihoon Kim
-// Licensed under the MIT License.
-
 #import "EXPMatchers+toBeInstanceOf.h"
 
 EXPMatcherImplementationBegin(toBeInstanceOf, (Class expected)) {

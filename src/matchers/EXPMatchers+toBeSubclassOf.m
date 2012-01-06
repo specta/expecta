@@ -1,7 +1,3 @@
-// Expecta - EXPMatchers+toBeSubclassOf.m
-// Copyright (c) 2011 Peter Jihoon Kim
-// Licensed under the MIT License.
-
 #import "EXPMatchers+toBeSubclassOf.h"
 #import "NSValue+Expecta.h"
 

@@ -1,7 +1,3 @@
-// Expecta - EXPUnsupportedObject.m
-// Copyright (c) 2011 Peter Jihoon Kim
-// Licensed under the MIT License.
-
 #import "EXPUnsupportedObject.h"
 
 @implementation EXPUnsupportedObject

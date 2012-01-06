@@ -1,7 +1,3 @@
-// Expecta - ExpectaSupport.m
-// Copyright (c) 2011 Peter Jihoon Kim
-// Licensed under the MIT License.
-
 #import "ExpectaSupport.h"
 #import "NSValue+Expecta.h"
 #import "NSObject+Expecta.h"

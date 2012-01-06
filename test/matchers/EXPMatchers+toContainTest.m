@@ -1,7 +1,3 @@
-// Expecta - EXPMatchers+toContainTest.m
-// Copyright (c) 2011 Peter Jihoon Kim
-// Licensed under the MIT License.
-
 #import "TestHelper.h"
 
 @interface EXPMatchers_toContainTest : SenTestCase {
