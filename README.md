@@ -169,5 +169,5 @@ You can find the public Tracker project [here](https://www.pivotaltracker.com/pr
 
 ## LICENSE
 
-Copyright (c) 2011 Peter Jihoon Kim. This software is licensed under the [MIT License](http://github.com/petejkim/expecta/raw/master/LICENSE).
+Copyright (c) 2011-2012 Peter Jihoon Kim. This software is licensed under the [MIT License](http://github.com/petejkim/expecta/raw/master/LICENSE).
 
