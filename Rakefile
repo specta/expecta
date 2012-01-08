@@ -24,8 +24,8 @@ task :build => :clean do |t|
   execute xcodebuild('Expecta-iOS', 'iphonesimulator', configuration)
   execute xcodebuild('Expecta-iOS', 'iphoneos', configuration)
   macosx_binary = "build/#{configuration}/libExpecta.a"
-  iphoneos_binary = "build/#{configuration}-iphonesimulator/libExpecta-ios.a"
-  iphonesimulator_binary = "build/#{configuration}-iphoneos/libExpecta-ios.a"
+  iphoneos_binary = "build/#{configuration}-iphoneos/libExpecta-ios.a"
+  iphonesimulator_binary = "build/#{configuration}-iphonesimulator/libExpecta-ios.a"
   universal_binary = "build/libExpecta-ios-universal.a"
   puts "=== GENERATE UNIVERSAL iOS BINARY (Device/Simulator) ==="
   execute "lipo -create '#{iphoneos_binary}' '#{iphonesimulator_binary}' -output '#{universal_binary}'"

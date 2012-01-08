@@ -145,18 +145,18 @@ NSString *EXPDescribeObject(id obj) {
 }
 
 void EXP_prerequisite(EXPBoolBlock block) {
-  [[[[NSThread currentThread] threadDictionary] objectForKey:@"currentMatcher"] setPrerequisiteBlock:block];
+  [[[[NSThread currentThread] threadDictionary] objectForKey:@"EXP_currentMatcher"] setPrerequisiteBlock:block];
 }
 
 void EXP_match(EXPBoolBlock block) {
-  [[[[NSThread currentThread] threadDictionary] objectForKey:@"currentMatcher"] setMatchBlock:block];
+  [[[[NSThread currentThread] threadDictionary] objectForKey:@"EXP_currentMatcher"] setMatchBlock:block];
 }
 
 void EXP_failureMessageForTo(EXPStringBlock block) {
-  [[[[NSThread currentThread] threadDictionary] objectForKey:@"currentMatcher"] setFailureMessageForToBlock:block];
+  [[[[NSThread currentThread] threadDictionary] objectForKey:@"EXP_currentMatcher"] setFailureMessageForToBlock:block];
 }
 
 void EXP_failureMessageForNotTo(EXPStringBlock block) {
-  [[[[NSThread currentThread] threadDictionary] objectForKey:@"currentMatcher"] setFailureMessageForNotToBlock:block];
+  [[[[NSThread currentThread] threadDictionary] objectForKey:@"EXP_currentMatcher"] setFailureMessageForNotToBlock:block];
 }
 

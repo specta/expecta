@@ -43,7 +43,7 @@ expect(baz).toEqual(3.14159);
 
 If `EXP_SHORTHAND` is not defined, expectations must be written with `EXP_expect` instead of `expect`.
 
-Expecta works with OCUnit (SenTestingKit), [Cedar BDD Framework](http://pivotal.github.com/cedar/) and any other OCUnit-compatible test framework.
+Expecta is framework-agnostic. It works well with OCUnit (SenTestingKit) and OCUnit-compatible test frameworks such as [Specta](http://github.com/petejkim/specta/), [GHUnit](http://github.com/gabriel/gh-unit/) and [GTMUnit](http://code.google.com/p/google-toolbox-for-mac/). Expecta also supports [Cedar](http://pivotal.github.com/cedar/).
 
 ## BUILT-IN MATCHERS
 
@@ -169,4 +169,5 @@ You can find the public Tracker project [here](https://www.pivotaltracker.com/pr
 
 ## LICENSE
 
-Copyright (c) 2011 Peter Jihoon Kim. This software is licensed under the MIT License.
+Copyright (c) 2011 Peter Jihoon Kim. This software is licensed under the [MIT License](http://github.com/petejkim/expecta/raw/master/LICENSE).
+

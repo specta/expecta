@@ -37,16 +37,14 @@
 		AEBA779B14055E9D001690B6 /* EXPMatchers+toBeLessThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBA779814055E9D001690B6 /* EXPMatchers+toBeLessThanOrEqualTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEBA779C14055E9D001690B6 /* EXPMatchers+toBeLessThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA779914055E9D001690B6 /* EXPMatchers+toBeLessThanOrEqualTo.m */; };
 		AEBA779D14055E9D001690B6 /* EXPMatchers+toBeLessThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA779914055E9D001690B6 /* EXPMatchers+toBeLessThanOrEqualTo.m */; };
-		E1EB1BC313BEA1BE00E4C93B /* EXPDoubleTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = E1EB1BBF13BEA1BE00E4C93B /* EXPDoubleTuple.h */; };
-		E1EB1BC413BEA1BE00E4C93B /* EXPDoubleTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = E1EB1BBF13BEA1BE00E4C93B /* EXPDoubleTuple.h */; };
+		E1EB1BC313BEA1BE00E4C93B /* EXPDoubleTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = E1EB1BBF13BEA1BE00E4C93B /* EXPDoubleTuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1EB1BC413BEA1BE00E4C93B /* EXPDoubleTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = E1EB1BBF13BEA1BE00E4C93B /* EXPDoubleTuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1EB1BC513BEA1BE00E4C93B /* EXPDoubleTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EB1BC013BEA1BE00E4C93B /* EXPDoubleTuple.m */; };
 		E1EB1BC613BEA1BE00E4C93B /* EXPDoubleTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EB1BC013BEA1BE00E4C93B /* EXPDoubleTuple.m */; };
-		E1EB1BC713BEA1BE00E4C93B /* EXPFloatTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = E1EB1BC113BEA1BE00E4C93B /* EXPFloatTuple.h */; };
-		E1EB1BC813BEA1BE00E4C93B /* EXPFloatTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = E1EB1BC113BEA1BE00E4C93B /* EXPFloatTuple.h */; };
+		E1EB1BC713BEA1BE00E4C93B /* EXPFloatTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = E1EB1BC113BEA1BE00E4C93B /* EXPFloatTuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1EB1BC813BEA1BE00E4C93B /* EXPFloatTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = E1EB1BC113BEA1BE00E4C93B /* EXPFloatTuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1EB1BC913BEA1BE00E4C93B /* EXPFloatTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EB1BC213BEA1BE00E4C93B /* EXPFloatTuple.m */; };
 		E1EB1BCA13BEA1BE00E4C93B /* EXPFloatTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EB1BC213BEA1BE00E4C93B /* EXPFloatTuple.m */; };
-		E930679B13B2E24100EA26FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E930679913B2E22A00EA26FF /* Foundation.framework */; };
-		E930679C13B2E24B00EA26FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E930679913B2E22A00EA26FF /* Foundation.framework */; };
 		E93067E213B2E6D100EA26FF /* libExpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E93067CE13B2E6D100EA26FF /* libExpecta-iOS.a */; };
 		E93067F513B2E7D900EA26FF /* ExpectationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7313B2DEB70010F4D7 /* ExpectationTest.m */; };
 		E93067F613B2E7DC00EA26FF /* NSValue+ExpectaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7C13B2DEB70010F4D7 /* NSValue+ExpectaTest.m */; };
@@ -85,8 +83,6 @@
 		E930681813B2E85B00EA26FF /* EXPMatchers+toBeTruthy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF5113B2DDC60010F4D7 /* EXPMatchers+toBeTruthy.m */; };
 		E930681913B2E85E00EA26FF /* EXPMatchers+toEqual.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF5313B2DDC60010F4D7 /* EXPMatchers+toEqual.m */; };
 		E930681A13B2E86000EA26FF /* EXPMatchers+toEqual.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF5213B2DDC60010F4D7 /* EXPMatchers+toEqual.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E94296F113B42BF60038708B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E930679913B2E22A00EA26FF /* Foundation.framework */; };
-		E94296F213B42BFA0038708B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E930679913B2E22A00EA26FF /* Foundation.framework */; };
 		E94296F413B42E160038708B /* EXPMatchers+toContainTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E94296F313B42E160038708B /* EXPMatchers+toContainTest.m */; };
 		E94296F513B42E160038708B /* EXPMatchers+toContainTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E94296F313B42E160038708B /* EXPMatchers+toContainTest.m */; };
 		E94296F813B430DF0038708B /* EXPMatchers+toContain.h in Headers */ = {isa = PBXBuildFile; fileRef = E94296F613B430DE0038708B /* EXPMatchers+toContain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -147,6 +143,12 @@
 		E9ACDFA013B2E0BB0010F4D7 /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF9C13B2E0BB0010F4D7 /* Fixtures.m */; };
 		E9AFC43A13C482D3006B4F2A /* AsynchronousTestingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AFC43913C482D3006B4F2A /* AsynchronousTestingTest.m */; };
 		E9AFC43B13C482D3006B4F2A /* AsynchronousTestingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AFC43913C482D3006B4F2A /* AsynchronousTestingTest.m */; };
+		E9B777E714BA316200D8DC76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E930679913B2E22A00EA26FF /* Foundation.framework */; };
+		E9B777EA14BA317800D8DC76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B777E814BA316E00D8DC76 /* Foundation.framework */; };
+		E9B777EC14BA31BE00D8DC76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E930679913B2E22A00EA26FF /* Foundation.framework */; };
+		E9B777EF14BA31D100D8DC76 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B777ED14BA31C600D8DC76 /* SenTestingKit.framework */; };
+		E9B777F014BA31DA00D8DC76 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B777ED14BA31C600D8DC76 /* SenTestingKit.framework */; };
+		E9B777F114BA31DE00D8DC76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B777E814BA316E00D8DC76 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -247,8 +249,9 @@
 		E9ACDF9C13B2E0BB0010F4D7 /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
 		E9ACDF9D13B2E0BB0010F4D7 /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
 		E9ACDFA213B2E0CC0010F4D7 /* Test-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
-		E9ACDFA313B2E0CC0010F4D7 /* Test-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Test-Prefix.pch"; sourceTree = "<group>"; };
 		E9AFC43913C482D3006B4F2A /* AsynchronousTestingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsynchronousTestingTest.m; sourceTree = "<group>"; };
+		E9B777E814BA316E00D8DC76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E9B777ED14BA31C600D8DC76 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,7 +259,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E94296F113B42BF60038708B /* Foundation.framework in Frameworks */,
+				E9B777EA14BA317800D8DC76 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +267,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E94296F213B42BFA0038708B /* Foundation.framework in Frameworks */,
+				E9B777F114BA31DE00D8DC76 /* Foundation.framework in Frameworks */,
+				E9B777F014BA31DA00D8DC76 /* SenTestingKit.framework in Frameworks */,
 				E93067E213B2E6D100EA26FF /* libExpecta-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,7 +277,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E930679C13B2E24B00EA26FF /* Foundation.framework in Frameworks */,
+				E9B777E714BA316200D8DC76 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +285,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E930679B13B2E24100EA26FF /* Foundation.framework in Frameworks */,
+				E9B777EC14BA31BE00D8DC76 /* Foundation.framework in Frameworks */,
+				E9B777EF14BA31D100D8DC76 /* SenTestingKit.framework in Frameworks */,
 				E9ACDF2113B2DD520010F4D7 /* libExpecta.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +321,9 @@
 		E9ACDF0E13B2DD520010F4D7 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E930679913B2E22A00EA26FF /* Foundation.framework */,
+				E9B777E414BA314A00D8DC76 /* macosx */,
+				E9B777E614BA315200D8DC76 /* ios */,
+				E9B777ED14BA31C600D8DC76 /* SenTestingKit.framework */,
 			);
 			name = frameworks;
 			sourceTree = "<group>";
@@ -436,9 +443,24 @@
 			isa = PBXGroup;
 			children = (
 				E9ACDFA213B2E0CC0010F4D7 /* Test-Info.plist */,
-				E9ACDFA313B2E0CC0010F4D7 /* Test-Prefix.pch */,
 			);
 			path = support;
+			sourceTree = "<group>";
+		};
+		E9B777E414BA314A00D8DC76 /* macosx */ = {
+			isa = PBXGroup;
+			children = (
+				E930679913B2E22A00EA26FF /* Foundation.framework */,
+			);
+			name = macosx;
+			sourceTree = "<group>";
+		};
+		E9B777E614BA315200D8DC76 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				E9B777E814BA316E00D8DC76 /* Foundation.framework */,
+			);
+			name = ios;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,9 +489,9 @@
 				E9685DBD13B5E39300ADF2D7 /* ExpectaSupport.h in Headers */,
 				61740D8B14256B2500091DDF /* EXPMatchers+toBeInTheRangeOf.h in Headers */,
 				AE0E76FF13FF3840009AF5D8 /* EXPMatchers+toBeLessThan.h in Headers */,
+				AEBA779B14055E9D001690B6 /* EXPMatchers+toBeLessThanOrEqualTo.h in Headers */,
 				E1EB1BC413BEA1BE00E4C93B /* EXPDoubleTuple.h in Headers */,
 				E1EB1BC813BEA1BE00E4C93B /* EXPFloatTuple.h in Headers */,
-				AEBA779B14055E9D001690B6 /* EXPMatchers+toBeLessThanOrEqualTo.h in Headers */,
 				4913B4CD1411E18A00040ECB /* EXPMatchers+toBeGreaterThan.h in Headers */,
 				4913B4D61411E45800040ECB /* EXPMatchers+toBeGreaterThanOrEqualTo.h in Headers */,
 			);
@@ -498,11 +520,11 @@
 				E9685DBC13B5E39300ADF2D7 /* ExpectaSupport.h in Headers */,
 				61740D8A14256B2500091DDF /* EXPMatchers+toBeInTheRangeOf.h in Headers */,
 				AE0E76F813FF3732009AF5D8 /* EXPMatchers+toBeLessThan.h in Headers */,
-				E1EB1BC313BEA1BE00E4C93B /* EXPDoubleTuple.h in Headers */,
-				E1EB1BC713BEA1BE00E4C93B /* EXPFloatTuple.h in Headers */,
 				AEBA779A14055E9D001690B6 /* EXPMatchers+toBeLessThanOrEqualTo.h in Headers */,
 				4913B4CC1411E18A00040ECB /* EXPMatchers+toBeGreaterThan.h in Headers */,
 				4913B4D51411E45800040ECB /* EXPMatchers+toBeGreaterThanOrEqualTo.h in Headers */,
+				E1EB1BC313BEA1BE00E4C93B /* EXPDoubleTuple.h in Headers */,
+				E1EB1BC713BEA1BE00E4C93B /* EXPFloatTuple.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +610,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Peter Jihoon Kim";
 			};
 			buildConfigurationList = E9ACDF0613B2DD520010F4D7 /* Build configuration list for PBXProject "Expecta" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -832,7 +855,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "test/support/Test-Prefix.pch";
+				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "test/support/Test-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
@@ -858,7 +881,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "test/support/Test-Prefix.pch";
+				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "test/support/Test-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
@@ -878,6 +901,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -910,7 +934,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = supported;
@@ -927,7 +950,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = supported;
@@ -944,12 +966,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "test/support/Test-Prefix.pch";
+				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "test/support/Test-Info.plist";
 				OTHER_LDFLAGS = (
@@ -966,12 +987,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "test/support/Test-Prefix.pch";
+				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "test/support/Test-Info.plist";
 				OTHER_LDFLAGS = (
