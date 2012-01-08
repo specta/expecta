@@ -26,7 +26,15 @@ expect([bar isBar]).toEqual(YES);
 expect(baz).toEqual(3.14159);
 ```
 
-## USAGE
+## SETUP
+
+Use [CocoaPods](https://github.com/CocoaPods/CocoaPods)
+
+```ruby
+dependency 'Expecta', '~> 0.1.0'
+```
+
+or
 
 1. Clone from Github.
 2. Run `rake` in project root to build.
