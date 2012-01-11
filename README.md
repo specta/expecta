@@ -2,7 +2,7 @@
 
 A Matcher Framework for Objective-C/Cocoa
 
-## HOW IS IT BETTER?
+## INTRODUCTION
 
 The main advantage of using Expecta over other matcher frameworks is that you do not have to specify the data types. Also, the syntax of Expecta matchers is much more readable and does not suffer from parenthesitis. If you have used [Jasmine](http://pivotal.github.com/jasmine/) before, you will feel right at home!
 
@@ -31,7 +31,7 @@ expect(baz).toEqual(3.14159);
 Use [CocoaPods](https://github.com/CocoaPods/CocoaPods)
 
 ```ruby
-dependency 'Expecta', '~> 0.1.0'
+dependency 'Expecta', '~> 0.1.1'
 ```
 
 or
