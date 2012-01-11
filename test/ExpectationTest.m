@@ -33,8 +33,7 @@
 }
 
 - (void)test_expect_Class {
-  v = [NSValue valueWithPointer:[EXPExpect class]];
-  assertEqualObjects(expect([EXPExpect class]).actual, v);
+  assertEqualObjects(expect([EXPExpect class]).actual, [EXPExpect class]);
 }
 
 - (void)test_expect_CString {

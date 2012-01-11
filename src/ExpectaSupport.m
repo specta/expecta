@@ -54,7 +54,7 @@ id _EXPObjectify(char *type, ...) {
   } else if(strcmp(type, @encode(unsigned short)) == 0) {
     unsigned short actual = (unsigned short)va_arg(v, unsigned int);
     obj = [NSNumber numberWithUnsignedShort:actual];
-  } else if(strcmp(type, @encode(id)) == 0) {
+  } else if((strcmp(type, @encode(id)) == 0) || (strcmp(type, @encode(Class)) == 0)) {
     id actual = va_arg(v, id);
     obj = actual;
   } else if(strcmp(type, @encode(__typeof__(nil))) == 0) {
