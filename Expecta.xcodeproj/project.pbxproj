@@ -149,6 +149,8 @@
 		E9B777EF14BA31D100D8DC76 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B777ED14BA31C600D8DC76 /* SenTestingKit.framework */; };
 		E9B777F014BA31DA00D8DC76 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B777ED14BA31C600D8DC76 /* SenTestingKit.framework */; };
 		E9B777F114BA31DE00D8DC76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B777E814BA316E00D8DC76 /* Foundation.framework */; };
+		E9BDBAA714BE1CD900102FB5 /* MiscTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BDBAA614BE1CD900102FB5 /* MiscTest.m */; };
+		E9BDBAA814BE1CD900102FB5 /* MiscTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BDBAA614BE1CD900102FB5 /* MiscTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,6 +254,7 @@
 		E9AFC43913C482D3006B4F2A /* AsynchronousTestingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsynchronousTestingTest.m; sourceTree = "<group>"; };
 		E9B777E814BA316E00D8DC76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		E9B777ED14BA31C600D8DC76 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		E9BDBAA614BE1CD900102FB5 /* MiscTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiscTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +403,7 @@
 				E9ACDF7C13B2DEB70010F4D7 /* NSValue+ExpectaTest.m */,
 				E969C52213B5FD02006BB8B1 /* EXPFailTest.m */,
 				E9AFC43913C482D3006B4F2A /* AsynchronousTestingTest.m */,
+				E9BDBAA614BE1CD900102FB5 /* MiscTest.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -733,6 +737,7 @@
 				4913B4C81411E01A00040ECB /* EXPMatchers+toBeGreaterThanTest.m in Sources */,
 				4913B4D21411E2DA00040ECB /* EXPMatchers+toBeGreaterThanOrEqualToTest.m in Sources */,
 				61740D861425689A00091DDF /* EXPMatchers+toBeInTheRangeOfTest.m in Sources */,
+				E9BDBAA814BE1CD900102FB5 /* MiscTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,6 +795,7 @@
 				4913B4C71411E01A00040ECB /* EXPMatchers+toBeGreaterThanTest.m in Sources */,
 				4913B4D11411E2DA00040ECB /* EXPMatchers+toBeGreaterThanOrEqualToTest.m in Sources */,
 				61740D851425689A00091DDF /* EXPMatchers+toBeInTheRangeOfTest.m in Sources */,
+				E9BDBAA714BE1CD900102FB5 /* MiscTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

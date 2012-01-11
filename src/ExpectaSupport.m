@@ -141,7 +141,24 @@ NSString *EXPDescribeObject(id obj) {
       }
     }
   }
-  return [obj description];
+  NSString *description = [obj description];
+  if([obj isKindOfClass:[NSArray class]]) {
+    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:[obj count]];
+    for(id o in obj) {
+      [arr addObject:EXPDescribeObject(o)];
+    }
+    description = [NSString stringWithFormat:@"(%@)", [arr componentsJoinedByString:@", "]];
+  } else if([obj isKindOfClass:[NSDictionary class]]) {
+    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:[obj count]];
+    for(id k in obj) {
+      id v = [obj objectForKey:k];
+      [arr addObject:[NSString stringWithFormat:@"%@ = %@;",EXPDescribeObject(k), EXPDescribeObject(v)]];
+    }
+    description = [NSString stringWithFormat:@"{%@}", [arr componentsJoinedByString:@" "]];
+  } else {
+    description = [description stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
+  }
+  return description;
 }
 
 void EXP_prerequisite(EXPBoolBlock block) {
