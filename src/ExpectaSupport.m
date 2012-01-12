@@ -54,12 +54,12 @@ id _EXPObjectify(char *type, ...) {
   } else if(strcmp(type, @encode(unsigned short)) == 0) {
     unsigned short actual = (unsigned short)va_arg(v, unsigned int);
     obj = [NSNumber numberWithUnsignedShort:actual];
-  } else if((strcmp(type, @encode(id)) == 0) || (strcmp(type, @encode(Class)) == 0)) {
+  } else if((strstr(type, @encode(id)) != NULL) || (strstr(type, @encode(Class)) != 0)) {
     id actual = va_arg(v, id);
     obj = actual;
   } else if(strcmp(type, @encode(__typeof__(nil))) == 0) {
     obj = nil;
-  } else if(strcmp(type, @encode(EXPBasicBlock)) == 0) {
+  } else if(strstr(type, @encode(EXPBasicBlock)) != NULL) {
     id actual = va_arg(v, EXPBasicBlock);
     obj = [[actual copy] autorelease];
   } else if(strstr(type, "ff}{") != NULL) { //TODO: of course this only works for a 2x2 e.g. CGRect

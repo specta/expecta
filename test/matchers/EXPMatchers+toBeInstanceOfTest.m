@@ -3,6 +3,7 @@
 @interface EXPMatchers_toBeInstanceOfTest : SenTestCase {
   Foo *foo;
   Bar *bar;
+  id baz;
 }
 @end
 
@@ -11,6 +12,7 @@
 - (void)setUp {
   foo = [[Foo new] autorelease];
   bar = [[Bar new] autorelease];
+  baz = foo;
 }
 
 - (void)test_toBeInstanceOf {
@@ -20,6 +22,7 @@
   assertFail(test_expect(foo).toBeInstanceOf(nil), @"the expected value is nil/null");
   assertFail(test_expect(foo).toBeInstanceOf([Bar class]), @"expected: an instance of Bar, got: an instance of Foo");
   assertFail(test_expect(bar).toBeInstanceOf([Foo class]), @"expected: an instance of Foo, got: an instance of Bar");
+  assertPass(test_expect(baz).toBeInstanceOf([Foo class]));
 }
 
 - (void)test_Not_toBeInstanceOf {
@@ -29,6 +32,7 @@
   assertFail(test_expect(foo).Not.toBeInstanceOf(nil), @"the expected value is nil/null");
   assertFail(test_expect(foo).Not.toBeInstanceOf([Foo class]), @"expected: not an instance of Foo, got: an instance of Foo");
   assertFail(test_expect(bar).Not.toBeInstanceOf([Bar class]), @"expected: not an instance of Bar, got: an instance of Bar");
+  assertPass(test_expect(baz).Not.toBeInstanceOf([Bar class]));
 }
 
 - (void)test_toBeAnInstanceOf {

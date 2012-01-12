@@ -4,6 +4,7 @@
   Foo *foo;
   Bar *bar;
   Baz *baz;
+  id qux;
 }
 @end
 
@@ -13,6 +14,7 @@
   foo = [[Foo new] autorelease];
   bar = [[Bar new] autorelease];
   baz = [[Baz new] autorelease];
+  qux = foo;
 }
 
 - (void)test_toBeKindOf {
@@ -23,6 +25,7 @@
   assertFail(test_expect(foo).toBeKindOf(nil), @"the expected value is nil/null");
   assertFail(test_expect(foo).toBeKindOf([Bar class]), @"expected: a kind of Bar, got: an instance of Foo, which is not a kind of Bar");
   assertFail(test_expect(bar).toBeKindOf([Baz class]), @"expected: a kind of Baz, got: an instance of Bar, which is not a kind of Baz");
+  assertPass(test_expect(qux).toBeKindOf([Foo class]));
 }
 
 - (void)test_Not_toBeKindOf {
@@ -33,6 +36,7 @@
   assertFail(test_expect(foo).Not.toBeKindOf(nil), @"the expected value is nil/null");
   assertFail(test_expect(foo).Not.toBeKindOf([Foo class]), @"expected: not a kind of Foo, got: an instance of Foo, which is a kind of Foo");
   assertFail(test_expect(bar).Not.toBeKindOf([Foo class]), @"expected: not a kind of Foo, got: an instance of Bar, which is a kind of Foo");
+  assertPass(test_expect(qux).Not.toBeKindOf([Bar class]));
 }
 
 - (void)test_toBeAKindOf {
