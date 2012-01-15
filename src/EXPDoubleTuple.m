@@ -5,7 +5,7 @@
 @synthesize values = _values, size = _size;
 
 - (id)initWithDoubleValues:(double *)values size:(size_t)size {
-    if (self == [super init]) {
+    if ((self = [super init])) {
         self.values = malloc(sizeof(double) * size);
         memcpy(self.values, values, sizeof(double) * size);
         self.size = size;
