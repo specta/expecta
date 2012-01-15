@@ -4,7 +4,7 @@
 EXPMatcherImplementationBegin(_toBeInTheRangeOf, (id expectedLowerBound, id expectedUpperBound)) {
     match(^BOOL{
         if ([actual respondsToSelector:@selector(compare:)]) {
-            NSComparisonResult compareLowerBound = [expectedLowerBound compare: actual]; 
+            NSComparisonResult compareLowerBound = [expectedLowerBound compare: actual];
             NSComparisonResult compareUpperBound = [expectedUpperBound compare: actual];
             if (compareLowerBound == NSOrderedSame) {
                 return YES;
