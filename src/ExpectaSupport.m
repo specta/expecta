@@ -148,6 +148,12 @@ NSString *EXPDescribeObject(id obj) {
       [arr addObject:EXPDescribeObject(o)];
     }
     description = [NSString stringWithFormat:@"(%@)", [arr componentsJoinedByString:@", "]];
+  } else if([obj isKindOfClass:[NSSet class]]) {
+    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:[obj count]];
+    for(id o in obj) {
+      [arr addObject:EXPDescribeObject(o)];
+    }
+    description = [NSString stringWithFormat:@"{(%@)}", [arr componentsJoinedByString:@", "]];
   } else if([obj isKindOfClass:[NSDictionary class]]) {
     NSMutableArray *arr = [NSMutableArray arrayWithCapacity:[obj count]];
     for(id k in obj) {
