@@ -4,13 +4,13 @@
 #import "EXPUnsupportedObject.h"
 #import "EXPFloatTuple.h"
 #import "EXPDoubleTuple.h"
+#import <objc/runtime.h>
 
-#if TARGET_OS_IPHONE
-    #import <objc/runtime.h>
-#else
-    #import <objc/objc-class.h>
-#endif
+@interface NSException (ExpectaSenTestFailure)
 
++ (NSException *)failureInFile:(NSString *)filename atLine:(int)lineNumber withDescription:(NSString *)formatString, ...;
+
+@end
 
 typedef void (^EXPBasicBlock)();
 
@@ -96,33 +96,17 @@ EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, EXPIdBlock a
 }
 
 void EXPFail(id testCase, int lineNumber, char *fileName, NSString *message) {
+  NSString *reason = [NSString stringWithFormat:@"%s:%d %@", fileName, lineNumber, message];
+  NSException *exception = [NSException exceptionWithName:@"Expecta Error" reason:reason userInfo:nil];
+
   if(testCase && [testCase respondsToSelector:@selector(failWithException:)]) {
-    NSException *exception = EXPOCUnitException(fileName, lineNumber, message);
+    if([[(Class)objc_getMetaClass("NSException") class] instancesRespondToSelector:@selector(failureInFile:atLine:withDescription:)]) {
+      exception = [NSException failureInFile:[NSString stringWithUTF8String:fileName] atLine:lineNumber withDescription:message];
+    }
     [testCase failWithException:exception];
   } else {
-    NSString *reason = [NSString stringWithFormat:@"%s:%d %@", fileName, lineNumber, message];
-    NSException *exception = [NSException exceptionWithName:@"Expecta Error" reason:reason userInfo:nil];
     [exception raise];
   }
-}
-
-NSException* EXPOCUnitException(const char* fileName, int lineNumber, NSString *description) {
-  NSException *exception = nil;
-
-  SEL selector = @selector(failureInFile:atLine:withDescription:);
-  NSMethodSignature *signature = [[NSException class]->isa instanceMethodSignatureForSelector:selector];
-  NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
-  [invocation setTarget:[NSException class]];
-  [invocation setSelector:selector];
-
-  id fileArg = [NSString stringWithUTF8String:fileName];
-  [invocation setArgument:&fileArg atIndex:2];
-  [invocation setArgument:&lineNumber atIndex:3];
-  [invocation setArgument:&description atIndex:4];
-
-  [invocation invoke];
-  [invocation getReturnValue:&exception];
-  return exception;
 }
 
 NSString *EXPDescribeObject(id obj) {
