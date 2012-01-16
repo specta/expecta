@@ -4,19 +4,14 @@
 
 EXPMatcherImplementationBegin(toBeSubclassOf, (Class expected)) {
   __block BOOL actualIsClass = YES;
-  __block BOOL isSubclass = NO;
 
   prerequisite(^BOOL {
-    @try {
-      isSubclass = [actual isSubclassOfClass:expected];
-    } @catch (NSException *exception) {
-      actualIsClass = NO;
-    }
+    actualIsClass = class_isMetaClass(object_getClass(actual));
     return actualIsClass;
   });
 
   match(^BOOL{
-    return isSubclass;
+    return [actual isSubclassOfClass:expected];
   });
 
   failureMessageForTo(^NSString *{
