@@ -19,7 +19,7 @@
 }
 
 - (void)test_isNotGoing {
-  __block NSString *foo = @"";
+  __block NSString *foo = @"bar";
   [self performSelector:@selector(performBlock:) withObject:[[^{
     foo = @"foo";
   } copy] autorelease] afterDelay:0.1];

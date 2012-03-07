@@ -92,7 +92,8 @@
         NSDate *expiryDate = [NSDate dateWithTimeIntervalSinceNow:timeOut];
         while(1) {
           matchResult = _matchBlock();
-          if(matchResult || ([(NSDate *)[NSDate date] compare:expiryDate] == NSOrderedDescending)) {
+          failed = self.negative ? matchResult : !matchResult;
+          if(!failed || ([(NSDate *)[NSDate date] compare:expiryDate] == NSOrderedDescending)) {
             break;
           }
           [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.01]];
