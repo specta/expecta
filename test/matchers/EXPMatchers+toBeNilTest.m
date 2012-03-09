@@ -1,38 +1,38 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_toBeNilTest : SenTestCase {
+@interface EXPMatchers_beNilTest : SenTestCase {
   NSObject *nilObject;
   int *nullPointer;
 }
 @end
 
-@implementation EXPMatchers_toBeNilTest
+@implementation EXPMatchers_beNilTest
 
 - (void)setUp {
   nilObject = nil;
   nullPointer = NULL;
 }
 
-- (void)test_toBeNil {
-  assertPass(test_expect(nil).toBeNil());
-  assertPass(test_expect(nilObject).toBeNil());
-  assertFail(test_expect(@"foo").toBeNil(), @"expected: nil/null, got: foo");
+- (void)test_beNil {
+  assertPass(test_expect(nil).beNil());
+  assertPass(test_expect(nilObject).beNil());
+  assertFail(test_expect(@"foo").beNil(), @"expected: nil/null, got: foo");
 }
 
-- (void)test_Not_toBeNil {
-  assertPass(test_expect(@"foo").Not.toBeNil());
-  assertFail(test_expect(nil).Not.toBeNil(), @"expected: not nil/null, got: nil/null");
-  assertFail(test_expect(nilObject).Not.toBeNil(), @"expected: not nil/null, got: nil/null");
+- (void)test_Not_beNil {
+  assertPass(test_expect(@"foo").toNot.beNil());
+  assertFail(test_expect(nil).toNot.beNil(), @"expected: not nil/null, got: nil/null");
+  assertFail(test_expect(nilObject).toNot.beNil(), @"expected: not nil/null, got: nil/null");
 }
 
-- (void)test_toBeNull {
-  assertPass(test_expect(NULL).toBeNull());
-  assertPass(test_expect(nullPointer).toBeNull());
+- (void)test_beNull {
+  assertPass(test_expect(NULL).beNull());
+  assertPass(test_expect(nullPointer).beNull());
 }
 
-- (void)test_Not_toBeNull {
-  assertFail(test_expect(NULL).Not.toBeNull(), @"expected: not nil/null, got: nil/null");
-  assertFail(test_expect(nullPointer).Not.toBeNull(), @"expected: not nil/null, got: nil/null");
+- (void)test_Not_beNull {
+  assertFail(test_expect(NULL).toNot.beNull(), @"expected: not nil/null, got: nil/null");
+  assertFail(test_expect(nullPointer).toNot.beNull(), @"expected: not nil/null, got: nil/null");
 }
 
 @end

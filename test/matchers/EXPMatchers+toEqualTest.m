@@ -7,168 +7,168 @@
 @implementation EXPMatchers_toEqualTest
 
 - (void)test_toEqual_nil {
-  assertPass(test_expect(nil).toEqual(nil));
-  assertFail(test_expect(@"foo").toEqual(nil), @"expected: nil/null, got: foo");
+  assertPass(test_expect(nil).equal(nil));
+  assertFail(test_expect(@"foo").equal(nil), @"expected: nil/null, got: foo");
 }
 
 - (void)test_Not_toEqual_nil {
-  assertPass(test_expect(@"foo").Not.toEqual(nil));
-  assertFail(test_expect(nil).Not.toEqual(nil), @"expected: not nil/null, got: nil/null");
+  assertPass(test_expect(@"foo").toNot.equal(nil));
+  assertFail(test_expect(nil).toNot.equal(nil), @"expected: not nil/null, got: nil/null");
 }
 
 - (void)test_toEqual_object {
   NSObject *foo = [NSObject new], *bar = [NSObject new];
-  assertPass(test_expect(foo).toEqual(foo));
-  assertFail(test_expect(foo).toEqual(bar), ([NSString stringWithFormat:@"expected: %@, got: %@", bar, foo]));
+  assertPass(test_expect(foo).equal(foo));
+  assertFail(test_expect(foo).equal(bar), ([NSString stringWithFormat:@"expected: %@, got: %@", bar, foo]));
   [foo release];
   [bar release];
 }
 
 - (void)test_Not_toEqual_object {
   NSObject *foo = [NSObject new], *bar = [NSObject new];
-  assertPass(test_expect(foo).Not.toEqual(bar));
-  assertFail(test_expect(foo).Not.toEqual(foo), ([NSString stringWithFormat:@"expected: not %@, got: %@", foo, foo]));
+  assertPass(test_expect(foo).toNot.equal(bar));
+  assertFail(test_expect(foo).toNot.equal(foo), ([NSString stringWithFormat:@"expected: not %@, got: %@", foo, foo]));
   [foo release];
   [bar release];
 }
 
 - (void)test_toEqual_NSString {
-  assertPass(test_expect(@"foo").toEqual(@"foo"));
-  assertFail(test_expect(@"foo").toEqual(@"bar"), @"expected: bar, got: foo");
+  assertPass(test_expect(@"foo").equal(@"foo"));
+  assertFail(test_expect(@"foo").equal(@"bar"), @"expected: bar, got: foo");
 }
 
 - (void)test_Not_toEqual_NSString {
-  assertPass(test_expect(@"foo").Not.toEqual(@"bar"));
-  assertFail(test_expect(@"foo").Not.toEqual(@"foo"), @"expected: not foo, got: foo");
+  assertPass(test_expect(@"foo").toNot.equal(@"bar"));
+  assertFail(test_expect(@"foo").toNot.equal(@"foo"), @"expected: not foo, got: foo");
 }
 
 - (void)test_toEqual_SEL {
-  assertPass(test_expect(@selector(foo)).toEqual(@selector(foo)));
-  assertFail(test_expect(@selector(foo)).toEqual(@selector(bar:)), @"expected: @selector(bar:), got: @selector(foo)");
+  assertPass(test_expect(@selector(foo)).equal(@selector(foo)));
+  assertFail(test_expect(@selector(foo)).equal(@selector(bar:)), @"expected: @selector(bar:), got: @selector(foo)");
 }
 
 - (void)test_Not_toEqual_SEL {
-  assertPass(test_expect(@selector(foo)).Not.toEqual(@selector(bar:)));
-  assertFail(test_expect(@selector(foo)).Not.toEqual(@selector(foo)), @"expected: not @selector(foo), got: @selector(foo)");
+  assertPass(test_expect(@selector(foo)).toNot.equal(@selector(bar:)));
+  assertFail(test_expect(@selector(foo)).toNot.equal(@selector(foo)), @"expected: not @selector(foo), got: @selector(foo)");
 }
 
 - (void)test_toEqual_Class {
-  assertPass(test_expect([NSString class]).toEqual([NSString class]));
-  assertFail(test_expect([NSString class]).toEqual([NSArray class]), @"expected: NSArray, got: NSString");
+  assertPass(test_expect([NSString class]).equal([NSString class]));
+  assertFail(test_expect([NSString class]).equal([NSArray class]), @"expected: NSArray, got: NSString");
 }
 
 - (void)test_Not_toEqual_Class {
-  assertPass(test_expect([NSString class]).Not.toEqual([NSArray class]));
-  assertFail(test_expect([NSString class]).Not.toEqual([NSString class]), @"expected: not NSString, got: NSString");
+  assertPass(test_expect([NSString class]).toNot.equal([NSArray class]));
+  assertFail(test_expect([NSString class]).toNot.equal([NSString class]), @"expected: not NSString, got: NSString");
 }
 
 - (void)test_toEqual_BOOL {
-  assertPass(test_expect(NO).toEqual(NO));
-  assertFail(test_expect(NO).toEqual(YES), @"expected: 1, got: 0");
+  assertPass(test_expect(NO).equal(NO));
+  assertFail(test_expect(NO).equal(YES), @"expected: 1, got: 0");
 }
 
 - (void)test_Not_toEqual_BOOL {
-  assertPass(test_expect(NO).Not.toEqual(YES));
-  assertFail(test_expect(NO).Not.toEqual(NO), @"expected: not 0, got: 0");
+  assertPass(test_expect(NO).toNot.equal(YES));
+  assertFail(test_expect(NO).toNot.equal(NO), @"expected: not 0, got: 0");
 }
 
 - (void)test_toEqual_char {
-  assertPass(test_expect((char)10).toEqual((char)10));
-  assertFail(test_expect((char)10).toEqual((char)20), @"expected: 20, got: 10");
+  assertPass(test_expect((char)10).equal((char)10));
+  assertFail(test_expect((char)10).equal((char)20), @"expected: 20, got: 10");
 }
 
 - (void)test_Not_toEqual_char {
-  assertPass(test_expect((char)10).Not.toEqual((char)20));
-  assertFail(test_expect((char)10).Not.toEqual((char)10), @"expected: not 10, got: 10");
+  assertPass(test_expect((char)10).toNot.equal((char)20));
+  assertFail(test_expect((char)10).toNot.equal((char)10), @"expected: not 10, got: 10");
 }
 
 - (void)test_toEqual_int {
-  assertPass(test_expect((int)0).toEqual((int)0));
-  assertFail(test_expect((int)0).toEqual((int)1), @"expected: 1, got: 0");
+  assertPass(test_expect((int)0).equal((int)0));
+  assertFail(test_expect((int)0).equal((int)1), @"expected: 1, got: 0");
 }
 
 - (void)test_Not_toEqual_int {
-  assertPass(test_expect((int)0).Not.toEqual((int)1));
-  assertFail(test_expect((int)0).Not.toEqual((int)0), @"expected: not 0, got: 0");
+  assertPass(test_expect((int)0).toNot.equal((int)1));
+  assertFail(test_expect((int)0).toNot.equal((int)0), @"expected: not 0, got: 0");
 }
 
 - (void)test_toEqual_int_char {
-  assertPass(test_expect((int)0).toEqual((char)0));
-  assertFail(test_expect((int)0).toEqual((char)1), @"expected: 1, got: 0");
+  assertPass(test_expect((int)0).equal((char)0));
+  assertFail(test_expect((int)0).equal((char)1), @"expected: 1, got: 0");
 }
 
 - (void)test_Not_toEqual_int_char {
-  assertPass(test_expect((int)0).Not.toEqual((char)1));
-  assertFail(test_expect((int)0).Not.toEqual((char)0), @"expected: not 0, got: 0");
+  assertPass(test_expect((int)0).toNot.equal((char)1));
+  assertFail(test_expect((int)0).toNot.equal((char)0), @"expected: not 0, got: 0");
 }
 
 - (void)test_toEqual_int_unsigned_int {
-  assertPass(test_expect((int)0).toEqual((unsigned int)0));
-  assertFail(test_expect((int)0).toEqual((unsigned int)1), @"expected: 1, got: 0");
+  assertPass(test_expect((int)0).equal((unsigned int)0));
+  assertFail(test_expect((int)0).equal((unsigned int)1), @"expected: 1, got: 0");
 }
 
 - (void)test_Not_toEqual_int_unsigned_int {
-  assertPass(test_expect((int)0).Not.toEqual((unsigned int)1));
-  assertFail(test_expect((int)0).Not.toEqual((unsigned int)0), @"expected: not 0, got: 0");
+  assertPass(test_expect((int)0).toNot.equal((unsigned int)1));
+  assertFail(test_expect((int)0).toNot.equal((unsigned int)0), @"expected: not 0, got: 0");
 }
 
 - (void)test_toEqual_int_long_long {
-  assertPass(test_expect((int)0).toEqual(0ll));
-  assertFail(test_expect((int)0).toEqual(1ll), @"expected: 1, got: 0");
+  assertPass(test_expect((int)0).equal(0ll));
+  assertFail(test_expect((int)0).equal(1ll), @"expected: 1, got: 0");
 }
 
 - (void)test_Not_toEqual_int_long_long {
-  assertPass(test_expect((int)0).Not.toEqual(1ll));
-  assertFail(test_expect((int)0).Not.toEqual(0ll), @"expected: not 0, got: 0");
+  assertPass(test_expect((int)0).toNot.equal(1ll));
+  assertFail(test_expect((int)0).toNot.equal(0ll), @"expected: not 0, got: 0");
 }
 
 - (void)test_toEqual_float {
-  assertPass(test_expect(0.1f).toEqual(0.1f));
-  assertFail(test_expect(0.1f).toEqual(0.2f), @"expected: 0.2, got: 0.1");
+  assertPass(test_expect(0.1f).equal(0.1f));
+  assertFail(test_expect(0.1f).equal(0.2f), @"expected: 0.2, got: 0.1");
 }
 
 - (void)test_Not_toEqual_float {
-  assertPass(test_expect(0.1f).Not.toEqual(0.2f));
-  assertFail(test_expect(0.1f).Not.toEqual(0.1f), @"expected: not 0.1, got: 0.1");
+  assertPass(test_expect(0.1f).toNot.equal(0.2f));
+  assertFail(test_expect(0.1f).toNot.equal(0.1f), @"expected: not 0.1, got: 0.1");
 }
 
 - (void)test_toEqual_double {
-  assertPass(test_expect(0.1).toEqual(0.1));
-  assertFail(test_expect(0.1).toEqual(0.2), @"expected: 0.2, got: 0.1");
+  assertPass(test_expect(0.1).equal(0.1));
+  assertFail(test_expect(0.1).equal(0.2), @"expected: 0.2, got: 0.1");
 }
 
 - (void)test_Not_toEqual_double {
-  assertPass(test_expect(0.1).Not.toEqual(0.2));
-  assertFail(test_expect(0.1).Not.toEqual(0.1), @"expected: not 0.1, got: 0.1");
+  assertPass(test_expect(0.1).toNot.equal(0.2));
+  assertFail(test_expect(0.1).toNot.equal(0.1), @"expected: not 0.1, got: 0.1");
 }
 
 - (void)test_toEqual_float_double {
-  assertPass(test_expect(0.1f).toEqual(0.1));
-  assertFail(test_expect(0.1f).toEqual(0.2), @"expected: 0.2, got: 0.1");
+  assertPass(test_expect(0.1f).equal(0.1));
+  assertFail(test_expect(0.1f).equal(0.2), @"expected: 0.2, got: 0.1");
 }
 
 - (void)test_Not_toEqual_float_double {
-  assertPass(test_expect(0.1f).Not.toEqual(0.2));
-  assertFail(test_expect(0.1f).Not.toEqual(0.1), @"expected: not 0.1, got: 0.1");
+  assertPass(test_expect(0.1f).toNot.equal(0.2));
+  assertFail(test_expect(0.1f).toNot.equal(0.1), @"expected: not 0.1, got: 0.1");
 }
 
 - (void)test_toEqual_pointer {
   int num = 1, num2 = 1;
   int *a = &num, *b = &num2;
-  assertPass(test_expect(a).toEqual(&num));
-  assertPass(test_expect(a).Not.toEqual(b));
+  assertPass(test_expect(a).equal(&num));
+  assertPass(test_expect(a).toNot.equal(b));
 }
 
 - (void)test_toEqual_nullPointer {
   int *nullPointer = NULL;
-  assertPass(test_expect(nullPointer).toEqual(NULL));
+  assertPass(test_expect(nullPointer).equal(NULL));
 }
 
 - (void)test_toEqual_block {
   void (^block)() = ^{};
   void (^block2)() = ^{};
-  assertPass(test_expect(block).toEqual(block));
-  assertPass(test_expect(block).Not.toEqual(block2));
+  assertPass(test_expect(block).equal(block));
+  assertPass(test_expect(block).toNot.equal(block2));
 }
 
 typedef struct SomeFloatPair {
@@ -179,7 +179,7 @@ typedef struct SomeFloatPair {
 - (void)test_toEqual_SomeFloatPair {
     SomeFloatPair a = {1.0f, 2.0f};
     SomeFloatPair b = {1.0f, 2.0f};
-    assertPass(test_expect(a).toEqual(b));
+    assertPass(test_expect(a).equal(b));
 }
 
 typedef struct SomeFloatQuad {
@@ -192,7 +192,7 @@ typedef struct SomeFloatQuad {
 - (void)test_toEqual_SomeFloatQuad {
     SomeFloatQuad a = {1.0f, 2.0f, 3.0f, 4.0f};
     SomeFloatQuad b = {1.0f, 2.0f, 3.0f, 4.0f};
-    assertPass(test_expect(a).toEqual(b));
+    assertPass(test_expect(a).equal(b));
 }
 
 typedef struct SomeDoublePair {
@@ -203,7 +203,7 @@ typedef struct SomeDoublePair {
 - (void)test_toEqual_SomeDoublePair {
     SomeDoublePair a = {1.0, 2.0};
     SomeDoublePair b = {1.0, 2.0};
-    assertPass(test_expect(a).toEqual(b));
+    assertPass(test_expect(a).equal(b));
 }
 
 typedef struct SomeDoubleQuad {
@@ -216,7 +216,7 @@ typedef struct SomeDoubleQuad {
 - (void)test_toEqual_SomeDoubleQuad {
     SomeDoubleQuad a = {1.0, 2.0, 3.0, 4.0};
     SomeDoubleQuad b = {1.0, 2.0, 3.0, 4.0};
-    assertPass(test_expect(a).toEqual(b));
+    assertPass(test_expect(a).equal(b));
 }
 
 typedef struct SomeDoublePairPair {
@@ -227,7 +227,7 @@ typedef struct SomeDoublePairPair {
 - (void)test_toEqual_SomeDoublePairPair {
     SomeDoublePairPair a = {{1.0, 2.0}, {3.0, 4.0}};
     SomeDoublePairPair b = {{1.0, 2.0}, {3.0, 4.0}};
-    assertPass(test_expect(a).toEqual(b));
+    assertPass(test_expect(a).equal(b));
 }
 
 typedef struct SomeFloatPairPair {
@@ -238,7 +238,7 @@ typedef struct SomeFloatPairPair {
 - (void)test_toEqual_SomeFloatPairPair {
     SomeFloatPairPair a = {{1.0f, 2.0f}, {3.0f, 4.0f}};
     SomeFloatPairPair b = {{1.0f, 2.0f}, {3.0f, 4.0f}};
-    assertPass(test_expect(a).toEqual(b));
+    assertPass(test_expect(a).equal(b));
 }
 
 @end

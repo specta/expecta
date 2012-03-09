@@ -1,6 +1,6 @@
-#import "EXPMatchers+toContain.h"
+#import "EXPMatchers+contain.h"
 
-EXPMatcherImplementationBegin(_toContain, (id expected)) {
+EXPMatcherImplementationBegin(_contain, (id expected)) {
   BOOL actualIsCompatible = [actual isKindOfClass:[NSString class]] || [actual isKindOfClass:[NSArray class]];
   BOOL expectedIsNil = (expected == nil);
 

@@ -1,6 +1,6 @@
-#import "EXPMatchers+toBeInstanceOf.h"
+#import "EXPMatchers+beKindOf.h"
 
-EXPMatcherImplementationBegin(toBeInstanceOf, (Class expected)) {
+EXPMatcherImplementationBegin(beKindOf, (Class expected)) {
   BOOL actualIsNil = (actual == nil);
   BOOL expectedIsNil = (expected == nil);
 
@@ -9,19 +9,19 @@ EXPMatcherImplementationBegin(toBeInstanceOf, (Class expected)) {
   });
 
   match(^BOOL{
-    return [actual isMemberOfClass:expected];
+    return [actual isKindOfClass:expected];
   });
 
   failureMessageForTo(^NSString *{
     if(actualIsNil) return @"the actual value is nil/null";
     if(expectedIsNil) return @"the expected value is nil/null";
-    return [NSString stringWithFormat:@"expected: an instance of %@, got: an instance of %@", [expected class], [actual class]];
+    return [NSString stringWithFormat:@"expected: a kind of %@, got: an instance of %@, which is not a kind of %@", [expected class], [actual class], [expected class]];
   });
 
   failureMessageForNotTo(^NSString *{
     if(actualIsNil) return @"the actual value is nil/null";
     if(expectedIsNil) return @"the expected value is nil/null";
-    return [NSString stringWithFormat:@"expected: not an instance of %@, got: an instance of %@", [expected class], [actual class]];
+    return [NSString stringWithFormat:@"expected: not a kind of %@, got: an instance of %@, which is a kind of %@", [expected class], [actual class], [expected class]];
   });
 }
 EXPMatcherImplementationEnd

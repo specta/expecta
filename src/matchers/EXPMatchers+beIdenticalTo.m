@@ -1,7 +1,7 @@
-#import "EXPMatchers+toEqual.h"
+#import "EXPMatchers+equal.h"
 #import "EXPMatcherHelpers.h"
 
-EXPMatcherImplementationBegin(toBeIdenticalTo, (void *expected)) {
+EXPMatcherImplementationBegin(beIdenticalTo, (void *expected)) {
   match(^BOOL{
     if(actual == expected) {
       return YES;

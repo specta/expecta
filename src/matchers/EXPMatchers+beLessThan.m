@@ -1,7 +1,7 @@
-#import "EXPMatchers+toBeLessThan.h"
+#import "EXPMatchers+beLessThan.h"
 #import "EXPMatcherHelpers.h"
 
-EXPMatcherImplementationBegin(_toBeLessThan, (id expected)) {
+EXPMatcherImplementationBegin(_beLessThan, (id expected)) {
     match(^BOOL{
         if ([actual respondsToSelector:@selector(compare:)]) {
             return [actual compare:expected] == NSOrderedAscending;

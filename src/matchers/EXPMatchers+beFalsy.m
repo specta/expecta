@@ -1,7 +1,7 @@
-#import "EXPMatchers+toBeFalsy.h"
+#import "EXPMatchers+beFalsy.h"
 #import "EXPMatcherHelpers.h"
 
-EXPMatcherImplementationBegin(toBeFalsy, (void)) {
+EXPMatcherImplementationBegin(beFalsy, (void)) {
   match(^BOOL{
     if([actual isKindOfClass:[NSNumber class]]) {
       return ![(NSNumber *)actual boolValue];

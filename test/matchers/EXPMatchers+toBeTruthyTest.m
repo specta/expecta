@@ -1,44 +1,44 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_toBeTruthyTest : SenTestCase {
+@interface EXPMatchers_beTruthyTest : SenTestCase {
   int *nullPointer;
 }
 @end
 
-@implementation EXPMatchers_toBeTruthyTest
+@implementation EXPMatchers_beTruthyTest
 
 - (void)setUp {
   nullPointer = NULL;
 }
 
-- (void)test_toBeTruthy {
-  assertPass(test_expect(YES).toBeTruthy());
-  assertPass(test_expect(TRUE).toBeTruthy());
-  assertPass(test_expect(1).toBeTruthy());
-  assertPass(test_expect(123).toBeTruthy());
-  assertPass(test_expect(-123).toBeTruthy());
-  assertPass(test_expect(0.1).toBeTruthy());
-  assertPass(test_expect(@"hello").toBeTruthy());
-  assertFail(test_expect(NO).toBeTruthy(), @"expected: a truthy value, got: 0, which is falsy");
-  assertFail(test_expect(FALSE).toBeTruthy(), @"expected: a truthy value, got: 0, which is falsy");
-  assertFail(test_expect(0).toBeTruthy(), @"expected: a truthy value, got: 0, which is falsy");
-  assertFail(test_expect(nil).toBeTruthy(), @"expected: a truthy value, got: nil/null, which is falsy");
-  assertFail(test_expect(nullPointer).toBeTruthy(), @"expected: a truthy value, got: nil/null, which is falsy");
+- (void)test_beTruthy {
+  assertPass(test_expect(YES).beTruthy());
+  assertPass(test_expect(TRUE).beTruthy());
+  assertPass(test_expect(1).beTruthy());
+  assertPass(test_expect(123).beTruthy());
+  assertPass(test_expect(-123).beTruthy());
+  assertPass(test_expect(0.1).beTruthy());
+  assertPass(test_expect(@"hello").beTruthy());
+  assertFail(test_expect(NO).beTruthy(), @"expected: a truthy value, got: 0, which is falsy");
+  assertFail(test_expect(FALSE).beTruthy(), @"expected: a truthy value, got: 0, which is falsy");
+  assertFail(test_expect(0).beTruthy(), @"expected: a truthy value, got: 0, which is falsy");
+  assertFail(test_expect(nil).beTruthy(), @"expected: a truthy value, got: nil/null, which is falsy");
+  assertFail(test_expect(nullPointer).beTruthy(), @"expected: a truthy value, got: nil/null, which is falsy");
 }
 
-- (void)test_Not_toBeTruthy {
-  assertPass(test_expect(NO).Not.toBeTruthy());
-  assertPass(test_expect(FALSE).Not.toBeTruthy());
-  assertPass(test_expect(0).Not.toBeTruthy());
-  assertPass(test_expect(nil).Not.toBeTruthy());
-  assertPass(test_expect(nullPointer).Not.toBeTruthy());
-  assertFail(test_expect(YES).Not.toBeTruthy(), @"expected: a non-truthy value, got: 1, which is truthy");
-  assertFail(test_expect(TRUE).Not.toBeTruthy(), @"expected: a non-truthy value, got: 1, which is truthy");
-  assertFail(test_expect(1).Not.toBeTruthy(), @"expected: a non-truthy value, got: 1, which is truthy");
-  assertFail(test_expect(123).Not.toBeTruthy(), @"expected: a non-truthy value, got: 123, which is truthy");
-  assertFail(test_expect(-123).Not.toBeTruthy(), @"expected: a non-truthy value, got: -123, which is truthy");
-  assertFail(test_expect(0.1).Not.toBeTruthy(), @"expected: a non-truthy value, got: 0.1, which is truthy");
-  assertFail(test_expect(@"hello").Not.toBeTruthy(), @"expected: a non-truthy value, got: hello, which is truthy");
+- (void)test_Not_beTruthy {
+  assertPass(test_expect(NO).toNot.beTruthy());
+  assertPass(test_expect(FALSE).toNot.beTruthy());
+  assertPass(test_expect(0).toNot.beTruthy());
+  assertPass(test_expect(nil).toNot.beTruthy());
+  assertPass(test_expect(nullPointer).toNot.beTruthy());
+  assertFail(test_expect(YES).toNot.beTruthy(), @"expected: a non-truthy value, got: 1, which is truthy");
+  assertFail(test_expect(TRUE).toNot.beTruthy(), @"expected: a non-truthy value, got: 1, which is truthy");
+  assertFail(test_expect(1).toNot.beTruthy(), @"expected: a non-truthy value, got: 1, which is truthy");
+  assertFail(test_expect(123).toNot.beTruthy(), @"expected: a non-truthy value, got: 123, which is truthy");
+  assertFail(test_expect(-123).toNot.beTruthy(), @"expected: a non-truthy value, got: -123, which is truthy");
+  assertFail(test_expect(0.1).toNot.beTruthy(), @"expected: a non-truthy value, got: 0.1, which is truthy");
+  assertFail(test_expect(@"hello").toNot.beTruthy(), @"expected: a non-truthy value, got: hello, which is truthy");
 }
 
 @end

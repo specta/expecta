@@ -1,13 +1,13 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_toBeInstanceOfTest : SenTestCase {
+@interface EXPMatchers_beInstanceOfTest : SenTestCase {
   Foo *foo;
   Bar *bar;
   id baz;
 }
 @end
 
-@implementation EXPMatchers_toBeInstanceOfTest
+@implementation EXPMatchers_beInstanceOfTest
 
 - (void)setUp {
   foo = [[Foo new] autorelease];
@@ -15,36 +15,36 @@
   baz = foo;
 }
 
-- (void)test_toBeInstanceOf {
-  assertPass(test_expect(foo).toBeInstanceOf([Foo class]));
-  assertPass(test_expect(bar).toBeInstanceOf([Bar class]));
-  assertFail(test_expect(nil).toBeInstanceOf([Foo class]), @"the actual value is nil/null");
-  assertFail(test_expect(foo).toBeInstanceOf(nil), @"the expected value is nil/null");
-  assertFail(test_expect(foo).toBeInstanceOf([Bar class]), @"expected: an instance of Bar, got: an instance of Foo");
-  assertFail(test_expect(bar).toBeInstanceOf([Foo class]), @"expected: an instance of Foo, got: an instance of Bar");
-  assertPass(test_expect(baz).toBeInstanceOf([Foo class]));
+- (void)test_beInstanceOf {
+  assertPass(test_expect(foo).beInstanceOf([Foo class]));
+  assertPass(test_expect(bar).beInstanceOf([Bar class]));
+  assertFail(test_expect(nil).beInstanceOf([Foo class]), @"the actual value is nil/null");
+  assertFail(test_expect(foo).beInstanceOf(nil), @"the expected value is nil/null");
+  assertFail(test_expect(foo).beInstanceOf([Bar class]), @"expected: an instance of Bar, got: an instance of Foo");
+  assertFail(test_expect(bar).beInstanceOf([Foo class]), @"expected: an instance of Foo, got: an instance of Bar");
+  assertPass(test_expect(baz).beInstanceOf([Foo class]));
 }
 
-- (void)test_Not_toBeInstanceOf {
-  assertPass(test_expect(foo).Not.toBeInstanceOf([Bar class]));
-  assertPass(test_expect(bar).Not.toBeInstanceOf([Foo class]));
-  assertFail(test_expect(nil).Not.toBeInstanceOf([Foo class]), @"the actual value is nil/null");
-  assertFail(test_expect(foo).Not.toBeInstanceOf(nil), @"the expected value is nil/null");
-  assertFail(test_expect(foo).Not.toBeInstanceOf([Foo class]), @"expected: not an instance of Foo, got: an instance of Foo");
-  assertFail(test_expect(bar).Not.toBeInstanceOf([Bar class]), @"expected: not an instance of Bar, got: an instance of Bar");
-  assertPass(test_expect(baz).Not.toBeInstanceOf([Bar class]));
+- (void)test_Not_beInstanceOf {
+  assertPass(test_expect(foo).toNot.beInstanceOf([Bar class]));
+  assertPass(test_expect(bar).toNot.beInstanceOf([Foo class]));
+  assertFail(test_expect(nil).toNot.beInstanceOf([Foo class]), @"the actual value is nil/null");
+  assertFail(test_expect(foo).toNot.beInstanceOf(nil), @"the expected value is nil/null");
+  assertFail(test_expect(foo).toNot.beInstanceOf([Foo class]), @"expected: not an instance of Foo, got: an instance of Foo");
+  assertFail(test_expect(bar).toNot.beInstanceOf([Bar class]), @"expected: not an instance of Bar, got: an instance of Bar");
+  assertPass(test_expect(baz).toNot.beInstanceOf([Bar class]));
 }
 
-- (void)test_toBeAnInstanceOf {
-  assertPass(test_expect(foo).toBeAnInstanceOf([Foo class]));
+- (void)test_beAnInstanceOf {
+  assertPass(test_expect(foo).beAnInstanceOf([Foo class]));
 }
 
-- (void)test_toBeMemberOf {
-  assertPass(test_expect(foo).toBeMemberOf([Foo class]));
+- (void)test_beMemberOf {
+  assertPass(test_expect(foo).beMemberOf([Foo class]));
 }
 
-- (void)test_toBeAMemberOf {
-  assertPass(test_expect(foo).toBeAMemberOf([Foo class]));
+- (void)test_beAMemberOf {
+  assertPass(test_expect(foo).beAMemberOf([Foo class]));
 }
 
 @end

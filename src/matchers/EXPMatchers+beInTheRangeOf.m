@@ -1,7 +1,7 @@
-#import "EXPMatchers+toBeInTheRangeOf.h"
+#import "EXPMatchers+beInTheRangeOf.h"
 #import "EXPMatcherHelpers.h"
 
-EXPMatcherImplementationBegin(_toBeInTheRangeOf, (id expectedLowerBound, id expectedUpperBound)) {
+EXPMatcherImplementationBegin(_beInTheRangeOf, (id expectedLowerBound, id expectedUpperBound)) {
     match(^BOOL{
         if ([actual respondsToSelector:@selector(compare:)]) {
             NSComparisonResult compareLowerBound = [expectedLowerBound compare: actual];

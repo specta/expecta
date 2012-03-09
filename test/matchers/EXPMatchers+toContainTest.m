@@ -15,29 +15,29 @@
 }
 
 - (void)test_toContain {
-  assertPass(test_expect(array).toContain(@"foo"));
-  assertPass(test_expect(array).toContain(@"bar"));
-  assertPass(test_expect(array).toContain(@"baz"));
-  assertPass(test_expect(string).toContain(@"foo"));
-  assertPass(test_expect(string).toContain(@"bar"));
-  assertPass(test_expect(string).toContain(@"baz"));
-  assertFail(test_expect(array).toContain(@"qux"), @"expected (foo, bar, baz) to contain qux");
-  assertFail(test_expect(string).toContain(@"qux"), @"expected foo|bar,baz to contain qux");
-  assertFail(test_expect(string).toContain(nil), @"the expected value is nil/null");
-  assertFail(test_expect([NSDictionary dictionary]).toContain(@"foo"), @"{} is not an instance of NSString or NSArray");
-  assertPass(test_expect(array2).toContain([NSString class]));
+  assertPass(test_expect(array).contain(@"foo"));
+  assertPass(test_expect(array).contain(@"bar"));
+  assertPass(test_expect(array).contain(@"baz"));
+  assertPass(test_expect(string).contain(@"foo"));
+  assertPass(test_expect(string).contain(@"bar"));
+  assertPass(test_expect(string).contain(@"baz"));
+  assertFail(test_expect(array).contain(@"qux"), @"expected (foo, bar, baz) to contain qux");
+  assertFail(test_expect(string).contain(@"qux"), @"expected foo|bar,baz to contain qux");
+  assertFail(test_expect(string).contain(nil), @"the expected value is nil/null");
+  assertFail(test_expect([NSDictionary dictionary]).contain(@"foo"), @"{} is not an instance of NSString or NSArray");
+  assertPass(test_expect(array2).contain([NSString class]));
 }
 
 - (void)test_Not_toContain {
-  assertPass(test_expect(array).Not.toContain(@"qux"));
-  assertPass(test_expect(array).Not.toContain(@"quux"));
-  assertPass(test_expect(string).Not.toContain(@"qux"));
-  assertPass(test_expect(string).Not.toContain(@"quux"));
-  assertFail(test_expect(array).Not.toContain(@"foo"), @"expected (foo, bar, baz) not to contain foo");
-  assertFail(test_expect(string).Not.toContain(@"baz"), @"expected foo|bar,baz not to contain baz");
-  assertFail(test_expect(string).Not.toContain(nil), @"the expected value is nil/null");
-  assertFail(test_expect([NSDictionary dictionary]).Not.toContain(@"foo"), @"{} is not an instance of NSString or NSArray");
-  assertPass(test_expect(array2).Not.toContain([NSSet class]));
+  assertPass(test_expect(array).toNot.contain(@"qux"));
+  assertPass(test_expect(array).toNot.contain(@"quux"));
+  assertPass(test_expect(string).toNot.contain(@"qux"));
+  assertPass(test_expect(string).toNot.contain(@"quux"));
+  assertFail(test_expect(array).toNot.contain(@"foo"), @"expected (foo, bar, baz) not to contain foo");
+  assertFail(test_expect(string).toNot.contain(@"baz"), @"expected foo|bar,baz not to contain baz");
+  assertFail(test_expect(string).toNot.contain(nil), @"the expected value is nil/null");
+  assertFail(test_expect([NSDictionary dictionary]).toNot.contain(@"foo"), @"{} is not an instance of NSString or NSArray");
+  assertPass(test_expect(array2).toNot.contain([NSSet class]));
 }
 
 @end

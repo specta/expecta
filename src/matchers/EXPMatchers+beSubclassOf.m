@@ -1,8 +1,8 @@
-#import "EXPMatchers+toBeSubclassOf.h"
+#import "EXPMatchers+beSubclassOf.h"
 #import "NSValue+Expecta.h"
 #import <objc/runtime.h>
 
-EXPMatcherImplementationBegin(toBeSubclassOf, (Class expected)) {
+EXPMatcherImplementationBegin(beSubclassOf, (Class expected)) {
   __block BOOL actualIsClass = YES;
 
   prerequisite(^BOOL {
