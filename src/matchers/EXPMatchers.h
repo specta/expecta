@@ -12,3 +12,4 @@
 #import "EXPMatchers+beLessThan.h"
 #import "EXPMatchers+beLessThanOrEqualTo.h"
 #import "EXPMatchers+beInTheRangeOf.h"
+#import "EXPMatchers+beCloseTo.h"
