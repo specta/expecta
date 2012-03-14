@@ -1,12 +1,12 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_toContainTest : SenTestCase {
+@interface EXPMatchers_containTest : SenTestCase {
   NSArray *array, *array2;
   NSString *string;
 }
 @end
 
-@implementation EXPMatchers_toContainTest
+@implementation EXPMatchers_containTest
 
 - (void)setUp {
   array = [NSArray arrayWithObjects:@"foo", @"bar", @"baz", nil];
@@ -14,7 +14,7 @@
   string = @"foo|bar,baz";
 }
 
-- (void)test_toContain {
+- (void)test_contain {
   assertPass(test_expect(array).contain(@"foo"));
   assertPass(test_expect(array).contain(@"bar"));
   assertPass(test_expect(array).contain(@"baz"));
@@ -28,7 +28,7 @@
   assertPass(test_expect(array2).contain([NSString class]));
 }
 
-- (void)test_Not_toContain {
+- (void)test_toNot_contain {
   assertPass(test_expect(array).toNot.contain(@"qux"));
   assertPass(test_expect(array).toNot.contain(@"quux"));
   assertPass(test_expect(string).toNot.contain(@"qux"));

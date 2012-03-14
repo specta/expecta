@@ -28,7 +28,7 @@
   assertPass(test_expect(qux).beKindOf([Foo class]));
 }
 
-- (void)test_Not_beKindOf {
+- (void)test_toNot_beKindOf {
   assertPass(test_expect(foo).toNot.beKindOf([Bar class]));
   assertPass(test_expect(bar).toNot.beKindOf([Baz class]));
   assertPass(test_expect(baz).toNot.beKindOf([Foo class]));

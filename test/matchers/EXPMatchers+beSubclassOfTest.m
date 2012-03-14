@@ -14,7 +14,7 @@
   assertFail(test_expect(@"foo").beSubclassOf([Baz class]), @"the actual value is not a Class");
 }
 
-- (void)test_Not_beSubclassOf {
+- (void)test_toNot_beSubclassOf {
   assertPass(test_expect([Foo class]).toNot.beSubclassOf([Bar class]));
   assertPass(test_expect([Bar class]).toNot.beSubclassOf([Baz class]));
   assertPass(test_expect([Baz class]).toNot.beSubclassOf([Foo class]));

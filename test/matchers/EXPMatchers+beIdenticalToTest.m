@@ -23,7 +23,7 @@
   assertFail(test_expect(nil).beIdenticalTo(foo), ([NSString stringWithFormat:@"expected: <%p>, got: <0x0>", foo]));
 }
 
-- (void)test_Not_be {
+- (void)test_toNot_be {
   assertPass(test_expect(foo).toNot.beIdenticalTo(foo2));
   assertPass(test_expect(nil).toNot.beIdenticalTo(foo));
   assertFail(test_expect(nil).toNot.beIdenticalTo(nil), @"expected: not <0x0>, got: <0x0>");

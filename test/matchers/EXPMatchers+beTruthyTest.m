@@ -26,7 +26,7 @@
   assertFail(test_expect(nullPointer).beTruthy(), @"expected: a truthy value, got: nil/null, which is falsy");
 }
 
-- (void)test_Not_beTruthy {
+- (void)test_toNot_beTruthy {
   assertPass(test_expect(NO).toNot.beTruthy());
   assertPass(test_expect(FALSE).toNot.beTruthy());
   assertPass(test_expect(0).toNot.beTruthy());

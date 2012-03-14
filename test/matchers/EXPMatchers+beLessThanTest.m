@@ -20,7 +20,7 @@
     assertFail(test_expect([NSNumber numberWithInt:3]).beLessThan([NSNumber numberWithInt:2]), @"expected: 3 to be less than 2");
 }
 
-- (void)test_Not_beLessThan {
+- (void)test_toNot_beLessThan {
     assertPass(test_expect(3).toNot.beLessThan(2));
     assertPass(test_expect(3.8).toNot.beLessThan(3.2));
     assertPass(test_expect([NSNumber numberWithInt:3]).toNot.beLessThan([NSNumber numberWithInt:2]));

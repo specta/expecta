@@ -30,7 +30,7 @@
     assertPass(test_expect([NSNumber numberWithInt:5]).beInTheRangeOf(1.0, 10.0));
 }
 
-- (void)test_Not_beInTheRangeOf {
+- (void)test_toNot_beInTheRangeOf {
     assertPass(test_expect(0).toNot.beInTheRangeOf(1,10));
     assertPass(test_expect(11).toNot.beInTheRangeOf(1,10));
 

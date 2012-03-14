@@ -26,7 +26,7 @@
   assertFail(test_expect(@"hello").beFalsy(), @"expected: a falsy value, got: hello, which is truthy");
 }
 
-- (void)test_Not_beFalsy {
+- (void)test_toNot_beFalsy {
   assertPass(test_expect(YES).toNot.beFalsy());
   assertPass(test_expect(TRUE).toNot.beFalsy());
   assertPass(test_expect(1).toNot.beFalsy());

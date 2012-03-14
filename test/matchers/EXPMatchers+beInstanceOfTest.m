@@ -25,7 +25,7 @@
   assertPass(test_expect(baz).beInstanceOf([Foo class]));
 }
 
-- (void)test_Not_beInstanceOf {
+- (void)test_toNot_beInstanceOf {
   assertPass(test_expect(foo).toNot.beInstanceOf([Bar class]));
   assertPass(test_expect(bar).toNot.beInstanceOf([Foo class]));
   assertFail(test_expect(nil).toNot.beInstanceOf([Foo class]), @"the actual value is nil/null");
