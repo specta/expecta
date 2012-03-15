@@ -20,10 +20,10 @@ vs.
 **Expecta**
 
 ```objective-c
-expect(@"foo").equal@"foo");
-expect(foo).toNot.equal1);
-expect([bar isBar]).equalYES);
-expect(baz).equal3.14159);
+expect(@"foo").equal(@"foo");
+expect(foo).toNot.equal(1);
+expect([bar isBar]).to.equal(YES);
+expect(baz).to.equal(3.14159);
 ```
 
 ## SETUP
@@ -56,7 +56,7 @@ Expecta is framework-agnostic. It works well with OCUnit (SenTestingKit) and OCU
 
 ## BUILT-IN MATCHERS
 
->`expect(x).equaly);` compares objects or primitives x and y and passes if they are identical (==) or equivalent (isEqual:).
+>`expect(x).equal(y);` compares objects or primitives x and y and passes if they are identical (==) or equivalent (isEqual:).
 >
 >`expect(x).beIdenticalTo(y);` compares objects x and y and passes if they are identical and have the same memory address.
 >
@@ -83,20 +83,24 @@ Expecta is framework-agnostic. It works well with OCUnit (SenTestingKit) and OCU
 >`expect(x).beGreaterThanOrEqualTo(y);`
 >
 >`expect(x).beInTheRangeOf(y,z);`
+>
+>`expect(x).beCloseTo(y);`
 
 **More matchers are coming soon!**
 
 ## INVERTING MATCHERS
 
-Every matcher's criteria can be inverted by prepending `.Not`: (It is with a capital `N` because `not` is a keyword in C++.)
+Every matcher's criteria can be inverted by prepending `.toNot`:
 
->`expect(x).toNot.equaly);` compares objects or primitives x and y and passes if they are *not* equivalent.
+>`expect(x).toNot.equal(y);` compares objects or primitives x and y and passes if they are *not* equivalent.
 
 ## ASYNCHRONOUS TESTING
 
 Every matcher can be made to perform asynchronous testing by prepending `.isGoing` or `.isNotGoing`:
 
 >`expect(x).will.beNil();` passes if x becomes nil before the timeout.
+>
+>`expect(x).willNot.neNil();` passes if x becomes non-nil before the timeout.
 
 Default timeout is 1.0 second. This setting can be changed by calling `[Expecta setAsynchronousTestTimeout:x]`, where x is the desired timeout.
 
