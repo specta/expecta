@@ -7,9 +7,10 @@
 
 @dynamic
   actual,
-  Not,
-  isGoing,
-  isNotGoing;
+  to,
+  toNot,
+  will,
+  willNot;
 
 @synthesize
   actualBlock=_actualBlock,
@@ -54,18 +55,22 @@
 
 #pragma mark -
 
-- (EXPExpect *)Not {
+- (EXPExpect *)to {
+  return self;
+}
+
+- (EXPExpect *)toNot {
   self.negative = !self.negative;
   return self;
 }
 
-- (EXPExpect *)isGoing {
+- (EXPExpect *)will {
   self.asynchronous = YES;
   return self;
 }
 
-- (EXPExpect *)isNotGoing {
-  return self.isGoing.Not;
+- (EXPExpect *)willNot {
+  return self.will.toNot;
 }
 
 #pragma mark -
@@ -92,7 +97,8 @@
         NSDate *expiryDate = [NSDate dateWithTimeIntervalSinceNow:timeOut];
         while(1) {
           matchResult = _matchBlock();
-          if(matchResult || ([(NSDate *)[NSDate date] compare:expiryDate] == NSOrderedDescending)) {
+          failed = self.negative ? matchResult : !matchResult;
+          if(!failed || ([(NSDate *)[NSDate date] compare:expiryDate] == NSOrderedDescending)) {
             break;
           }
           [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.01]];

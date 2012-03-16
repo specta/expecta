@@ -26,9 +26,10 @@ typedef NSString *(^EXPStringBlock)();
 @property(nonatomic) BOOL negative;
 @property(nonatomic) BOOL asynchronous;
 
-@property(nonatomic, readonly) EXPExpect *Not;
-@property(nonatomic, readonly) EXPExpect *isGoing;
-@property(nonatomic, readonly) EXPExpect *isNotGoing;
+@property(nonatomic, readonly) EXPExpect *to;
+@property(nonatomic, readonly) EXPExpect *toNot;
+@property(nonatomic, readonly) EXPExpect *will;
+@property(nonatomic, readonly) EXPExpect *willNot;
 
 @property(nonatomic, copy) EXPBoolBlock prerequisiteBlock;
 @property(nonatomic, copy) EXPBoolBlock matchBlock;
