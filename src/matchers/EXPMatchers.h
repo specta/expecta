@@ -6,6 +6,7 @@
 #import "EXPMatchers+beTruthy.h"
 #import "EXPMatchers+beFalsy.h"
 #import "EXPMatchers+contain.h"
+#import "EXPMatchers+haveCountOf.h"
 #import "EXPMatchers+beIdenticalTo.h"
 #import "EXPMatchers+beGreaterThan.h"
 #import "EXPMatchers+beGreaterThanOrEqualTo.h"

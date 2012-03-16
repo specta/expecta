@@ -12,7 +12,7 @@ EXPMatcherImplementationBegin(_contain, (id expected)) {
     if(actualIsCompatible) {
       if([actual isKindOfClass:[NSString class]]) {
         return [(NSString *)actual rangeOfString:[expected description]].location != NSNotFound;
-      } else if([actual conformsToProtocol:@protocol(NSFastEnumeration)]) {
+      } else {
 		for (id object in actual) {
           if ([object isEqual:expected]) {
             return YES;
