@@ -20,10 +20,10 @@ vs.
 **Expecta**
 
 ```objective-c
-expect(@"foo").toEqual(@"foo");
-expect(foo).Not.toEqual(1);
-expect([bar isBar]).toEqual(YES);
-expect(baz).toEqual(3.14159);
+expect(@"foo").equal(@"foo");
+expect(foo).toNot.equal(1);
+expect([bar isBar]).to.equal(YES);
+expect(baz).to.equal(3.14159);
 ```
 
 ## SETUP
@@ -56,73 +56,77 @@ Expecta is framework-agnostic. It works well with OCUnit (SenTestingKit) and OCU
 
 ## BUILT-IN MATCHERS
 
->`expect(x).toEqual(y);` compares objects or primitives x and y and passes if they are identical (==) or equivalent (isEqual:).
+>`expect(x).equal(y);` compares objects or primitives x and y and passes if they are identical (==) or equivalent (isEqual:).
 >
->`expect(x).toBeIdenticalTo(y);` compares objects x and y and passes if they are identical and have the same memory address.
+>`expect(x).beIdenticalTo(y);` compares objects x and y and passes if they are identical and have the same memory address.
 >
->`expect(x).toBeNil();` passes if x is nil.
+>`expect(x).beNil();` passes if x is nil.
 >
->`expect(x).toBeTruthy();` passes if x evaluates to true (non-zero).
+>`expect(x).beTruthy();` passes if x evaluates to true (non-zero).
 >
->`expect(x).toBeFalsy();` passes if x evaluates to false (zero).
+>`expect(x).beFalsy();` passes if x evaluates to false (zero).
 >
->`expect(x).toContain(y);` passes if an instance of NSArray or NSString x contains y.
+>`expect(x).contain(y);` passes if an instance of NSArray or NSString x contains y.
 >
->`expect(x).toBeInstanceOf([Foo class]);` passes if x is an instance of a class Foo.
+>`expect(x).beInstanceOf([Foo class]);` passes if x is an instance of a class Foo.
 >
->`expect(x).toBeKindOf([Foo class]);` passes if x is an instance of a class Foo or if x is an instance of any class that inherits from the class Foo.
+>`expect(x).beKindOf([Foo class]);` passes if x is an instance of a class Foo or if x is an instance of any class that inherits from the class Foo.
 >
->`expect([Foo class]).toBeSubclassOf([Bar class]);` passes if the class Foo is a subclass of the class Bar or if it is identical to the class Bar. Use toBeKindOf() for class clusters.
+>`expect([Foo class]).beSubclassOf([Bar class]);` passes if the class Foo is a subclass of the class Bar or if it is identical to the class Bar. Use beKindOf() for class clusters.
 >
->`expect(x).toBeLessThan(y);`
+>`expect(x).beLessThan(y);`
 >
->`expect(x).toBeLessThanOrEqualTo(y);`
+>`expect(x).beLessThanOrEqualTo(y);`
 >
->`expect(x).toBeGreaterThan(y);`
+>`expect(x).beGreaterThan(y);`
 >
->`expect(x).toBeGreaterThanOrEqualTo(y);`
+>`expect(x).beGreaterThanOrEqualTo(y);`
 >
->`expect(x).toBeInTheRangeOf(y,z);`
+>`expect(x).beInTheRangeOf(y,z);`
+>
+>`expect(x).beCloseTo(y);`
 
 **More matchers are coming soon!**
 
 ## INVERTING MATCHERS
 
-Every matcher's criteria can be inverted by prepending `.Not`: (It is with a capital `N` because `not` is a keyword in C++.)
+Every matcher's criteria can be inverted by prepending `.toNot`:
 
->`expect(x).Not.toEqual(y);` compares objects or primitives x and y and passes if they are *not* equivalent.
+>`expect(x).toNot.equal(y);` compares objects or primitives x and y and passes if they are *not* equivalent.
 
 ## ASYNCHRONOUS TESTING
 
 Every matcher can be made to perform asynchronous testing by prepending `.isGoing` or `.isNotGoing`:
 
->`expect(x).isGoing.toBeNil();` passes if x becomes nil before the timeout.
+>`expect(x).will.beNil();` passes if x becomes nil before the timeout.
+>
+>`expect(x).willNot.neNil();` passes if x becomes non-nil before the timeout.
 
 Default timeout is 1.0 second. This setting can be changed by calling `[Expecta setAsynchronousTestTimeout:x]`, where x is the desired timeout.
 
 ## WRITING NEW MATCHERS
 
-Writing a new matcher is easy with special macros provided by Expecta. Take a look at how `.toBeKindOf()` matcher is defined:
+Writing a new matcher is easy with special macros provided by Expecta. Take a look at how `.beKindOf()` matcher is defined:
 
-`EXPMatchers+toBeKindOf.h`
+`EXPMatchers+beKindOf.h`
 
 ```objective-c
 #import "Expecta.h"
 
-EXPMatcherInterface(toBeKindOf, (Class expected));
+EXPMatcherInterface(beKindOf, (Class expected));
 // 1st argument is the name of the matcher function
 // 2nd argument is the list of arguments that may be passed in the function call.
 // Multiple arguments are fine. (e.g. (int foo, float bar))
 
-#define toBeAKindOf toBeKindOf
+#define beAKindOf beKindOf
 ```
 
-`EXPMatchers+toBeKindOf.m`
+`EXPMatchers+beKindOf.m`
 
 ```objective-c
-#import "EXPMatchers+toBeKindOf.h"
+#import "EXPMatchers+beKindOf.h"
 
-EXPMatcherImplementationBegin(toBeKindOf, (Class expected)) {
+EXPMatcherImplementationBegin(beKindOf, (Class expected)) {
   BOOL actualIsNil = (actual == nil);
   BOOL expectedIsNil = (expected == nil);
 
@@ -157,6 +161,42 @@ EXPMatcherImplementationBegin(toBeKindOf, (Class expected)) {
   });
 }
 EXPMatcherImplementationEnd
+```
+
+## DYNAMIC PREDICATE MATCHERS
+
+It is possible to add predicate matchers by simply defining the matcher interface, with the matcher implementation being handled at runtime by delegating to the predicate method on your object.
+
+For instance, if you have the following class:
+
+```objc
+@interface LightSwitch : NSObject
+@property (nonatomic, assign, getter=isTurnedOn) BOOL turnedOn;
+@end
+
+@implementation LightSwitch
+@synthesize turnedOn;
+@end
+```
+
+The normal way to write an assertion that the switch is turned on would be:
+
+```objc
+expect([lightSwitch isTurnedOn]).to.beTruthy();
+```
+
+However, if we define a custom predicate matcher:
+
+```objc
+EXPMatcherInterface(isTurnedOn, (void));
+```
+
+(Note: we haven't defined the matcher implementation, just it's interface)
+
+You can now write your assertion as follows:
+
+```objc
+expect(lightSwitch).isTurnedOn();
 ```
 
 ## CONTRIBUTION
