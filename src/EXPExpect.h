@@ -31,3 +31,11 @@
 - (void)applyMatcher:(id<EXPMatcher>)matcher to:(NSObject **)actual;
 
 @end
+
+@interface EXPDynamicPredicateMatcher : NSObject <EXPMatcher> {
+  EXPExpect *_expectation;
+  SEL _selector;
+}
+- (id)initWithExpectation:(EXPExpect *)expectation selector:(SEL)selector;
+- (void (^)(void))dispatch;
+@end

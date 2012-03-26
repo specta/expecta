@@ -124,4 +124,64 @@ fileName=_fileName;
   self.negative = NO;
 }
 
+#pragma mark - Dynamic predicate dispatch
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
+{
+  if ([self.actual respondsToSelector:aSelector]) {
+    return [self.actual methodSignatureForSelector:aSelector];
+  }
+  return [super methodSignatureForSelector:aSelector];
+}
+
+- (void)forwardInvocation:(NSInvocation *)anInvocation
+{
+  if ([self.actual respondsToSelector:anInvocation.selector]) {
+    EXPDynamicPredicateMatcher *matcher = [[EXPDynamicPredicateMatcher alloc] initWithExpectation:self selector:anInvocation.selector];
+    [anInvocation setSelector:@selector(dispatch)];
+    [anInvocation invokeWithTarget:matcher];
+    [matcher release];
+  }
+  else {
+    [super forwardInvocation:anInvocation];
+  }
+}
+
+@end
+
+@implementation EXPDynamicPredicateMatcher
+
+- (id)initWithExpectation:(EXPExpect *)expectation selector:(SEL)selector
+{
+  if ((self = [super init])) {
+    _expectation = expectation;
+    _selector = selector;
+  }
+  return self;
+}
+
+- (BOOL)matches:(id)actual
+{
+  return (BOOL)[actual performSelector:_selector];
+}
+
+- (NSString *)failureMessageForTo:(id)actual
+{
+  return [NSString stringWithFormat:@"expected %@ to be true", NSStringFromSelector(_selector)];
+}
+
+- (NSString *)failureMessageForNotTo:(id)actual
+{
+  return [NSString stringWithFormat:@"expected %@ to be false", NSStringFromSelector(_selector)];
+}
+
+- (void (^)(void))dispatch
+{
+  __block id blockExpectation = _expectation;
+  
+  return [^{
+    [blockExpectation applyMatcher:self];
+  } copy];
+}
+
 @end
