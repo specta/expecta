@@ -2,7 +2,7 @@
 #import "NSObject+Expecta.h"
 #import "Expecta.h"
 #import "EXPUnsupportedObject.h"
-#import "EXPRuntimeMatcher.h"
+#import "EXPBlockDefinedMatcher.h"
 
 @implementation EXPExpect
 
@@ -69,7 +69,7 @@ fileName=_fileName;
 
 - (void)applyMatcher:(id<EXPMatcher>)matcher to:(NSObject **)actual {
   // temporarily cast to runtime matcher, just to get things working
-  EXPRuntimeMatcher *_matcher = (EXPRuntimeMatcher *)matcher;
+  EXPBlockDefinedMatcher *_matcher = (EXPBlockDefinedMatcher *)matcher;
   
   if([*actual isKindOfClass:[EXPUnsupportedObject class]]) {
     EXPFail(self.testCase, self.lineNumber, self.fileName,

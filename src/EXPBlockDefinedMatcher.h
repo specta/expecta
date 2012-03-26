@@ -10,7 +10,7 @@
 #import "EXPMatcher.h"
 #import "EXPDefines.h"
 
-@interface EXPRuntimeMatcher : NSObject <EXPMatcher>
+@interface EXPBlockDefinedMatcher : NSObject <EXPMatcher>
 
 @property(nonatomic, copy) EXPBoolBlock prerequisiteBlock;
 @property(nonatomic, copy) EXPBoolBlock matchBlock;

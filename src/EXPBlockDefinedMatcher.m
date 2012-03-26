@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Peter Jihoon Kim. All rights reserved.
 //
 
-#import "EXPRuntimeMatcher.h"
+#import "EXPBlockDefinedMatcher.h"
 
-@implementation EXPRuntimeMatcher
+@implementation EXPBlockDefinedMatcher
 
 @synthesize prerequisiteBlock;
 @synthesize matchBlock;
