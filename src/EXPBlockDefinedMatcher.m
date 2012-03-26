@@ -15,4 +15,36 @@
 @synthesize failureMessageForToBlock;
 @synthesize failureMessageForNotToBlock;
 
+- (BOOL)meetsPrerequesiteFor:(id)actual
+{
+  if (self.prerequisiteBlock) {
+    return self.prerequisiteBlock();
+  }
+  return YES;
+}
+
+- (BOOL)matches:(id)actual
+{
+  if (self.matchBlock) {
+    return self.matchBlock();
+  }
+  return YES;
+}
+
+- (NSString *)failureMessageForTo:(id)actual
+{
+  if (self.failureMessageForToBlock) {
+    return self.failureMessageForToBlock();
+  }
+  return nil;
+}
+
+- (NSString *)failureMessageForNotTo:(id)actual
+{
+  if (self.failureMessageForNotToBlock) {
+    return self.failureMessageForNotToBlock();
+  }
+  return nil;
+}
+
 @end

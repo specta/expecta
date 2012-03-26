@@ -2,6 +2,7 @@
 #import "NSObject+Expecta.h"
 #import "Expecta.h"
 #import "EXPUnsupportedObject.h"
+#import "EXPMatcher.h"
 #import "EXPBlockDefinedMatcher.h"
 
 @implementation EXPExpect
@@ -68,15 +69,12 @@ fileName=_fileName;
 }
 
 - (void)applyMatcher:(id<EXPMatcher>)matcher to:(NSObject **)actual {
-  // temporarily cast to runtime matcher, just to get things working
-  EXPBlockDefinedMatcher *_matcher = (EXPBlockDefinedMatcher *)matcher;
-  
   if([*actual isKindOfClass:[EXPUnsupportedObject class]]) {
     EXPFail(self.testCase, self.lineNumber, self.fileName,
             [NSString stringWithFormat:@"expecting a %@ is not supported", ((EXPUnsupportedObject *)*actual).type]);
-  } else if(_matcher.matchBlock) {   
+  } else {  
     BOOL failed;
-    if(_matcher.prerequisiteBlock && !_matcher.prerequisiteBlock()) {
+    if(![matcher meetsPrerequesiteFor:*actual]) {
       failed = YES;
     } else {
       BOOL matchResult;
@@ -84,7 +82,7 @@ fileName=_fileName;
         NSTimeInterval timeOut = [Expecta asynchronousTestTimeout];
         NSDate *expiryDate = [NSDate dateWithTimeIntervalSinceNow:timeOut];
         while(1) {
-          matchResult = _matcher.matchBlock();
+          matchResult = [matcher matches:*actual];
           failed = self.negative ? matchResult : !matchResult;
           if(!failed || ([(NSDate *)[NSDate date] compare:expiryDate] == NSOrderedDescending)) {
             break;
@@ -93,21 +91,22 @@ fileName=_fileName;
           *actual = self.actual;
         }
       } else {
-        matchResult = _matcher.matchBlock();
+        matchResult = [matcher matches:*actual];
       }
       failed = self.negative ? matchResult : !matchResult;
     }
     if(failed) {
-      NSString *message = @"Match Failed.";
+      NSString *message;
+      
       if(self.negative) {
-        if(_matcher.failureMessageForNotToBlock) {
-          message = _matcher.failureMessageForNotToBlock();
-        }
+        message = [matcher failureMessageForNotTo:*actual];
       } else {
-        if(_matcher.failureMessageForToBlock) {
-          message = _matcher.failureMessageForToBlock();
-        }
+        message = [matcher failureMessageForTo:*actual];
       }
+      if (message == nil) {
+        message = @"Match Failed.";
+      }
+      
       EXPFail(self.testCase, self.lineNumber, self.fileName, message);
     }
   }
