@@ -32,21 +32,6 @@
   return [_expected isEqual:actual];
 }
 
-- (BOOL)meetsPrerequesiteFor:(id)actual
-{
-  return YES;
-}
-
-- (NSString *)failureMessageForTo:(id)actual
-{
-  return [NSString stringWithFormat:@"expected: %@, got: %@", _expected, actual];
-}
-
-- (NSString *)failureMessageForNotTo:(id)actual
-{
-  return nil;
-}
-
 @end
 
 EXPMatcherInterface(_equalWithCustomMatcher, (id expected));
@@ -73,7 +58,7 @@ EXPMatcherInterface(_equalWithCustomMatcher, (id expected));
 - (void)test_CanUseCustomImplementationsOf_EXPMatcher
 {
   assertPass(test_expect(@"foo").equalWithCustomMatcher(@"foo"));
-  assertFail(test_expect(@"foo").equalWithCustomMatcher(@"bar"), @"expected: bar, got: foo");
+  assertFail(test_expect(@"foo").equalWithCustomMatcher(@"bar"), @"Match Failed.");
 }
 
 @end

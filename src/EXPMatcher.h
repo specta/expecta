@@ -10,8 +10,10 @@
 
 @protocol EXPMatcher <NSObject>
 
-- (BOOL)meetsPrerequesiteFor:(id)actual;
 - (BOOL)matches:(id)actual;
+
+@optional
+- (BOOL)meetsPrerequesiteFor:(id)actual;
 - (NSString *)failureMessageForTo:(id)actual;
 - (NSString *)failureMessageForNotTo:(id)actual;
 

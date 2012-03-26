@@ -80,7 +80,8 @@ fileName=_fileName;
             [NSString stringWithFormat:@"expecting a %@ is not supported", ((EXPUnsupportedObject *)*actual).type]);
   } else {  
     BOOL failed;
-    if(![matcher meetsPrerequesiteFor:*actual]) {
+    if([matcher respondsToSelector:@selector(meetsPrerequesiteFor:)] && 
+       ![matcher meetsPrerequesiteFor:*actual]) {
       failed = YES;
     } else {
       BOOL matchResult;
@@ -105,9 +106,13 @@ fileName=_fileName;
       NSString *message;
       
       if(self.negative) {
-        message = [matcher failureMessageForNotTo:*actual];
+        if ([matcher respondsToSelector:@selector(failureMessageForNotTo:)]) {
+          message = [matcher failureMessageForNotTo:*actual]; 
+        }
       } else {
-        message = [matcher failureMessageForTo:*actual];
+        if ([matcher respondsToSelector:@selector(failureMessageForTo:)]) {
+          message = [matcher failureMessageForTo:*actual];
+        }
       }
       if (message == nil) {
         message = @"Match Failed.";
