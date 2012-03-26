@@ -163,6 +163,42 @@ EXPMatcherImplementationBegin(beKindOf, (Class expected)) {
 EXPMatcherImplementationEnd
 ```
 
+## DYNAMIC PREDICATE MATCHERS
+
+It is possible to add predicate matchers by simply defining the matcher interface, with the matcher implementation being handled at runtime by delegating to the predicate method on your object.
+
+For instance, if you have the following class:
+
+```objc
+@interface LightSwitch : NSObject
+@property (nonatomic, assign, getter=isTurnedOn) BOOL turnedOn;
+@end
+
+@implementation LightSwitch
+@synthesize turnedOn;
+@end
+```
+
+The normal way to write an assertion that the switch is turned on would be:
+
+```objc
+expect([lightSwitch isTurnedOn]).to.beTruthy();
+```
+
+However, if we define a custom predicate matcher:
+
+```objc
+EXPMatcherInterface(isTurnedOn, (void));
+```
+
+(Note: we haven't defined the matcher implementation, just it's interface)
+
+You can now write your assertion as follows:
+
+```objc
+expect(lightSwitch).isTurnedOn();
+```
+
 ## CONTRIBUTION
 
 You can find the public Tracker project [here](https://www.pivotaltracker.com/projects/323267).
