@@ -14,17 +14,17 @@
   [self performSelector:@selector(performBlock:) withObject:[[^{
     foo = @"foo";
   } copy] autorelease] afterDelay:0.1];
-  assertPass(test_expect(foo).isGoing.toEqual(@"foo"));
-  assertFail(test_expect(foo).isGoing.toEqual(@"bar"), @"expected: bar, got: foo");
+  assertPass(test_expect(foo).will.equal(@"foo"));
+  assertFail(test_expect(foo).will.equal(@"bar"), @"expected: bar, got: foo");
 }
 
 - (void)test_isNotGoing {
-  __block NSString *foo = @"";
+  __block NSString *foo = @"bar";
   [self performSelector:@selector(performBlock:) withObject:[[^{
     foo = @"foo";
   } copy] autorelease] afterDelay:0.1];
-  assertPass(test_expect(foo).isNotGoing.toEqual(@"bar"));
-  assertFail(test_expect(foo).isNotGoing.toEqual(@"foo"), @"expected: not foo, got: foo");
+  assertPass(test_expect(foo).willNot.equal(@"bar"));
+  assertFail(test_expect(foo).willNot.equal(@"foo"), @"expected: not foo, got: foo");
 }
 
 - (void)test_Expecta_setAsynchronousTestTimeout {
