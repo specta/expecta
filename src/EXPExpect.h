@@ -27,6 +27,7 @@
 - (id)initWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(char *)fileName;
 + (EXPExpect *)expectWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(char *)fileName;
 
+- (void)applyMatcher:(id<EXPMatcher>)matcher;
 - (void)applyMatcher:(id<EXPMatcher>)matcher to:(NSObject **)actual;
 
 @end

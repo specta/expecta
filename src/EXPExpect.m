@@ -68,6 +68,12 @@ fileName=_fileName;
   return nil;
 }
 
+- (void)applyMatcher:(id<EXPMatcher>)matcher
+{
+  id actual = [self actual];
+  [self applyMatcher:matcher to:&actual];
+}
+
 - (void)applyMatcher:(id<EXPMatcher>)matcher to:(NSObject **)actual {
   if([*actual isKindOfClass:[EXPUnsupportedObject class]]) {
     EXPFail(self.testCase, self.lineNumber, self.fileName,
