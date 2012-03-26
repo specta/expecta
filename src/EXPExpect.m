@@ -2,6 +2,7 @@
 #import "NSObject+Expecta.h"
 #import "Expecta.h"
 #import "EXPUnsupportedObject.h"
+#import "EXPRuntimeMatcher.h"
 
 @implementation EXPExpect
 
@@ -18,11 +19,7 @@
   negative=_negative,
   asynchronous=_asynchronous,
   lineNumber=_lineNumber,
-  fileName=_fileName,
-  prerequisiteBlock=_prerequisiteBlock,
-  matchBlock=_matchBlock,
-  failureMessageForToBlock=_failureMessageForToBlock,
-  failureMessageForNotToBlock=_failureMessageForNotToBlock;
+fileName=_fileName;
 
 - (id)initWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(char *)fileName {
   self = [super init];
@@ -33,24 +30,12 @@
     self.asynchronous = NO;
     self.lineNumber = lineNumber;
     self.fileName = fileName;
-    self.prerequisiteBlock = nil;
-    self.matchBlock = nil;
-    self.failureMessageForToBlock = nil;
-    self.failureMessageForNotToBlock = nil;
   }
   return self;
 }
 
 + (EXPExpect *)expectWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(char *)fileName {
   return [[[EXPExpect alloc] initWithActualBlock:actualBlock testCase:(id)testCase lineNumber:lineNumber fileName:fileName] autorelease];
-}
-
-- (void)dealloc {
-  self.prerequisiteBlock = nil;
-  self.matchBlock = nil;
-  self.failureMessageForToBlock = nil;
-  self.failureMessageForNotToBlock = nil;
-  [super dealloc];
 }
 
 #pragma mark -
@@ -82,13 +67,16 @@
   return nil;
 }
 
-- (void)applyMatcher:(NSObject **)actual {
+- (void)applyMatcher:(id<EXPMatcher>)matcher to:(NSObject **)actual {
+  // temporarily cast to runtime matcher, just to get things working
+  EXPRuntimeMatcher *_matcher = (EXPRuntimeMatcher *)matcher;
+  
   if([*actual isKindOfClass:[EXPUnsupportedObject class]]) {
     EXPFail(self.testCase, self.lineNumber, self.fileName,
             [NSString stringWithFormat:@"expecting a %@ is not supported", ((EXPUnsupportedObject *)*actual).type]);
-  } else if(_matchBlock) {
+  } else if(_matcher.matchBlock) {   
     BOOL failed;
-    if(_prerequisiteBlock && !_prerequisiteBlock()) {
+    if(_matcher.prerequisiteBlock && !_matcher.prerequisiteBlock()) {
       failed = YES;
     } else {
       BOOL matchResult;
@@ -96,7 +84,7 @@
         NSTimeInterval timeOut = [Expecta asynchronousTestTimeout];
         NSDate *expiryDate = [NSDate dateWithTimeIntervalSinceNow:timeOut];
         while(1) {
-          matchResult = _matchBlock();
+          matchResult = _matcher.matchBlock();
           failed = self.negative ? matchResult : !matchResult;
           if(!failed || ([(NSDate *)[NSDate date] compare:expiryDate] == NSOrderedDescending)) {
             break;
@@ -105,19 +93,19 @@
           *actual = self.actual;
         }
       } else {
-        matchResult = _matchBlock();
+        matchResult = _matcher.matchBlock();
       }
       failed = self.negative ? matchResult : !matchResult;
     }
     if(failed) {
       NSString *message = @"Match Failed.";
       if(self.negative) {
-        if(_failureMessageForNotToBlock) {
-          message = _failureMessageForNotToBlock();
+        if(_matcher.failureMessageForNotToBlock) {
+          message = _matcher.failureMessageForNotToBlock();
         }
       } else {
-        if(_failureMessageForToBlock) {
-          message = _failureMessageForToBlock();
+        if(_matcher.failureMessageForToBlock) {
+          message = _matcher.failureMessageForToBlock();
         }
       }
       EXPFail(self.testCase, self.lineNumber, self.fileName, message);

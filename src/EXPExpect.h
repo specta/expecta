@@ -1,8 +1,6 @@
 #import <Foundation/Foundation.h>
-
-typedef id (^EXPIdBlock)();
-typedef BOOL (^EXPBoolBlock)();
-typedef NSString *(^EXPStringBlock)();
+#import "EXPMatcher.h"
+#import "EXPDefines.h"
 
 @interface EXPExpect : NSObject {
   EXPIdBlock _actualBlock;
@@ -11,11 +9,6 @@ typedef NSString *(^EXPStringBlock)();
   char *_fileName;
   BOOL _negative;
   BOOL _asynchronous;
-
-  EXPBoolBlock _prerequisiteBlock;
-  EXPBoolBlock _matchBlock;
-  EXPStringBlock _failureMessageForToBlock;
-  EXPStringBlock _failureMessageForNotToBlock;
 }
 
 @property(nonatomic, copy) EXPIdBlock actualBlock;
@@ -31,14 +24,9 @@ typedef NSString *(^EXPStringBlock)();
 @property(nonatomic, readonly) EXPExpect *will;
 @property(nonatomic, readonly) EXPExpect *willNot;
 
-@property(nonatomic, copy) EXPBoolBlock prerequisiteBlock;
-@property(nonatomic, copy) EXPBoolBlock matchBlock;
-@property(nonatomic, copy) EXPStringBlock failureMessageForToBlock;
-@property(nonatomic, copy) EXPStringBlock failureMessageForNotToBlock;
-
 - (id)initWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(char *)fileName;
 + (EXPExpect *)expectWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(char *)fileName;
 
-- (void)applyMatcher:(NSObject **)actual;
+- (void)applyMatcher:(id<EXPMatcher>)matcher to:(NSObject **)actual;
 
 @end

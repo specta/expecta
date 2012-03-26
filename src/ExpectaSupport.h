@@ -1,4 +1,5 @@
 #import "EXPExpect.h"
+#import "EXPRuntimeMatcher.h"
 
 id _EXPObjectify(char *type, ...);
 EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, EXPIdBlock actualBlock);
@@ -26,7 +27,8 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
 @implementation EXPExpect (matcherName##Matcher) \
 @dynamic matcherName;\
 - (void(^) matcherArguments) matcherName { \
-  [[[NSThread currentThread] threadDictionary] setObject:self forKey:@"EXP_currentMatcher"]; \
+  EXPRuntimeMatcher *matcher = [[EXPRuntimeMatcher alloc] init]; \
+  [[[NSThread currentThread] threadDictionary] setObject:matcher forKey:@"EXP_currentMatcher"]; \
   __block id actual = self.actual; \
   __block void (^prerequisite)(EXPBoolBlock block) = ^(EXPBoolBlock block) { EXP_prerequisite(block); }; \
   __block void (^match)(EXPBoolBlock block) = ^(EXPBoolBlock block) { EXP_match(block); }; \
@@ -38,7 +40,7 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
 
 #define _EXPMatcherImplementationEnd \
     } \
-    [self applyMatcher:&actual]; \
+    [self applyMatcher:matcher to:&actual]; \
   }; \
   return [[matcherBlock copy] autorelease]; \
 } \
