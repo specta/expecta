@@ -4,7 +4,7 @@ A Matcher Framework for Objective-C/Cocoa
 
 ## NOTICE
 
-Expecta 0.2.x has a new syntax that is slightly different from Expecta 0.1.x. For example `expect(x).toEqual(y)` should now be written as `expect(x).to.equal(y)`.
+Expecta 0.2.x has a new syntax that is slightly different from Expecta 0.1.x. For example `expect(x).toEqual(y)` should now be written as `expect(x).to.equal(y)`. You can do `#define EXP_OLD_SYNTAX` before importing `Expecta.h` to enable backward-compatiblity mode, but keep in mind that the old syntax is deprecated.
 
 ## INTRODUCTION
 
@@ -50,6 +50,7 @@ or
 6. Add the following to your test code.
 
 ```objective-c
+// #define EXP_OLD_SYNTAX // enable backward-compatibility
 #define EXP_SHORTHAND
 #import "Expecta.h"
 ```
