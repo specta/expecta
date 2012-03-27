@@ -101,7 +101,7 @@ Every matcher's criteria can be inverted by prepending `.notTo` or `.toNot`:
 
 ## ASYNCHRONOUS TESTING
 
-Every matcher can be made to perform asynchronous testing by prepending `.isGoing` or `.isNotGoing`:
+Every matcher can be made to perform asynchronous testing by prepending `.will` or `.willNot`:
 
 >`expect(x).will.beNil();` passes if x becomes nil before the timeout.
 >
