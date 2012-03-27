@@ -7,7 +7,7 @@ EXPMatcherImplementationBegin(_beCloseToWithin, (id expected, id within)) {
 		[expected isKindOfClass:[NSNumber class]] &&
 		[within isKindOfClass:[NSNumber class]];
     });
-    
+
     match(^BOOL{
         double actualValue = [actual doubleValue];
         double expectedValue = [expected doubleValue];
@@ -16,11 +16,11 @@ EXPMatcherImplementationBegin(_beCloseToWithin, (id expected, id within)) {
         double upperBound = expectedValue + withinValue;
         return (actualValue > lowerBound) && (actualValue < upperBound);
     });
-	
+
     failureMessageForTo(^NSString *{
         return [NSString stringWithFormat:@"expected: %@ to be close to %@ within %@", EXPDescribeObject(actual), EXPDescribeObject(expected), EXPDescribeObject(within)];
     });
-	
+
     failureMessageForNotTo(^NSString *{
         return [NSString stringWithFormat:@"expected: %@ to be close to %@ within %@", EXPDescribeObject(actual), EXPDescribeObject(expected), EXPDescribeObject(within)];
     });

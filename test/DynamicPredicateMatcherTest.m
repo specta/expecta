@@ -8,7 +8,9 @@
 
 #import "TestHelper.h"
 
-@interface LightSwitch : NSObject
+@interface LightSwitch : NSObject {
+  BOOL turnedOn;
+}
 @property (nonatomic, assign, getter=isTurnedOn) BOOL turnedOn;
 @end
 
@@ -27,13 +29,13 @@ EXPMatcherInterface(isTurnedOn, (void));
 - (void)test_CanUseObjectPredicatesAsBooleanMatchers
 {
   LightSwitch *lightSwitch = [[LightSwitch alloc] init];
-  
+
   lightSwitch.turnedOn = YES;
-  
+
   expect(lightSwitch).to.beTurnedOn();
-  
+
   lightSwitch.turnedOn = NO;
-  
+
   expect(lightSwitch).toNot.beTurnedOn();
 }
 

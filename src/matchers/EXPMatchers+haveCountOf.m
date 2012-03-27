@@ -17,7 +17,7 @@ EXPMatcherImplementationBegin(haveCountOf, (NSUInteger expected)) {
       return [actual count];
     }
   };
-	
+
   match(^BOOL{
     if(actualIsCompatible) {
       return count(actual) == expected;
