@@ -1,10 +1,14 @@
-# Expecta
+# Expecta 0.2.0
 
 A Matcher Framework for Objective-C/Cocoa
 
+## NOTICE
+
+Expecta 0.2.x has a new syntax that is slightly different from Expecta 0.1.x. For example `expect(x).toEqual(y)` should now be written as `expect(x).to.equal(y)`.
+
 ## INTRODUCTION
 
-The main advantage of using Expecta over other matcher frameworks is that you do not have to specify the data types. Also, the syntax of Expecta matchers is much more readable and does not suffer from parenthesitis. If you have used [Jasmine](http://pivotal.github.com/jasmine/) before, you will feel right at home!
+The main advantage of using Expecta over other matcher frameworks is that you do not have to specify the data types. Also, the syntax of Expecta matchers is much more readable and does not suffer from parenthesitis.
 
 **OCHamcrest**
 
@@ -20,8 +24,8 @@ vs.
 **Expecta**
 
 ```objective-c
-expect(@"foo").equal(@"foo");
-expect(foo).toNot.equal(1);
+expect(@"foo").to.equal(@"foo"); // `to` is a syntatic sugar and can be safely omitted.
+expect(foo).notTo.equal(1);
 expect([bar isBar]).to.equal(YES);
 expect(baz).to.equal(3.14159);
 ```
@@ -31,8 +35,8 @@ expect(baz).to.equal(3.14159);
 Use [CocoaPods](https://github.com/CocoaPods/CocoaPods)
 
 ```ruby
-dependency 'Expecta', '~> 0.1.3'
-# dependency 'Specta', '~> 0.1.3' # specta bdd framework
+dependency 'Expecta', '~> 0.2.0'
+# dependency 'Specta', '~> 0.2.0' # specta bdd framework
 ```
 
 or
@@ -40,7 +44,7 @@ or
 1. Clone from Github.
 2. Run `rake` in project root to build.
 3. Copy and add all header files in `products` folder to the Spec/Test target in your Xcode project.
-4. For **OS X projects**, copy and add `libExpecta-macosx.a` in `products` folder to the Spec/Test target in your Xcode project.  
+4. For **OS X projects**, copy and add `libExpecta-macosx.a` in `products` folder to the Spec/Test target in your Xcode project.
    For **iOS projects**, copy and add `libExpecta-ios-universal.a` in `products` folder to the Spec/Test target in your Xcode project.
 5. Add `-ObjC` to the "Other Linker Flags" build setting for the Spec/Test target in your Xcode project.
 6. Add the following to your test code.
@@ -56,43 +60,43 @@ Expecta is framework-agnostic. It works well with OCUnit (SenTestingKit) and OCU
 
 ## BUILT-IN MATCHERS
 
->`expect(x).equal(y);` compares objects or primitives x and y and passes if they are identical (==) or equivalent (isEqual:).
+>`expect(x).to.equal(y);` compares objects or primitives x and y and passes if they are identical (==) or equivalent (isEqual:).
 >
->`expect(x).beIdenticalTo(y);` compares objects x and y and passes if they are identical and have the same memory address.
+>`expect(x).to.beIdenticalTo(y);` compares objects x and y and passes if they are identical and have the same memory address.
 >
->`expect(x).beNil();` passes if x is nil.
+>`expect(x).to.beNil();` passes if x is nil.
 >
->`expect(x).beTruthy();` passes if x evaluates to true (non-zero).
+>`expect(x).to.beTruthy();` passes if x evaluates to true (non-zero).
 >
->`expect(x).beFalsy();` passes if x evaluates to false (zero).
+>`expect(x).to.beFalsy();` passes if x evaluates to false (zero).
 >
->`expect(x).contain(y);` passes if an instance of NSArray or NSString x contains y.
+>`expect(x).to.contain(y);` passes if an instance of NSArray or NSString x contains y.
 >
->`expect(x).beInstanceOf([Foo class]);` passes if x is an instance of a class Foo.
+>`expect(x).to.beInstanceOf([Foo class]);` passes if x is an instance of a class Foo.
 >
->`expect(x).beKindOf([Foo class]);` passes if x is an instance of a class Foo or if x is an instance of any class that inherits from the class Foo.
+>`expect(x).to.beKindOf([Foo class]);` passes if x is an instance of a class Foo or if x is an instance of any class that inherits from the class Foo.
 >
->`expect([Foo class]).beSubclassOf([Bar class]);` passes if the class Foo is a subclass of the class Bar or if it is identical to the class Bar. Use beKindOf() for class clusters.
+>`expect([Foo class]).to.beSubclassOf([Bar class]);` passes if the class Foo is a subclass of the class Bar or if it is identical to the class Bar. Use beKindOf() for class clusters.
 >
->`expect(x).beLessThan(y);`
+>`expect(x).to.beLessThan(y);`
 >
->`expect(x).beLessThanOrEqualTo(y);`
+>`expect(x).to.beLessThanOrEqualTo(y);`
 >
->`expect(x).beGreaterThan(y);`
+>`expect(x).to.beGreaterThan(y);`
 >
->`expect(x).beGreaterThanOrEqualTo(y);`
+>`expect(x).to.beGreaterThanOrEqualTo(y);`
 >
->`expect(x).beInTheRangeOf(y,z);`
+>`expect(x).to.beInTheRangeOf(y,z);`
 >
->`expect(x).beCloseTo(y);`
+>`expect(x).to.beCloseTo(y);`
 
 **More matchers are coming soon!**
 
 ## INVERTING MATCHERS
 
-Every matcher's criteria can be inverted by prepending `.toNot`:
+Every matcher's criteria can be inverted by prepending `.notTo` or `.toNot`:
 
->`expect(x).toNot.equal(y);` compares objects or primitives x and y and passes if they are *not* equivalent.
+>`expect(x).notTo.equal(y);` compares objects or primitives x and y and passes if they are *not* equivalent.
 
 ## ASYNCHRONOUS TESTING
 
@@ -211,12 +215,14 @@ You can find the public Tracker project [here](https://www.pivotaltracker.com/pr
 
 ### CONTRIBUTORS
 
-* [kseebaldt](https://github.com/kseebaldt)
-* [akitchen](https://github.com/akitchen)
-* [joncooper](https://github.com/joncooper)
-* [twobitlabs](https://github.com/twobitlabs)
+* [Kurtis Seebaldt](https://github.com/kseebaldt)
+* [Andrew Kitchen](https://github.com/akitchen)
+* [Jon Cooper](https://github.com/joncooper)
+* [Two Bit Labs](https://github.com/twobitlabs)
+* [David Hart](https://github.com/TrahDivad)
+* [Luke Redpath](https://github.com/lukeredpath)
 
 ## LICENSE
 
-Copyright (c) 2011-2012 Peter Jihoon Kim. This software is licensed under the [MIT License](http://github.com/petejkim/expecta/raw/master/LICENSE).
+Copyright (c) 2011-2012 Peter Jihoon Kim and contributors. This software is licensed under the [MIT License](http://github.com/petejkim/expecta/raw/master/LICENSE).
 

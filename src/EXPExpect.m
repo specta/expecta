@@ -11,6 +11,7 @@
   actual,
   to,
   toNot,
+  notTo,
   will,
   willNot;
 
@@ -20,7 +21,7 @@
   negative=_negative,
   asynchronous=_asynchronous,
   lineNumber=_lineNumber,
-fileName=_fileName;
+  fileName=_fileName;
 
 - (id)initWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(char *)fileName {
   self = [super init];
@@ -48,6 +49,10 @@ fileName=_fileName;
 - (EXPExpect *)toNot {
   self.negative = !self.negative;
   return self;
+}
+
+- (EXPExpect *)notTo {
+  return [self toNot];
 }
 
 - (EXPExpect *)will {
@@ -78,13 +83,13 @@ fileName=_fileName;
   if([*actual isKindOfClass:[EXPUnsupportedObject class]]) {
     EXPFail(self.testCase, self.lineNumber, self.fileName,
             [NSString stringWithFormat:@"expecting a %@ is not supported", ((EXPUnsupportedObject *)*actual).type]);
-  } else {  
-    BOOL failed;
-    if([matcher respondsToSelector:@selector(meetsPrerequesiteFor:)] && 
+  } else {
+    BOOL failed = NO;
+    if([matcher respondsToSelector:@selector(meetsPrerequesiteFor:)] &&
        ![matcher meetsPrerequesiteFor:*actual]) {
       failed = YES;
     } else {
-      BOOL matchResult;
+      BOOL matchResult = NO;
       if(self.asynchronous) {
         NSTimeInterval timeOut = [Expecta asynchronousTestTimeout];
         NSDate *expiryDate = [NSDate dateWithTimeIntervalSinceNow:timeOut];
@@ -103,11 +108,11 @@ fileName=_fileName;
       failed = self.negative ? matchResult : !matchResult;
     }
     if(failed) {
-      NSString *message;
-      
+      NSString *message = nil;
+
       if(self.negative) {
         if ([matcher respondsToSelector:@selector(failureMessageForNotTo:)]) {
-          message = [matcher failureMessageForNotTo:*actual]; 
+          message = [matcher failureMessageForNotTo:*actual];
         }
       } else {
         if ([matcher respondsToSelector:@selector(failureMessageForTo:)]) {
@@ -117,7 +122,7 @@ fileName=_fileName;
       if (message == nil) {
         message = @"Match Failed.";
       }
-      
+
       EXPFail(self.testCase, self.lineNumber, self.fileName, message);
     }
   }
@@ -178,7 +183,7 @@ fileName=_fileName;
 - (void (^)(void))dispatch
 {
   __block id blockExpectation = _expectation;
-  
+
   return [^{
     [blockExpectation applyMatcher:self];
   } copy];

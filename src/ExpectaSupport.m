@@ -96,6 +96,7 @@ EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, EXPIdBlock a
 }
 
 void EXPFail(id testCase, int lineNumber, char *fileName, NSString *message) {
+  NSLog(@"%s:%d %@", fileName, lineNumber, message);
   NSString *reason = [NSString stringWithFormat:@"%s:%d %@", fileName, lineNumber, message];
   NSException *exception = [NSException exceptionWithName:@"Expecta Error" reason:reason userInfo:nil];
 

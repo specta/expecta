@@ -17,6 +17,15 @@
   assertEquals(x.testCase, self);
 }
 
+- (void)test_expect_NotTo {
+  x = expect(@"foo");
+  assertFalse(x.negative);
+  x = expect(@"foo").notTo;
+  assertTrue(x.negative);
+  x = expect(@"foo").toNot;
+  assertTrue(x.negative);
+}
+
 - (void)test_expect_nil {
   assertNil(expect(nil).actual);
 }

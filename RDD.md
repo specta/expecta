@@ -2,12 +2,6 @@
 
 ## To Be Implemented
 
-### Asynchronous Tests
-
->`expect(x).will.equaly);` passes if x and y eventually become equivalent
->
->`expect(x).willNot.equaly);` passes if x and y do not eventually become equivalent
-
 ### BOOL
 
 >`expect(x).beYes();` passes if x is a BOOL value of YES

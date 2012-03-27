@@ -230,6 +230,7 @@
 		E942971113B45ADD0038708B /* EXPMatchers+beIdenticalToTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+beIdenticalToTest.m"; sourceTree = "<group>"; };
 		E942971413B45C8D0038708B /* EXPMatchers+beIdenticalTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+beIdenticalTo.h"; sourceTree = "<group>"; };
 		E942971513B45C8E0038708B /* EXPMatchers+beIdenticalTo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+beIdenticalTo.m"; sourceTree = "<group>"; };
+		E95368421521B5FC00AA3B81 /* Expecta.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Expecta.podspec; sourceTree = "<group>"; };
 		E9685DBB13B5E39300ADF2D7 /* ExpectaSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpectaSupport.h; sourceTree = "<group>"; };
 		E9685DBE13B5E5DA00ADF2D7 /* ExpectaSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectaSupport.m; sourceTree = "<group>"; };
 		E969C52213B5FD02006BB8B1 /* EXPFailTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXPFailTest.m; sourceTree = "<group>"; };
@@ -331,6 +332,7 @@
 		E9ACDF0113B2DD520010F4D7 = {
 			isa = PBXGroup;
 			children = (
+				E95368421521B5FC00AA3B81 /* Expecta.podspec */,
 				E9ACDF9413B2DEF30010F4D7 /* LICENSE */,
 				E9ACDF9513B2DEF30010F4D7 /* README.md */,
 				E9A6BAAE13B7183100950250 /* RDD.md */,

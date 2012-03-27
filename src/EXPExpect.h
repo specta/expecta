@@ -21,6 +21,7 @@
 
 @property(nonatomic, readonly) EXPExpect *to;
 @property(nonatomic, readonly) EXPExpect *toNot;
+@property(nonatomic, readonly) EXPExpect *notTo;
 @property(nonatomic, readonly) EXPExpect *will;
 @property(nonatomic, readonly) EXPExpect *willNot;
 
