@@ -4,6 +4,7 @@
 #import "EXPUnsupportedObject.h"
 #import "EXPFloatTuple.h"
 #import "EXPDoubleTuple.h"
+#import "EXPDefines.h"
 #import <objc/runtime.h>
 
 @interface NSException (ExpectaSenTestFailure)
@@ -11,8 +12,6 @@
 + (NSException *)failureInFile:(NSString *)filename atLine:(int)lineNumber withDescription:(NSString *)formatString, ...;
 
 @end
-
-typedef void (^EXPBasicBlock)();
 
 id _EXPObjectify(char *type, ...) {
   va_list v;

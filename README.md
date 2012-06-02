@@ -79,19 +79,25 @@ Expecta is framework-agnostic. It works well with OCUnit (SenTestingKit) and OCU
 >
 >`expect([Foo class]).to.beSubclassOf([Bar class]);` passes if the class Foo is a subclass of the class Bar or if it is identical to the class Bar. Use beKindOf() for class clusters.
 >
->`expect(x).to.beLessThan(y);`
+>`expect(x).to.beLessThan(y);` passes if `x` is less than `y`.
 >
->`expect(x).to.beLessThanOrEqualTo(y);`
+>`expect(x).to.beLessThanOrEqualTo(y);` passes if `x` is less than or equal to `y`.
 >
->`expect(x).to.beGreaterThan(y);`
+>`expect(x).to.beGreaterThan(y);` passes if `x` is greater than `y`.
 >
->`expect(x).to.beGreaterThanOrEqualTo(y);`
+>`expect(x).to.beGreaterThanOrEqualTo(y);` passes if `x` is greater than or equal to `y`.
 >
->`expect(x).to.beInTheRangeOf(y,z);`
+>`expect(x).to.beInTheRangeOf(y,z);` passes if `x` is in the range of `y` and `z`.
 >
->`expect(x).to.beCloseTo(y);`
+>`expect(x).to.beCloseTo(y);` passes if `x` is close to `y`.
+>
+>`expect(x).to.beCloseToWithin(y, z);` passes if `x` is close to `y` within `z`.
+>
+>`expect(^{ /* code */ }).to.raise(@"ExceptionName");` passes if a given block of code raises an exception named `ExceptionName`.
+>
+>`expect(^{ /* code */ }).to.raiseAny();` passes if a given block of code raises any exception.
 
-**More matchers are coming soon!**
+**Please contribute more matchers.**
 
 ## INVERTING MATCHERS
 
