@@ -36,7 +36,7 @@ Use [CocoaPods](https://github.com/CocoaPods/CocoaPods)
 
 ```ruby
 dependency 'Expecta', '~> 0.2.0'
-# dependency 'Specta', '~> 0.2.0' # specta bdd framework
+# dependency 'Specta', '~> 0.1.5' # specta bdd framework
 ```
 
 or
@@ -229,7 +229,7 @@ You can find the public Tracker project [here](https://www.pivotaltracker.com/pr
 * [Kurtis Seebaldt](https://github.com/kseebaldt)
 * [Andrew Kitchen](https://github.com/akitchen)
 * [Jon Cooper](https://github.com/joncooper)
-* [Two Bit Labs](https://github.com/twobitlabs)
+* [Christopher Pickslay](https://github.com/twobitlabs)
 * [David Hart](https://github.com/TrahDivad)
 * [Luke Redpath](https://github.com/lukeredpath)
 
