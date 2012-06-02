@@ -183,6 +183,8 @@
 		E9D3DF13157A7EA30054978E /* EXPMatchers+raise.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D3DF11157A7EA30054978E /* EXPMatchers+raise.m */; };
 		E9D3DF15157A7EB40054978E /* EXPMatchers+raise.h in Headers */ = {isa = PBXBuildFile; fileRef = E9D3DF14157A7EB40054978E /* EXPMatchers+raise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9D3DF16157A7EB40054978E /* EXPMatchers+raise.h in Headers */ = {isa = PBXBuildFile; fileRef = E9D3DF14157A7EB40054978E /* EXPMatchers+raise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9D3DF1B157A8AC30054978E /* EXPMatchers+beCloseToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D3DF1A157A8AC10054978E /* EXPMatchers+beCloseToTest.m */; };
+		E9D3DF1C157A8AC30054978E /* EXPMatchers+beCloseToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D3DF1A157A8AC10054978E /* EXPMatchers+beCloseToTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -304,6 +306,7 @@
 		E9D3DF0D157A7B7E0054978E /* EXPMatchers+raiseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+raiseTest.m"; sourceTree = "<group>"; };
 		E9D3DF11157A7EA30054978E /* EXPMatchers+raise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+raise.m"; sourceTree = "<group>"; };
 		E9D3DF14157A7EB40054978E /* EXPMatchers+raise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+raise.h"; sourceTree = "<group>"; };
+		E9D3DF1A157A8AC10054978E /* EXPMatchers+beCloseToTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+beCloseToTest.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -491,6 +494,7 @@
 				4913B4D01411E2DA00040ECB /* EXPMatchers+beGreaterThanOrEqualToTest.m */,
 				AE0E76FB13FF37D6009AF5D8 /* EXPMatchers+beLessThanTest.m */,
 				AEBA779414055CA2001690B6 /* EXPMatchers+beLessThanOrEqualToTest.m */,
+				E9D3DF1A157A8AC10054978E /* EXPMatchers+beCloseToTest.m */,
 			);
 			path = matchers;
 			sourceTree = "<group>";
@@ -827,6 +831,7 @@
 				A305756F1520C5B400DA19BD /* CustomMatcherImplementationsTest.m in Sources */,
 				A30575AB1520F61500DA19BD /* DynamicPredicateMatcherTest.m in Sources */,
 				E9D3DF0F157A7B7E0054978E /* EXPMatchers+raiseTest.m in Sources */,
+				E9D3DF1C157A8AC30054978E /* EXPMatchers+beCloseToTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,6 +899,7 @@
 				A305756E1520C5B200DA19BD /* CustomMatcherImplementationsTest.m in Sources */,
 				A30575A91520F5FE00DA19BD /* DynamicPredicateMatcherTest.m in Sources */,
 				E9D3DF0E157A7B7E0054978E /* EXPMatchers+raiseTest.m in Sources */,
+				E9D3DF1B157A8AC30054978E /* EXPMatchers+beCloseToTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
