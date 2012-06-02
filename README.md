@@ -73,6 +73,10 @@ Expecta is framework-agnostic. It works well with OCUnit (SenTestingKit) and OCU
 >
 >`expect(x).to.contain(y);` passes if an instance of NSArray or NSString x contains y.
 >
+>`expect(x).to.haveCountOf(y);` passes if an instance of NSArray, NSSet, NSDictionary or NSString x has a count or length of y.
+>
+>`expect(x).to.beEmpty();` passes if an instance of NSArray, NSSet, NSDictionary or NSString x has a count or length of 0.
+>
 >`expect(x).to.beInstanceOf([Foo class]);` passes if x is an instance of a class Foo.
 >
 >`expect(x).to.beKindOf([Foo class]);` passes if x is an instance of a class Foo or if x is an instance of any class that inherits from the class Foo.
@@ -111,7 +115,7 @@ Every matcher can be made to perform asynchronous testing by prepending `.will` 
 
 >`expect(x).will.beNil();` passes if x becomes nil before the timeout.
 >
->`expect(x).willNot.neNil();` passes if x becomes non-nil before the timeout.
+>`expect(x).willNot.beNil();` passes if x becomes non-nil before the timeout.
 
 Default timeout is 1.0 second. This setting can be changed by calling `[Expecta setAsynchronousTestTimeout:x]`, where x is the desired timeout.
 

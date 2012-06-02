@@ -31,3 +31,12 @@
 #define toEqual                       equal
 #define toBeCloseTo                   beCloseTo
 #define toBeCloseToWithin             beCloseToWithin
+#define toHaveCount                   haveCountOf
+#define toHaveCountOf                 haveCountOf
+#define toHaveACountOf                haveCountOf
+#define toHaveLength                  haveCountOf
+#define toHaveLengthOf                haveCountOf
+#define toHaveALengthOf               haveCountOf
+#define toBeEmpty                     beEmpty
+#define toRaise                       raise
+#define toRaiseAny                    raiseAny
