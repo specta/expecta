@@ -15,6 +15,10 @@
 #  define expect(actual) EXP_expect((actual))
 #endif
 
+#ifdef EXP_OLD_SYNTAX
+#  import "EXPBackwardCompatibility.h"
+#endif
+
 @interface Expecta : NSObject
 
 + (NSTimeInterval)asynchronousTestTimeout;

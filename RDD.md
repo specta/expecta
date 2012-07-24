@@ -2,17 +2,11 @@
 
 ## To Be Implemented
 
-### Asynchronous Tests
-
->`expect(x).isGoing.toEqual(y);` passes if x and y eventually become equivalent
->
->`expect(x).isNotGoing.toEqual(y);` passes if x and y do not eventually become equivalent
-
 ### BOOL
 
->`expect(x).toBeYes();` passes if x is a BOOL value of YES
+>`expect(x).beYes();` passes if x is a BOOL value of YES
 >
->`expect(x).toBeNo();` passes if x is a BOOL value of NO
+>`expect(x).beNo();` passes if x is a BOOL value of NO
 
 ### Class
 
@@ -26,17 +20,17 @@
 
 ### Number
 
->`expect(x).toBeLessThan(y);` passes if x is less than y
+>`expect(x).beLessThan(y);` passes if x is less than y
 >
->`expect(x).toBeLessThanOrEqualTo(y);` passes if x is less than or equal to y
+>`expect(x).beLessThanOrEqualTo(y);` passes if x is less than or equal to y
 >
->`expect(x).toBeGreaterThan(y);` passes if x is greater than y
+>`expect(x).beGreaterThan(y);` passes if x is greater than y
 >
->`expect(x).toBeGreaterThanOrEqualTo(y);` passes if x is greater than or equal to y
+>`expect(x).beGreaterThanOrEqualTo(y);` passes if x is greater than or equal to y
 >
->`expect(x).toBeCloseTo(y, z);` passes if x is equal to y to a precision of z decimal places
+>`expect(x).beCloseTo(y, z);` passes if x is equal to y to a precision of z decimal places
 >
->`expect(x).toBeInTheRangeOf(y, z);` passes if x is in the range of [y, z]
+>`expect(x).beInTheRangeOf(y, z);` passes if x is in the range of [y, z]
 
 ### Exceptions
 
@@ -50,7 +44,7 @@
 
 ### Collection
 
->`expect(x).toBeEmpty();` passes if x is empty
+>`expect(x).beEmpty();` passes if x is empty
 >
 >`expect(x).toHaveCountOf(y);` passes if x contains y number of objects
 >

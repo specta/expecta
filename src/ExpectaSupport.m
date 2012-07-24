@@ -4,6 +4,7 @@
 #import "EXPUnsupportedObject.h"
 #import "EXPFloatTuple.h"
 #import "EXPDoubleTuple.h"
+#import "EXPDefines.h"
 #import <objc/runtime.h>
 
 @interface NSException (ExpectaSenTestFailure)
@@ -11,8 +12,6 @@
 + (NSException *)failureInFile:(NSString *)filename atLine:(int)lineNumber withDescription:(NSString *)formatString, ...;
 
 @end
-
-typedef void (^EXPBasicBlock)();
 
 id _EXPObjectify(char *type, ...) {
   va_list v;
@@ -96,6 +95,7 @@ EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, EXPIdBlock a
 }
 
 void EXPFail(id testCase, int lineNumber, char *fileName, NSString *message) {
+  NSLog(@"%s:%d %@", fileName, lineNumber, message);
   NSString *reason = [NSString stringWithFormat:@"%s:%d %@", fileName, lineNumber, message];
   NSException *exception = [NSException exceptionWithName:@"Expecta Error" reason:reason userInfo:nil];
 

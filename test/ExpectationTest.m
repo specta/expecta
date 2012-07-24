@@ -17,6 +17,15 @@
   assertEquals(x.testCase, self);
 }
 
+- (void)test_expect_NotTo {
+  x = expect(@"foo");
+  assertFalse(x.negative);
+  x = expect(@"foo").notTo;
+  assertTrue(x.negative);
+  x = expect(@"foo").toNot;
+  assertTrue(x.negative);
+}
+
 - (void)test_expect_nil {
   assertNil(expect(nil).actual);
 }
@@ -154,7 +163,7 @@
     int a;
     float b;
   } u;
-  assertFail(test_expect(u).toBeNil(), @"expecting a union is not supported");
+  assertFail(test_expect(u).beNil(), @"expecting a union is not supported");
 }
 
 - (void)test_expect_struct {
@@ -162,7 +171,7 @@
     int a;
     float b;
   } s;
-  assertFail(test_expect(s).toBeNil(), @"expecting a struct is not supported");
+  assertFail(test_expect(s).beNil(), @"expecting a struct is not supported");
 }
 
 @end
