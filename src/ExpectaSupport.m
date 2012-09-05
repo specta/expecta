@@ -110,45 +110,37 @@ void EXPFail(id testCase, int lineNumber, char *fileName, NSString *message) {
 }
 
 NSString *EXPDescribeObject(id obj) {
-  if(obj == nil) {
-    return @"nil/null";
-  } else if([obj isKindOfClass:[NSValue class]]) {
-    if([obj isKindOfClass:[NSValue class]] && ![obj isKindOfClass:[NSNumber class]]) {
-      void *pointerValue = [obj pointerValue];
-      const char *type = [(NSValue *)obj _EXP_objCType];
-      if(type) {
-        if(strcmp(type, @encode(SEL)) == 0) {
-          return [NSString stringWithFormat:@"@selector(%@)", NSStringFromSelector([obj pointerValue])];
-        } else if(strcmp(type, @encode(Class)) == 0) {
-          return NSStringFromClass(pointerValue);
+    if(obj == nil) {
+        return @"nil/null";
+    } else if([obj isKindOfClass:[NSValue class]]) {
+        if([obj isKindOfClass:[NSValue class]] && ![obj isKindOfClass:[NSNumber class]]) {
+            void *pointerValue = [obj pointerValue];
+            const char *type = [(NSValue *)obj _EXP_objCType];
+            if(type) {
+                if(strcmp(type, @encode(SEL)) == 0) {
+                    return [NSString stringWithFormat:@"@selector(%@)", NSStringFromSelector([obj pointerValue])];
+                } else if(strcmp(type, @encode(Class)) == 0) {
+                    return NSStringFromClass(pointerValue);
+                }
+            }
         }
-      }
     }
-  }
-  NSString *description = [obj description];
-  if([obj isKindOfClass:[NSArray class]]) {
-    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:[obj count]];
-    for(id o in obj) {
-      [arr addObject:EXPDescribeObject(o)];
+    NSString *description = [obj description];
+    if([obj isKindOfClass:[NSArray class]]) {
+        description = @"NSArray";
+    } else if([obj isKindOfClass:[NSSet class]]) {
+        description = @"NSSet";
+    } else if([obj isKindOfClass:[NSDictionary class]]) {
+        NSMutableArray *arr = [NSMutableArray arrayWithCapacity:[obj count]];
+        for(id k in obj) {
+            id v = [obj objectForKey:k];
+            [arr addObject:[NSString stringWithFormat:@"%@ = %@;",EXPDescribeObject(k), EXPDescribeObject(v)]];
+        }
+        description = [NSString stringWithFormat:@"{%@}", [arr componentsJoinedByString:@" "]];
+    } else {
+        description = [description stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
     }
-    description = [NSString stringWithFormat:@"(%@)", [arr componentsJoinedByString:@", "]];
-  } else if([obj isKindOfClass:[NSSet class]]) {
-    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:[obj count]];
-    for(id o in obj) {
-      [arr addObject:EXPDescribeObject(o)];
-    }
-    description = [NSString stringWithFormat:@"{(%@)}", [arr componentsJoinedByString:@", "]];
-  } else if([obj isKindOfClass:[NSDictionary class]]) {
-    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:[obj count]];
-    for(id k in obj) {
-      id v = [obj objectForKey:k];
-      [arr addObject:[NSString stringWithFormat:@"%@ = %@;",EXPDescribeObject(k), EXPDescribeObject(v)]];
-    }
-    description = [NSString stringWithFormat:@"{%@}", [arr componentsJoinedByString:@" "]];
-  } else {
-    description = [description stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
-  }
-  return description;
+    return description;
 }
 
 void EXP_prerequisite(EXPBoolBlock block) {
