@@ -4,6 +4,7 @@ EXPMatcherImplementationBegin(haveCountOf, (NSUInteger expected)) {
   BOOL actualIsCompatible = [actual isKindOfClass:[NSString class]] ||
     [actual isKindOfClass:[NSArray class]] ||
 	[actual isKindOfClass:[NSSet class]] ||
+    [actual isKindOfClass:[NSOrderedSet class]] ||
 	[actual isKindOfClass:[NSDictionary class]];
 
   prerequisite(^BOOL{
@@ -26,12 +27,12 @@ EXPMatcherImplementationBegin(haveCountOf, (NSUInteger expected)) {
   });
 
   failureMessageForTo(^NSString *{
-    if(!actualIsCompatible) return [NSString stringWithFormat:@"%@ is not an instance of NSString, NSArray, NSSet, or NSDictionary", EXPDescribeObject(actual)];
+    if(!actualIsCompatible) return [NSString stringWithFormat:@"%@ is not an instance of NSString, NSArray, NSSet, NSOrderedSet or NSDictionary", EXPDescribeObject(actual)];
     return [NSString stringWithFormat:@"expected %@ to have a count of %zi but got %zi", EXPDescribeObject(actual), expected, count(actual)];
   });
 
   failureMessageForNotTo(^NSString *{
-    if(!actualIsCompatible) return [NSString stringWithFormat:@"%@ is not an instance of NSString, NSArray, NSSet, or NSDictionary", EXPDescribeObject(actual)];
+    if(!actualIsCompatible) return [NSString stringWithFormat:@"%@ is not an instance of NSString, NSArray, NSSet, NSOrderedSet or NSDictionary", EXPDescribeObject(actual)];
     return [NSString stringWithFormat:@"expected %@ not to have a count of %zi", EXPDescribeObject(actual), expected];
   });
 }
