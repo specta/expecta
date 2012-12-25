@@ -28,7 +28,7 @@
   assertPass(test_expect(string).haveCountOf(6));
   assertFail(test_expect(array).haveCountOf(2), @"expected (foo, bar, baz) to have a count of 2 but got 3");
   assertFail(test_expect(string).haveCountOf(3), @"expected foobar to have a count of 3 but got 6");
-  NSString* errorMessage = [NSString stringWithFormat:@"%@ is not an instance of NSString, NSArray, NSSet, or NSDictionary", object];
+  NSString* errorMessage = [NSString stringWithFormat:@"%@ is not an instance of NSString, NSArray, NSSet, NSOrderedSet, or NSDictionary", object];
   assertFail(test_expect(object).haveCountOf(2), errorMessage);
 }
 
@@ -40,7 +40,7 @@
   assertPass(test_expect(string).toNot.haveCountOf(1));
   assertFail(test_expect(array).toNot.haveCountOf(3), @"expected (foo, bar, baz) not to have a count of 3");
   assertFail(test_expect(string).toNot.haveCountOf(6), @"expected foobar not to have a count of 6");
-  NSString* errorMessage = [NSString stringWithFormat:@"%@ is not an instance of NSString, NSArray, NSSet, or NSDictionary", object];
+  NSString* errorMessage = [NSString stringWithFormat:@"%@ is not an instance of NSString, NSArray, NSSet, NSOrderedSet, or NSDictionary", object];
   assertFail(test_expect(object).toNot.haveCountOf(2), errorMessage);
 }
 
