@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2546A95C16629D500078E044 /* EXPMatchers+raiseWithReason.h in Headers */ = {isa = PBXBuildFile; fileRef = 2546A95A16629D4F0078E044 /* EXPMatchers+raiseWithReason.h */; };
-		2546A95D16629D500078E044 /* EXPMatchers+raiseWithReason.h in Headers */ = {isa = PBXBuildFile; fileRef = 2546A95A16629D4F0078E044 /* EXPMatchers+raiseWithReason.h */; };
+		2546A95C16629D500078E044 /* EXPMatchers+raiseWithReason.h in Headers */ = {isa = PBXBuildFile; fileRef = 2546A95A16629D4F0078E044 /* EXPMatchers+raiseWithReason.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2546A95D16629D500078E044 /* EXPMatchers+raiseWithReason.h in Headers */ = {isa = PBXBuildFile; fileRef = 2546A95A16629D4F0078E044 /* EXPMatchers+raiseWithReason.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2546A95E16629D500078E044 /* EXPMatchers+raiseWithReason.m in Sources */ = {isa = PBXBuildFile; fileRef = 2546A95B16629D4F0078E044 /* EXPMatchers+raiseWithReason.m */; };
 		2546A95F16629D500078E044 /* EXPMatchers+raiseWithReason.m in Sources */ = {isa = PBXBuildFile; fileRef = 2546A95B16629D4F0078E044 /* EXPMatchers+raiseWithReason.m */; };
 		2546A96216629DF70078E044 /* EXPMatchers+raiseWithReasonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2546A96116629DF70078E044 /* EXPMatchers+raiseWithReasonTest.m */; };
@@ -583,11 +583,11 @@
 				63F6F356150A542D009E1BC3 /* EXPMatchers+beCloseTo.h in Headers */,
 				63B349DE15135C8800C955DC /* EXPMatchers+haveCountOf.h in Headers */,
 				E9D3DF16157A7EB40054978E /* EXPMatchers+raise.h in Headers */,
+				2546A95D16629D500078E044 /* EXPMatchers+raiseWithReason.h in Headers */,
 				A305755F1520BCCB00DA19BD /* EXPMatcher.h in Headers */,
 				A30575641520BDCE00DA19BD /* EXPBlockDefinedMatcher.h in Headers */,
 				E95368521521BEE900AA3B81 /* EXPBackwardCompatibility.h in Headers */,
 				E95368911521C58D00AA3B81 /* EXPDefines.h in Headers */,
-				2546A95D16629D500078E044 /* EXPMatchers+raiseWithReason.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,11 +622,11 @@
 				63F6F355150A542D009E1BC3 /* EXPMatchers+beCloseTo.h in Headers */,
 				63B349DD15135C8800C955DC /* EXPMatchers+haveCountOf.h in Headers */,
 				E9D3DF15157A7EB40054978E /* EXPMatchers+raise.h in Headers */,
+				2546A95C16629D500078E044 /* EXPMatchers+raiseWithReason.h in Headers */,
 				A305755E1520BCCB00DA19BD /* EXPMatcher.h in Headers */,
 				A30575631520BDCE00DA19BD /* EXPBlockDefinedMatcher.h in Headers */,
 				E95368511521BEE900AA3B81 /* EXPBackwardCompatibility.h in Headers */,
 				E95368921521C58D00AA3B81 /* EXPDefines.h in Headers */,
-				2546A95C16629D500078E044 /* EXPMatchers+raiseWithReason.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
