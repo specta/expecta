@@ -37,6 +37,12 @@
   return self;
 }
 
+- (void)dealloc
+{
+  self.actualBlock = nil;
+  [super dealloc];
+}
+
 + (EXPExpect *)expectWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(char *)fileName {
   return [[[EXPExpect alloc] initWithActualBlock:actualBlock testCase:(id)testCase lineNumber:lineNumber fileName:fileName] autorelease];
 }
@@ -186,9 +192,9 @@
 {
   __block id blockExpectation = _expectation;
 
-  return [^{
+  return [[^{
     [blockExpectation applyMatcher:self];
-  } copy];
+  } copy] autorelease];
 }
 
 @end
