@@ -3,9 +3,9 @@
 EXPMatcherImplementationBegin(haveCountOf, (NSUInteger expected)) {
   BOOL actualIsCompatible = [actual isKindOfClass:[NSString class]] ||
     [actual isKindOfClass:[NSArray class]] ||
-	[actual isKindOfClass:[NSSet class]] ||
+  [actual isKindOfClass:[NSSet class]] ||
     [actual isKindOfClass:[NSOrderedSet class]] ||
-	[actual isKindOfClass:[NSDictionary class]];
+  [actual isKindOfClass:[NSDictionary class]];
 
   prerequisite(^BOOL{
     return actualIsCompatible;
@@ -14,7 +14,7 @@ EXPMatcherImplementationBegin(haveCountOf, (NSUInteger expected)) {
   NSUInteger (^count)(id) = ^(id actual) {
     if([actual isKindOfClass:[NSString class]]) {
       return [actual length];
-	} else {
+  } else {
       return [actual count];
     }
   };

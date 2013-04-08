@@ -20,4 +20,12 @@
   expect(EXPDescribeObject(dict)).equal(@"{foo = bar;}");
 }
 
+- (void)test_EXPObjectifyCopiesObjectsWithBlockType
+{
+    id original = [[NSMutableArray alloc] init];
+    id copy = _EXPObjectify(@encode(EXPBasicBlock), original);
+    
+    expect(original == copy).to.beFalsy();
+}
+
 @end
