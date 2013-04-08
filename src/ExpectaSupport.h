@@ -42,6 +42,7 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
     } \
     [self applyMatcher:matcher to:&actual]; \
   }; \
+  [matcher release]; \
   return [[matcherBlock copy] autorelease]; \
 } \
 @end
