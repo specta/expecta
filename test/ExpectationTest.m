@@ -174,4 +174,28 @@
   assertFail(test_expect(s).beNil(), @"expecting a struct is not supported");
 }
 
+- (void)test_boolean_type_equivalence {
+  bool noBool = false;
+  BOOL noBOOL = NO;
+  int noInt = 0;
+  id noNSNum = [NSNumber numberWithBool:NO];
+  
+  _Bool yesBool = true;
+  BOOL yesBOOL = YES;
+  int yesInt = 1;
+  id yesNSNum = [NSNumber numberWithBool:YES];
+  
+  expect(false).to.equal(NO);
+  expect(NO).to.equal(noBool);
+  expect(noBool).to.equal(noBOOL);
+  expect(noBOOL).to.equal(noInt);
+  expect(noInt).to.equal(noNSNum);
+  
+  expect(true).to.equal(YES);
+  expect(YES).to.equal(yesBool);
+  expect(yesBool).to.equal(yesBOOL);
+  expect(yesBOOL).to.equal(yesInt);
+  expect(yesInt).to.equal(yesNSNum);
+}
+
 @end
