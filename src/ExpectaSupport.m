@@ -20,6 +20,10 @@ id _EXPObjectify(char *type, ...) {
   if(strcmp(type, @encode(char)) == 0) {
     char actual = (char)va_arg(v, int);
     obj = [NSNumber numberWithChar:actual];
+  } else if(strcmp(type, @encode(_Bool)) == 0) {
+    _Static_assert(sizeof(_Bool) <= sizeof(int), "Expected _Bool to be subject to vararg type promotion");
+    _Bool actual = (_Bool)va_arg(v, int);
+    obj = [NSNumber numberWithBool:actual];
   } else if(strcmp(type, @encode(double)) == 0) {
     double actual = (double)va_arg(v, double);
     obj = [NSNumber numberWithDouble:actual];
