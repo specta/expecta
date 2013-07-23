@@ -1,3 +1,17 @@
+v0.2.2
+======
+
+* Trigger a memory barrier when using `will` [jspahrsummers]
+* Support for ARC when writing custom matchers [nickhutchinson]
+* Ensure matcher category loading with constructors [robrix]
+* haveCountOf supports any class that responds to `count` [segiddins][apparentsoft]
+
+v0.2.1
+======
+
+* Added raiseWithReason matcher [blakewatters]
+* Fixed crash when expecting a block [chrisdevereux]
+
 v0.2.0
 ======
 

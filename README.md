@@ -35,8 +35,14 @@ expect(baz).to.equal(3.14159);
 Use [CocoaPods](https://github.com/CocoaPods/CocoaPods)
 
 ```ruby
-dependency 'Expecta', '~> 0.2.1'
-# dependency 'Specta', '~> 0.1.7' # specta bdd framework
+target :MyApp do
+  # your app dependencies
+end
+
+target :MyAppTests do
+  pod 'Expecta',     '~> 0.2.2'   # expecta matchers
+  # pod 'Specta',      '~> 0.1.11'  # specta bdd framework
+end
 ```
 
 or
@@ -224,16 +230,28 @@ You can find the public Tracker project [here](https://www.pivotaltracker.com/pr
 * Please prefix instance variable names with a single underscore (`_`).
 * Please prefix custom classes and functions defined in the global scope with `EXP`.
 
+## CREDITS
+
+Expecta is brought to you by [Peter Jihoon Kim](http://github.com/petejkim) and the [Specta team](https://github.com/specta?tab=members).
+
 ### CONTRIBUTORS
 
-* [Kurtis Seebaldt](https://github.com/kseebaldt)
+* [Alan Rogers](https://github.com/alanjrogers)
 * [Andrew Kitchen](https://github.com/akitchen)
-* [Jon Cooper](https://github.com/joncooper)
+* [Blake Watters](https://github.com/blakewatters)
 * [Christopher Pickslay](https://github.com/twobitlabs)
+* [Chris Devereux](https://github.com/chrisdevereux)
 * [David Hart](https://github.com/TrahDivad)
+* [Jacob Gorban](https://github.com/apparentsoft)
+* [Jon Cooper](https://github.com/joncooper)
+* [Justin Spahr-Summers](https://github.com/jspahrsummers)
+* [Kurtis Seebaldt](https://github.com/kseebaldt)
 * [Luke Redpath](https://github.com/lukeredpath)
+* [Nicholas Hutchinson](https://github.com/nickhutchinson)
+* [Rob Rix](https://github.com/robrix)
+* [Samuel Giddins](https://github.com/segiddins)
+* [Zack Waugh](https://github.com/zachwaugh)
 
 ## LICENSE
 
-Copyright (c) 2011-2012 Peter Jihoon Kim and contributors. This software is licensed under the [MIT License](http://github.com/petejkim/expecta/raw/master/LICENSE).
-
+Expecta is licensed under the [MIT License](http://github.com/petejkim/expecta/raw/master/LICENSE).
