@@ -12,6 +12,15 @@ void EXP_match(EXPBoolBlock block);
 void EXP_failureMessageForTo(EXPStringBlock block);
 void EXP_failureMessageForNotTo(EXPStringBlock block);
 
+#if __has_feature(objc_arc)
+#define _EXP_release(x)
+#define _EXP_autorelease(x) (x)
+
+#else
+#define _EXP_release(x) [x release]
+#define _EXP_autorelease(x) [x autorelease]
+#endif
+
 // workaround for the categories bug: http://developer.apple.com/library/mac/#qa/qa1490/_index.html
 #define EXPFixCategoriesBug(name) \
 __attribute__((constructor)) static void EXPFixCategoriesBug##name() {}
@@ -41,7 +50,7 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
     } \
     [self applyMatcher:matcher to:&actual]; \
   }; \
-  [matcher release]; \
-  return [[matcherBlock copy] autorelease]; \
+  _EXP_release(matcher); \
+  return _EXP_autorelease([matcherBlock copy]); \
 } \
 @end
