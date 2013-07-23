@@ -14,8 +14,7 @@ void EXP_failureMessageForNotTo(EXPStringBlock block);
 
 // workaround for the categories bug: http://developer.apple.com/library/mac/#qa/qa1490/_index.html
 #define EXPFixCategoriesBug(name) \
-@interface EXPFixCategoriesBug##name; @end \
-@implementation EXPFixCategoriesBug##name; @end
+__attribute__((constructor)) static void EXPFixCategoriesBug##name() {}
 
 #define _EXPMatcherInterface(matcherName, matcherArguments) \
 @interface EXPExpect (matcherName##Matcher) \
