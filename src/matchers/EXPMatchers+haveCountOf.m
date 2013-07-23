@@ -2,9 +2,7 @@
 
 EXPMatcherImplementationBegin(haveCountOf, (NSUInteger expected)) {
   BOOL actualIsCompatible = [actual isKindOfClass:[NSString class]] ||
-    [actual isKindOfClass:[NSArray class]] ||
-  [actual isKindOfClass:[NSSet class]] ||
-  [actual isKindOfClass:[NSDictionary class]];
+    [actual respondsToSelector:@selector(count)];
 
   prerequisite(^BOOL{
     return actualIsCompatible;
