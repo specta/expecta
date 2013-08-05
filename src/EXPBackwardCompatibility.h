@@ -1,4 +1,8 @@
+#ifdef EXP_FRAMEWORK_HEADERS
+#import <Expecta/EXPExpect.h>
+#else
 #import "EXPExpect.h"
+#endif
 
 @interface EXPExpect (BackwardCompatiblity)
 

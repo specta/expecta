@@ -1,3 +1,23 @@
+#ifdef EXP_FRAMEWORK_HEADERS
+#import <Expecta/EXPMatchers+beNil.h>
+#import <Expecta/EXPMatchers+equal.h>
+#import <Expecta/EXPMatchers+beInstanceOf.h>
+#import <Expecta/EXPMatchers+beKindOf.h>
+#import <Expecta/EXPMatchers+beSubclassOf.h>
+#import <Expecta/EXPMatchers+beTruthy.h>
+#import <Expecta/EXPMatchers+beFalsy.h>
+#import <Expecta/EXPMatchers+contain.h>
+#import <Expecta/EXPMatchers+haveCountOf.h>
+#import <Expecta/EXPMatchers+beIdenticalTo.h>
+#import <Expecta/EXPMatchers+beGreaterThan.h>
+#import <Expecta/EXPMatchers+beGreaterThanOrEqualTo.h>
+#import <Expecta/EXPMatchers+beLessThan.h>
+#import <Expecta/EXPMatchers+beLessThanOrEqualTo.h>
+#import <Expecta/EXPMatchers+beInTheRangeOf.h>
+#import <Expecta/EXPMatchers+beCloseTo.h>
+#import <Expecta/EXPMatchers+raise.h>
+#import <Expecta/EXPMatchers+raiseWithReason.h>
+#else
 #import "EXPMatchers+beNil.h"
 #import "EXPMatchers+equal.h"
 #import "EXPMatchers+beInstanceOf.h"
@@ -16,3 +36,4 @@
 #import "EXPMatchers+beCloseTo.h"
 #import "EXPMatchers+raise.h"
 #import "EXPMatchers+raiseWithReason.h"
+#endif

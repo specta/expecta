@@ -1,5 +1,10 @@
+#ifdef EXP_FRAMEWORK_HEADERS
+#import <Expecta/EXPExpect.h>
+#import <Expecta/EXPBlockDefinedMatcher.h>
+#else
 #import "EXPExpect.h"
 #import "EXPBlockDefinedMatcher.h"
+#endif
 
 id _EXPObjectify(char *type, ...);
 EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, EXPIdBlock actualBlock);

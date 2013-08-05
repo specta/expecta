@@ -1,5 +1,9 @@
 #import <Foundation/Foundation.h>
+#ifdef EXP_FRAMEWORK_HEADERS
+#import <Expecta/ExpectaSupport.h>
+#else
 #import "ExpectaSupport.h"
+#endif
 
 #define EXPObjectify(value) _EXPObjectify(@encode(__typeof__((value))), (value))
 
@@ -9,7 +13,11 @@
 #define EXPMatcherImplementationBegin(matcherName, matcherArguments) _EXPMatcherImplementationBegin(matcherName, matcherArguments)
 #define EXPMatcherImplementationEnd _EXPMatcherImplementationEnd
 
+#ifdef EXP_FRAMEWORK_HEADERS
+#import <Expecta/EXPMatchers.h>
+#else
 #import "EXPMatchers.h"
+#endif
 
 #ifdef EXP_SHORTHAND
 #  define expect(actual) EXP_expect((actual))

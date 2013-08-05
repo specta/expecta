@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#ifdef EXP_FRAMEWORK_HEADERS
+#import <Expecta/EXPMatcher.h>
+#import <Expecta/EXPDefines.h>
+#else
 #import "EXPMatcher.h"
 #import "EXPDefines.h"
+#endif
 
 @interface EXPBlockDefinedMatcher : NSObject <EXPMatcher> {
   EXPBoolBlock prerequisiteBlock;
