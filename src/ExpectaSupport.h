@@ -43,14 +43,14 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
   __block void (^failureMessageForTo)(EXPStringBlock block) = ^(EXPStringBlock block) { EXP_failureMessageForTo(block); }; \
   __block void (^failureMessageForNotTo)(EXPStringBlock block) = ^(EXPStringBlock block) { EXP_failureMessageForNotTo(block); }; \
   prerequisite(nil); match(nil); failureMessageForTo(nil); failureMessageForNotTo(nil); \
-  void (^matcherBlock) matcherArguments = ^ matcherArguments { \
+  void (^matcherBlock) matcherArguments = [^ matcherArguments { \
     {
 
 #define _EXPMatcherImplementationEnd \
     } \
     [self applyMatcher:matcher to:&actual]; \
-  }; \
+  } copy]; \
   _EXP_release(matcher); \
-  return _EXP_autorelease([matcherBlock copy]); \
+  return _EXP_autorelease(matcherBlock); \
 } \
 @end
