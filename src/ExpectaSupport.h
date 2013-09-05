@@ -1,10 +1,10 @@
 #import "EXPExpect.h"
 #import "EXPBlockDefinedMatcher.h"
 
-id _EXPObjectify(char *type, ...);
-EXPExpect *_EXP_expect(id testCase, int lineNumber, char *fileName, EXPIdBlock actualBlock);
+id _EXPObjectify(const char *type, ...);
+EXPExpect *_EXP_expect(id testCase, int lineNumber, const char *fileName, EXPIdBlock actualBlock);
 
-void EXPFail(id testCase, int lineNumber, char *fileName, NSString *message);
+void EXPFail(id testCase, int lineNumber, const char *fileName, NSString *message);
 NSString *EXPDescribeObject(id obj);
 
 void EXP_prerequisite(EXPBoolBlock block);
