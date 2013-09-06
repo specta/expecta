@@ -98,6 +98,9 @@
     } else {
       BOOL matchResult = NO;
       if(self.asynchronous) {
+        NSUInteger runIndex = 0;
+        NSArray *runLoopModes = [NSArray arrayWithObjects:NSDefaultRunLoopMode, NSRunLoopCommonModes, nil];
+        NSTimeInterval checkEveryInterval = 0.01;
         NSTimeInterval timeOut = [Expecta asynchronousTestTimeout];
         NSDate *expiryDate = [NSDate dateWithTimeIntervalSinceNow:timeOut];
         while(1) {
@@ -106,7 +109,13 @@
           if(!failed || ([(NSDate *)[NSDate date] compare:expiryDate] == NSOrderedDescending)) {
             break;
           }
-          [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.01]];
+          @autoreleasepool {
+            NSString *mode = [runLoopModes objectAtIndex:(runIndex++ % [runLoopModes count])];
+            if (!mode || ![[NSRunLoop currentRunLoop] runMode:mode beforeDate:[NSDate dateWithTimeIntervalSinceNow:checkEveryInterval]]) {
+              // If there were no run loop sources or timers then we should sleep for the interval
+              [NSThread sleepForTimeInterval:checkEveryInterval];
+            }
+          }
           OSMemoryBarrier();
           *actual = self.actual;
         }
