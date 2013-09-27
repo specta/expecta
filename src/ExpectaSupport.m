@@ -111,6 +111,11 @@ void EXPFail(id testCase, int lineNumber, const char *fileName, NSString *messag
       exception = [NSException failureInFile:[NSString stringWithUTF8String:fileName] atLine:lineNumber withDescription:message];
     }
     [testCase failWithException:exception];
+  } else if(testCase && [testCase respondsToSelector:@selector(recordFailureWithDescription:inFile:atLine:expected:)]){
+      [testCase recordFailureWithDescription:message
+                                      inFile:[NSString stringWithUTF8String:fileName]
+                                      atLine:lineNumber
+                                    expected:NO];
   } else {
     [exception raise];
   }
