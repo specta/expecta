@@ -18,13 +18,11 @@ EXPMatcherImplementationBegin(_contain, (id expected)) {
       if([actual isKindOfClass:[NSString class]]) {
         return [(NSString *)actual rangeOfString:[expected description]].location != NSNotFound;
       } else if ([actual isKindOfClass:[NSDictionary class]]) {
-        for (id expectedKey in expected) {
-          id expectedValue = [expected objectForKey:expectedKey];
-          if (![expectedValue isEqual:[actual objectForKey: expectedKey]]) {
-            return NO;
-          }
-        }
-        return YES;
+        NSArray *expectedKeys = [expected allKeys];
+        id notFoundMarker = [NSObject new];
+        NSArray *expectedValues = [expected objectsForKeys:expectedKeys notFoundMarker:notFoundMarker];
+        NSArray *actualValues = [actual objectsForKeys:expectedKeys notFoundMarker:notFoundMarker];
+        return [actualValues isEqual:expectedValues];
       } else {
 		for (id object in actual) {
           if ([object isEqual:expected]) {
