@@ -77,7 +77,7 @@ Expecta is framework-agnostic. It works well with OCUnit (SenTestingKit) and OCU
 >
 >`expect(x).to.beFalsy();` passes if x evaluates to false (zero).
 >
->`expect(x).to.contain(y);` passes if an instance of NSArray or NSString x contains y.
+>`expect(x).to.contain(y);` passes if an instance of NSArray, NSDictionary or NSString x contains y.
 >
 >`expect(x).to.haveCountOf(y);` passes if an instance of NSArray, NSSet, NSDictionary or NSString x has a count or length of y.
 >
