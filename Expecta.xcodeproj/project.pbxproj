@@ -71,12 +71,9 @@
 		9C44172217FF40A500978F09 /* MiscTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BDBAA614BE1CD900102FB5 /* MiscTest.m */; };
 		9C44172317FF40A500978F09 /* DynamicPredicateMatcherTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A30575A81520F5FE00DA19BD /* DynamicPredicateMatcherTest.m */; };
 		9C44172417FF40A500978F09 /* CustomMatcherImplementationsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A30575691520C25500DA19BD /* CustomMatcherImplementationsTest.m */; };
-		9C44172517FF40A500978F09 /* XCTestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6023B317FF288200AB60B3 /* XCTestTest.m */; };
 		9C44172617FF45EE00978F09 /* libExpecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */; };
 		9C44172717FF4FD500978F09 /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF9C13B2E0BB0010F4D7 /* Fixtures.m */; };
 		9C44172817FF4FD900978F09 /* FakeTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF9A13B2E0BB0010F4D7 /* FakeTestCase.m */; };
-		9C6023B417FF288200AB60B3 /* XCTestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6023B317FF288200AB60B3 /* XCTestTest.m */; };
-		9CAC720F17FF7261005CCEAF /* XCTestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6023B317FF288200AB60B3 /* XCTestTest.m */; };
 		A305755E1520BCCB00DA19BD /* EXPMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A305755D1520BCCB00DA19BD /* EXPMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A305755F1520BCCB00DA19BD /* EXPMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A305755D1520BCCB00DA19BD /* EXPMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A30575631520BDCE00DA19BD /* EXPBlockDefinedMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A30575611520BDCD00DA19BD /* EXPBlockDefinedMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -275,7 +272,6 @@
 		9C4416FF17FF3F4A00978F09 /* Expecta XCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Expecta XCTests-Info.plist"; sourceTree = "<group>"; };
 		9C44170117FF3F4A00978F09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9C44170517FF3F4A00978F09 /* Expecta XCTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Expecta XCTests-Prefix.pch"; sourceTree = "<group>"; };
-		9C6023B317FF288200AB60B3 /* XCTestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTestTest.m; sourceTree = "<group>"; };
 		A305755D1520BCCB00DA19BD /* EXPMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPMatcher.h; sourceTree = "<group>"; };
 		A30575611520BDCD00DA19BD /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPBlockDefinedMatcher.h; sourceTree = "<group>"; };
 		A30575621520BDCE00DA19BD /* EXPBlockDefinedMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXPBlockDefinedMatcher.m; sourceTree = "<group>"; };
@@ -427,7 +423,8 @@
 			children = (
 				9C4416FE17FF3F4A00978F09 /* Supporting Files */,
 			);
-			path = "Expecta XCTests";
+			name = "Expecta XCTests";
+			path = "../Expecta XCTests";
 			sourceTree = "<group>";
 		};
 		9C4416FE17FF3F4A00978F09 /* Supporting Files */ = {
@@ -451,7 +448,6 @@
 				E9ACDF9413B2DEF30010F4D7 /* LICENSE */,
 				E9ACDF9513B2DEF30010F4D7 /* README.md */,
 				E9A6BAAE13B7183100950250 /* RDD.md */,
-				9C4416FD17FF3F4A00978F09 /* Expecta XCTests */,
 				9C4416FA17FF3F4A00978F09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -560,6 +556,7 @@
 				E9ACDFA113B2E0CC0010F4D7 /* support */,
 				E9ACDF7413B2DEB70010F4D7 /* matchers */,
 				E9ACDF9613B2E0BB0010F4D7 /* helpers */,
+				9C4416FD17FF3F4A00978F09 /* Expecta XCTests */,
 				E9ACDF7313B2DEB70010F4D7 /* ExpectationTest.m */,
 				E9ACDF7C13B2DEB70010F4D7 /* NSValue+ExpectaTest.m */,
 				E969C52213B5FD02006BB8B1 /* EXPFailTest.m */,
@@ -567,7 +564,6 @@
 				E9BDBAA614BE1CD900102FB5 /* MiscTest.m */,
 				A30575A81520F5FE00DA19BD /* DynamicPredicateMatcherTest.m */,
 				A30575691520C25500DA19BD /* CustomMatcherImplementationsTest.m */,
-				9C6023B317FF288200AB60B3 /* XCTestTest.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -922,7 +918,6 @@
 				9C44171517FF409D00978F09 /* EXPMatchers+raiseWithReasonTest.m in Sources */,
 				9C44171717FF409D00978F09 /* EXPMatchers+haveCountOfTest.m in Sources */,
 				9C44172417FF40A500978F09 /* CustomMatcherImplementationsTest.m in Sources */,
-				9C44172517FF40A500978F09 /* XCTestTest.m in Sources */,
 				9C44171E17FF40A500978F09 /* ExpectationTest.m in Sources */,
 				9C44171617FF409D00978F09 /* EXPMatchers+containTest.m in Sources */,
 				9C44171A17FF409D00978F09 /* EXPMatchers+beLessThanTest.m in Sources */,
@@ -997,7 +992,6 @@
 				E9D3DF0F157A7B7E0054978E /* EXPMatchers+raiseTest.m in Sources */,
 				E9D3DF1C157A8AC30054978E /* EXPMatchers+beCloseToTest.m in Sources */,
 				2546A96316629DF70078E044 /* EXPMatchers+raiseWithReasonTest.m in Sources */,
-				9CAC720F17FF7261005CCEAF /* XCTestTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1047,7 +1041,6 @@
 				E9ACDF8B13B2DEB70010F4D7 /* EXPMatchers+beNilTest.m in Sources */,
 				E9ACDF8C13B2DEB70010F4D7 /* EXPMatchers+beSubclassOfTest.m in Sources */,
 				E9ACDF8D13B2DEB70010F4D7 /* EXPMatchers+beTruthyTest.m in Sources */,
-				9C6023B417FF288200AB60B3 /* XCTestTest.m in Sources */,
 				E9ACDF8E13B2DEB70010F4D7 /* EXPMatchers+equalTest.m in Sources */,
 				E9ACDF8F13B2DEB70010F4D7 /* NSValue+ExpectaTest.m in Sources */,
 				E9ACDF9E13B2E0BB0010F4D7 /* EXPExpect+Test.m in Sources */,
@@ -1393,6 +1386,7 @@
 				9C44170A17FF3F4A00978F09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E93067F213B2E6D100EA26FF /* Build configuration list for PBXNativeTarget "Expecta-iOS" */ = {
 			isa = XCConfigurationList;
