@@ -1,6 +1,6 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_containTest : SenTestCase {
+@interface EXPMatchers_containTest : TEST_SUPERCLASS {
   NSArray *array, *array2;
   NSSet* set;
   NSString *string;

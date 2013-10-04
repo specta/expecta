@@ -1,6 +1,6 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_beInstanceOfTest : SenTestCase {
+@interface EXPMatchers_beInstanceOfTest : TEST_SUPERCLASS {
   Foo *foo;
   Bar *bar;
   id baz;

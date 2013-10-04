@@ -1,6 +1,6 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_raiseTest : SenTestCase
+@interface EXPMatchers_raiseTest : TEST_SUPERCLASS
 @end
 
 @implementation EXPMatchers_raiseTest

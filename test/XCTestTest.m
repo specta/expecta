@@ -8,12 +8,7 @@
 
 #import "TestHelper.h"
 
-#ifdef __IPHONE_7_0
-#import <XCTest/XCTest.h>
-@interface XCTestTest : XCTestCase
-#else
-@interface XCTestTest : SenTestCase
-#endif
+@interface XCTestTest : TEST_SUPERCLASS
 
 @end
 
