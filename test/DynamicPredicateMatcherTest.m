@@ -21,7 +21,7 @@
 EXPMatcherInterface(isTurnedOn, (void));
 #define beTurnedOn isTurnedOn
 
-@interface DynamicPredicateMatcherTest : SenTestCase
+@interface DynamicPredicateMatcherTest : TEST_SUPERCLASS
 @end
 
 @implementation DynamicPredicateMatcherTest

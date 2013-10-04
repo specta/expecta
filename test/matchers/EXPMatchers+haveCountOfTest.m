@@ -1,6 +1,6 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_haveCountOfTest : SenTestCase {
+@interface EXPMatchers_haveCountOfTest : TEST_SUPERCLASS {
   NSArray *array;
   NSSet* set;
   NSOrderedSet *orderedSet;

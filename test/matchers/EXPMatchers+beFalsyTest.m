@@ -1,6 +1,6 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_beFalsyTest : SenTestCase {
+@interface EXPMatchers_beFalsyTest : TEST_SUPERCLASS {
   int *nullPointer;
 }
 @end

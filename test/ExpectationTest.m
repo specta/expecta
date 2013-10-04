@@ -1,7 +1,7 @@
 #import "TestHelper.h"
 #import "NSValue+Expecta.h"
 
-@interface ExpectationTest : SenTestCase {
+@interface ExpectationTest : TEST_SUPERCLASS {
   EXPExpect *x;
   NSNumber *n;
   NSValue *v;

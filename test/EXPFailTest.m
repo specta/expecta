@@ -33,7 +33,7 @@
 
 @end
 
-@interface EXPFailTest : SenTestCase
+@interface EXPFailTest : TEST_SUPERCLASS
 @end
 
 @implementation EXPFailTest
