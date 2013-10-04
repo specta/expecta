@@ -50,6 +50,7 @@
   [testCase release];
 }
 
+#ifdef SenTestDescriptionKey
 - (void)test_EXPFailWithTestCaseClassThatHasFailureMethod {
   // it calls failWithException: method
   TestCaseClassWithFailMethod *testCase = [TestCaseClassWithFailMethod new];
@@ -64,5 +65,6 @@
   assertEqualObjects([exceptionUserInfo objectForKey:SenTestLineNumberKey], [NSNumber numberWithInt:777]);
   [testCase release];
 }
+#endif
 
 @end
