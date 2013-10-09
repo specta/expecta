@@ -25,6 +25,12 @@
 		4913B4D61411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4913B4D31411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4913B4D71411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4913B4D41411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.m */; };
 		4913B4D81411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4913B4D41411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.m */; };
+		541B02AC1805DFD9000DA87C /* EXPMatchers+conformTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 541B02AA1805DFD9000DA87C /* EXPMatchers+conformTo.h */; };
+		541B02AD1805DFD9000DA87C /* EXPMatchers+conformTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 541B02AA1805DFD9000DA87C /* EXPMatchers+conformTo.h */; };
+		541B02AE1805DFD9000DA87C /* EXPMatchers+conformTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B02AB1805DFD9000DA87C /* EXPMatchers+conformTo.m */; };
+		541B02AF1805DFD9000DA87C /* EXPMatchers+conformTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B02AB1805DFD9000DA87C /* EXPMatchers+conformTo.m */; };
+		541B02B11805E24C000DA87C /* EXPMatchers+conformToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B02B01805E24C000DA87C /* EXPMatchers+conformToTest.m */; };
+		541B02B21805E260000DA87C /* EXPMatchers+conformToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B02B01805E24C000DA87C /* EXPMatchers+conformToTest.m */; };
 		61740D851425689A00091DDF /* EXPMatchers+beInTheRangeOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 61740D841425689A00091DDF /* EXPMatchers+beInTheRangeOfTest.m */; };
 		61740D861425689A00091DDF /* EXPMatchers+beInTheRangeOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 61740D841425689A00091DDF /* EXPMatchers+beInTheRangeOfTest.m */; };
 		61740D8A14256B2500091DDF /* EXPMatchers+beInTheRangeOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 61740D8814256B2500091DDF /* EXPMatchers+beInTheRangeOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -220,6 +226,9 @@
 		4913B4D01411E2DA00040ECB /* EXPMatchers+beGreaterThanOrEqualToTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+beGreaterThanOrEqualToTest.m"; sourceTree = "<group>"; };
 		4913B4D31411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+beGreaterThanOrEqualTo.h"; sourceTree = "<group>"; };
 		4913B4D41411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+beGreaterThanOrEqualTo.m"; sourceTree = "<group>"; };
+		541B02AA1805DFD9000DA87C /* EXPMatchers+conformTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+conformTo.h"; sourceTree = "<group>"; };
+		541B02AB1805DFD9000DA87C /* EXPMatchers+conformTo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+conformTo.m"; sourceTree = "<group>"; };
+		541B02B01805E24C000DA87C /* EXPMatchers+conformToTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+conformToTest.m"; sourceTree = "<group>"; };
 		61740D841425689A00091DDF /* EXPMatchers+beInTheRangeOfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+beInTheRangeOfTest.m"; sourceTree = "<group>"; };
 		61740D8814256B2500091DDF /* EXPMatchers+beInTheRangeOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+beInTheRangeOf.h"; sourceTree = "<group>"; };
 		61740D8914256B2500091DDF /* EXPMatchers+beInTheRangeOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+beInTheRangeOf.m"; sourceTree = "<group>"; };
@@ -437,6 +446,8 @@
 				E9ACDF4D13B2DDC60010F4D7 /* EXPMatchers+beNil.m */,
 				E9ACDF4E13B2DDC60010F4D7 /* EXPMatchers+beSubclassOf.h */,
 				E9ACDF4F13B2DDC60010F4D7 /* EXPMatchers+beSubclassOf.m */,
+				541B02AA1805DFD9000DA87C /* EXPMatchers+conformTo.h */,
+				541B02AB1805DFD9000DA87C /* EXPMatchers+conformTo.m */,
 				E9ACDF5013B2DDC60010F4D7 /* EXPMatchers+beTruthy.h */,
 				E9ACDF5113B2DDC60010F4D7 /* EXPMatchers+beTruthy.m */,
 				E9ACDF4613B2DDC60010F4D7 /* EXPMatchers+beFalsy.h */,
@@ -495,6 +506,7 @@
 				E9ACDF7713B2DEB70010F4D7 /* EXPMatchers+beKindOfTest.m */,
 				E9ACDF7813B2DEB70010F4D7 /* EXPMatchers+beNilTest.m */,
 				E9ACDF7913B2DEB70010F4D7 /* EXPMatchers+beSubclassOfTest.m */,
+				541B02B01805E24C000DA87C /* EXPMatchers+conformToTest.m */,
 				E9ACDF7A13B2DEB70010F4D7 /* EXPMatchers+beTruthyTest.m */,
 				E9ACDF7513B2DEB70010F4D7 /* EXPMatchers+beFalsyTest.m */,
 				E9ACDF7B13B2DEB70010F4D7 /* EXPMatchers+equalTest.m */,
@@ -572,6 +584,7 @@
 				E930681A13B2E86000EA26FF /* EXPMatchers+equal.h in Headers */,
 				E94296F913B430DF0038708B /* EXPMatchers+contain.h in Headers */,
 				E942971713B45C8F0038708B /* EXPMatchers+beIdenticalTo.h in Headers */,
+				541B02AD1805DFD9000DA87C /* EXPMatchers+conformTo.h in Headers */,
 				E9685DBD13B5E39300ADF2D7 /* ExpectaSupport.h in Headers */,
 				61740D8B14256B2500091DDF /* EXPMatchers+beInTheRangeOf.h in Headers */,
 				AE0E76FF13FF3840009AF5D8 /* EXPMatchers+beLessThan.h in Headers */,
@@ -611,6 +624,7 @@
 				E9ACDF7013B2DDC60010F4D7 /* NSValue+Expecta.h in Headers */,
 				E94296F813B430DF0038708B /* EXPMatchers+contain.h in Headers */,
 				E942971613B45C8F0038708B /* EXPMatchers+beIdenticalTo.h in Headers */,
+				541B02AC1805DFD9000DA87C /* EXPMatchers+conformTo.h in Headers */,
 				E9685DBC13B5E39300ADF2D7 /* ExpectaSupport.h in Headers */,
 				61740D8A14256B2500091DDF /* EXPMatchers+beInTheRangeOf.h in Headers */,
 				AE0E76F813FF3732009AF5D8 /* EXPMatchers+beLessThan.h in Headers */,
@@ -812,6 +826,7 @@
 				A30575661520BDCE00DA19BD /* EXPBlockDefinedMatcher.m in Sources */,
 				E95368561521BFDB00AA3B81 /* EXPBackwardCompatibility.m in Sources */,
 				E9D3DF13157A7EA30054978E /* EXPMatchers+raise.m in Sources */,
+				541B02AF1805DFD9000DA87C /* EXPMatchers+conformTo.m in Sources */,
 				2546A95F16629D500078E044 /* EXPMatchers+raiseWithReason.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -834,6 +849,7 @@
 				E930680013B2E80200EA26FF /* Fixtures.m in Sources */,
 				E94296F513B42E160038708B /* EXPMatchers+containTest.m in Sources */,
 				E942971313B45ADD0038708B /* EXPMatchers+beIdenticalToTest.m in Sources */,
+				541B02B21805E260000DA87C /* EXPMatchers+conformToTest.m in Sources */,
 				E969C52613B60234006BB8B1 /* EXPFailTest.m in Sources */,
 				E9AFC43B13C482D3006B4F2A /* AsynchronousTestingTest.m in Sources */,
 				AE0E76FD13FF37D6009AF5D8 /* EXPMatchers+beLessThanTest.m in Sources */,
@@ -882,6 +898,7 @@
 				A30575651520BDCE00DA19BD /* EXPBlockDefinedMatcher.m in Sources */,
 				E95368551521BFDB00AA3B81 /* EXPBackwardCompatibility.m in Sources */,
 				E9D3DF12157A7EA30054978E /* EXPMatchers+raise.m in Sources */,
+				541B02AE1805DFD9000DA87C /* EXPMatchers+conformTo.m in Sources */,
 				2546A95E16629D500078E044 /* EXPMatchers+raiseWithReason.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -917,6 +934,7 @@
 				A30575A91520F5FE00DA19BD /* DynamicPredicateMatcherTest.m in Sources */,
 				E9D3DF0E157A7B7E0054978E /* EXPMatchers+raiseTest.m in Sources */,
 				E9D3DF1B157A8AC30054978E /* EXPMatchers+beCloseToTest.m in Sources */,
+				541B02B11805E24C000DA87C /* EXPMatchers+conformToTest.m in Sources */,
 				2546A96216629DF70078E044 /* EXPMatchers+raiseWithReasonTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
