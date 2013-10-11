@@ -25,8 +25,8 @@
 		4913B4D61411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4913B4D31411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4913B4D71411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4913B4D41411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.m */; };
 		4913B4D81411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4913B4D41411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.m */; };
-		541B02AC1805DFD9000DA87C /* EXPMatchers+conformTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 541B02AA1805DFD9000DA87C /* EXPMatchers+conformTo.h */; };
-		541B02AD1805DFD9000DA87C /* EXPMatchers+conformTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 541B02AA1805DFD9000DA87C /* EXPMatchers+conformTo.h */; };
+		541B02AC1805DFD9000DA87C /* EXPMatchers+conformTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 541B02AA1805DFD9000DA87C /* EXPMatchers+conformTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		541B02AD1805DFD9000DA87C /* EXPMatchers+conformTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 541B02AA1805DFD9000DA87C /* EXPMatchers+conformTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		541B02AE1805DFD9000DA87C /* EXPMatchers+conformTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B02AB1805DFD9000DA87C /* EXPMatchers+conformTo.m */; };
 		541B02AF1805DFD9000DA87C /* EXPMatchers+conformTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B02AB1805DFD9000DA87C /* EXPMatchers+conformTo.m */; };
 		541B02B11805E24C000DA87C /* EXPMatchers+conformToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B02B01805E24C000DA87C /* EXPMatchers+conformToTest.m */; };

@@ -3,17 +3,30 @@
 #import <objc/runtime.h>
 
 EXPMatcherImplementationBegin(conformTo, (Protocol *expected)) {
+    BOOL actualIsNil = (actual == nil);
+    BOOL expectedIsNil = (expected == nil);
+
+    prerequisite(^BOOL{
+        return !(actualIsNil || expectedIsNil);
+    });
+
     match(^BOOL{
         return [actual conformsToProtocol:expected];
     });
 
-    NSString *name = [NSString stringWithUTF8String:protocol_getName(expected)];
-
     failureMessageForTo(^NSString *{
+        if(actualIsNil) return @"the object is nil/null";
+        if(expectedIsNil) return @"the protocol is nil/null";
+
+        NSString *name = NSStringFromProtocol(expected);
         return [NSString stringWithFormat:@"expected: %@ to conform to %@", actual, name];
     });
 
     failureMessageForNotTo(^NSString *{
+        if(actualIsNil) return @"the object is nil/null";
+        if(expectedIsNil) return @"the protocol is nil/null";
+
+        NSString *name = NSStringFromProtocol(expected);
         return [NSString stringWithFormat:@"expected: %@ not to conform to %@", actual, name];
     });
 }
