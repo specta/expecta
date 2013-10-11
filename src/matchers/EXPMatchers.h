@@ -3,6 +3,7 @@
 #import "EXPMatchers+beInstanceOf.h"
 #import "EXPMatchers+beKindOf.h"
 #import "EXPMatchers+beSubclassOf.h"
+#import "EXPMatchers+conformTo.h"
 #import "EXPMatchers+beTruthy.h"
 #import "EXPMatchers+beFalsy.h"
 #import "EXPMatchers+contain.h"
