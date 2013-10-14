@@ -5,12 +5,10 @@ EXPMatcherImplementationBegin(_contain, (id expected)) {
   BOOL expectedIsNil = (expected == nil);
   BOOL actualIsDictionary = [actual isKindOfClass:[NSDictionary class]];
   BOOL expectedIsDictionary = [expected isKindOfClass:[NSDictionary class]];
-  BOOL bothOrNeitherDictionaries = (actualIsDictionary && expectedIsDictionary) ||
-      (!actualIsDictionary && !expectedIsDictionary);
+  BOOL bothOrNeitherDictionaries = (actualIsDictionary && expectedIsDictionary) || (!actualIsDictionary && !expectedIsDictionary);
 
   prerequisite(^BOOL{
-    return actualIsCompatible && !expectedIsNil &&
-      bothOrNeitherDictionaries;
+    return actualIsCompatible && !expectedIsNil && bothOrNeitherDictionaries;
   });
 
   match(^BOOL{
@@ -22,14 +20,15 @@ EXPMatcherImplementationBegin(_contain, (id expected)) {
         id notFoundMarker = [NSObject new];
         NSArray *expectedValues = [expected objectsForKeys:expectedKeys notFoundMarker:notFoundMarker];
         NSArray *actualValues = [actual objectsForKeys:expectedKeys notFoundMarker:notFoundMarker];
+        [notFoundMarker release];
         return [actualValues isEqual:expectedValues];
       } else {
-		for (id object in actual) {
+        for (id object in actual) {
           if ([object isEqual:expected]) {
             return YES;
           }
-		}
-	  }
+        }
+      }
     }
     return NO;
   });
@@ -50,13 +49,13 @@ EXPMatcherImplementationBegin(_contain, (id expected)) {
   failureMessageForNotTo(^NSString *{
     if(!actualIsCompatible) return [NSString stringWithFormat:@"%@ is not an instance of NSString or NSFastEnumeration", EXPDescribeObject(actual)];
     if(expectedIsNil) return @"the expected value is nil/null";
-      if(!bothOrNeitherDictionaries) {
-        if (actualIsDictionary) {
-          return [NSString stringWithFormat:@"%@ is not an instance of NSDictionary", EXPDescribeObject(expected)];
-        } else {
-          return [NSString stringWithFormat:@"%@ is not an instance of NSDictionary", EXPDescribeObject(actual)];
-        }
+    if(!bothOrNeitherDictionaries) {
+      if (actualIsDictionary) {
+        return [NSString stringWithFormat:@"%@ is not an instance of NSDictionary", EXPDescribeObject(expected)];
+      } else {
+        return [NSString stringWithFormat:@"%@ is not an instance of NSDictionary", EXPDescribeObject(actual)];
       }
+    }
     return [NSString stringWithFormat:@"expected %@ not to contain %@", EXPDescribeObject(actual), EXPDescribeObject(expected)];
   });
 }
