@@ -1,22 +1,12 @@
 #import "TestHelper.h"
-
-// Test case class without failWithException: method
-@interface TestCaseClassWithoutFailMethod : NSObject
-- (void)fail;
-@end
+#import "EXPFailTest.h"
 
 @implementation TestCaseClassWithoutFailMethod
+
 - (void)fail {
   EXPFail(self, 777, "test.m", @"epic fail");
 }
-@end
 
-// Test case class with failWithException: method
-@interface TestCaseClassWithFailMethod : TestCaseClassWithoutFailMethod {
-  NSException *_exception;
-}
-@property(nonatomic, retain) NSException *exception;
-- (void)failWithException:(NSException *)exception;
 @end
 
 @implementation TestCaseClassWithFailMethod
@@ -33,29 +23,25 @@
 
 @end
 
-// Test case class with failWithException: method
-@interface TestCaseClassWithRecordFailureMethod : TestCaseClassWithoutFailMethod
-@property(strong)NSString *description;
-@property(strong)NSString *fileName;
-@property(assign)NSUInteger lineNumber;
-@property(assign)BOOL expected;
-
-- (void)recordFailureWithDescription:(NSString *)description
-                              inFile:(NSString *)filename
-                              atLine:(NSUInteger)lineNumber
-                            expected:(BOOL)expected;
-@end
-
 @implementation TestCaseClassWithRecordFailureMethod
 
-- (void)recordFailureWithDescription:(NSString *)description
-                              inFile:(NSString *)filename
-                              atLine:(NSUInteger)lineNumber
-                            expected:(BOOL)expected {
-    self.description = description;
-    self.fileName = filename;
-    self.lineNumber = lineNumber;
-    self.expected = expected;
+@synthesize
+  description=_description,
+  fileName=_fileName,
+  lineNumber=_lineNumber,
+  expected=_expected;
+
+- (void)dealloc {
+  self.description = nil;
+  self.fileName = nil;
+  [super dealloc];
+}
+
+- (void)recordFailureWithDescription:(NSString *)description inFile:(NSString *)filename atLine:(NSUInteger)lineNumber expected:(BOOL)expected {
+  self.description = description;
+  self.fileName = filename;
+  self.lineNumber = lineNumber;
+  self.expected = expected;
 }
 
 @end
