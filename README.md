@@ -40,7 +40,7 @@ target :MyApp do
 end
 
 target :MyAppTests do
-  pod 'Expecta',     '~> 0.2.2'   # expecta matchers
+  pod 'Expecta',     '~> 0.2.3'   # expecta matchers
   # pod 'Specta',      '~> 0.1.11'  # specta bdd framework
 end
 ```
