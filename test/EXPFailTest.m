@@ -33,7 +33,34 @@
 
 @end
 
-@interface EXPFailTest : SenTestCase
+// Test case class with failWithException: method
+@interface TestCaseClassWithRecordFailureMethod : TestCaseClassWithoutFailMethod
+@property(strong)NSString *description;
+@property(strong)NSString *fileName;
+@property(assign)NSUInteger lineNumber;
+@property(assign)BOOL expected;
+
+- (void)recordFailureWithDescription:(NSString *)description
+                              inFile:(NSString *)filename
+                              atLine:(NSUInteger)lineNumber
+                            expected:(BOOL)expected;
+@end
+
+@implementation TestCaseClassWithRecordFailureMethod
+
+- (void)recordFailureWithDescription:(NSString *)description
+                              inFile:(NSString *)filename
+                              atLine:(NSUInteger)lineNumber
+                            expected:(BOOL)expected {
+    self.description = description;
+    self.fileName = filename;
+    self.lineNumber = lineNumber;
+    self.expected = expected;
+}
+
+@end
+    
+@interface EXPFailTest : TEST_SUPERCLASS
 @end
 
 @implementation EXPFailTest
@@ -50,6 +77,20 @@
   [testCase release];
 }
 
+#ifdef USE_XCTEST
+- (void)test_EXPFailWithTestCaseClassThatHasFailureMethod {
+    // it calls recordFailureWithDescription:inFile:atLine:expected: method
+    TestCaseClassWithRecordFailureMethod *testCase = [TestCaseClassWithRecordFailureMethod new];
+    assertNil(testCase.description);
+    assertNil(testCase.fileName);
+    [testCase fail];
+    assertEqualObjects(testCase.description, @"epic fail");
+    assertEqualObjects(testCase.fileName, @"test.m");
+    assertEqualObjects(@(testCase.lineNumber), @777);
+    assertEquals(testCase.expected, NO);
+    [testCase release];
+}
+#else
 - (void)test_EXPFailWithTestCaseClassThatHasFailureMethod {
   // it calls failWithException: method
   TestCaseClassWithFailMethod *testCase = [TestCaseClassWithFailMethod new];
@@ -64,5 +105,6 @@
   assertEqualObjects([exceptionUserInfo objectForKey:SenTestLineNumberKey], [NSNumber numberWithInt:777]);
   [testCase release];
 }
+#endif
 
 @end

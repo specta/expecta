@@ -1,6 +1,6 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_beNilTest : SenTestCase {
+@interface EXPMatchers_beNilTest : TEST_SUPERCLASS {
   NSObject *nilObject;
   int *nullPointer;
 }
