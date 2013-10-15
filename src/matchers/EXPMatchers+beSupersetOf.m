@@ -1,6 +1,6 @@
 #import "EXPMatchers+contain.h"
 
-EXPMatcherImplementationBegin(containSubset, (id subset)) {
+EXPMatcherImplementationBegin(beSupersetOf, (id subset)) {
   BOOL actualIsCompatible = [actual isKindOfClass:[NSDictionary class]] || [actual respondsToSelector:@selector(containsObject:)];
   BOOL subsetIsNil = (subset == nil);
   BOOL classMatches = [subset isKindOfClass:[actual class]];
