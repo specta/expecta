@@ -29,7 +29,7 @@ EXPMatcherImplementationBegin(containSubset, (id subset)) {
   });
 
   failureMessageForTo(^NSString *{
-    if(!actualIsCompatible) return [NSString stringWithFormat:@"%@ is not an instance of NSDictionary or implements -containsObject:", EXPDescribeObject(actual)];
+    if(!actualIsCompatible) return [NSString stringWithFormat:@"%@ is not an instance of NSDictionary and does not implement -containsObject:", EXPDescribeObject(actual)];
 
     if(subsetIsNil) return @"the expected value is nil/null";
 
@@ -39,7 +39,7 @@ EXPMatcherImplementationBegin(containSubset, (id subset)) {
   });
 
   failureMessageForNotTo(^NSString *{
-    if(!actualIsCompatible) return [NSString stringWithFormat:@"%@ is not an instance of NSDictionary or implements -containsObject:", EXPDescribeObject(actual)];
+    if(!actualIsCompatible) return [NSString stringWithFormat:@"%@ is not an instance of NSDictionary and does not implement -containsObject:", EXPDescribeObject(actual)];
 
     if(subsetIsNil) return @"the expected value is nil/null";
 

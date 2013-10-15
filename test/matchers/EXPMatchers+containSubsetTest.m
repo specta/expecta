@@ -40,7 +40,7 @@
   assertFail(test_expect(orderedSet).containSubset([NSOrderedSet orderedSetWithObject:@"xyz"]), @"expected {(foo, bar, baz)} to be a superset of {(xyz)}");
   assertFail(test_expect(dictionary).containSubset([NSDictionary dictionaryWithObject:@2 forKey:@"xyz"]), @"expected {foo = 1; bar = 2;} to be a superset of {xyz = 2;}");
 
-  assertFail(test_expect(nil).containSubset([NSArray array]), @"nil/null is not an instance of NSDictionary or implements -containsObject:");
+  assertFail(test_expect(nil).containSubset([NSArray array]), @"nil/null is not an instance of NSDictionary and does not implement -containsObject:");
   assertFail(test_expect(array).containSubset(nil), @"the expected value is nil/null");
   assertFail(test_expect(array).containSubset(set), @"{(foo, bar)} does not match the class of (foo, bar, baz)");
 }
@@ -66,7 +66,7 @@
   assertPass(test_expect(orderedSet).notTo.containSubset([NSOrderedSet orderedSetWithObject:@"xyz"]));
   assertPass(test_expect(dictionary).notTo.containSubset([NSDictionary dictionaryWithObject:@2 forKey:@"xyz"]));
 
-  assertFail(test_expect(nil).notTo.containSubset([NSArray array]), @"nil/null is not an instance of NSDictionary or implements -containsObject:");
+  assertFail(test_expect(nil).notTo.containSubset([NSArray array]), @"nil/null is not an instance of NSDictionary and does not implement -containsObject:");
   assertFail(test_expect(array).notTo.containSubset(nil), @"the expected value is nil/null");
   assertFail(test_expect(array).notTo.containSubset(set), @"{(foo, bar)} does not match the class of (foo, bar, baz)");
 }
