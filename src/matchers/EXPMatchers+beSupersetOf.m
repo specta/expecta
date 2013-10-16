@@ -1,7 +1,7 @@
 #import "EXPMatchers+contain.h"
 
 EXPMatcherImplementationBegin(beSupersetOf, (id subset)) {
-  BOOL actualIsCompatible = [actual isKindOfClass:[NSDictionary class]] || [actual isKindOfClass:[NSString class]] || [actual respondsToSelector:@selector(containsObject:)];
+  BOOL actualIsCompatible = [actual isKindOfClass:[NSDictionary class]] || [actual respondsToSelector:@selector(containsObject:)];
   BOOL subsetIsNil = (subset == nil);
   BOOL classMatches = [subset isKindOfClass:[actual class]];
 
@@ -18,13 +18,6 @@ EXPMatcherImplementationBegin(beSupersetOf, (id subset)) {
         id subsetValue = [subset valueForKey:key];
 
         if (![subsetValue isEqual:actualValue]) return NO;
-      }
-    } else if ([actual isKindOfClass:[NSString class]]) {
-      for (NSUInteger i = 0; i < [subset length]; i++) {
-        unichar character = [subset characterAtIndex:i];
-        NSRange range = [actual rangeOfString:[NSString stringWithCharacters:&character length:1]];
-
-        if (range.location == NSNotFound) return NO;
       }
     } else {
       for (id object in subset) {
