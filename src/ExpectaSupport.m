@@ -139,7 +139,7 @@ NSString *EXPDescribeObject(id obj) {
         if(strcmp(type, @encode(SEL)) == 0) {
           return [NSString stringWithFormat:@"@selector(%@)", NSStringFromSelector([obj pointerValue])];
         } else if(strcmp(type, @encode(Class)) == 0) {
-          return NSStringFromClass(pointerValue);
+          return NSStringFromClass((__bridge Class)pointerValue);
         }
       }
     }

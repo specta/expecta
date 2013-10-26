@@ -1,9 +1,5 @@
 #import "Expecta.h"
 
-EXPMatcherInterface(_beIdenticalTo, (void *expected));
+EXPMatcherInterface(_beIdenticalTo, (id expected));
 
-#if __has_feature(objc_arc)
-#define beIdenticalTo(expected) _beIdenticalTo((__bridge void*)expected)
-#else
 #define beIdenticalTo _beIdenticalTo
-#endif
