@@ -11,9 +11,9 @@
 @implementation EXPMatchers_beKindOfTest
 
 - (void)setUp {
-  foo = [[Foo new] autorelease];
-  bar = [[Bar new] autorelease];
-  baz = [[Baz new] autorelease];
+  foo = [Foo new];
+  bar = [Bar new];
+  baz = [Baz new];
   qux = foo;
 }
 

@@ -44,7 +44,6 @@ EXPMatcherInterface(_equalWithCustomMatcher, (id expected));
   return [^(id expected) {
     MyCustomMatcherImpl *customMatcher = [[MyCustomMatcherImpl alloc] initWithExpected:expected];
     [self applyMatcher:customMatcher];
-    [customMatcher release];
   } copy];
 }
 

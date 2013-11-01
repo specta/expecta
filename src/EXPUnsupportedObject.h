@@ -4,7 +4,7 @@
   NSString *_type;
 }
 
-@property (nonatomic, retain) NSString *type;
+@property (nonatomic, strong) NSString *type;
 
 - (id)initWithType:(NSString *)type;
 

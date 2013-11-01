@@ -12,9 +12,4 @@
   return self;
 }
 
-- (void)dealloc {
-  self.type = nil;
-  [super dealloc];
-}
-
 @end

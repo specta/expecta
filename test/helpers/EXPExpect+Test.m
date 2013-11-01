@@ -4,7 +4,7 @@
 @implementation EXPExpect (Test)
 
 - (EXPExpect *)test {
-  self.testCase = [[FakeTestCase new] autorelease];
+  self.testCase = [FakeTestCase new];
   return self;
 }
 

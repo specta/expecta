@@ -10,8 +10,8 @@
 @implementation EXPMatchers_beInstanceOfTest
 
 - (void)setUp {
-  foo = [[Foo new] autorelease];
-  bar = [[Bar new] autorelease];
+  foo = [Foo new];
+  bar = [Bar new];
   baz = foo;
 }
 

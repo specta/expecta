@@ -2,7 +2,7 @@
 #import "EXPDefines.h"
 
 EXPMatcherImplementationBegin(raiseWithReason, (NSString *expectedExceptionName, NSString *expectedReason)) {
-    __block NSException *exceptionCaught = nil;
+    __block __unsafe_unretained NSException *exceptionCaught = nil;
     
     match(^BOOL{
         BOOL expectedExceptionCaught = NO;
