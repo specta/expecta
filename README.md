@@ -112,6 +112,8 @@ Expecta is framework-agnostic. It works well with OCUnit (SenTestingKit) and OCU
 >`expect(x).to.conformTo(y);` passes if `x` conforms to the protocol `y`.
 >
 >`expect(x).to.respondTo(y);` passes if `x` responds to the selector `y`.
+>
+>`expect(x).to.beginWith(y);` passes if an instance of NSString, NSArray, or NSOrderedSet `x` begins with `y`. Also aliased by `startWith`
 
 **Please contribute more matchers.**
 
