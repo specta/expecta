@@ -1,5 +1,11 @@
 #import "Fixtures.h"
 
-@implementation Foo; @end
+@implementation Foo
+- (void)fooMethod {}
+@end
+
 @implementation Bar; @end
-@implementation Baz; @end
+
+@implementation Baz
++ (void)bazClassMethod {}
+@end

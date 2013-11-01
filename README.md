@@ -108,6 +108,10 @@ Expecta is framework-agnostic. It works well with OCUnit (SenTestingKit) and OCU
 >`expect(^{ /* code */ }).to.raise(@"ExceptionName");` passes if a given block of code raises an exception named `ExceptionName`.
 >
 >`expect(^{ /* code */ }).to.raiseAny();` passes if a given block of code raises any exception.
+>
+>`expect(x).to.conformTo(y);` passes if `x` conforms to the protocol `y`.
+>
+>`expect(x).to.respondTo(y);` passes if `x` responds to the selector `y`.
 
 **Please contribute more matchers.**
 
