@@ -20,3 +20,4 @@
 #import "EXPMatchers+raiseWithReason.h"
 #import "EXPMatchers+respondTo.h"
 #import "EXPMatchers+beginWith.h"
+#import "EXPMatchers+endWith.h"

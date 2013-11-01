@@ -61,6 +61,10 @@
 		77EC2C1318245BAD00A77BCC /* EXPMatchers+beginWithTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EC2C1218245BAD00A77BCC /* EXPMatchers+beginWithTest.m */; };
 		77EC2C1418245BAD00A77BCC /* EXPMatchers+beginWithTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EC2C1218245BAD00A77BCC /* EXPMatchers+beginWithTest.m */; };
 		77EC2C1518245BAD00A77BCC /* EXPMatchers+beginWithTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EC2C1218245BAD00A77BCC /* EXPMatchers+beginWithTest.m */; };
+		77EC2C1818246C0E00A77BCC /* EXPMatchers+endWith.h in Headers */ = {isa = PBXBuildFile; fileRef = 77EC2C1618246C0E00A77BCC /* EXPMatchers+endWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77EC2C1918246C0E00A77BCC /* EXPMatchers+endWith.h in Headers */ = {isa = PBXBuildFile; fileRef = 77EC2C1618246C0E00A77BCC /* EXPMatchers+endWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77EC2C1A18246C0E00A77BCC /* EXPMatchers+endWith.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EC2C1718246C0E00A77BCC /* EXPMatchers+endWith.m */; };
+		77EC2C1B18246C0E00A77BCC /* EXPMatchers+endWith.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EC2C1718246C0E00A77BCC /* EXPMatchers+endWith.m */; };
 		77F622FD182405D80004F628 /* EXPMatchers+respondTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F622FB182405D80004F628 /* EXPMatchers+respondTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77F622FE182405D80004F628 /* EXPMatchers+respondTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F622FB182405D80004F628 /* EXPMatchers+respondTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77F622FF182405D80004F628 /* EXPMatchers+respondTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F622FC182405D80004F628 /* EXPMatchers+respondTo.m */; };
@@ -300,6 +304,8 @@
 		77EC2C0B1824330600A77BCC /* EXPMatchers+beginWith.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+beginWith.h"; sourceTree = "<group>"; };
 		77EC2C0C1824330600A77BCC /* EXPMatchers+beginWith.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+beginWith.m"; sourceTree = "<group>"; };
 		77EC2C1218245BAD00A77BCC /* EXPMatchers+beginWithTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+beginWithTest.m"; sourceTree = "<group>"; };
+		77EC2C1618246C0E00A77BCC /* EXPMatchers+endWith.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+endWith.h"; sourceTree = "<group>"; };
+		77EC2C1718246C0E00A77BCC /* EXPMatchers+endWith.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+endWith.m"; sourceTree = "<group>"; };
 		77F622FB182405D80004F628 /* EXPMatchers+respondTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+respondTo.h"; sourceTree = "<group>"; };
 		77F622FC182405D80004F628 /* EXPMatchers+respondTo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+respondTo.m"; sourceTree = "<group>"; };
 		77F6231C182418F10004F628 /* EXPMatchers+respondToTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+respondToTest.m"; sourceTree = "<group>"; };
@@ -569,6 +575,8 @@
 				77F622FC182405D80004F628 /* EXPMatchers+respondTo.m */,
 				77EC2C0B1824330600A77BCC /* EXPMatchers+beginWith.h */,
 				77EC2C0C1824330600A77BCC /* EXPMatchers+beginWith.m */,
+				77EC2C1618246C0E00A77BCC /* EXPMatchers+endWith.h */,
+				77EC2C1718246C0E00A77BCC /* EXPMatchers+endWith.m */,
 			);
 			path = matchers;
 			sourceTree = "<group>";
@@ -686,6 +694,7 @@
 				E9685DBD13B5E39300ADF2D7 /* ExpectaSupport.h in Headers */,
 				61740D8B14256B2500091DDF /* EXPMatchers+beInTheRangeOf.h in Headers */,
 				AE0E76FF13FF3840009AF5D8 /* EXPMatchers+beLessThan.h in Headers */,
+				77EC2C1918246C0E00A77BCC /* EXPMatchers+endWith.h in Headers */,
 				AEBA779B14055E9D001690B6 /* EXPMatchers+beLessThanOrEqualTo.h in Headers */,
 				E1EB1BC413BEA1BE00E4C93B /* EXPDoubleTuple.h in Headers */,
 				E1EB1BC813BEA1BE00E4C93B /* EXPFloatTuple.h in Headers */,
@@ -729,6 +738,7 @@
 				E9685DBC13B5E39300ADF2D7 /* ExpectaSupport.h in Headers */,
 				61740D8A14256B2500091DDF /* EXPMatchers+beInTheRangeOf.h in Headers */,
 				AE0E76F813FF3732009AF5D8 /* EXPMatchers+beLessThan.h in Headers */,
+				77EC2C1818246C0E00A77BCC /* EXPMatchers+endWith.h in Headers */,
 				AEBA779A14055E9D001690B6 /* EXPMatchers+beLessThanOrEqualTo.h in Headers */,
 				4913B4CC1411E18A00040ECB /* EXPMatchers+beGreaterThan.h in Headers */,
 				4913B4D51411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.h in Headers */,
@@ -989,6 +999,7 @@
 				4913B4D81411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.m in Sources */,
 				617BC21B142579C600D6C27C /* EXPMatchers+beInTheRangeOf.m in Sources */,
 				63F6F34F150A518C009E1BC3 /* EXPMatchers+beLessThan.m in Sources */,
+				77EC2C1B18246C0E00A77BCC /* EXPMatchers+endWith.m in Sources */,
 				63F6F358150A542D009E1BC3 /* EXPMatchers+beCloseTo.m in Sources */,
 				77F62300182405D80004F628 /* EXPMatchers+respondTo.m in Sources */,
 				63B349E015135C8800C955DC /* EXPMatchers+haveCountOf.m in Sources */,
@@ -1066,6 +1077,7 @@
 				4913B4D71411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.m in Sources */,
 				617BC21A142579C500D6C27C /* EXPMatchers+beInTheRangeOf.m in Sources */,
 				63F6F34E150A5172009E1BC3 /* EXPMatchers+beLessThan.m in Sources */,
+				77EC2C1A18246C0E00A77BCC /* EXPMatchers+endWith.m in Sources */,
 				63F6F357150A542D009E1BC3 /* EXPMatchers+beCloseTo.m in Sources */,
 				77F622FF182405D80004F628 /* EXPMatchers+respondTo.m in Sources */,
 				63B349DF15135C8800C955DC /* EXPMatchers+haveCountOf.m in Sources */,
