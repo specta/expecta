@@ -2,6 +2,12 @@
 
 @protocol Protocol <NSObject> @end
 
-@interface Foo : NSObject; @end;
+@interface Foo : NSObject
+- (void)fooMethod;
+@end
+
 @interface Bar : Foo; @end;
-@interface Baz : NSObject <Protocol>; @end;
+
+@interface Baz : NSObject <Protocol>
++ (void)bazClassMethod;
+@end
