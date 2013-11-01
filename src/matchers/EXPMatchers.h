@@ -18,3 +18,4 @@
 #import "EXPMatchers+beCloseTo.h"
 #import "EXPMatchers+raise.h"
 #import "EXPMatchers+raiseWithReason.h"
+#import "EXPMatchers+respondTo.h"
