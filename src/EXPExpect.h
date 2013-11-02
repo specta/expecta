@@ -4,7 +4,7 @@
 
 @interface EXPExpect : NSObject {
   EXPIdBlock _actualBlock;
-  id _testCase;
+  id __strong _testCase;
   int _lineNumber;
   char *_fileName;
   BOOL _negative;
@@ -13,7 +13,7 @@
 
 @property(nonatomic, copy) EXPIdBlock actualBlock;
 @property(nonatomic, readonly) id actual;
-@property(nonatomic, assign) id testCase;
+@property(nonatomic, strong) id testCase;
 @property(nonatomic) int lineNumber;
 @property(nonatomic) const char *fileName;
 @property(nonatomic) BOOL negative;

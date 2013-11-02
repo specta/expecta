@@ -15,7 +15,6 @@
 
 - (void)dealloc {
     free(self.values);
-    [super dealloc];
 }
 
 - (BOOL)isEqual:(id)object {

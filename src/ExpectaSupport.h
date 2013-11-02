@@ -33,7 +33,7 @@ __attribute__((constructor)) static void EXPFixCategoriesBug##name() {}
 #define _EXPMatcherImplementationBegin(matcherName, matcherArguments) \
 EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
 @implementation EXPExpect (matcherName##Matcher) \
-@dynamic matcherName;\
+\
 - (void(^) matcherArguments) matcherName { \
   EXPBlockDefinedMatcher *matcher = [[EXPBlockDefinedMatcher alloc] init]; \
   [[[NSThread currentThread] threadDictionary] setObject:matcher forKey:@"EXP_currentMatcher"]; \

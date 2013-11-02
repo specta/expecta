@@ -1,12 +1,12 @@
 #import "EXPMatchers+equal.h"
 #import "EXPMatcherHelpers.h"
 
-EXPMatcherImplementationBegin(beIdenticalTo, (void *expected)) {
+EXPMatcherImplementationBegin(beIdenticalTo, (id expected)) {
   match(^BOOL{
     if(actual == expected) {
       return YES;
     } else if([actual isKindOfClass:[NSValue class]] && EXPIsValuePointer((NSValue *)actual)) {
-      if([(NSValue *)actual pointerValue] == expected) {
+      if([(NSValue *)actual pointerValue] == (__bridge void *)expected) {
         return YES;
       }
     }

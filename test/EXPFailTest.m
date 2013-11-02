@@ -12,11 +12,6 @@
 @implementation TestCaseClassWithFailMethod
 @synthesize exception=_exception;
 
-- (void)dealloc {
-  self.exception = nil;
-  [super dealloc];
-}
-
 - (void)failWithException:(NSException *)exception {
   self.exception = exception;
 }
@@ -30,12 +25,6 @@
   fileName=_fileName,
   lineNumber=_lineNumber,
   expected=_expected;
-
-- (void)dealloc {
-  self.description = nil;
-  self.fileName = nil;
-  [super dealloc];
-}
 
 - (void)recordFailureWithDescription:(NSString *)description inFile:(NSString *)filename atLine:(NSUInteger)lineNumber expected:(BOOL)expected {
   self.description = description;
@@ -60,7 +49,6 @@
     assertEqualObjects([exception name], @"Expecta Error");
     assertEqualObjects([exception reason], @"test.m:777 epic fail");
   }
-  [testCase release];
 }
 
 #ifdef USE_XCTEST
@@ -89,7 +77,6 @@
   assertEqualObjects([exceptionUserInfo objectForKey:SenTestDescriptionKey], @"epic fail");
   assertEqualObjects([exceptionUserInfo objectForKey:SenTestFilenameKey], @"test.m");
   assertEqualObjects([exceptionUserInfo objectForKey:SenTestLineNumberKey], [NSNumber numberWithInt:777]);
-  [testCase release];
 }
 #endif
 

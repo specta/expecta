@@ -37,14 +37,8 @@
   return self;
 }
 
-- (void)dealloc
-{
-  self.actualBlock = nil;
-  [super dealloc];
-}
-
 + (EXPExpect *)expectWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(const char *)fileName {
-  return [[[EXPExpect alloc] initWithActualBlock:actualBlock testCase:(id)testCase lineNumber:lineNumber fileName:fileName] autorelease];
+  return [[EXPExpect alloc] initWithActualBlock:actualBlock testCase:(id)testCase lineNumber:lineNumber fileName:fileName];
 }
 
 #pragma mark -
@@ -153,7 +147,6 @@
     EXPDynamicPredicateMatcher *matcher = [[EXPDynamicPredicateMatcher alloc] initWithExpectation:self selector:anInvocation.selector];
     [anInvocation setSelector:@selector(dispatch)];
     [anInvocation invokeWithTarget:matcher];
-    [matcher release];
   }
   else {
     [super forwardInvocation:anInvocation];
@@ -190,11 +183,11 @@
 
 - (void (^)(void))dispatch
 {
-  __block id blockExpectation = _expectation;
+  __unsafe_unretained id blockExpectation = _expectation;
 
-  return [[^{
+  return [^{
     [blockExpectation applyMatcher:self];
-  } copy] autorelease];
+  } copy];
 }
 
 @end

@@ -11,18 +11,18 @@
 
 - (void)test_isGoing {
   __block NSString *foo = @"";
-  [self performSelector:@selector(performBlock:) withObject:[[^{
+  [self performSelector:@selector(performBlock:) withObject:[^{
     foo = @"foo";
-  } copy] autorelease] afterDelay:0.1];
+  } copy] afterDelay:0.1];
   assertPass(test_expect(foo).will.equal(@"foo"));
   assertFail(test_expect(foo).will.equal(@"bar"), @"expected: bar, got: foo");
 }
 
 - (void)test_isNotGoing {
   __block NSString *foo = @"bar";
-  [self performSelector:@selector(performBlock:) withObject:[[^{
+  [self performSelector:@selector(performBlock:) withObject:[^{
     foo = @"foo";
-  } copy] autorelease] afterDelay:0.1];
+  } copy] afterDelay:0.1];
   assertPass(test_expect(foo).willNot.equal(@"bar"));
   assertFail(test_expect(foo).willNot.equal(@"foo"), @"expected: not foo, got: foo");
 }

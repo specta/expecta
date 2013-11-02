@@ -22,10 +22,10 @@
 
 - (void)test_EXPObjectifyCopiesObjectsWithBlockType
 {
-    id original = [[NSMutableArray alloc] init];
+    id original = ^{ return @"foo"; };
     id copy = _EXPObjectify(@encode(EXPBasicBlock), original);
     
-    expect(original == copy).to.beFalsy();
+    expect(original).to.equal(copy);
 }
 
 @end

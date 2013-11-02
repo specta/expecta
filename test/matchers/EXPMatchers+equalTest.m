@@ -21,16 +21,12 @@
   NSObject *foo = [NSObject new], *bar = [NSObject new];
   assertPass(test_expect(foo).equal(foo));
   assertFail(test_expect(foo).equal(bar), ([NSString stringWithFormat:@"expected: %@, got: %@", bar, foo]));
-  [foo release];
-  [bar release];
 }
 
 - (void)test_toNot_equal_object {
   NSObject *foo = [NSObject new], *bar = [NSObject new];
   assertPass(test_expect(foo).toNot.equal(bar));
   assertFail(test_expect(foo).toNot.equal(foo), ([NSString stringWithFormat:@"expected: not %@, got: %@", foo, foo]));
-  [foo release];
-  [bar release];
 }
 
 - (void)test_equal_NSString {

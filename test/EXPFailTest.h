@@ -10,7 +10,7 @@
   NSException *_exception;
 }
 
-@property (nonatomic, retain) NSException *exception;
+@property (nonatomic, strong) NSException *exception;
 - (void)failWithException:(NSException *)exception;
 
 @end
@@ -23,8 +23,8 @@
   BOOL _expected;
 }
 
-@property (nonatomic, retain) NSString *description;
-@property (nonatomic, retain) NSString *fileName;
+@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *fileName;
 @property (assign) NSUInteger lineNumber;
 @property (assign) BOOL expected;
 

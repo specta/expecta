@@ -69,29 +69,29 @@ id _EXPObjectify(const char *type, ...) {
       // This condition must occur before the test for id/class type,
       // otherwise blocks will be treated as vanilla objects.
       id actual = va_arg(v, EXPBasicBlock);
-      obj = [[actual copy] autorelease];
+      obj = [actual copy];
   } else if((strstr(type, @encode(id)) != NULL) || (strstr(type, @encode(Class)) != 0)) {
     id actual = va_arg(v, id);
     obj = actual;
   } else if(strcmp(type, @encode(__typeof__(nil))) == 0) {
     obj = nil;
   } else if(strstr(type, "ff}{") != NULL) { //TODO: of course this only works for a 2x2 e.g. CGRect
-    obj = [[[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4] autorelease];
+    obj = [[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4];
   } else if(strstr(type, "=ff}") != NULL) {
-    obj = [[[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[2]) size:2] autorelease];
+    obj = [[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[2]) size:2];
   } else if(strstr(type, "=ffff}") != NULL) {
-    obj = [[[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4] autorelease];
+    obj = [[EXPFloatTuple alloc] initWithFloatValues:(float *)va_arg(v, float[4]) size:4];
   } else if(strstr(type, "dd}{") != NULL) { //TODO: same here
-    obj = [[[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[4]) size:4] autorelease];
+    obj = [[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[4]) size:4];
   } else if(strstr(type, "=dd}") != NULL) {
-    obj = [[[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[2]) size:2] autorelease];
+    obj = [[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[2]) size:2];
   } else if(strstr(type, "=dddd}") != NULL) {
-    obj = [[[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[4]) size:4] autorelease];
+    obj = [[EXPDoubleTuple alloc] initWithDoubleValues:(double *)va_arg(v, double[4]) size:4];
   } else if(type[0] == '{') {
-    EXPUnsupportedObject *actual = [[[EXPUnsupportedObject alloc] initWithType:@"struct"] autorelease];
+    EXPUnsupportedObject *actual = [[EXPUnsupportedObject alloc] initWithType:@"struct"];
     obj = actual;
   } else if(type[0] == '(') {
-    EXPUnsupportedObject *actual = [[[EXPUnsupportedObject alloc] initWithType:@"union"] autorelease];
+    EXPUnsupportedObject *actual = [[EXPUnsupportedObject alloc] initWithType:@"union"];
     obj = actual;
   } else {
     void *actual = va_arg(v, void *);
@@ -139,7 +139,7 @@ NSString *EXPDescribeObject(id obj) {
         if(strcmp(type, @encode(SEL)) == 0) {
           return [NSString stringWithFormat:@"@selector(%@)", NSStringFromSelector([obj pointerValue])];
         } else if(strcmp(type, @encode(Class)) == 0) {
-          return NSStringFromClass(pointerValue);
+          return NSStringFromClass((__bridge Class)pointerValue);
         }
       }
     }
