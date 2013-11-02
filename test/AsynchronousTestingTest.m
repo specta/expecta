@@ -11,9 +11,9 @@
 
 - (void)test_isGoing {
   __block NSString *foo = @"";
-  [self performSelector:@selector(performBlock:) withObject:^{
+  [self performSelector:@selector(performBlock:) withObject:[^{
     foo = @"foo";
-  } afterDelay:0.1];
+  } copy] afterDelay:0.1];
   assertPass(test_expect(foo).will.equal(@"foo"));
   assertFail(test_expect(foo).will.equal(@"bar"), @"expected: bar, got: foo");
 }
