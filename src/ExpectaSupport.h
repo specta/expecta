@@ -1,6 +1,10 @@
 #import "EXPExpect.h"
 #import "EXPBlockDefinedMatcher.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+  
 id _EXPObjectify(const char *type, ...);
 EXPExpect *_EXP_expect(id testCase, int lineNumber, const char *fileName, EXPIdBlock actualBlock);
 
@@ -11,6 +15,10 @@ void EXP_prerequisite(EXPBoolBlock block);
 void EXP_match(EXPBoolBlock block);
 void EXP_failureMessageForTo(EXPStringBlock block);
 void EXP_failureMessageForNotTo(EXPStringBlock block);
+
+#ifdef __cplusplus
+}
+#endif
 
 #if __has_feature(objc_arc)
 #define _EXP_release(x)
