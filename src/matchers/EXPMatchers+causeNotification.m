@@ -13,11 +13,13 @@ EXPMatcherImplementationBegin(causeNotification, (NSString *expectedNotification
     match(^BOOL{
         __block BOOL expectedNotificationOccurred = NO;
         
-        [[NSNotificationCenter defaultCenter] addObserverForName:expectedNotificationName object:nil queue:nil usingBlock:^(NSNotification *note){
+        id observer = [[NSNotificationCenter defaultCenter] addObserverForName:expectedNotificationName object:nil queue:nil usingBlock:^(NSNotification *note){
             expectedNotificationOccurred = YES;
         }];
 
         ((EXPBasicBlock)actual)();
+        
+        [[NSNotificationCenter defaultCenter] removeObserver:observer];
         
         return expectedNotificationOccurred;
     });
