@@ -1,14 +1,14 @@
 //
-//  EXPMatchers+causeNotification.m
+//  EXPMatchers+notify.m
 //  Pods
 //
 //  Created by Ron Lisle on 11/10/13.
 //
 //
 
-#import "EXPMatchers+causeNotification.h"
+#import "EXPMatchers+notify.h"
 
-EXPMatcherImplementationBegin(causeNotification, (NSString *expectedNotificationName)){
+EXPMatcherImplementationBegin(notify, (NSString *expectedNotificationName)){
     
     match(^BOOL{
         __block BOOL expectedNotificationOccurred = NO;
