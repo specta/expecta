@@ -39,11 +39,11 @@ EXPMatcherImplementationBegin(notify, (id expectedNotification)){
     });
     
     failureMessageForTo(^NSString *{
-        return @"expected notification did not occur";
+        return @"expected: notification";
     });
     
     failureMessageForNotTo(^NSString *{
-        return @"expected notification not to occur but it did";
+        return @"expected: no notification";
     });
 }
 
