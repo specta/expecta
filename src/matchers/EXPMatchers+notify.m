@@ -8,13 +8,27 @@
 
 #import "EXPMatchers+notify.h"
 
-EXPMatcherImplementationBegin(notify, (NSString *expectedNotificationName)){
+EXPMatcherImplementationBegin(notify, (id expectedNotification)){
     
     match(^BOOL{
         __block BOOL expectedNotificationOccurred = NO;
-        
-        id observer = [[NSNotificationCenter defaultCenter] addObserverForName:expectedNotificationName object:nil queue:nil usingBlock:^(NSNotification *note){
-            expectedNotificationOccurred = YES;
+        NSString *name;
+        BOOL isNotification = [expectedNotification isKindOfClass:[NSNotification class]];
+        BOOL isName = [expectedNotification isKindOfClass:[NSString class]];
+        if (isNotification) {
+            name = [expectedNotification name];
+        }else if(isName) {
+            name = expectedNotification;
+        }else {
+            return NO;
+        }
+            
+        id observer = [[NSNotificationCenter defaultCenter] addObserverForName:name object:nil queue:nil usingBlock:^(NSNotification *note){
+            if (isNotification) {
+                expectedNotificationOccurred = [expectedNotification isEqual:note];
+            }else{
+                expectedNotificationOccurred = YES;
+            }
         }];
 
         ((EXPBasicBlock)actual)();

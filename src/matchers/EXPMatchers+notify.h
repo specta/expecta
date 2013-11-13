@@ -8,5 +8,5 @@
 
 #import "Expecta.h"
 
-EXPMatcherInterface(notify, (NSString *expectedNotificationName));
+EXPMatcherInterface(notify, (id expectedNotification));
 
