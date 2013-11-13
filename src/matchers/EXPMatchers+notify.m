@@ -1,33 +1,36 @@
-//
-//  EXPMatchers+notify.m
-//  Pods
-//
-//  Created by Ron Lisle on 11/10/13.
-//
-//
-
 #import "EXPMatchers+notify.h"
 
-EXPMatcherImplementationBegin(notify, (id expectedNotification)){
+EXPMatcherImplementationBegin(notify, (id expected)){
+    BOOL actualIsNil = (actual == nil);
+    BOOL expectedIsNil = (expected == nil);
+    BOOL isNotification = [expected isKindOfClass:[NSNotification class]];
+    BOOL isName = [expected isKindOfClass:[NSString class]];
+    
+    __block NSString *expectedName;
+    __block NSString *gotName = @"none";
+    __block BOOL expectedNotificationOccurred = NO;
+
+    prerequisite(^BOOL{
+        return !(actualIsNil || expectedIsNil);
+    });
     
     match(^BOOL{
-        __block BOOL expectedNotificationOccurred = NO;
-        NSString *name;
-        BOOL isNotification = [expectedNotification isKindOfClass:[NSNotification class]];
-        BOOL isName = [expectedNotification isKindOfClass:[NSString class]];
         if (isNotification) {
-            name = [expectedNotification name];
+            expectedName = [expected name];
         }else if(isName) {
-            name = expectedNotification;
+            expectedName = expected;
         }else {
             return NO;
         }
             
-        id observer = [[NSNotificationCenter defaultCenter] addObserverForName:name object:nil queue:nil usingBlock:^(NSNotification *note){
+        id observer = [[NSNotificationCenter defaultCenter] addObserverForName:nil object:nil queue:nil usingBlock:^(NSNotification *note){
+            gotName = note.name;
             if (isNotification) {
-                expectedNotificationOccurred = [expectedNotification isEqual:note];
+                expectedNotificationOccurred = [expected isEqual:note];
             }else{
-                expectedNotificationOccurred = YES;
+                if ([gotName isEqualToString:expectedName]) {
+                    expectedNotificationOccurred = YES;
+                }
             }
         }];
 
@@ -39,11 +42,15 @@ EXPMatcherImplementationBegin(notify, (id expectedNotification)){
     });
     
     failureMessageForTo(^NSString *{
-        return @"expected: notification";
+        if(actualIsNil) return @"the actual value is nil/null";
+        if(expectedIsNil) return @"the expected value is nil/null";
+        return [NSString stringWithFormat:@"expected: %@, got: %@",expectedName, gotName];
     });
     
     failureMessageForNotTo(^NSString *{
-        return @"expected: no notification";
+        if(actualIsNil) return @"the actual value is nil/null";
+        if(expectedIsNil) return @"the expected value is nil/null";
+        return [NSString stringWithFormat:@"expected: none, got: %@", gotName];
     });
 }
 
