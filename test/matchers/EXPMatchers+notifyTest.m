@@ -11,9 +11,24 @@
   }).to.notify(@"testNotification1"));
 
   NSNotification *n = [[NSNotification alloc] initWithName:@"testNotification2" object:self userInfo:nil];
+
   assertPass(test_expect(^{
       [[NSNotificationCenter defaultCenter] postNotification:n];
   }).to.notify(n));
+
+  assertPass(test_expect(^{
+      
+    NSNotification *notification = [NSNotification
+        notificationWithName:@"NotificationName" object:nil];
+    [[NSNotificationQueue defaultQueue]
+         enqueueNotification:notification
+         postingStyle:NSPostASAP
+         coalesceMask:NSNotificationCoalescingOnName
+         forModes:nil];
+  }).will.notify(@"NotificationName"));
+
+
+NSLog(@"Debug: After will.notify test");
     
   assertFail(test_expect(^{
     // not raising...

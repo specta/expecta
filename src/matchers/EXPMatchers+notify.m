@@ -37,7 +37,7 @@ EXPMatcherImplementationBegin(notify, (id expected)){
         ((EXPBasicBlock)actual)();
         
         [[NSNotificationCenter defaultCenter] removeObserver:observer];
-        
+
         return expectedNotificationOccurred;
     });
     
