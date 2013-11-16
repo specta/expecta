@@ -17,18 +17,16 @@
   }).to.notify(n));
 
   assertPass(test_expect(^{
-      
     NSNotification *notification = [NSNotification
         notificationWithName:@"NotificationName" object:nil];
+      
     [[NSNotificationQueue defaultQueue]
          enqueueNotification:notification
-         postingStyle:NSPostASAP
+         postingStyle:NSPostWhenIdle
          coalesceMask:NSNotificationCoalescingOnName
          forModes:nil];
+      
   }).will.notify(@"NotificationName"));
-
-
-NSLog(@"Debug: After will.notify test");
     
   assertFail(test_expect(^{
     // not raising...
@@ -76,7 +74,6 @@ NSLog(@"Debug: After will.notify test");
         // not raising...
     }).to.notify(nil),
                @"the expected value is nil/null");
-    
     
 }
 

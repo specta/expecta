@@ -9,45 +9,49 @@ EXPMatcherImplementationBegin(notify, (id expected)){
     __block NSString *expectedName;
     __block NSString *gotName = @"none";
     __block BOOL expectedNotificationOccurred = NO;
+    __block id observer;
 
     prerequisite(^BOOL{
-        return !(actualIsNil || expectedIsNil);
-    });
-    
-    match(^BOOL{
+        expectedNotificationOccurred = NO;
+        if (actualIsNil || expectedIsNil) return NO;
         if (isNotification) {
             expectedName = [expected name];
         }else if(isName) {
             expectedName = expected;
-        }else {
-            return NO;
         }
-            
-        id observer = [[NSNotificationCenter defaultCenter] addObserverForName:nil object:nil queue:nil usingBlock:^(NSNotification *note){
-            gotName = note.name;
-            if (isNotification) {
-                expectedNotificationOccurred = [expected isEqual:note];
-            }else{
-                if ([gotName isEqualToString:expectedName]) {
-                    expectedNotificationOccurred = YES;
-                }
-            }
-        }];
-
-        ((EXPBasicBlock)actual)();
         
-        [[NSNotificationCenter defaultCenter] removeObserver:observer];
-
+        observer = [[NSNotificationCenter defaultCenter] addObserverForName:nil object:nil queue:nil usingBlock:^(NSNotification *note){
+                gotName = note.name;
+                if (isNotification) {
+                    expectedNotificationOccurred = [expected isEqual:note];
+                }else{
+                    if ([gotName isEqualToString:expectedName]) {
+                        expectedNotificationOccurred = YES;
+                    }
+                }
+                // Do we want to fail if other occurs?
+        }];
+        ((EXPBasicBlock)actual)();
+        return YES;
+    });
+    
+    match(^BOOL{
+        if (!(isNotification || isName)) return NO;
+        if(expectedNotificationOccurred) {
+            [[NSNotificationCenter defaultCenter] removeObserver:observer];
+        }
         return expectedNotificationOccurred;
     });
     
     failureMessageForTo(^NSString *{
+        [[NSNotificationCenter defaultCenter] removeObserver:observer];
         if(actualIsNil) return @"the actual value is nil/null";
         if(expectedIsNil) return @"the expected value is nil/null";
         return [NSString stringWithFormat:@"expected: %@, got: %@",expectedName, gotName];
     });
     
     failureMessageForNotTo(^NSString *{
+        [[NSNotificationCenter defaultCenter] removeObserver:observer];
         if(actualIsNil) return @"the actual value is nil/null";
         if(expectedIsNil) return @"the expected value is nil/null";
         return [NSString stringWithFormat:@"expected: none, got: %@", gotName];
