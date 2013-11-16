@@ -29,7 +29,7 @@
   }).will.notify(@"NotificationName"));
     
   assertFail(test_expect(^{
-    // not raising...
+    // no notification
   }).to.notify(@"testNotification2"),
              @"expected: testNotification2, got: none");
 
@@ -37,7 +37,7 @@
                @"the actual value is nil/null");
     
   assertFail(test_expect(^{
-      // not raising...
+      // no notification
   }).to.notify(nil),
                @"the expected value is nil/null");
 
@@ -45,11 +45,15 @@
       [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
   }).to.notify(@"testNotification2"),
              @"expected: testNotification2, got: testNotification1");
+    
+    assertFail(test_expect(^{
+        // not doing anything
+    }).to.notify([[NSObject alloc] init]), @"the actual value is not a notification or string");
 }
 
 - (void)test_toNot_notify {
   assertPass(test_expect(^{
-      // not causing anything
+      // no notification
   }).notTo.notify(@"testExpectaNotification1"));
 
   assertFail(test_expect(^{
@@ -67,13 +71,22 @@
         [[NSNotificationCenter defaultCenter] postNotification:n1];
     }).toNot.notify(n2));
 
-    assertFail(test_expect(nil).to.notify(@"testNotification"),
+    assertPass(test_expect(^{
+        // no notification
+    }).willNot.notify(@"NotificationName"));
+    
+    
+    assertFail(test_expect(nil).toNot.notify(@"testNotification"),
                @"the actual value is nil/null");
     
     assertFail(test_expect(^{
-        // not raising...
-    }).to.notify(nil),
+        // no notification
+    }).toNot.notify(nil),
                @"the expected value is nil/null");
+
+    assertFail(test_expect(^{
+        // no notification
+    }).toNot.notify([[NSObject alloc] init]), @"the actual value is not a notification or string");
     
 }
 

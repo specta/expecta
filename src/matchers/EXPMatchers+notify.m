@@ -18,6 +18,8 @@ EXPMatcherImplementationBegin(notify, (id expected)){
             expectedName = [expected name];
         }else if(isName) {
             expectedName = expected;
+        }else{
+            return NO;
         }
         
         observer = [[NSNotificationCenter defaultCenter] addObserverForName:nil object:nil queue:nil usingBlock:^(NSNotification *note){
@@ -44,16 +46,22 @@ EXPMatcherImplementationBegin(notify, (id expected)){
     });
     
     failureMessageForTo(^NSString *{
-        [[NSNotificationCenter defaultCenter] removeObserver:observer];
+        if (observer) {
+            [[NSNotificationCenter defaultCenter] removeObserver:observer];
+        }
         if(actualIsNil) return @"the actual value is nil/null";
         if(expectedIsNil) return @"the expected value is nil/null";
+        if(!(isNotification || isName)) return @"the actual value is not a notification or string";
         return [NSString stringWithFormat:@"expected: %@, got: %@",expectedName, gotName];
     });
     
     failureMessageForNotTo(^NSString *{
-        [[NSNotificationCenter defaultCenter] removeObserver:observer];
+        if (observer) {
+            [[NSNotificationCenter defaultCenter] removeObserver:observer];
+        }
         if(actualIsNil) return @"the actual value is nil/null";
         if(expectedIsNil) return @"the expected value is nil/null";
+        if(!(isNotification || isName)) return @"the actual value is not a notification or string";
         return [NSString stringWithFormat:@"expected: none, got: %@", gotName];
     });
 }
