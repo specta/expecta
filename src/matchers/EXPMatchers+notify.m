@@ -31,14 +31,13 @@ EXPMatcherImplementationBegin(notify, (id expected)){
           expectedNotificationOccurred = YES;
         }
       }
-      // Do we want to fail if other occurs?
+      // Do we want to fail immediately if other occurs? Probably not.
     }];
     ((EXPBasicBlock)actual)();
     return YES;
   });
   
   match(^BOOL{
-    if (!(isNotification || isName)) return NO;
     if(expectedNotificationOccurred) {
       [[NSNotificationCenter defaultCenter] removeObserver:observer];
     }
