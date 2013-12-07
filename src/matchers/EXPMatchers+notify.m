@@ -22,7 +22,7 @@ EXPMatcherImplementationBegin(notify, (id expected)){
       return NO;
     }
     
-    observer = [[NSNotificationCenter defaultCenter] addObserverForName:nil object:nil queue:nil usingBlock:^(NSNotification *note){
+    observer = [[NSNotificationCenter defaultCenter] addObserverForName:expectedName object:nil queue:nil usingBlock:^(NSNotification *note){
       gotName = note.name;
       if (isNotification) {
         expectedNotificationOccurred = [expected isEqual:note];
@@ -31,7 +31,6 @@ EXPMatcherImplementationBegin(notify, (id expected)){
           expectedNotificationOccurred = YES;
         }
       }
-      // Do we want to fail immediately if other occurs? Probably not.
     }];
     ((EXPBasicBlock)actual)();
     return YES;
@@ -61,7 +60,7 @@ EXPMatcherImplementationBegin(notify, (id expected)){
     if(actualIsNil) return @"the actual value is nil/null";
     if(expectedIsNil) return @"the expected value is nil/null";
     if(!(isNotification || isName)) return @"the actual value is not a notification or string";
-    return [NSString stringWithFormat:@"expected: none, got: %@", gotName];
+    return [NSString stringWithFormat:@"expected: none, got: %@", expectedName];
   });
 }
 
