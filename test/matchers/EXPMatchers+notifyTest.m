@@ -1,7 +1,5 @@
 #import "TestHelper.h"
 
-//TODO: Need to replace NSNotificationQueue with a delay (dispatch_after?)
-
 @interface EXPMatchers_notifyTest : TEST_SUPERCLASS
 @end
 
@@ -40,15 +38,9 @@
   }).to.notify(@"testNotification1"));
   
   assertPass(test_expect(^{
-    NSNotification *notification = [NSNotification
-              notificationWithName:@"NotificationName" object:nil];
-    
-    [[NSNotificationQueue defaultQueue]
-     enqueueNotification:notification
-     postingStyle:NSPostWhenIdle
-     coalesceMask:NSNotificationCoalescingOnName
-     forModes:nil];
-    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
+      [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationName" object:nil];
+    });
   }).will.notify(@"NotificationName"));
   
   assertFail(test_expect(^{
