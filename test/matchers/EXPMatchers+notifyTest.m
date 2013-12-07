@@ -1,5 +1,7 @@
 #import "TestHelper.h"
 
+//TODO: Need to replace NSNotificationQueue with a delay (dispatch_after?)
+
 @interface EXPMatchers_notifyTest : TEST_SUPERCLASS
 @end
 
@@ -15,6 +17,27 @@
   assertPass(test_expect(^{
     [[NSNotificationCenter defaultCenter] postNotification:n];
   }).to.notify(n));
+
+  assertPass(test_expect(^{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:nil];
+  }).to.notify(@"testNotification1"));
+    
+  assertPass(test_expect(^{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
+  }).to.notify(@"testNotification1"));
+    
+  assertPass(test_expect(^{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:nil];
+  }).to.notify(@"testNotification1"));
+  
+  assertPass(test_expect(^{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
+  }).to.notify(@"testNotification1"));
   
   assertPass(test_expect(^{
     NSNotification *notification = [NSNotification
@@ -44,7 +67,7 @@
   assertFail(test_expect(^{
     [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
   }).to.notify(@"testNotification2"),
-             @"expected: testNotification2, got: testNotification1");
+             @"expected: testNotification2, got: none");
   
   assertFail(test_expect(^{
     // not doing anything
