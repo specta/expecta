@@ -25,7 +25,7 @@ EXPMatcherImplementationBegin(notify, (id expected)){
     observer = [[NSNotificationCenter defaultCenter] addObserverForName:expectedName object:nil queue:nil usingBlock:^(NSNotification *note){
       gotName = note.name;
       if (isNotification) {
-        expectedNotificationOccurred = [expected isEqual:note];
+        expectedNotificationOccurred |= [expected isEqual:note];
       }else{
         if ([gotName isEqualToString:expectedName]) {
           expectedNotificationOccurred = YES;

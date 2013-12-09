@@ -10,28 +10,33 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
   }).to.notify(@"testNotification1"));
   
-  NSNotification *n = [[NSNotification alloc] initWithName:@"testNotification2" object:self userInfo:nil];
+  NSNotification *n1 = [[NSNotification alloc] initWithName:@"testNotification2" object:self userInfo:nil];
   
   assertPass(test_expect(^{
-    [[NSNotificationCenter defaultCenter] postNotification:n];
-  }).to.notify(n));
+    [[NSNotificationCenter defaultCenter] postNotification:n1];
+  }).to.notify(n1));
 
   assertPass(test_expect(^{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:nil];
-  }).to.notify(@"testNotification1"));
-    
-  assertPass(test_expect(^{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
-  }).to.notify(@"testNotification1"));
-    
-  assertPass(test_expect(^{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:nil];
-  }).to.notify(@"testNotification1"));
+    [[NSNotificationCenter defaultCenter] postNotification:n1];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:self userInfo:@{@"test" : @"value"}];
+  }).to.notify(n1));
   
+  assertPass(test_expect(^{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:nil];
+  }).to.notify(@"testNotification1"));
+    
+  assertPass(test_expect(^{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
+  }).to.notify(@"testNotification1"));
+    
+  assertPass(test_expect(^{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:nil];
+  }).to.notify(@"testNotification1"));
+
   assertPass(test_expect(^{
     [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification1" object:nil];
