@@ -7,7 +7,6 @@ EXPMatcherImplementationBegin(notify, (id expected)){
   BOOL isName = [expected isKindOfClass:[NSString class]];
   
   __block NSString *expectedName;
-  __block NSString *gotName = @"none";
   __block BOOL expectedNotificationOccurred = NO;
   __block id observer;
   
@@ -23,13 +22,10 @@ EXPMatcherImplementationBegin(notify, (id expected)){
     }
     
     observer = [[NSNotificationCenter defaultCenter] addObserverForName:expectedName object:nil queue:nil usingBlock:^(NSNotification *note){
-      gotName = note.name;
       if (isNotification) {
         expectedNotificationOccurred |= [expected isEqual:note];
       }else{
-        if ([gotName isEqualToString:expectedName]) {
-          expectedNotificationOccurred = YES;
-        }
+        expectedNotificationOccurred = YES;
       }
     }];
     ((EXPBasicBlock)actual)();
@@ -50,7 +46,7 @@ EXPMatcherImplementationBegin(notify, (id expected)){
     if(actualIsNil) return @"the actual value is nil/null";
     if(expectedIsNil) return @"the expected value is nil/null";
     if(!(isNotification || isName)) return @"the actual value is not a notification or string";
-    return [NSString stringWithFormat:@"expected: %@, got: %@",expectedName, gotName];
+    return [NSString stringWithFormat:@"expected: %@, got: none",expectedName];
   });
   
   failureMessageForNotTo(^NSString *{
