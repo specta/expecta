@@ -16,6 +16,12 @@
     [[NSNotificationCenter defaultCenter] postNotification:n1];
   }).to.notify(n1));
 
+  NSNotification *n2 = [[NSNotification alloc] initWithName:@"testNotification2" object:self userInfo:@{@"test" : @"value2"}];
+
+  assertPass(test_expect(^{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:self userInfo:@{@"test" : @"value2"}];
+  }).to.notify(n2));
+  
   assertPass(test_expect(^{
     [[NSNotificationCenter defaultCenter] postNotification:n1];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:self userInfo:@{@"test" : @"value"}];
@@ -69,6 +75,11 @@
   assertFail(test_expect(^{
     // not doing anything
   }).to.notify([[NSObject alloc] init]), @"the actual value is not a notification or string");
+  
+  assertFail(test_expect(^{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"testNotification2" object:self userInfo:@{@"test" : @"value"}];
+  }).to.notify(n2), @"expected: testNotification2, got: none");
+  
 }
 
 - (void)test_toNot_notify {
