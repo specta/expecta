@@ -113,9 +113,9 @@ Expecta is framework-agnostic. It works well with OCUnit (SenTestingKit) and OCU
 >
 >`expect(x).to.respondTo(y);` passes if `x` responds to the selector `y`.
 >
->`expect( /* code */ ).to.notify(@"NotificationName");` passes if a given block of code generates an NSException named `NotificationName`.
+>`expect( /* code */ ).to.notify(@"NotificationName");` passes if a given block of code generates an NSNotification named `NotificationName`.
 >
->`expect( /* code */ ).to.notify(notification);` passes if a given block of code generates an NSException equal to the passed `notification`.
+>`expect( /* code */ ).to.notify(notification);` passes if a given block of code generates an NSNotification equal to the passed `notification`.
 
 **Please contribute more matchers.**
 
