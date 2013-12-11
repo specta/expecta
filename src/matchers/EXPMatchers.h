@@ -19,3 +19,4 @@
 #import "EXPMatchers+raise.h"
 #import "EXPMatchers+raiseWithReason.h"
 #import "EXPMatchers+respondTo.h"
+#import "EXPMatchers+notify.h"
