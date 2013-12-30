@@ -13,11 +13,11 @@
 		2546A95F16629D500078E044 /* EXPMatchers+raiseWithReason.m in Sources */ = {isa = PBXBuildFile; fileRef = 2546A95B16629D4F0078E044 /* EXPMatchers+raiseWithReason.m */; };
 		2546A96216629DF70078E044 /* EXPMatchers+raiseWithReasonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2546A96116629DF70078E044 /* EXPMatchers+raiseWithReasonTest.m */; };
 		2546A96316629DF70078E044 /* EXPMatchers+raiseWithReasonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2546A96116629DF70078E044 /* EXPMatchers+raiseWithReasonTest.m */; };
-		2706C0C3183F25870053E3CF /* EXPMatchers+notify.h in Headers */ = {isa = PBXBuildFile; fileRef = 27B6192A182F4D3F0075C95F /* EXPMatchers+notify.h */; };
+		2706C0C3183F25870053E3CF /* EXPMatchers+notify.h in Headers */ = {isa = PBXBuildFile; fileRef = 27B6192A182F4D3F0075C95F /* EXPMatchers+notify.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2706C0C4183F25900053E3CF /* EXPMatchers+notify.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B6192B182F4D3F0075C95F /* EXPMatchers+notify.m */; };
 		2706C0C5183F26580053E3CF /* EXPMatchers+notifyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B6192F182F4DF30075C95F /* EXPMatchers+notifyTest.m */; };
 		2706C0C6183F26590053E3CF /* EXPMatchers+notifyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B6192F182F4DF30075C95F /* EXPMatchers+notifyTest.m */; };
-		27B6192C182F4D3F0075C95F /* EXPMatchers+notify.h in Headers */ = {isa = PBXBuildFile; fileRef = 27B6192A182F4D3F0075C95F /* EXPMatchers+notify.h */; };
+		27B6192C182F4D3F0075C95F /* EXPMatchers+notify.h in Headers */ = {isa = PBXBuildFile; fileRef = 27B6192A182F4D3F0075C95F /* EXPMatchers+notify.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27B6192D182F4D3F0075C95F /* EXPMatchers+notify.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B6192B182F4D3F0075C95F /* EXPMatchers+notify.m */; };
 		27B61930182F4DF30075C95F /* EXPMatchers+notifyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B6192F182F4DF30075C95F /* EXPMatchers+notifyTest.m */; };
 		27B61931182F5A700075C95F /* EXPMatchers+respondToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F6231C182418F10004F628 /* EXPMatchers+respondToTest.m */; };
