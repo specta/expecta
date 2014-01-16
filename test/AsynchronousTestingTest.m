@@ -27,6 +27,14 @@
   assertFail(test_expect(foo).willNot.equal(@"foo"), @"expected: not foo, got: foo");
 }
 
+- (void)test_asynchronous_prerequisite {
+  __block NSArray *foo = nil;
+  [self performSelector:@selector(performBlock:) withObject:[[^{
+    foo = @[];
+  } copy] autorelease] afterDelay:0.1];
+  assertPass(test_expect(foo).will.haveCountOf(0));
+}
+
 - (void)test_Expecta_setAsynchronousTestTimeout {
   assertEquals([Expecta asynchronousTestTimeout], 1.0);
   [Expecta setAsynchronousTestTimeout: 10.0];

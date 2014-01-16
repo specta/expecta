@@ -92,28 +92,42 @@
             [NSString stringWithFormat:@"expecting a %@ is not supported", ((EXPUnsupportedObject *)*actual).type]);
   } else {
     BOOL failed = NO;
-    if([matcher respondsToSelector:@selector(meetsPrerequesiteFor:)] &&
-       ![matcher meetsPrerequesiteFor:*actual]) {
-      failed = YES;
-    } else {
-      BOOL matchResult = NO;
-      if(self.asynchronous) {
-        NSTimeInterval timeOut = [Expecta asynchronousTestTimeout];
-        NSDate *expiryDate = [NSDate dateWithTimeIntervalSinceNow:timeOut];
-        while(1) {
+    BOOL matchResult = NO;
+    if(self.asynchronous) {
+      NSTimeInterval timeOut = [Expecta asynchronousTestTimeout];
+      NSDate *expiryDate = [NSDate dateWithTimeIntervalSinceNow:timeOut];
+      while(1) {
+        if ([self violatesPrerequesiteForMatcher:matcher to:actual]) {
+          failed = YES;
+        } else {
           matchResult = [matcher matches:*actual];
           failed = self.negative ? matchResult : !matchResult;
-          if(!failed || ([(NSDate *)[NSDate date] compare:expiryDate] == NSOrderedDescending)) {
-            break;
-          }
-          [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.01]];
-          OSMemoryBarrier();
-          *actual = self.actual;
         }
+
+        if(!failed || ([(NSDate *)[NSDate date] compare:expiryDate] == NSOrderedDescending)) {
+          NSString *breakReason = @"";
+
+          if (!failed) {
+            breakReason = @"Matcher did not fail";
+          } else {
+            breakReason = @"timed out";
+          }
+
+          NSLog(@"break because %@", breakReason);
+          break;
+        }
+
+        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.01]];
+        OSMemoryBarrier();
+        *actual = self.actual;
+      }
+    } else {
+      if ([self violatesPrerequesiteForMatcher:matcher to:actual]) {
+        failed = YES;
       } else {
         matchResult = [matcher matches:*actual];
+        failed = self.negative ? matchResult : !matchResult;
       }
-      failed = self.negative ? matchResult : !matchResult;
     }
     if(failed) {
       NSString *message = nil;
@@ -135,6 +149,10 @@
     }
   }
   self.negative = NO;
+}
+
+- (BOOL)violatesPrerequesiteForMatcher:(id<EXPMatcher>)matcher to:(NSObject **)actual {
+  return [matcher respondsToSelector:@selector(meetsPrerequesiteFor:)] && ![matcher meetsPrerequesiteFor:*actual];
 }
 
 #pragma mark - Dynamic predicate dispatch
