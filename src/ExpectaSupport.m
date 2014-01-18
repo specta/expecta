@@ -161,6 +161,8 @@ NSString *EXPDescribeObject(id obj) {
       [arr addObject:[NSString stringWithFormat:@"%@ = %@;",EXPDescribeObject(k), EXPDescribeObject(v)]];
     }
     description = [NSString stringWithFormat:@"{%@}", [arr componentsJoinedByString:@" "]];
+  } else if([obj isKindOfClass:[NSAttributedString class]]) {
+    description = [obj string];
   } else {
     description = [description stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
   }
