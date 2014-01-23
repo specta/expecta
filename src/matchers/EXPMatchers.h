@@ -22,3 +22,4 @@
 #import "EXPMatchers+notify.h"
 #import "EXPMatchers+beginWith.h"
 #import "EXPMatchers+endWith.h"
+#import "EXPMatchers+beSameDay.h"
