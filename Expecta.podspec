@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage = 'http://github.com/petejkim/expecta'
   s.author   = { 'Peter Jihoon Kim' => 'raingrove@gmail.com' }
 
-  s.source   = { :git => 'https://github.com/specta/expecta.git', :tag => 'v0.2.4' }
+  s.source   = { :git => 'https://github.com/specta/expecta.git', :tag => "#{s.version}" }
 
   s.description = %{
     Expecta is a matcher framework for Objective-C and Cocoa. The main
@@ -20,4 +20,3 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'Foundation'
 end
-
