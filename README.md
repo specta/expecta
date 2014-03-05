@@ -4,7 +4,9 @@ A Matcher Framework for Objective-C/Cocoa
 
 ## NOTICE
 
-Expecta 0.2.x has a new syntax that is slightly different from Expecta 0.1.x. For example `expect(x).toEqual(y)` should now be written as `expect(x).to.equal(y)`. You can do `#define EXP_OLD_SYNTAX` before importing `Expecta.h` to enable backward-compatiblity mode, but keep in mind that the old syntax is deprecated.
+Expecta 0.3.x removes support for Garbage Collected targets, as support for these has been removed from Xcode 5.1 and greater. If you need Garbage Collection support, please continue to use Expecta 0.2.4.
+
+Expecta 0.2.x and later has a new syntax that is slightly different from Expecta 0.1.x. For example `expect(x).toEqual(y)` should now be written as `expect(x).to.equal(y)`. You can do `#define EXP_OLD_SYNTAX` before importing `Expecta.h` to enable backward-compatiblity mode, but keep in mind that the old syntax is deprecated.
 
 ## INTRODUCTION
 
