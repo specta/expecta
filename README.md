@@ -1,10 +1,10 @@
-# Expecta
+#Expecta
 
 A Matcher Framework for Objective-C/Cocoa
 
 ## NOTICE
 
-Expecta 0.3.x removes support for Garbage Collected targets, as support for these has been removed from Xcode 5.1 and greater. If you need Garbage Collection support, please continue to use Expecta 0.2.4.
+Expecta 0.3.x removes support for Garbage Collected targets, as support for these has been removed from Xcode 5.1 and greater. If you need Garbage Collection support, please continue to use Expecta 0.2.4. The minimum deployment targets have also been raised to iOS 5.x and OS X 10.7 or greater.
 
 Expecta 0.2.x and later has a new syntax that is slightly different from Expecta 0.1.x. For example `expect(x).toEqual(y)` should now be written as `expect(x).to.equal(y)`. You can do `#define EXP_OLD_SYNTAX` before importing `Expecta.h` to enable backward-compatiblity mode, but keep in mind that the old syntax is deprecated.
 
@@ -19,14 +19,11 @@ assertThat(@"foo", is(equalTo(@"foo")));
 assertThatUnsignedInteger(foo, isNot(equalToUnsignedInteger(1)));
 assertThatBool([bar isBar], is(equalToBool(YES)));
 assertThatDouble(baz, is(equalToDouble(3.14159)));
-```
+``` vs. **Expecta **
 
-vs.
-
-**Expecta**
-
-```objective-c
-expect(@"foo").to.equal(@"foo"); // `to` is a syntatic sugar and can be safely omitted.
+```objective -
+    c expect(@"foo").to.equal(
+        @"foo"); // `to` is a syntatic sugar and can be safely omitted.
 expect(foo).notTo.equal(1);
 expect([bar isBar]).to.equal(YES);
 expect(baz).to.equal(3.14159);
@@ -38,12 +35,12 @@ Use [CocoaPods](https://github.com/CocoaPods/CocoaPods)
 
 ```ruby
 target :MyApp do
-  # your app dependencies
+#your app dependencies
 end
 
 target :MyAppTests do
   pod 'Expecta',     '~> 0.2.4'   # expecta matchers
-  # pod 'Specta',      '~> 0.1.11'  # specta bdd framework
+#pod 'Specta', '~> 0.1.11' #specta bdd framework
 end
 ```
 
@@ -152,7 +149,8 @@ Writing a new matcher is easy with special macros provided by Expecta. Take a lo
 
 EXPMatcherInterface(beKindOf, (Class expected));
 // 1st argument is the name of the matcher function
-// 2nd argument is the list of arguments that may be passed in the function call.
+// 2nd argument is the list of arguments that may be passed in the function
+// call.
 // Multiple arguments are fine. (e.g. (int foo, float bar))
 
 #define beAKindOf beKindOf
@@ -167,33 +165,40 @@ EXPMatcherImplementationBegin(beKindOf, (Class expected)) {
   BOOL actualIsNil = (actual == nil);
   BOOL expectedIsNil = (expected == nil);
 
-  prerequisite(^BOOL{
+  prerequisite(^BOOL {
     return !(actualIsNil || expectedIsNil);
-    // Return `NO` if matcher should fail whether or not the result is inverted using `.Not`.
+    // Return `NO` if matcher should fail whether or not the result is inverted
+    // using `.Not`.
   });
 
-  match(^BOOL{
+  match(^BOOL {
     return [actual isKindOfClass:expected];
     // Return `YES` if the matcher should pass, `NO` if it should not.
     // The actual value/object is passed as `actual`.
     // Please note that primitive values will be wrapped in NSNumber/NSValue.
   });
 
-  failureMessageForTo(^NSString *{
-    if(actualIsNil) return @"the actual value is nil/null";
-    if(expectedIsNil) return @"the expected value is nil/null";
-    return [NSString stringWithFormat:@"expected: a kind of %@, "
-                                       "got: an instance of %@, which is not a kind of %@",
-                                       [expected class], [actual class], [expected class]];
+  failureMessageForTo(^NSString * {
+    if (actualIsNil)
+      return @"the actual value is nil/null";
+    if (expectedIsNil)
+      return @"the expected value is nil/null";
+    return [NSString
+        stringWithFormat:@"expected: a kind of %@, "
+                          "got: an instance of %@, which is not a kind of %@",
+                         [expected class], [actual class], [expected class]];
     // Return the message to be displayed when the match function returns `YES`.
   });
 
-  failureMessageForNotTo(^NSString *{
-    if(actualIsNil) return @"the actual value is nil/null";
-    if(expectedIsNil) return @"the expected value is nil/null";
-    return [NSString stringWithFormat:@"expected: not a kind of %@, "
-                                       "got: an instance of %@, which is a kind of %@",
-                                       [expected class], [actual class], [expected class]];
+  failureMessageForNotTo(^NSString * {
+    if (actualIsNil)
+      return @"the actual value is nil/null";
+    if (expectedIsNil)
+      return @"the expected value is nil/null";
+    return [NSString
+        stringWithFormat:@"expected: not a kind of %@, "
+                          "got: an instance of %@, which is a kind of %@",
+                         [expected class], [actual class], [expected class]];
     // Return the message to be displayed when the match function returns `NO`.
   });
 }
