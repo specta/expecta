@@ -19,8 +19,8 @@ Pod::Spec.new do |s|
   s.source_files = 'src/**/*.{h,m}'
 
   s.requires_arc = false
-  s.ios.deployment_target = '4.0'
-  s.osx.deployment_target = '10.6'
+  s.ios.deployment_target = '5.0'
+  s.osx.deployment_target = '10.7'
 
   s.frameworks = 'Foundation'
 end
