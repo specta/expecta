@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'Expecta'
-  s.version  = '0.2.4'
+  s.version  = '0.3.0'
   s.license  = { :type => 'MIT', :file => 'LICENSE' }
   s.summary  = 'A matcher framework for Objective-C & Cocoa.'
   s.homepage = 'http://github.com/petejkim/expecta'
