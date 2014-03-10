@@ -112,9 +112,9 @@ Expecta is framework-agnostic. It works well with OCUnit (SenTestingKit) and OCU
 >
 >`expect(x).to.respondTo(y);` passes if `x` responds to the selector `y`.
 >
->`expect( /* code */ ).to.notify(@"NotificationName");` passes if a given block of code generates an NSNotification named `NotificationName`.
+>`expect(^{ /* code */ }).to.notify(@"NotificationName");` passes if a given block of code generates an NSNotification named `NotificationName`.
 >
->`expect( /* code */ ).to.notify(notification);` passes if a given block of code generates an NSNotification equal to the passed `notification`.
+>`expect(^{ /* code */ }).to.notify(notification);` passes if a given block of code generates an NSNotification equal to the passed `notification`.
 >
 >`expect(x).to.beginWith(y);` passes if an instance of NSString, NSArray, or NSOrderedSet `x` begins with `y`. Also aliased by `startWith`
 >
