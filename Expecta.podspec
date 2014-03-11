@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'Expecta'
-  s.version  = '0.2.4'
+  s.version  = '0.3.0'
   s.license  = { :type => 'MIT', :file => 'LICENSE' }
   s.summary  = 'A matcher framework for Objective-C & Cocoa.'
   s.homepage = 'http://github.com/petejkim/expecta'
@@ -19,8 +19,8 @@ Pod::Spec.new do |s|
   s.source_files = 'src/**/*.{h,m}'
 
   s.requires_arc = false
-  s.ios.deployment_target = '4.0'
-  s.osx.deployment_target = '10.6'
+  s.ios.deployment_target = '5.0'
+  s.osx.deployment_target = '10.7'
 
   s.frameworks = 'Foundation'
 end

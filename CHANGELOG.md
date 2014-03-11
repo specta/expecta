@@ -1,3 +1,9 @@
+v0.3.0
+======
+* Adds support for Xcode/Apple LLVM 5.1, which means turning off Garbage Collection support [tonyarnold]
+* Raises minimum deployment targets to iOS 5.x and OS X 10.7 [tonyarnold]
+
+
 v0.2.2
 ======
 
