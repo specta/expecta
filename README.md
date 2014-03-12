@@ -19,11 +19,12 @@ assertThat(@"foo", is(equalTo(@"foo")));
 assertThatUnsignedInteger(foo, isNot(equalToUnsignedInteger(1)));
 assertThatBool([bar isBar], is(equalToBool(YES)));
 assertThatDouble(baz, is(equalToDouble(3.14159)));
-``` vs. **Expecta **
+``` 
 
-```objective -
-    c expect(@"foo").to.equal(
-        @"foo"); // `to` is a syntatic sugar and can be safely omitted.
+vs. **Expecta**
+
+```objective-c
+expect(@"foo").to.equal(@"foo"); // `to` is a syntatic sugar and can be safely omitted.
 expect(foo).notTo.equal(1);
 expect([bar isBar]).to.equal(YES);
 expect(baz).to.equal(3.14159);
