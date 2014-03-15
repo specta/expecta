@@ -2,7 +2,7 @@
 #import "EXPMatcherHelpers.h"
 
 EXPMatcherImplementationBegin(_beInTheRangeOf, (id expectedLowerBound, id expectedUpperBound)) {
-    match(^BOOL{
+    match(^BOOL(id actual){
         if ([actual respondsToSelector:@selector(compare:)]) {
             NSComparisonResult compareLowerBound = [expectedLowerBound compare: actual];
             NSComparisonResult compareUpperBound = [expectedUpperBound compare: actual];
@@ -19,11 +19,11 @@ EXPMatcherImplementationBegin(_beInTheRangeOf, (id expectedLowerBound, id expect
         return NO;
     });
 
-    failureMessageForTo(^NSString *{
+    failureMessageForTo(^NSString *(id actual){
         return [NSString stringWithFormat:@"expected: %@ to be in the range [%@, %@] (inclusive)", EXPDescribeObject(actual), EXPDescribeObject(expectedLowerBound), EXPDescribeObject(expectedUpperBound)];
     });
 
-    failureMessageForNotTo(^NSString *{
+    failureMessageForNotTo(^NSString *(id actual){
         return [NSString stringWithFormat:@"expected: %@ not to be in the range [%@, %@] (inclusive)", EXPDescribeObject(actual), EXPDescribeObject(expectedLowerBound), EXPDescribeObject(expectedUpperBound)];
     });
 }

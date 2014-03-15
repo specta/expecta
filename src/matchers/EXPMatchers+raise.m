@@ -4,7 +4,7 @@
 EXPMatcherImplementationBegin(raise, (NSString *expectedExceptionName)) {
   __block NSException *exceptionCaught = nil;
 
-  match(^BOOL{
+  match(^BOOL(id actual){
     BOOL expectedExceptionCaught = NO;
     @try {
       ((EXPBasicBlock)actual)();
@@ -15,13 +15,13 @@ EXPMatcherImplementationBegin(raise, (NSString *expectedExceptionName)) {
     return expectedExceptionCaught;
   });
 
-  failureMessageForTo(^NSString *{
+  failureMessageForTo(^NSString *(id actual){
     return [NSString stringWithFormat:@"expected: %@, got: %@",
             expectedExceptionName ? expectedExceptionName : @"any exception",
             exceptionCaught ? [exceptionCaught name] : @"no exception"];
   });
 
-  failureMessageForNotTo(^NSString *{
+  failureMessageForNotTo(^NSString *(id actual){
     return [NSString stringWithFormat:@"expected: %@, got: %@",
             expectedExceptionName ? [NSString stringWithFormat:@"not %@", expectedExceptionName] : @"no exception",
             exceptionCaught ? [exceptionCaught name] : @"no exception"];

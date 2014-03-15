@@ -2,7 +2,7 @@
 #import "EXPMatcherHelpers.h"
 
 EXPMatcherImplementationBegin(beIdenticalTo, (void *expected)) {
-  match(^BOOL{
+  match(^BOOL(id actual){
     if(actual == expected) {
       return YES;
     } else if([actual isKindOfClass:[NSValue class]] && EXPIsValuePointer((NSValue *)actual)) {
@@ -13,11 +13,11 @@ EXPMatcherImplementationBegin(beIdenticalTo, (void *expected)) {
     return NO;
   });
 
-  failureMessageForTo(^NSString *{
+  failureMessageForTo(^NSString *(id actual){
     return [NSString stringWithFormat:@"expected: <%p>, got: <%p>", expected, actual];
   });
 
-  failureMessageForNotTo(^NSString *{
+  failureMessageForNotTo(^NSString *(id actual){
     return [NSString stringWithFormat:@"expected: not <%p>, got: <%p>", expected, actual];
   });
 }
