@@ -1,5 +1,6 @@
 #import "Expecta.h"
 
-EXPMatcherInterface(beNil, (void));
+EXPMatcherInterface(_beNil, (void));
 
 #define beNull beNil
+#define beNil() _beNil()

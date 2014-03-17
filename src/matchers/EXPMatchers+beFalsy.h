@@ -1,3 +1,5 @@
 #import "Expecta.h"
 
-EXPMatcherInterface(beFalsy, (void));
+EXPMatcherInterface(_beFalsy, (void));
+
+#define beFalsy() _beFalsy()
