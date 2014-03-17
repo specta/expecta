@@ -1,7 +1,7 @@
 #import "EXPMatchers+beTruthy.h"
 #import "EXPMatcherHelpers.h"
 
-EXPMatcherImplementationBegin(beTruthy, (void)) {
+EXPMatcherImplementationBegin(_beTruthy, (void)) {
   match(^BOOL{
     if([actual isKindOfClass:[NSNumber class]]) {
       return !![(NSNumber *)actual boolValue];

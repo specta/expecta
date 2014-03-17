@@ -1,3 +1,5 @@
 #import "Expecta.h"
 
-EXPMatcherInterface(beTruthy, (void));
+EXPMatcherInterface(_beTruthy, (void));
+
+#define beTruthy() _beTruthy()

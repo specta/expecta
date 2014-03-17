@@ -1,6 +1,6 @@
 #import "EXPMatchers+beNil.h"
 
-EXPMatcherImplementationBegin(beNil, (void)) {
+EXPMatcherImplementationBegin(_beNil, (void)) {
   match(^BOOL{
     return actual == nil;
   });
