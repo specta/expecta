@@ -17,6 +17,26 @@
   assertEquals(x.testCase, self);
 }
 
+- (void)test_expect_elements {
+  x = expect(@"foo");
+  assertFalse(x.collection);
+  x = expect(@"foo").elements;
+  assertTrue(x.collection);
+  
+  // Array
+  NSArray *a = @[ @1, @1, @1 ];
+  assertPass(test_expect(a).elements.to.equal(1));
+  a = @[ @1, @2, @1 ];
+  assertFail(test_expect(a).elements.to.equal(2), @"(0)=> expected: 2, got: 1, (2)=> expected: 2, got: 1");
+  
+  // Set
+  NSSet *b = [NSSet setWithObjects:@1, @2, nil];
+  Class expectedClass = [NSNumber class];
+  assertPass(test_expect(b).elements.to.beKindOf(expectedClass));
+  b = [NSSet setWithObjects:@1, @2, nil];
+  assertFail(test_expect(b).elements.to.equal(2), @"(element)=> expected: 2, got: 1");
+}
+
 - (void)test_expect_NotTo {
   x = expect(@"foo");
   assertFalse(x.negative);
