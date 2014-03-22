@@ -12,18 +12,23 @@
 
 - (void)dealloc
 {
-    self.prerequisiteBlock = nil;
-    self.matchBlock = nil;
-    self.failureMessageForToBlock = nil;
-    self.failureMessageForNotToBlock = nil;
-    
-    [super dealloc];
+  self.prerequisiteBlock = nil;
+  self.matchBlock = nil;
+  self.failureMessageForToBlock = nil;
+  self.failureMessageForNotToBlock = nil;
+  if (self.cleanUpBlock) {
+    self.cleanUpBlock();
+    self.cleanUpBlock = nil;
+  }
+  
+  [super dealloc];
 }
 
 @synthesize prerequisiteBlock;
 @synthesize matchBlock;
 @synthesize failureMessageForToBlock;
 @synthesize failureMessageForNotToBlock;
+@synthesize cleanUpBlock;
 
 - (BOOL)meetsPrerequesiteFor:(id)actual
 {

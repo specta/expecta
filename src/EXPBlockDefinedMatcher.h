@@ -15,11 +15,13 @@
   EXPBoolBlock matchBlock;
   EXPStringBlock failureMessageForToBlock;
   EXPStringBlock failureMessageForNotToBlock;
+  EXPBasicBlock cleanUpBlock;
 }
 
 @property(nonatomic, copy) EXPBoolBlock prerequisiteBlock;
 @property(nonatomic, copy) EXPBoolBlock matchBlock;
 @property(nonatomic, copy) EXPStringBlock failureMessageForToBlock;
 @property(nonatomic, copy) EXPStringBlock failureMessageForNotToBlock;
+@property(nonatomic, copy) EXPBasicBlock cleanUpBlock;
 
 @end
