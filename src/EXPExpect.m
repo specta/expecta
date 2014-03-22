@@ -6,6 +6,12 @@
 #import "EXPBlockDefinedMatcher.h"
 #import <libkern/OSAtomic.h>
 
+@interface EXPExpect ()
+
+@property(nonatomic) NSMutableArray *failureMessages;
+
+@end
+
 @implementation EXPExpect
 
 @dynamic
@@ -21,6 +27,7 @@
   testCase=_testCase,
   negative=_negative,
   asynchronous=_asynchronous,
+  collection=_collection,
   lineNumber=_lineNumber,
   fileName=_fileName;
 
@@ -48,6 +55,12 @@
 }
 
 #pragma mark -
+
+- (EXPExpect *)elements;
+{
+  self.collection = YES;
+  return self;
+}
 
 - (EXPExpect *)to {
   return self;
@@ -83,58 +96,109 @@
 - (void)applyMatcher:(id<EXPMatcher>)matcher
 {
   id actual = [self actual];
-  [self applyMatcher:matcher to:&actual];
-}
-
-- (void)applyMatcher:(id<EXPMatcher>)matcher to:(NSObject **)actual {
-  if([*actual isKindOfClass:[EXPUnsupportedObject class]]) {
+  self.failureMessages = [NSMutableArray array];
+  
+  if([actual isKindOfClass:[EXPUnsupportedObject class]]) {
     EXPFail(self.testCase, self.lineNumber, self.fileName,
-            [NSString stringWithFormat:@"expecting a %@ is not supported", ((EXPUnsupportedObject *)*actual).type]);
+            [NSString stringWithFormat:@"expecting a %@ is not supported", ((EXPUnsupportedObject *)actual).type]);
+    return;
+  }
+  
+  if([matcher respondsToSelector:@selector(meetsPrerequesiteFor:)] && ![matcher meetsPrerequesiteFor:actual]) {
+    [self collectFailureWithMatcher:matcher
+                             actual:actual
+           failureMessageDecoration:nil];
   } else {
-    BOOL failed = NO;
-    if([matcher respondsToSelector:@selector(meetsPrerequesiteFor:)] &&
-       ![matcher meetsPrerequesiteFor:*actual]) {
-      failed = YES;
-    } else {
-      BOOL matchResult = NO;
-      if(self.asynchronous) {
-        NSTimeInterval timeOut = [Expecta asynchronousTestTimeout];
-        NSDate *expiryDate = [NSDate dateWithTimeIntervalSinceNow:timeOut];
-        while(1) {
-          matchResult = [matcher matches:*actual];
-          failed = self.negative ? matchResult : !matchResult;
-          if(!failed || ([(NSDate *)[NSDate date] compare:expiryDate] == NSOrderedDescending)) {
-            break;
-          }
-          [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.01]];
-          OSMemoryBarrier();
-          *actual = self.actual;
-        }
-      } else {
-        matchResult = [matcher matches:*actual];
+    NSTimeInterval timeOut = [Expecta asynchronousTestTimeout];
+    NSDate *expiryDate = [NSDate dateWithTimeIntervalSinceNow:timeOut];
+    while(1) {
+      [self evaluateWithMatcher:matcher actual:actual];
+      if(!self.asynchronous || self.failureMessages.count == 0 || ([(NSDate *)[NSDate date] compare:expiryDate] == NSOrderedDescending)) {
+        break;
       }
-      failed = self.negative ? matchResult : !matchResult;
-    }
-    if(failed) {
-      NSString *message = nil;
-
-      if(self.negative) {
-        if ([matcher respondsToSelector:@selector(failureMessageForNotTo:)]) {
-          message = [matcher failureMessageForNotTo:*actual];
-        }
-      } else {
-        if ([matcher respondsToSelector:@selector(failureMessageForTo:)]) {
-          message = [matcher failureMessageForTo:*actual];
-        }
-      }
-      if (message == nil) {
-        message = @"Match Failed.";
-      }
-
-      EXPFail(self.testCase, self.lineNumber, self.fileName, message);
+      [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.01]];
+      OSMemoryBarrier();
+      actual = [self actual];
+      [self.failureMessages removeAllObjects];
     }
   }
+  if(self.failureMessages.count > 0) {
+    EXPFail(self.testCase, self.lineNumber, self.fileName, [self.failureMessages componentsJoinedByString:@", "]);
+  }
   self.negative = NO;
+}
+
+- (void)evaluateWithMatcher:(id<EXPMatcher>)matcher
+                     actual:(id)actual;
+{
+  if(self.collection) {
+    if(!actual && self.asynchronous) {
+      [self collectFailureWithMatcher:matcher actual:nil failureMessageDecoration:nil];
+      return;
+    }
+    
+    if ([actual isKindOfClass:[NSArray class]] || [actual isKindOfClass:[NSOrderedSet class]]) {
+      [actual enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [self collectFailureIfRequiredWithMatcher:matcher
+                                           actual:obj
+                         failureMessageDecoration:^(NSString *matcherString){
+                           return [NSString stringWithFormat:@"(%lu)=> %@", idx, matcherString];
+                         }];
+      }];
+    } else if ([actual isKindOfClass:[NSSet class]]) {
+      [(NSSet *)actual enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+        [self collectFailureIfRequiredWithMatcher:matcher
+                                           actual:obj
+                         failureMessageDecoration:^(NSString *matcherString){
+                           return [NSString stringWithFormat:@"(element)=> %@", matcherString];
+                         }];
+      }];
+    }
+    
+  } else {
+    [self collectFailureIfRequiredWithMatcher:matcher
+                                       actual:actual
+                     failureMessageDecoration:nil];
+  }
+}
+
+- (void)collectFailureIfRequiredWithMatcher:(id<EXPMatcher>)matcher
+                                     actual:(id)actual
+                   failureMessageDecoration:(NSString *(^)(NSString *matcherString))failureMessageDecoration;
+{
+  if ([matcher matches:actual] != self.negative) {
+    return;
+  }
+  
+  [self collectFailureWithMatcher:matcher
+                           actual:actual
+         failureMessageDecoration:failureMessageDecoration];
+}
+
+- (void)collectFailureWithMatcher:(id<EXPMatcher>)matcher
+                           actual:(id)actual
+         failureMessageDecoration:(NSString *(^)(NSString *matcherString))failureMessageDecoration;
+{
+  NSString *message = nil;
+  
+  if(self.negative) {
+    if ([matcher respondsToSelector:@selector(failureMessageForNotTo:)]) {
+      message = [matcher failureMessageForNotTo:actual];
+    }
+  } else {
+    if ([matcher respondsToSelector:@selector(failureMessageForTo:)]) {
+      message = [matcher failureMessageForTo:actual];
+    }
+  }
+  if (message == nil) {
+    message = @"Match Failed.";
+  }
+  
+  if (failureMessageDecoration) {
+    [self.failureMessages addObject:failureMessageDecoration(message)];
+  } else {
+    [self.failureMessages addObject:message];
+  }
 }
 
 #pragma mark - Dynamic predicate dispatch

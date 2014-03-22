@@ -1,15 +1,15 @@
 #import "EXPMatchers+contain.h"
 
 EXPMatcherImplementationBegin(_contain, (id expected)) {
-  BOOL actualIsCompatible = [actual isKindOfClass:[NSString class]] || [actual conformsToProtocol:@protocol(NSFastEnumeration)];
+  BOOL (^actualIsCompatible)(id actual) = ^BOOL(id actual){ return [actual isKindOfClass:[NSString class]] || [actual conformsToProtocol:@protocol(NSFastEnumeration)]; };
   BOOL expectedIsNil = (expected == nil);
 
-  prerequisite(^BOOL{
-    return actualIsCompatible && !expectedIsNil;
+  prerequisite(^BOOL(id actual){
+    return actualIsCompatible(actual) && !expectedIsNil;
   });
 
-  match(^BOOL{
-    if(actualIsCompatible) {
+  match(^BOOL(id actual){
+    if(actualIsCompatible(actual)) {
       if([actual isKindOfClass:[NSString class]]) {
         return [(NSString *)actual rangeOfString:[expected description]].location != NSNotFound;
       } else {
@@ -23,14 +23,14 @@ EXPMatcherImplementationBegin(_contain, (id expected)) {
     return NO;
   });
 
-  failureMessageForTo(^NSString *{
-    if(!actualIsCompatible) return [NSString stringWithFormat:@"%@ is not an instance of NSString or NSFastEnumeration", EXPDescribeObject(actual)];
+  failureMessageForTo(^NSString *(id actual){
+    if(!actualIsCompatible(actual)) return [NSString stringWithFormat:@"%@ is not an instance of NSString or NSFastEnumeration", EXPDescribeObject(actual)];
     if(expectedIsNil) return @"the expected value is nil/null";
     return [NSString stringWithFormat:@"expected %@ to contain %@", EXPDescribeObject(actual), EXPDescribeObject(expected)];
   });
 
-  failureMessageForNotTo(^NSString *{
-    if(!actualIsCompatible) return [NSString stringWithFormat:@"%@ is not an instance of NSString or NSFastEnumeration", EXPDescribeObject(actual)];
+  failureMessageForNotTo(^NSString *(id actual){
+    if(!actualIsCompatible(actual)) return [NSString stringWithFormat:@"%@ is not an instance of NSString or NSFastEnumeration", EXPDescribeObject(actual)];
     if(expectedIsNil) return @"the expected value is nil/null";
     return [NSString stringWithFormat:@"expected %@ not to contain %@", EXPDescribeObject(actual), EXPDescribeObject(expected)];
   });

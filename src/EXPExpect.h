@@ -9,6 +9,7 @@
   char *_fileName;
   BOOL _negative;
   BOOL _asynchronous;
+  BOOL _collection;
 }
 
 @property(nonatomic, copy) EXPIdBlock actualBlock;
@@ -18,7 +19,9 @@
 @property(nonatomic) const char *fileName;
 @property(nonatomic) BOOL negative;
 @property(nonatomic) BOOL asynchronous;
+@property(nonatomic) BOOL collection;
 
+@property(nonatomic, readonly) EXPExpect *elements;
 @property(nonatomic, readonly) EXPExpect *to;
 @property(nonatomic, readonly) EXPExpect *toNot;
 @property(nonatomic, readonly) EXPExpect *notTo;
@@ -29,7 +32,6 @@
 + (EXPExpect *)expectWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(const char *)fileName;
 
 - (void)applyMatcher:(id<EXPMatcher>)matcher;
-- (void)applyMatcher:(id<EXPMatcher>)matcher to:(NSObject **)actual;
 
 @end
 

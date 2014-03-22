@@ -11,6 +11,7 @@ void EXP_prerequisite(EXPBoolBlock block);
 void EXP_match(EXPBoolBlock block);
 void EXP_failureMessageForTo(EXPStringBlock block);
 void EXP_failureMessageForNotTo(EXPStringBlock block);
+void EXP_cleanUp(EXPBasicBlock block);
 
 #if __has_feature(objc_arc)
 #define _EXP_release(x)
@@ -37,18 +38,18 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
 - (void(^) matcherArguments) matcherName { \
   EXPBlockDefinedMatcher *matcher = [[EXPBlockDefinedMatcher alloc] init]; \
   [[[NSThread currentThread] threadDictionary] setObject:matcher forKey:@"EXP_currentMatcher"]; \
-  __block id actual = self.actual; \
   __block void (^prerequisite)(EXPBoolBlock block) = ^(EXPBoolBlock block) { EXP_prerequisite(block); }; \
   __block void (^match)(EXPBoolBlock block) = ^(EXPBoolBlock block) { EXP_match(block); }; \
   __block void (^failureMessageForTo)(EXPStringBlock block) = ^(EXPStringBlock block) { EXP_failureMessageForTo(block); }; \
   __block void (^failureMessageForNotTo)(EXPStringBlock block) = ^(EXPStringBlock block) { EXP_failureMessageForNotTo(block); }; \
-  prerequisite(nil); match(nil); failureMessageForTo(nil); failureMessageForNotTo(nil); \
+  __block void (^cleanUp)(EXPBasicBlock block) = ^(EXPBasicBlock block){ EXP_cleanUp(block); }; \
+  prerequisite(nil); match(nil); failureMessageForTo(nil); failureMessageForNotTo(nil); cleanUp(nil); \
   void (^matcherBlock) matcherArguments = [^ matcherArguments { \
     {
 
 #define _EXPMatcherImplementationEnd \
     } \
-    [self applyMatcher:matcher to:&actual]; \
+    [self applyMatcher:matcher]; \
   } copy]; \
   _EXP_release(matcher); \
   return _EXP_autorelease(matcherBlock); \

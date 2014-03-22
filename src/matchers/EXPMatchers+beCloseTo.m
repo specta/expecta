@@ -2,13 +2,13 @@
 #import "EXPMatcherHelpers.h"
 
 EXPMatcherImplementationBegin(_beCloseToWithin, (id expected, id within)) {
-  prerequisite(^BOOL{
+  prerequisite(^BOOL(id actual){
     return [actual isKindOfClass:[NSNumber class]] &&
 		[expected isKindOfClass:[NSNumber class]] &&
 		([within isKindOfClass:[NSNumber class]] || (within == nil));
   });
 
-  match(^BOOL{
+  match(^BOOL(id actual){
 		double actualValue = [actual doubleValue];
 		double expectedValue = [expected doubleValue];
 
@@ -26,7 +26,7 @@ EXPMatcherImplementationBegin(_beCloseToWithin, (id expected, id within)) {
 		}
   });
 
-  failureMessageForTo(^NSString *{
+  failureMessageForTo(^NSString *(id actual){
     if (within) {
       return [NSString stringWithFormat:@"expected %@ to be close to %@ within %@",
               EXPDescribeObject(actual), EXPDescribeObject(expected), EXPDescribeObject(within)];
@@ -36,7 +36,7 @@ EXPMatcherImplementationBegin(_beCloseToWithin, (id expected, id within)) {
     }
   });
 
-  failureMessageForNotTo(^NSString *{
+  failureMessageForNotTo(^NSString *(id actual){
     if (within) {
       return [NSString stringWithFormat:@"expected %@ not to be close to %@ within %@",
               EXPDescribeObject(actual), EXPDescribeObject(expected), EXPDescribeObject(within)];

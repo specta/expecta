@@ -12,23 +12,28 @@
 
 - (void)dealloc
 {
-    self.prerequisiteBlock = nil;
-    self.matchBlock = nil;
-    self.failureMessageForToBlock = nil;
-    self.failureMessageForNotToBlock = nil;
-    
-    [super dealloc];
+  self.prerequisiteBlock = nil;
+  self.matchBlock = nil;
+  self.failureMessageForToBlock = nil;
+  self.failureMessageForNotToBlock = nil;
+  if (self.cleanUpBlock) {
+    self.cleanUpBlock();
+    self.cleanUpBlock = nil;
+  }
+  
+  [super dealloc];
 }
 
 @synthesize prerequisiteBlock;
 @synthesize matchBlock;
 @synthesize failureMessageForToBlock;
 @synthesize failureMessageForNotToBlock;
+@synthesize cleanUpBlock;
 
 - (BOOL)meetsPrerequesiteFor:(id)actual
 {
   if (self.prerequisiteBlock) {
-    return self.prerequisiteBlock();
+    return self.prerequisiteBlock(actual);
   }
   return YES;
 }
@@ -36,7 +41,7 @@
 - (BOOL)matches:(id)actual
 {
   if (self.matchBlock) {
-    return self.matchBlock();
+    return self.matchBlock(actual);
   }
   return YES;
 }
@@ -44,7 +49,7 @@
 - (NSString *)failureMessageForTo:(id)actual
 {
   if (self.failureMessageForToBlock) {
-    return self.failureMessageForToBlock();
+    return self.failureMessageForToBlock(actual);
   }
   return nil;
 }
@@ -52,7 +57,7 @@
 - (NSString *)failureMessageForNotTo:(id)actual
 {
   if (self.failureMessageForNotToBlock) {
-    return self.failureMessageForNotToBlock();
+    return self.failureMessageForNotToBlock(actual);
   }
   return nil;
 }

@@ -185,3 +185,7 @@ void EXP_failureMessageForNotTo(EXPStringBlock block) {
   [[[[NSThread currentThread] threadDictionary] objectForKey:@"EXP_currentMatcher"] setFailureMessageForNotToBlock:block];
 }
 
+void EXP_cleanUp(EXPBasicBlock block) {
+  [[[[NSThread currentThread] threadDictionary] objectForKey:@"EXP_currentMatcher"] setCleanUpBlock:block];
+}
+
