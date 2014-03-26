@@ -84,3 +84,5 @@ EXPMatcherImplementationBegin(postNotification, (id expected)){
 }
 
 EXPMatcherImplementationEnd
+
+EXPMatcherAliasImplementation(notify, postNotification, (id expectedNotification))

@@ -25,3 +25,7 @@ EXPMatcherImplementationBegin(beInstanceOf, (Class expected)) {
   });
 }
 EXPMatcherImplementationEnd
+
+EXPMatcherAliasImplementation(beAnInstanceOf, beInstanceOf, (Class expected));
+EXPMatcherAliasImplementation(beMemberOf,     beInstanceOf, (Class expected));
+EXPMatcherAliasImplementation(beAMemberOf,    beInstanceOf, (Class expected));

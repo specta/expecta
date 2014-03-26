@@ -1,5 +1,4 @@
 #import "Expecta.h"
 
 EXPMatcherInterface(postNotification, (id expectedNotification));
-
-#define notify postNotification
+EXPMatcherInterface(notify, (id expectedNotification));

@@ -19,7 +19,7 @@
 @end
 
 EXPMatcherInterface(isTurnedOn, (void));
-#define beTurnedOn isTurnedOn
+EXPMatcherInterface(beTurnedOn, (void));
 
 @interface DynamicPredicateMatcherTest : XCTestCase
 @end
@@ -40,3 +40,5 @@ EXPMatcherInterface(isTurnedOn, (void));
 }
 
 @end
+
+EXPMatcherAliasImplementation(beTurnedOn, isTurnedOn, (void));

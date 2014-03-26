@@ -55,4 +55,24 @@
   assertFail(test_expect(object).toNot.haveCountOf(2), errorMessage);
 }
 
+- (void)test_haveCount {
+  assertPass(test_expect(array).haveCount(3));
+}
+
+- (void)test_haveACountOf {
+  assertPass(test_expect(array).haveACountOf(3));
+}
+
+- (void)test_haveLength {
+  assertPass(test_expect(array).haveLength(3));
+}
+
+- (void)test_haveLengthOf {
+  assertPass(test_expect(array).haveLengthOf(3));
+}
+
+- (void)test_haveALengthOf {
+  assertPass(test_expect(array).haveALengthOf(3));
+}
+
 @end

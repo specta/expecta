@@ -25,3 +25,5 @@ EXPMatcherImplementationBegin(beKindOf, (Class expected)) {
   });
 }
 EXPMatcherImplementationEnd
+
+EXPMatcherAliasImplementation(beAKindOf, beKindOf, (Class expected));

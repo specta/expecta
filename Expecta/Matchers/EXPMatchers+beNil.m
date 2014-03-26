@@ -14,3 +14,5 @@ EXPMatcherImplementationBegin(beNil, (void)) {
   });
 }
 EXPMatcherImplementationEnd
+
+EXPMatcherAliasImplementation(beNull, beNil, (void));
