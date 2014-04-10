@@ -63,7 +63,7 @@ or
 
 If `EXP_SHORTHAND` is not defined, expectations must be written with `EXP_expect` instead of `expect`.
 
-Expecta is framework-agnostic. It works well with OCUnit (SenTestingKit) and OCUnit-compatible test frameworks such as [Specta](http://github.com/petejkim/specta/), [GHUnit](http://github.com/gabriel/gh-unit/) and [GTMUnit](http://code.google.com/p/google-toolbox-for-mac/). Expecta also supports [Cedar](http://pivotal.github.com/cedar/).
+Expecta is framework-agnostic. It works well with XCTest, OCUnit (SenTestingKit) and OCUnit-compatible test frameworks such as [Specta](http://github.com/petejkim/specta/), [GHUnit](http://github.com/gabriel/gh-unit/) and [GTMUnit](http://code.google.com/p/google-toolbox-for-mac/). Expecta also supports [Cedar](http://pivotal.github.com/cedar/).
 
 ## BUILT-IN MATCHERS
 
