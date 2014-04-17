@@ -12,7 +12,7 @@
 #import "EXPMatchers.h"
 
 #ifdef EXP_SHORTHAND
-#  define expect(actual) EXP_expect((actual))
+#  define expect(...) EXP_expect((__VA_ARGS__))
 #endif
 
 #ifdef EXP_OLD_SYNTAX
