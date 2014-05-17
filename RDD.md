@@ -38,10 +38,6 @@
 >
 >`expect(^{ expr; }).toChange(x.hello, z);` passes if expr changes x.hello by amount z
 
-### String
-
->`expect(x).toMatch(y);` compares x to a regex pattern y and passes if they match
-
 ### Collection
 
 >`expect(x).beEmpty();` passes if x is empty
