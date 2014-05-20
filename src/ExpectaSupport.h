@@ -1,6 +1,10 @@
 #import "EXPExpect.h"
 #import "EXPBlockDefinedMatcher.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 id _EXPObjectify(const char *type, ...);
 EXPExpect *_EXP_expect(id testCase, int lineNumber, const char *fileName, EXPIdBlock actualBlock);
 
@@ -54,3 +58,7 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
   return _EXP_autorelease(matcherBlock); \
 } \
 @end
+
+#ifdef __cplusplus
+}
+#endif
