@@ -6,3 +6,7 @@ build/
 *.pbxuser
 *.mode1v3
 
+products/*.h
+products/*.a
+products/LICENSE
+products/README.md
