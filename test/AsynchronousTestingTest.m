@@ -27,6 +27,17 @@
   assertFail(test_expect(foo).willNot.equal(@"foo"), @"expected: not foo, got: foo");
 }
 
+- (void)test_after {
+  __block NSString *foo = @"";
+  [self performSelector:@selector(performBlock:) withObject:[[^{
+    foo = @"foo";
+  } copy] autorelease] afterDelay:1.5];
+  assertPass(test_expect(foo).after(2).to.equal(@"foo"));
+  assertPass(test_expect(foo).after(2).notTo.equal(@"bar"));
+  assertFail(test_expect(foo).after(2).to.equal(@"bar"), @"expected: bar, got: foo");
+  assertFail(test_expect(foo).after(2).notTo.equal(@"foo"), @"expected: not foo, got: foo");
+}
+
 - (void)test_Expecta_setAsynchronousTestTimeout {
   assertEquals([Expecta asynchronousTestTimeout], 1.0);
   [Expecta setAsynchronousTestTimeout: 10.0];
