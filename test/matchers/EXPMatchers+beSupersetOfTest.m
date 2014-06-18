@@ -5,7 +5,8 @@
   NSSet *set;
   NSOrderedSet *orderedSet;
   NSDictionary *dictionary;
-  NSObject* object;
+  NSObject *object;
+  NSDictionary *json;
 }
 @end
 
@@ -17,6 +18,9 @@
   orderedSet = [NSOrderedSet orderedSetWithArray:array];
   dictionary = [NSDictionary dictionaryWithObjectsAndKeys:@1, @"foo", @2, @"bar", nil];
   object = [[NSObject alloc] init];
+  json = [NSJSONSerialization JSONObjectWithData:[@"{\"foo\":1,\"bar\":2}" dataUsingEncoding:NSUTF8StringEncoding]
+                                         options:kNilOptions
+                                           error:nil];
 }
 
 - (void)test_beSupersetOf {
@@ -24,11 +28,13 @@
   assertPass(test_expect(set).beSupersetOf([NSSet setWithObject:@"bar"]));
   assertPass(test_expect(orderedSet).beSupersetOf([NSOrderedSet orderedSetWithObject:@"baz"]));
   assertPass(test_expect(dictionary).beSupersetOf([NSDictionary dictionaryWithObject:@2 forKey:@"bar"]));
+  assertPass(test_expect(json).beSupersetOf([NSDictionary dictionaryWithObject:@2 forKey:@"bar"]));
 
   assertPass(test_expect(array).beSupersetOf(array));
   assertPass(test_expect(set).beSupersetOf(set));
   assertPass(test_expect(orderedSet).beSupersetOf(orderedSet));
   assertPass(test_expect(dictionary).beSupersetOf(dictionary));
+  assertPass(test_expect(json).beSupersetOf(json));
 
   assertPass(test_expect(array).beSupersetOf([NSArray array]));
   assertPass(test_expect(set).beSupersetOf([NSSet set]));
@@ -65,6 +71,7 @@
   assertPass(test_expect(set).notTo.beSupersetOf([NSSet setWithObject:@"xyz"]));
   assertPass(test_expect(orderedSet).notTo.beSupersetOf([NSOrderedSet orderedSetWithObject:@"xyz"]));
   assertPass(test_expect(dictionary).notTo.beSupersetOf([NSDictionary dictionaryWithObject:@2 forKey:@"xyz"]));
+  assertPass(test_expect(json).notTo.beSupersetOf([NSDictionary dictionaryWithObject:@2 forKey:@"xyz"]));
 
   assertFail(test_expect(nil).notTo.beSupersetOf([NSArray array]), @"nil/null is not an instance of NSDictionary and does not implement -containsObject:");
   assertFail(test_expect(array).notTo.beSupersetOf(nil), @"the expected value is nil/null");

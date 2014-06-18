@@ -3,7 +3,13 @@
 EXPMatcherImplementationBegin(beSupersetOf, (id subset)) {
   BOOL actualIsCompatible = [actual isKindOfClass:[NSDictionary class]] || [actual respondsToSelector:@selector(containsObject:)];
   BOOL subsetIsNil = (subset == nil);
-  BOOL classMatches = [subset isKindOfClass:[actual class]];
+
+  // For some instances the isKindOfClass: method returns false, even though
+  // they are both actually dictionaries. e.g. Comparing a NSCFDictionary and a
+  // NSDictionary.
+  BOOL bothAreDictionaries = [actual isKindOfClass:[NSDictionary class]] && [subset isKindOfClass:[NSDictionary class]];
+
+  BOOL classMatches = bothAreDictionaries || [subset isKindOfClass:[actual class]];
 
   prerequisite(^BOOL{
     return actualIsCompatible && !subsetIsNil && classMatches;
