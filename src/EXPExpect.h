@@ -9,6 +9,7 @@
   char *_fileName;
   BOOL _negative;
   BOOL _asynchronous;
+  NSTimeInterval _timeout;
 }
 
 @property(nonatomic, copy) EXPIdBlock actualBlock;
@@ -18,12 +19,14 @@
 @property(nonatomic) const char *fileName;
 @property(nonatomic) BOOL negative;
 @property(nonatomic) BOOL asynchronous;
+@property(nonatomic) NSTimeInterval timeout;
 
 @property(nonatomic, readonly) EXPExpect *to;
 @property(nonatomic, readonly) EXPExpect *toNot;
 @property(nonatomic, readonly) EXPExpect *notTo;
 @property(nonatomic, readonly) EXPExpect *will;
 @property(nonatomic, readonly) EXPExpect *willNot;
+@property(nonatomic, readonly) EXPExpect *(^after)(NSTimeInterval timeInterval);
 
 - (id)initWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(const char *)fileName;
 + (EXPExpect *)expectWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(const char *)fileName;

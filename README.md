@@ -19,7 +19,7 @@ assertThat(@"foo", is(equalTo(@"foo")));
 assertThatUnsignedInteger(foo, isNot(equalToUnsignedInteger(1)));
 assertThatBool([bar isBar], is(equalToBool(YES)));
 assertThatDouble(baz, is(equalToDouble(3.14159)));
-``` 
+```
 
 vs. **Expecta**
 
@@ -131,13 +131,37 @@ Every matcher's criteria can be inverted by prepending `.notTo` or `.toNot`:
 
 ## ASYNCHRONOUS TESTING
 
-Every matcher can be made to perform asynchronous testing by prepending `.will` or `.willNot`:
+Every matcher can be made to perform asynchronous testing by prepending `.will`, `.willNot` or `after(...)`:
 
->`expect(x).will.beNil();` passes if x becomes nil before the timeout.
+>`expect(x).will.beNil();` passes if x becomes nil before the default timeout.
 >
->`expect(x).willNot.beNil();` passes if x becomes non-nil before the timeout.
+>`expect(x).willNot.beNil();` passes if x becomes non-nil before the default timeout.
+>
+>`expect(x).after(3).to.beNil();` passes if x becoms nil after 3.0 seconds.
+>
+>`expect(x).after(2.5).notTo.equal(42);` passes if x doesn't equal 42 after 2.5 seconds.
 
-Default timeout is 1.0 second. This setting can be changed by calling `[Expecta setAsynchronousTestTimeout:x]`, where x is the desired timeout.
+Default timeout is 1.0 second and it's used for all matchers if not specified otherwise. This setting can be changed by calling `[Expecta setAsynchronousTestTimeout:x]`, where x is the desired timeout.
+
+```objective-c
+describe(@"Foo", ^{
+  beforeAll(^{
+    // All asynchronous matching using `will` and `willNot`
+    // will have a timeout of 2.0 seconds
+    [Expecta setAsynchronousTestTimeout:2];
+  });
+
+  it(@"will not be nil", ^{
+    // Test case where default timeout is used
+    expect(foo).willNot.beNil();
+  });
+
+  it(@"should equal 42 after 3 seconds", ^{
+    // Signle case where timeout differs from the default
+    expect(foo).after(3).to.equal(42);
+  });
+});
+```
 
 ## WRITING NEW MATCHERS
 

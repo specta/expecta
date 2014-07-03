@@ -14,13 +14,15 @@
   toNot,
   notTo,
   will,
-  willNot;
+  willNot,
+  after;
 
 @synthesize
   actualBlock=_actualBlock,
   testCase=_testCase,
   negative=_negative,
   asynchronous=_asynchronous,
+  timeout=_timeout,
   lineNumber=_lineNumber,
   fileName=_fileName;
 
@@ -31,6 +33,7 @@
     self.testCase = testCase;
     self.negative = NO;
     self.asynchronous = NO;
+    self.timeout = [Expecta asynchronousTestTimeout];
     self.lineNumber = lineNumber;
     self.fileName = fileName;
   }
@@ -71,6 +74,17 @@
   return self.will.toNot;
 }
 
+- (EXPExpect *(^)(NSTimeInterval))after
+{
+  EXPExpect * (^block)(NSTimeInterval) = [^EXPExpect *(NSTimeInterval timeout) {
+    self.asynchronous = YES;
+    self.timeout = timeout;
+    return self;
+  } copy];
+
+  return [block autorelease];
+}
+
 #pragma mark -
 
 - (id)actual {
@@ -98,7 +112,7 @@
     } else {
       BOOL matchResult = NO;
       if(self.asynchronous) {
-        NSTimeInterval timeOut = [Expecta asynchronousTestTimeout];
+        NSTimeInterval timeOut = self.timeout;
         NSDate *expiryDate = [NSDate dateWithTimeIntervalSinceNow:timeOut];
         while(1) {
           matchResult = [matcher matches:*actual];
