@@ -1,5 +1,10 @@
 #Expecta
 
+[![Build Status](http://img.shields.io/travis/specta/expecta/master.svg?style=flat)](https://travis-ci.org/specta/expecta)
+[![Pod Version](http://img.shields.io/cocoapods/v/Expecta.svg?style=flat)](http://cocoadocs.org/docsets/Expecta/)
+[![Pod Platform](http://img.shields.io/cocoapods/p/Expecta.svg?style=flat)](http://cocoadocs.org/docsets/Expecta/)
+[![Pod License](http://img.shields.io/cocoapods/l/Expecta.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
 A Matcher Framework for Objective-C/Cocoa
 
 ## NOTICE
