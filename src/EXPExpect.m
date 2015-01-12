@@ -42,7 +42,7 @@
 
 - (void)dealloc
 {
-  self.actualBlock = nil;
+  _actualBlock = nil;
   [super dealloc];
 }
 
