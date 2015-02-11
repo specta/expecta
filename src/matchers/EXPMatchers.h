@@ -19,6 +19,6 @@
 #import "EXPMatchers+raise.h"
 #import "EXPMatchers+raiseWithReason.h"
 #import "EXPMatchers+respondTo.h"
-#import "EXPMatchers+notify.h"
+#import "EXPMatchers+postNotification.h"
 #import "EXPMatchers+beginWith.h"
 #import "EXPMatchers+endWith.h"
