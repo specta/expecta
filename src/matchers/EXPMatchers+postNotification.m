@@ -1,5 +1,28 @@
 #import "EXPMatchers+postNotification.h"
 
+@implementation NSNotification (EXPEquality)
+
+- (BOOL)exp_isFunctionallyEqualTo:(NSNotification *)otherNotification
+{
+  if (![otherNotification isKindOfClass:[NSNotification class]]) return NO;
+
+  BOOL namesMatch = [otherNotification.name isEqualToString:self.name];
+
+  BOOL objectsMatch = YES;
+  if (otherNotification.object || self.object) {
+    objectsMatch = [otherNotification.object isEqual:self.object];
+  }
+
+  BOOL userInfoMatches = YES;
+  if (otherNotification.userInfo || self.userInfo) {
+    userInfoMatches = [otherNotification.userInfo isEqual:self.userInfo];
+  }
+
+  return (namesMatch && objectsMatch && userInfoMatches);
+}
+
+@end
+
 EXPMatcherImplementationBegin(postNotification, (id expected)){
   BOOL actualIsNil = (actual == nil);
   BOOL expectedIsNil = (expected == nil);
@@ -23,7 +46,7 @@ EXPMatcherImplementationBegin(postNotification, (id expected)){
 
     observer = [[NSNotificationCenter defaultCenter] addObserverForName:expectedName object:nil queue:nil usingBlock:^(NSNotification *note){
       if (isNotification) {
-        expectedNotificationOccurred |= [expected isEqual:note];
+        expectedNotificationOccurred |= [expected exp_isFunctionallyEqualTo:note];
       }else{
         expectedNotificationOccurred = YES;
       }
