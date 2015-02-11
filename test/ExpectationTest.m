@@ -53,25 +53,25 @@
 
 - (void)test_expect_char {
   char a = 127;
-  n = [NSNumber numberWithChar:a];
+  n = @(a);
   assertEqualObjects(expect(a).actual, n);
 }
 
 - (void)test_expect_double {
   double a = 3.141592653589793;
-  n = [NSNumber numberWithDouble:a];
+  n = @(a);
   assertEqualObjects(expect(a).actual, n);
 }
 
 - (void)test_expect_float {
   float a = 3.141592f;
-  n = [NSNumber numberWithFloat:a];
+  n = @(a);
   assertEqualObjects(expect(a).actual, n);
 }
 
 - (void)test_expect_int {
   int a = 2147483647;
-  n = [NSNumber numberWithInt:a];
+  n = @(a);
   assertEqualObjects(expect(a).actual, n);
 }
 
@@ -81,19 +81,19 @@
 #else
   long a = 2147483647;
 #endif
-  n = [NSNumber numberWithLong:a];
+  n = @(a);
   assertEqualObjects(expect(a).actual, n);
 }
 
 - (void)test_expect_long_long {
   long long a = 9223372036854775807;
-  n = [NSNumber numberWithLongLong:a];
+  n = @(a);
   assertEqualObjects(expect(a).actual, n);
 }
 
 - (void)test_expect_short {
   short a = 32767;
-  n = [NSNumber numberWithShort:a];
+  n = @(a);
   assertEqualObjects(expect(a).actual, n);
 }
 
@@ -103,19 +103,19 @@
 #else
   NSInteger a = 2147483647;
 #endif
-  n = [NSNumber numberWithInteger:a];
+  n = @(a);
   assertEqualObjects(expect(a).actual, n);
 }
 
 - (void)test_expect_unsigned_char {
   unsigned char a = 255;
-  n = [NSNumber numberWithUnsignedChar:a];
+  n = @(a);
   assertEqualObjects(expect(a).actual, n);
 }
 
 - (void)test_expect_unsigned_int {
   unsigned int a = 4294967295;
-  n = [NSNumber numberWithUnsignedInt:a];
+  n = @(a);
   assertEqualObjects(expect(a).actual, n);
 }
 
@@ -125,19 +125,19 @@
 #else
   unsigned long a = 4294967295;
 #endif
-  n = [NSNumber numberWithUnsignedLong:a];
+  n = @(a);
   assertEqualObjects(expect(a).actual, n);
 }
 
 - (void)test_expect_unsigned_long_long {
   unsigned long long a = 18446744073709551615u;
-  n = [NSNumber numberWithUnsignedLongLong:a];
+  n = @(a);
   assertEqualObjects(expect(a).actual, n);
 }
 
 - (void)test_expect_unsigned_short {
   unsigned short a = 65535;
-  n = [NSNumber numberWithUnsignedShort:a];
+  n = @(a);
   assertEqualObjects(expect(a).actual, n);
 }
 
@@ -147,7 +147,7 @@
 #else
   NSUInteger a = 4294967295;
 #endif
-  n = [NSNumber numberWithUnsignedInteger:a];
+  n = @(a);
   assertEqualObjects(expect(a).actual, n);
 }
 
@@ -178,12 +178,12 @@
   bool noBool = false;
   BOOL noBOOL = NO;
   int noInt = 0;
-  id noNSNum = [NSNumber numberWithBool:NO];
+  id noNSNum = @NO;
   
   _Bool yesBool = true;
   BOOL yesBOOL = YES;
   int yesInt = 1;
-  id yesNSNum = [NSNumber numberWithBool:YES];
+  id yesNSNum = @YES;
   
   expect(false).to.equal(NO);
   expect(NO).to.equal(noBool);

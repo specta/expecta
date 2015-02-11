@@ -11,8 +11,8 @@
 @implementation EXPMatchers_containTest
 
 - (void)setUp {
-  array = [NSArray arrayWithObjects:@"foo", @"bar", @"baz", nil];
-  array2 = [NSArray arrayWithObjects:[NSString class], [NSDictionary class], nil];
+  array = @[@"foo", @"bar", @"baz"];
+  array2 = @[[NSString class], [NSDictionary class]];
   set = [NSSet setWithObjects:@"foo", @"bar", nil];
   string = @"foo|bar,baz";
   object = [NSObject new];

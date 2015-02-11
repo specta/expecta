@@ -13,13 +13,13 @@
   NSString *_expected;
 }
 
-- (id)initWithExpected:(NSString *)expected;
+- (instancetype)initWithExpected:(NSString *)expected NS_DESIGNATED_INITIALIZER;
 
 @end
 
 @implementation MyCustomMatcherImpl
 
-- (id)initWithExpected:(NSString *)expected
+- (instancetype)initWithExpected:(NSString *)expected
 {
   if ((self = [super init])) {
     _expected = [expected copy];

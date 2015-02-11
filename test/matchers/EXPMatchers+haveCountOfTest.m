@@ -14,10 +14,10 @@
 @implementation EXPMatchers_haveCountOfTest
 
 - (void)setUp {
-  array = [NSArray arrayWithObjects:@"foo", @"bar", @"baz", nil];
+  array = @[@"foo", @"bar", @"baz"];
   set = [NSSet setWithObjects:@"foo", @"bar", nil];
   orderedSet = [NSOrderedSet orderedSetWithObjects:@"foo", @"bar", @"baz", @"qux", nil];
-  dictionary = [NSDictionary dictionaryWithObjectsAndKeys:@"value", @"key", nil];
+  dictionary = @{@"key": @"value"};
   string = @"foobar";
   attributedString = [[NSAttributedString alloc] initWithString:@"foobar"];
   object = [NSObject new];

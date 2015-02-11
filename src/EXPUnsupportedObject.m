@@ -4,7 +4,7 @@
 
 @synthesize type=_type;
 
-- (id)initWithType:(NSString *)type {
+- (instancetype)initWithType:(NSString *)type {
   self = [super init];
   if(self) {
     self.type = type;
