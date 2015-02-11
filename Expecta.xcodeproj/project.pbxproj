@@ -418,6 +418,7 @@
 		908379791A8B972C009844DA /* Expecta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Expecta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		908379DC1A8B98E8009844DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		908379DD1A8B990A009844DA /* Expecta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Expecta.h; sourceTree = "<group>"; };
+		908379E51A8B9F13009844DA /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
 		9C4416F917FF3F4A00978F09 /* ExpectaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpectaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A305755D1520BCCB00DA19BD /* EXPMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPMatcher.h; sourceTree = "<group>"; };
 		A30575611520BDCD00DA19BD /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPBlockDefinedMatcher.h; sourceTree = "<group>"; };
@@ -495,7 +496,6 @@
 		E9ACDF9B13B2E0BB0010F4D7 /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
 		E9ACDF9C13B2E0BB0010F4D7 /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
 		E9ACDF9D13B2E0BB0010F4D7 /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
-		E9ACDFA213B2E0CC0010F4D7 /* Test-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
 		E9AFC43913C482D3006B4F2A /* AsynchronousTestingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsynchronousTestingTest.m; sourceTree = "<group>"; };
 		E9B777E814BA316E00D8DC76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		E9BDBAA614BE1CD900102FB5 /* MiscTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiscTest.m; sourceTree = "<group>"; };
@@ -553,6 +553,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		908379E41A8B9EE1009844DA /* support */ = {
+			isa = PBXGroup;
+			children = (
+				908379DC1A8B98E8009844DA /* Info.plist */,
+			);
+			name = support;
+			sourceTree = "<group>";
+		};
 		E9ACDF0113B2DD520010F4D7 = {
 			isa = PBXGroup;
 			children = (
@@ -610,11 +618,11 @@
 				A305755D1520BCCB00DA19BD /* EXPMatcher.h */,
 				E9ACDF4113B2DDC60010F4D7 /* EXPUnsupportedObject.h */,
 				E9ACDF4213B2DDC60010F4D7 /* EXPUnsupportedObject.m */,
-				908379DC1A8B98E8009844DA /* Info.plist */,
 				E9ACDF4313B2DDC60010F4D7 /* matchers */,
 				E9ACDF5513B2DDC60010F4D7 /* NSObject+Expecta.h */,
 				E9ACDF5613B2DDC60010F4D7 /* NSValue+Expecta.h */,
 				E9ACDF5713B2DDC60010F4D7 /* NSValue+Expecta.m */,
+				908379E41A8B9EE1009844DA /* support */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -743,7 +751,7 @@
 		E9ACDFA113B2E0CC0010F4D7 /* support */ = {
 			isa = PBXGroup;
 			children = (
-				E9ACDFA213B2E0CC0010F4D7 /* Test-Info.plist */,
+				908379E51A8B9F13009844DA /* Test-Info.plist */,
 			);
 			path = support;
 			sourceTree = "<group>";
@@ -1063,6 +1071,7 @@
 		E9ACDF0313B2DD520010F4D7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = EXP;
 				LastTestingUpgradeCheck = 0630;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Peter Jihoon Kim";
@@ -1517,7 +1526,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				INFOPLIST_FILE = "test/support/Test-XCTest-Info.plist";
+				INFOPLIST_FILE = "test/support/Test-Info.plist";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -1537,7 +1546,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				INFOPLIST_FILE = "test/support/Test-XCTest-Info.plist";
+				INFOPLIST_FILE = "test/support/Test-Info.plist";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -1626,7 +1635,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				INFOPLIST_FILE = "test/support/Test-XCTest-Info.plist";
+				INFOPLIST_FILE = "test/support/Test-Info.plist";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -1781,6 +1790,7 @@
 				908379271A8B9661009844DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9083798C1A8B972C009844DA /* Build configuration list for PBXNativeTarget "Expecta" */ = {
 			isa = XCConfigurationList;
@@ -1790,6 +1800,7 @@
 				9083798F1A8B972C009844DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C44170817FF3F4A00978F09 /* Build configuration list for PBXNativeTarget "ExpectaTests" */ = {
 			isa = XCConfigurationList;
