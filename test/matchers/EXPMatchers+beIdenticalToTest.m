@@ -1,6 +1,6 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_beIdenticalToTest : TEST_SUPERCLASS {
+@interface EXPMatchers_beIdenticalToTest : XCTestCase {
   NSMutableString *foo;
   NSMutableString *foo2;
   id foo3;

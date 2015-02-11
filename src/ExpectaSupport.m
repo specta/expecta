@@ -113,12 +113,7 @@ void EXPFail(id testCase, int lineNumber, const char *fileName, NSString *messag
   NSString *reason = [NSString stringWithFormat:@"%s:%d %@", fileName, lineNumber, message];
   NSException *exception = [NSException exceptionWithName:@"Expecta Error" reason:reason userInfo:nil];
 
-  if(testCase && [testCase respondsToSelector:@selector(failWithException:)]) {
-    if([[(Class)objc_getMetaClass("NSException") class] instancesRespondToSelector:@selector(failureInFile:atLine:withDescription:)]) {
-      exception = [NSException failureInFile:[NSString stringWithUTF8String:fileName] atLine:lineNumber withDescription:message];
-    }
-    [testCase failWithException:exception];
-  } else if(testCase && [testCase respondsToSelector:@selector(recordFailureWithDescription:inFile:atLine:expected:)]){
+  if(testCase && [testCase respondsToSelector:@selector(recordFailureWithDescription:inFile:atLine:expected:)]){
       [testCase recordFailureWithDescription:message
                                       inFile:[NSString stringWithUTF8String:fileName]
                                       atLine:lineNumber

@@ -1,6 +1,6 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_raiseWithReasonTest : TEST_SUPERCLASS
+@interface EXPMatchers_raiseWithReasonTest : XCTestCase
 @end
 
 @implementation EXPMatchers_raiseWithReasonTest

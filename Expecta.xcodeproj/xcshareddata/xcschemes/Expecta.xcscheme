@@ -28,23 +28,9 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E9ACDF1C13B2DD520010F4D7"
-               BuildableName = "ExpectaTests.octest"
-               BlueprintName = "ExpectaTests"
-               ReferencedContainer = "container:Expecta.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C4416F817FF3F4A00978F09"
-               BuildableName = "ExpectaTests-XCTest.xctest"
-               BlueprintName = "ExpectaTests-XCTest"
+               BuildableName = "ExpectaTests.xctest"
+               BlueprintName = "ExpectaTests"
                ReferencedContainer = "container:Expecta.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -60,23 +46,22 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E9ACDF1C13B2DD520010F4D7"
-               BuildableName = "ExpectaTests.octest"
+               BlueprintIdentifier = "9C4416F817FF3F4A00978F09"
+               BuildableName = "ExpectaTests.xctest"
                BlueprintName = "ExpectaTests"
                ReferencedContainer = "container:Expecta.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9C4416F817FF3F4A00978F09"
-               BuildableName = "ExpectaTests-XCTest.xctest"
-               BlueprintName = "ExpectaTests-XCTest"
-               ReferencedContainer = "container:Expecta.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E9ACDF0B13B2DD520010F4D7"
+            BuildableName = "libExpecta.a"
+            BlueprintName = "Expecta"
+            ReferencedContainer = "container:Expecta.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -87,6 +72,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E9ACDF0B13B2DD520010F4D7"
+            BuildableName = "libExpecta.a"
+            BlueprintName = "Expecta"
+            ReferencedContainer = "container:Expecta.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -96,6 +90,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E9ACDF0B13B2DD520010F4D7"
+            BuildableName = "libExpecta.a"
+            BlueprintName = "Expecta"
+            ReferencedContainer = "container:Expecta.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

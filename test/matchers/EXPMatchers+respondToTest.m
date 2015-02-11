@@ -1,6 +1,6 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_respondToTest : TEST_SUPERCLASS
+@interface EXPMatchers_respondToTest : XCTestCase
 {
   id foo;
   id baz;

@@ -1,7 +1,7 @@
 #import "TestHelper.h"
 #import "ExpectaSupport.h"
 
-@interface MiscTest : TEST_SUPERCLASS
+@interface MiscTest : XCTestCase
 @end
 
 @implementation MiscTest

@@ -46,7 +46,7 @@
 
 @end
     
-@interface EXPFailTest : TEST_SUPERCLASS
+@interface EXPFailTest : XCTestCase
 @end
 
 @implementation EXPFailTest
@@ -63,7 +63,6 @@
   [testCase release];
 }
 
-#ifdef USE_XCTEST
 - (void)test_EXPFailWithTestCaseClassThatHasFailureMethod {
     // it calls recordFailureWithDescription:inFile:atLine:expected: method
     TestCaseClassWithRecordFailureMethod *testCase = [TestCaseClassWithRecordFailureMethod new];
@@ -76,21 +75,5 @@
     assertEquals(testCase.expected, NO);
     [testCase release];
 }
-#else
-- (void)test_EXPFailWithTestCaseClassThatHasFailureMethod {
-  // it calls failWithException: method
-  TestCaseClassWithFailMethod *testCase = [TestCaseClassWithFailMethod new];
-  assertNil(testCase.exception);
-  [testCase fail];
-  NSException *exception = testCase.exception;
-  assertEqualObjects([exception name], SenTestFailureException);
-  assertEqualObjects([exception reason], @"epic fail");
-  NSDictionary *exceptionUserInfo = [exception userInfo];
-  assertEqualObjects([exceptionUserInfo objectForKey:SenTestDescriptionKey], @"epic fail");
-  assertEqualObjects([exceptionUserInfo objectForKey:SenTestFilenameKey], @"test.m");
-  assertEqualObjects([exceptionUserInfo objectForKey:SenTestLineNumberKey], [NSNumber numberWithInt:777]);
-  [testCase release];
-}
-#endif
 
 @end

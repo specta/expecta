@@ -1,7 +1,7 @@
 #import "TestHelper.h"
 #import "NSValue+Expecta.h"
 
-@interface EXPMatchers_beGreaterThanTest : TEST_SUPERCLASS
+@interface EXPMatchers_beGreaterThanTest : XCTestCase
 @end
 
 @implementation EXPMatchers_beGreaterThanTest

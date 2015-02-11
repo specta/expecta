@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E93067D913B2E6D100EA26FF"
-               BuildableName = "Expecta-iOSTests.octest"
+               BuildableName = "Expecta-iOSTests.xctest"
                BlueprintName = "Expecta-iOSTests"
                ReferencedContainer = "container:Expecta.xcodeproj">
             </BuildableReference>
@@ -49,6 +49,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E93067CD13B2E6D100EA26FF"
+            BuildableName = "libExpecta-iOS.a"
+            BlueprintName = "Expecta-iOS"
+            ReferencedContainer = "container:Expecta.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

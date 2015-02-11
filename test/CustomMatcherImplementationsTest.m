@@ -50,7 +50,7 @@ EXPMatcherInterface(_equalWithCustomMatcher, (id expected));
 
 @end
 
-@interface CustomMatcherImplementationsTest : TEST_SUPERCLASS
+@interface CustomMatcherImplementationsTest : XCTestCase
 @end
 
 @implementation CustomMatcherImplementationsTest
