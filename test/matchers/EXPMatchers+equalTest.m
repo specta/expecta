@@ -172,6 +172,14 @@
   assertPass(test_expect(block).toNot.equal(block2));
 }
 
+- (void)test_equal_decimal_to_number {
+  NSDecimalNumber *decimalNumber=[NSDecimalNumber decimalNumberWithString:@"1.07"];
+  NSNumber *number = @1.07;
+  assertPass(test_expect(decimalNumber).equal(number));
+  assertPass(test_expect(number).equal(decimalNumber));
+  assertPass(test_expect(@1.071).toNot.equal(decimalNumber));
+}
+
 typedef struct SomeFloatPair {
     float x;
     float y;
