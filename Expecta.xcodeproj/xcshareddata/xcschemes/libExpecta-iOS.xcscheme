@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "908379781A8B972C009844DA"
-               BuildableName = "Expecta.framework"
-               BlueprintName = "Expecta"
-               ReferencedContainer = "container:Expecta.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9C4416F817FF3F4A00978F09"
-               BuildableName = "ExpectaTests.xctest"
-               BlueprintName = "ExpectaTests"
+               BlueprintIdentifier = "E93067CD13B2E6D100EA26FF"
+               BuildableName = "libExpecta.a"
+               BlueprintName = "libExpecta-iOS"
                ReferencedContainer = "container:Expecta.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,22 +32,13 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9C4416F817FF3F4A00978F09"
-               BuildableName = "ExpectaTests.xctest"
-               BlueprintName = "ExpectaTests"
+               BlueprintIdentifier = "E93067D913B2E6D100EA26FF"
+               BuildableName = "Expecta-iOSTests.xctest"
+               BlueprintName = "Expecta-iOSTests"
                ReferencedContainer = "container:Expecta.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "908379781A8B972C009844DA"
-            BuildableName = "Expecta.framework"
-            BlueprintName = "Expecta"
-            ReferencedContainer = "container:Expecta.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -75,9 +52,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "908379781A8B972C009844DA"
-            BuildableName = "Expecta.framework"
-            BlueprintName = "Expecta"
+            BlueprintIdentifier = "E93067CD13B2E6D100EA26FF"
+            BuildableName = "libExpecta.a"
+            BlueprintName = "libExpecta-iOS"
             ReferencedContainer = "container:Expecta.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -90,15 +67,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "908379781A8B972C009844DA"
-            BuildableName = "Expecta.framework"
-            BlueprintName = "Expecta"
-            ReferencedContainer = "container:Expecta.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
