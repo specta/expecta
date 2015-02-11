@@ -215,7 +215,6 @@
 		908379DF1A8B997D009844DA /* Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 908379DD1A8B990A009844DA /* Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		908379E01A8B999B009844DA /* Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 908379DD1A8B990A009844DA /* Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		908379E11A8B99A2009844DA /* Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 908379DD1A8B990A009844DA /* Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9C4416FC17FF3F4A00978F09 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4416FB17FF3F4A00978F09 /* XCTest.framework */; };
 		9C44170B17FF409D00978F09 /* EXPMatchers+beInTheRangeOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 61740D841425689A00091DDF /* EXPMatchers+beInTheRangeOfTest.m */; };
 		9C44170C17FF409D00978F09 /* EXPMatchers+beIdenticalToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E942971113B45ADD0038708B /* EXPMatchers+beIdenticalToTest.m */; };
 		9C44170D17FF409D00978F09 /* EXPMatchers+beInstanceOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF7613B2DEB70010F4D7 /* EXPMatchers+beInstanceOfTest.m */; };
@@ -352,9 +351,6 @@
 		E9ACDF7013B2DDC60010F4D7 /* NSValue+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ACDF5613B2DDC60010F4D7 /* NSValue+Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9ACDF7113B2DDC60010F4D7 /* NSValue+Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = E9ACDF5713B2DDC60010F4D7 /* NSValue+Expecta.m */; };
 		E9AFC43B13C482D3006B4F2A /* AsynchronousTestingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AFC43913C482D3006B4F2A /* AsynchronousTestingTest.m */; };
-		E9B777E714BA316200D8DC76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E930679913B2E22A00EA26FF /* Foundation.framework */; };
-		E9B777EA14BA317800D8DC76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B777E814BA316E00D8DC76 /* Foundation.framework */; };
-		E9B777F114BA31DE00D8DC76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B777E814BA316E00D8DC76 /* Foundation.framework */; };
 		E9BDBAA814BE1CD900102FB5 /* MiscTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BDBAA614BE1CD900102FB5 /* MiscTest.m */; };
 		E9D3DF0F157A7B7E0054978E /* EXPMatchers+raiseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D3DF0D157A7B7E0054978E /* EXPMatchers+raiseTest.m */; };
 		E9D3DF12157A7EA30054978E /* EXPMatchers+raise.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D3DF11157A7EA30054978E /* EXPMatchers+raise.m */; };
@@ -423,7 +419,6 @@
 		908379DC1A8B98E8009844DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		908379DD1A8B990A009844DA /* Expecta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Expecta.h; sourceTree = "<group>"; };
 		9C4416F917FF3F4A00978F09 /* ExpectaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpectaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C4416FB17FF3F4A00978F09 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A305755D1520BCCB00DA19BD /* EXPMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPMatcher.h; sourceTree = "<group>"; };
 		A30575611520BDCD00DA19BD /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPBlockDefinedMatcher.h; sourceTree = "<group>"; };
 		A30575621520BDCE00DA19BD /* EXPBlockDefinedMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXPBlockDefinedMatcher.m; sourceTree = "<group>"; };
@@ -530,7 +525,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C44172617FF45EE00978F09 /* libExpecta.a in Frameworks */,
-				9C4416FC17FF3F4A00978F09 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,7 +532,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9B777EA14BA317800D8DC76 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +539,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9B777F114BA31DE00D8DC76 /* Foundation.framework in Frameworks */,
 				E93067E213B2E6D100EA26FF /* libExpecta.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,21 +547,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9B777E714BA316200D8DC76 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9C4416FA17FF3F4A00978F09 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9C4416FB17FF3F4A00978F09 /* XCTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E9ACDF0113B2DD520010F4D7 = {
 			isa = PBXGroup;
 			children = (
@@ -581,7 +564,6 @@
 				E9ACDF9413B2DEF30010F4D7 /* LICENSE */,
 				E9ACDF9513B2DEF30010F4D7 /* README.md */,
 				E9A6BAAE13B7183100950250 /* RDD.md */,
-				9C4416FA17FF3F4A00978F09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
