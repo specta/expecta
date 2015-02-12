@@ -7,12 +7,6 @@
 #import "EXPDefines.h"
 #import <objc/runtime.h>
 
-@interface NSException (ExpectaSenTestFailure)
-
-+ (NSException *)failureInFile:(NSString *)filename atLine:(int)lineNumber withDescription:(NSString *)formatString, ...;
-
-@end
-
 @interface NSObject (ExpectaXCTestRecordFailure)
 
 // suppress warning
@@ -26,44 +20,44 @@ id _EXPObjectify(const char *type, ...) {
   id obj = nil;
   if(strcmp(type, @encode(char)) == 0) {
     char actual = (char)va_arg(v, int);
-    obj = [NSNumber numberWithChar:actual];
+    obj = @(actual);
   } else if(strcmp(type, @encode(_Bool)) == 0) {
     _Static_assert(sizeof(_Bool) <= sizeof(int), "Expected _Bool to be subject to vararg type promotion");
     _Bool actual = (_Bool)va_arg(v, int);
-    obj = [NSNumber numberWithBool:actual];
+    obj = @(actual);
   } else if(strcmp(type, @encode(double)) == 0) {
     double actual = (double)va_arg(v, double);
-    obj = [NSNumber numberWithDouble:actual];
+    obj = @(actual);
   } else if(strcmp(type, @encode(float)) == 0) {
     float actual = (float)va_arg(v, double);
-    obj = [NSNumber numberWithFloat:actual];
+    obj = @(actual);
   } else if(strcmp(type, @encode(int)) == 0) {
     int actual = (int)va_arg(v, int);
-    obj = [NSNumber numberWithInt:actual];
+    obj = @(actual);
   } else if(strcmp(type, @encode(long)) == 0) {
     long actual = (long)va_arg(v, long);
-    obj = [NSNumber numberWithLong:actual];
+    obj = @(actual);
   } else if(strcmp(type, @encode(long long)) == 0) {
     long long actual = (long long)va_arg(v, long long);
-    obj = [NSNumber numberWithLongLong:actual];
+    obj = @(actual);
   } else if(strcmp(type, @encode(short)) == 0) {
     short actual = (short)va_arg(v, int);
-    obj = [NSNumber numberWithShort:actual];
+    obj = @(actual);
   } else if(strcmp(type, @encode(unsigned char)) == 0) {
     unsigned char actual = (unsigned char)va_arg(v, unsigned int);
-    obj = [NSNumber numberWithUnsignedChar:actual];
+    obj = @(actual);
   } else if(strcmp(type, @encode(unsigned int)) == 0) {
     unsigned int actual = (int)va_arg(v, unsigned int);
-    obj = [NSNumber numberWithUnsignedInt:actual];
+    obj = @(actual);
   } else if(strcmp(type, @encode(unsigned long)) == 0) {
     unsigned long actual = (unsigned long)va_arg(v, unsigned long);
-    obj = [NSNumber numberWithUnsignedLong:actual];
+    obj = @(actual);
   } else if(strcmp(type, @encode(unsigned long long)) == 0) {
     unsigned long long actual = (unsigned long long)va_arg(v, unsigned long long);
-    obj = [NSNumber numberWithUnsignedLongLong:actual];
+    obj = @(actual);
   } else if(strcmp(type, @encode(unsigned short)) == 0) {
     unsigned short actual = (unsigned short)va_arg(v, unsigned int);
-    obj = [NSNumber numberWithUnsignedShort:actual];
+    obj = @(actual);
   } else if(strstr(type, @encode(EXPBasicBlock)) != NULL) {
       // @encode(EXPBasicBlock) returns @? as of clang 4.1.
       // This condition must occur before the test for id/class type,
@@ -113,14 +107,9 @@ void EXPFail(id testCase, int lineNumber, const char *fileName, NSString *messag
   NSString *reason = [NSString stringWithFormat:@"%s:%d %@", fileName, lineNumber, message];
   NSException *exception = [NSException exceptionWithName:@"Expecta Error" reason:reason userInfo:nil];
 
-  if(testCase && [testCase respondsToSelector:@selector(failWithException:)]) {
-    if([[(Class)objc_getMetaClass("NSException") class] instancesRespondToSelector:@selector(failureInFile:atLine:withDescription:)]) {
-      exception = [NSException failureInFile:[NSString stringWithUTF8String:fileName] atLine:lineNumber withDescription:message];
-    }
-    [testCase failWithException:exception];
-  } else if(testCase && [testCase respondsToSelector:@selector(recordFailureWithDescription:inFile:atLine:expected:)]){
+  if(testCase && [testCase respondsToSelector:@selector(recordFailureWithDescription:inFile:atLine:expected:)]){
       [testCase recordFailureWithDescription:message
-                                      inFile:[NSString stringWithUTF8String:fileName]
+                                      inFile:@(fileName)
                                       atLine:lineNumber
                                     expected:NO];
   } else {
@@ -157,7 +146,7 @@ NSString *EXPDescribeObject(id obj) {
   } else if([obj isKindOfClass:[NSDictionary class]]) {
     NSMutableArray *arr = [NSMutableArray arrayWithCapacity:[obj count]];
     for(id k in obj) {
-      id v = [obj objectForKey:k];
+      id v = obj[k];
       [arr addObject:[NSString stringWithFormat:@"%@ = %@;",EXPDescribeObject(k), EXPDescribeObject(v)]];
     }
     description = [NSString stringWithFormat:@"{%@}", [arr componentsJoinedByString:@" "]];
@@ -170,18 +159,18 @@ NSString *EXPDescribeObject(id obj) {
 }
 
 void EXP_prerequisite(EXPBoolBlock block) {
-  [[[[NSThread currentThread] threadDictionary] objectForKey:@"EXP_currentMatcher"] setPrerequisiteBlock:block];
+  [[[NSThread currentThread] threadDictionary][@"EXP_currentMatcher"] setPrerequisiteBlock:block];
 }
 
 void EXP_match(EXPBoolBlock block) {
-  [[[[NSThread currentThread] threadDictionary] objectForKey:@"EXP_currentMatcher"] setMatchBlock:block];
+  [[[NSThread currentThread] threadDictionary][@"EXP_currentMatcher"] setMatchBlock:block];
 }
 
 void EXP_failureMessageForTo(EXPStringBlock block) {
-  [[[[NSThread currentThread] threadDictionary] objectForKey:@"EXP_currentMatcher"] setFailureMessageForToBlock:block];
+  [[[NSThread currentThread] threadDictionary][@"EXP_currentMatcher"] setFailureMessageForToBlock:block];
 }
 
 void EXP_failureMessageForNotTo(EXPStringBlock block) {
-  [[[[NSThread currentThread] threadDictionary] objectForKey:@"EXP_currentMatcher"] setFailureMessageForNotToBlock:block];
+  [[[NSThread currentThread] threadDictionary][@"EXP_currentMatcher"] setFailureMessageForNotToBlock:block];
 }
 

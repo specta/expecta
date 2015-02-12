@@ -1,4 +1,4 @@
-#import "Expecta.h"
+#import "ExpectaObject.h"
 
 @implementation Expecta
 

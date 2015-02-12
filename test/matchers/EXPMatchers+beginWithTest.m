@@ -1,6 +1,6 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_beginWithTest : TEST_SUPERCLASS
+@interface EXPMatchers_beginWithTest : XCTestCase
 {
   id object;
   NSOrderedSet *emptySet, *sampleSet;

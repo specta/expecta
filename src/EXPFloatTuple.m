@@ -4,7 +4,7 @@
 
 @synthesize values = _values, size = _size;
 
-- (id)initWithFloatValues:(float *)values size:(size_t)size {
+- (instancetype)initWithFloatValues:(float *)values size:(size_t)size {
     if ((self = [super init])) {
         self.values = malloc(sizeof(float) * size);
         memcpy(self.values, values, sizeof(float) * size);

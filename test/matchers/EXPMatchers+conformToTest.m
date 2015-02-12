@@ -1,6 +1,6 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_conformToTest : SenTestCase {
+@interface EXPMatchers_conformToTest : XCTestCase {
     id foo;
     id baz;
 }

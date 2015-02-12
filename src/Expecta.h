@@ -1,27 +1,14 @@
 #import <Foundation/Foundation.h>
-#import "ExpectaSupport.h"
 
-#define EXPObjectify(value) _EXPObjectify(@encode(__typeof__((value))), (value))
+//! Project version number for Expecta.
+FOUNDATION_EXPORT double ExpectaVersionNumber;
 
-#define EXP_expect(actual) _EXP_expect(self, __LINE__, __FILE__, ^id{ return EXPObjectify((actual)); })
+//! Project version string for Expecta.
+FOUNDATION_EXPORT const unsigned char ExpectaVersionString[];
 
-#define EXPMatcherInterface(matcherName, matcherArguments) _EXPMatcherInterface(matcherName, matcherArguments)
-#define EXPMatcherImplementationBegin(matcherName, matcherArguments) _EXPMatcherImplementationBegin(matcherName, matcherArguments)
-#define EXPMatcherImplementationEnd _EXPMatcherImplementationEnd
+#import <Expecta/ExpectaObject.h>
+#import <Expecta/ExpectaSupport.h>
+#import <Expecta/EXPMatchers.h>
 
-#import "EXPMatchers.h"
-
-#ifdef EXP_SHORTHAND
-#  define expect(...) EXP_expect((__VA_ARGS__))
-#endif
-
-#ifdef EXP_OLD_SYNTAX
-#  import "EXPBackwardCompatibility.h"
-#endif
-
-@interface Expecta : NSObject
-
-+ (NSTimeInterval)asynchronousTestTimeout;
-+ (void)setAsynchronousTestTimeout:(NSTimeInterval)timeout;
-
-@end
+// Enable shorthand by default
+#define expect(...) EXP_expect((__VA_ARGS__))

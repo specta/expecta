@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,18 +14,18 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "908379781A8B972C009844DA"
-               BuildableName = "Expecta.framework"
-               BlueprintName = "Expecta"
+               BlueprintIdentifier = "E9ACDF0B13B2DD520010F4D7"
+               BuildableName = "libExpecta.a"
+               BlueprintName = "libExpecta"
                ReferencedContainer = "container:Expecta.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C4416F817FF3F4A00978F09"
@@ -56,9 +56,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "908379781A8B972C009844DA"
-            BuildableName = "Expecta.framework"
-            BlueprintName = "Expecta"
+            BlueprintIdentifier = "E9ACDF0B13B2DD520010F4D7"
+            BuildableName = "libExpecta.a"
+            BlueprintName = "libExpecta"
             ReferencedContainer = "container:Expecta.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,9 +75,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "908379781A8B972C009844DA"
-            BuildableName = "Expecta.framework"
-            BlueprintName = "Expecta"
+            BlueprintIdentifier = "E9ACDF0B13B2DD520010F4D7"
+            BuildableName = "libExpecta.a"
+            BlueprintName = "libExpecta"
             ReferencedContainer = "container:Expecta.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -93,9 +93,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "908379781A8B972C009844DA"
-            BuildableName = "Expecta.framework"
-            BlueprintName = "Expecta"
+            BlueprintIdentifier = "E9ACDF0B13B2DD520010F4D7"
+            BuildableName = "libExpecta.a"
+            BlueprintName = "libExpecta"
             ReferencedContainer = "container:Expecta.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

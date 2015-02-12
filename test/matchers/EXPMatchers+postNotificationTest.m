@@ -1,6 +1,6 @@
 #import "TestHelper.h"
 
-@interface EXPMatchers_postNotificationTest : TEST_SUPERCLASS
+@interface EXPMatchers_postNotificationTest : XCTestCase
 @end
 
 @implementation EXPMatchers_postNotificationTest

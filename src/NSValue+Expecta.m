@@ -14,7 +14,7 @@ static char _EXP_typeKey;
 
 - (void)set_EXP_objCType:(const char *)_EXP_objCType {
   objc_setAssociatedObject(self, &_EXP_typeKey,
-                           [NSString stringWithCString:_EXP_objCType encoding:NSASCIIStringEncoding],
+                           @(_EXP_objCType),
                            OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 

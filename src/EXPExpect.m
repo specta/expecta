@@ -26,7 +26,7 @@
   lineNumber=_lineNumber,
   fileName=_fileName;
 
-- (id)initWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(const char *)fileName {
+- (instancetype)initWithActualBlock:(id)actualBlock testCase:(id)testCase lineNumber:(int)lineNumber fileName:(const char *)fileName {
   self = [super init];
   if(self) {
     self.actualBlock = actualBlock;
@@ -178,7 +178,7 @@
 
 @implementation EXPDynamicPredicateMatcher
 
-- (id)initWithExpectation:(EXPExpect *)expectation selector:(SEL)selector
+- (instancetype)initWithExpectation:(EXPExpect *)expectation selector:(SEL)selector
 {
   if ((self = [super init])) {
     _expectation = expectation;

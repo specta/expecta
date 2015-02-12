@@ -8,6 +8,6 @@
 @property (nonatomic, assign) double *values;
 @property (nonatomic, assign) size_t size;
 
-- (id)initWithDoubleValues:(double *)values size:(size_t)size;
+- (instancetype)initWithDoubleValues:(double *)values size:(size_t)size NS_DESIGNATED_INITIALIZER;
 
 @end

@@ -1,15 +1,15 @@
 #import "TestHelper.h"
 #import "ExpectaSupport.h"
 
-@interface MiscTest : TEST_SUPERCLASS
+@interface MiscTest : XCTestCase
 @end
 
 @implementation MiscTest
 
 - (void)test_StrippingOfLineBreaksInObjectDescription {
-  NSArray *arr = [NSArray arrayWithObjects:@"foo", @"bar", nil];
+  NSArray *arr = @[@"foo", @"bar"];
   NSSet *set = [NSSet setWithObjects:@"foo", @"bar", nil];
-  NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"bar", @"foo", nil];
+  NSDictionary *dict = @{@"foo": @"bar"};
   expect(EXPDescribeObject(@"\n")).toNot.contain(@"\n");
   expect(EXPDescribeObject(@"\n")).equal(@"\\n");
   expect(EXPDescribeObject(arr)).toNot.contain(@"\n");
