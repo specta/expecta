@@ -16,11 +16,11 @@ Pod::Spec.new do |s|
     Jasmine before, you will feel right at home!
   }
 
-  s.source_files = 'src/**/*.{h,m}'
+  s.source_files = 'Expecta/**/*.{h,m}'
 
   s.requires_arc = false
-  s.ios.deployment_target = '5.0'
+  s.ios.deployment_target = '5.1.1'
   s.osx.deployment_target = '10.7'
 
-  s.frameworks = 'Foundation'
+  s.frameworks = 'Foundation', 'XCTest'
 end
