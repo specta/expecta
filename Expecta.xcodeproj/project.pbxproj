@@ -1560,9 +1560,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = Expecta;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
 			};
 			name = Test;
 		};
@@ -1572,9 +1570,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = Expecta;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
@@ -1628,9 +1624,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = Expecta;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
@@ -1642,9 +1636,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = Expecta;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
@@ -1738,9 +1730,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = Expecta;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
 			};
 			name = Debug;
 		};
@@ -1749,9 +1739,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = Expecta;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
 			};
 			name = Release;
 		};
