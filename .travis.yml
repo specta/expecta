@@ -1,3 +1,3 @@
 language: objective-c
 osx_image: xcode611
-script: test/support/objc-build-scripts/cibuild
+script: Tests/Support/objc-build-scripts/cibuild
