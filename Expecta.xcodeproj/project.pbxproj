@@ -82,6 +82,13 @@
 		77F62300182405D80004F628 /* EXPMatchers+respondTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F622FC182405D80004F628 /* EXPMatchers+respondTo.m */; };
 		77F6231E182418F10004F628 /* EXPMatchers+respondToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F6231C182418F10004F628 /* EXPMatchers+respondToTest.m */; };
 		77F6231F182418F10004F628 /* EXPMatchers+respondToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F6231C182418F10004F628 /* EXPMatchers+respondToTest.m */; };
+		7D58DC4919273DA7006190A6 /* EXPMatchers+match.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D58DC4719273DA7006190A6 /* EXPMatchers+match.h */; };
+		7D58DC4A19273DA7006190A6 /* EXPMatchers+match.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D58DC4719273DA7006190A6 /* EXPMatchers+match.h */; };
+		7D58DC4B19273DA7006190A6 /* EXPMatchers+match.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D58DC4819273DA7006190A6 /* EXPMatchers+match.m */; };
+		7D58DC4C19273DA7006190A6 /* EXPMatchers+match.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D58DC4819273DA7006190A6 /* EXPMatchers+match.m */; };
+		7D58DC4E192750F6006190A6 /* EXPMatchers+matchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D58DC4D192750F6006190A6 /* EXPMatchers+matchTest.m */; };
+		7D58DC4F192750F6006190A6 /* EXPMatchers+matchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D58DC4D192750F6006190A6 /* EXPMatchers+matchTest.m */; };
+		7D58DC50192750F6006190A6 /* EXPMatchers+matchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D58DC4D192750F6006190A6 /* EXPMatchers+matchTest.m */; };
 		9C4416FC17FF3F4A00978F09 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4416FB17FF3F4A00978F09 /* XCTest.framework */; };
 		9C44170B17FF409D00978F09 /* EXPMatchers+beInTheRangeOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 61740D841425689A00091DDF /* EXPMatchers+beInTheRangeOfTest.m */; };
 		9C44170C17FF409D00978F09 /* EXPMatchers+beIdenticalToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E942971113B45ADD0038708B /* EXPMatchers+beIdenticalToTest.m */; };
@@ -323,6 +330,9 @@
 		77F622FB182405D80004F628 /* EXPMatchers+respondTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+respondTo.h"; sourceTree = "<group>"; };
 		77F622FC182405D80004F628 /* EXPMatchers+respondTo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+respondTo.m"; sourceTree = "<group>"; };
 		77F6231C182418F10004F628 /* EXPMatchers+respondToTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+respondToTest.m"; sourceTree = "<group>"; };
+		7D58DC4719273DA7006190A6 /* EXPMatchers+match.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+match.h"; sourceTree = "<group>"; };
+		7D58DC4819273DA7006190A6 /* EXPMatchers+match.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+match.m"; sourceTree = "<group>"; };
+		7D58DC4D192750F6006190A6 /* EXPMatchers+matchTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+matchTest.m"; sourceTree = "<group>"; };
 		9C4416F917FF3F4A00978F09 /* ExpectaTests-XCTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ExpectaTests-XCTest.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4416FB17FF3F4A00978F09 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A305755D1520BCCB00DA19BD /* EXPMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPMatcher.h; sourceTree = "<group>"; };
@@ -593,6 +603,8 @@
 				2546A95B16629D4F0078E044 /* EXPMatchers+raiseWithReason.m */,
 				77F622FB182405D80004F628 /* EXPMatchers+respondTo.h */,
 				77F622FC182405D80004F628 /* EXPMatchers+respondTo.m */,
+				7D58DC4719273DA7006190A6 /* EXPMatchers+match.h */,
+				7D58DC4819273DA7006190A6 /* EXPMatchers+match.m */,
 			);
 			path = matchers;
 			sourceTree = "<group>";
@@ -642,6 +654,7 @@
 				AEBA779414055CA2001690B6 /* EXPMatchers+beLessThanOrEqualToTest.m */,
 				E9D3DF1A157A8AC10054978E /* EXPMatchers+beCloseToTest.m */,
 				77F6231C182418F10004F628 /* EXPMatchers+respondToTest.m */,
+				7D58DC4D192750F6006190A6 /* EXPMatchers+matchTest.m */,
 			);
 			path = matchers;
 			sourceTree = "<group>";
@@ -724,6 +737,7 @@
 				A305755F1520BCCB00DA19BD /* EXPMatcher.h in Headers */,
 				54C6B1F1180CA74E00E13146 /* EXPMatchers+beSupersetOf.h in Headers */,
 				A30575641520BDCE00DA19BD /* EXPBlockDefinedMatcher.h in Headers */,
+				7D58DC4A19273DA7006190A6 /* EXPMatchers+match.h in Headers */,
 				770D441A187B29830031D46C /* EXPMatchers+beginWith.h in Headers */,
 				E95368521521BEE900AA3B81 /* EXPBackwardCompatibility.h in Headers */,
 				770D4428187B2A170031D46C /* EXPMatchers+endWith.h in Headers */,
@@ -769,6 +783,7 @@
 				A305755E1520BCCB00DA19BD /* EXPMatcher.h in Headers */,
 				54C6B1F0180CA74E00E13146 /* EXPMatchers+beSupersetOf.h in Headers */,
 				A30575631520BDCE00DA19BD /* EXPBlockDefinedMatcher.h in Headers */,
+				7D58DC4919273DA7006190A6 /* EXPMatchers+match.h in Headers */,
 				770D4419187B29830031D46C /* EXPMatchers+beginWith.h in Headers */,
 				E95368511521BEE900AA3B81 /* EXPBackwardCompatibility.h in Headers */,
 				770D4427187B2A170031D46C /* EXPMatchers+endWith.h in Headers */,
@@ -965,6 +980,7 @@
 				9C44172717FF4FD500978F09 /* Fixtures.m in Sources */,
 				9C44170D17FF409D00978F09 /* EXPMatchers+beInstanceOfTest.m in Sources */,
 				9C44171D17FF40A500978F09 /* EXPExpect+Test.m in Sources */,
+				7D58DC50192750F6006190A6 /* EXPMatchers+matchTest.m in Sources */,
 				9C44171917FF409D00978F09 /* EXPMatchers+beGreaterThanOrEqualToTest.m in Sources */,
 				9C44172817FF4FD900978F09 /* FakeTestCase.m in Sources */,
 				9C44171017FF409D00978F09 /* EXPMatchers+beSubclassOfTest.m in Sources */,
@@ -1027,6 +1043,7 @@
 				63F6F358150A542D009E1BC3 /* EXPMatchers+beCloseTo.m in Sources */,
 				77F62300182405D80004F628 /* EXPMatchers+respondTo.m in Sources */,
 				63B349E015135C8800C955DC /* EXPMatchers+haveCountOf.m in Sources */,
+				7D58DC4C19273DA7006190A6 /* EXPMatchers+match.m in Sources */,
 				A30575661520BDCE00DA19BD /* EXPBlockDefinedMatcher.m in Sources */,
 				E95368561521BFDB00AA3B81 /* EXPBackwardCompatibility.m in Sources */,
 				E9D3DF13157A7EA30054978E /* EXPMatchers+raise.m in Sources */,
@@ -1059,6 +1076,7 @@
 				541B02B21805E260000DA87C /* EXPMatchers+conformToTest.m in Sources */,
 				E969C52613B60234006BB8B1 /* EXPFailTest.m in Sources */,
 				E9AFC43B13C482D3006B4F2A /* AsynchronousTestingTest.m in Sources */,
+				7D58DC4F192750F6006190A6 /* EXPMatchers+matchTest.m in Sources */,
 				AE0E76FD13FF37D6009AF5D8 /* EXPMatchers+beLessThanTest.m in Sources */,
 				AEBA779614055CA2001690B6 /* EXPMatchers+beLessThanOrEqualToTest.m in Sources */,
 				27B61930182F4DF30075C95F /* EXPMatchers+notifyTest.m in Sources */,
@@ -1108,6 +1126,7 @@
 				63F6F357150A542D009E1BC3 /* EXPMatchers+beCloseTo.m in Sources */,
 				77F622FF182405D80004F628 /* EXPMatchers+respondTo.m in Sources */,
 				63B349DF15135C8800C955DC /* EXPMatchers+haveCountOf.m in Sources */,
+				7D58DC4B19273DA7006190A6 /* EXPMatchers+match.m in Sources */,
 				A30575651520BDCE00DA19BD /* EXPBlockDefinedMatcher.m in Sources */,
 				E95368551521BFDB00AA3B81 /* EXPBackwardCompatibility.m in Sources */,
 				E9D3DF12157A7EA30054978E /* EXPMatchers+raise.m in Sources */,
@@ -1120,6 +1139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D58DC4E192750F6006190A6 /* EXPMatchers+matchTest.m in Sources */,
 				E9ACDF8713B2DEB70010F4D7 /* ExpectationTest.m in Sources */,
 				E9ACDF8813B2DEB70010F4D7 /* EXPMatchers+beFalsyTest.m in Sources */,
 				E9ACDF8913B2DEB70010F4D7 /* EXPMatchers+beInstanceOfTest.m in Sources */,

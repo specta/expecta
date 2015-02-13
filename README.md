@@ -120,6 +120,8 @@ Expecta is framework-agnostic. It works well with XCTest, OCUnit (SenTestingKit)
 >`expect(x).to.beginWith(y);` passes if an instance of NSString, NSArray, or NSOrderedSet `x` begins with `y`. Also aliased by `startWith`
 >
 >`expect(x).to.endWith(y);` passes if an instance of NSString, NSArray, or NSOrderedSet `x` ends with `y`.
+>
+>`expect(x).to.match(y);` passes if an instance of NSString `x` matches regular expression (given as NSString) `y` one or more times.
 
 **Please contribute more matchers.**
 
