@@ -16,11 +16,13 @@ Pod::Spec.new do |s|
     Jasmine before, you will feel right at home!
   }
 
-  s.source_files = 'src/**/*.{h,m}'
+  s.source_files = 'Expecta/**/*.{h,m}'
 
   s.requires_arc = false
-  s.ios.deployment_target = '5.0'
+  s.ios.deployment_target = '5.1.1'
   s.osx.deployment_target = '10.7'
 
-  s.frameworks = 'Foundation'
+  s.frameworks   = 'Foundation', 'XCTest'
+  s.osx.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(DEVELOPER_FRAMEWORKS_DIR) "$(PLATFORM_DIR)/Developer/Library/Frameworks" "$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks"' }
+  s.ios.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(DEVELOPER_FRAMEWORKS_DIR) "$(PLATFORM_DIR)/Developer/Library/Frameworks" "$(DEVELOPER_DIR)/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks"' }
 end

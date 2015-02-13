@@ -436,7 +436,6 @@
 		E1EB1BC113BEA1BE00E4C93B /* EXPFloatTuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPFloatTuple.h; sourceTree = "<group>"; };
 		E1EB1BC213BEA1BE00E4C93B /* EXPFloatTuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXPFloatTuple.m; sourceTree = "<group>"; };
 		E905B375180B990C0072A07F /* EXPFailTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPFailTest.h; sourceTree = "<group>"; };
-		E930679913B2E22A00EA26FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E93067CE13B2E6D100EA26FF /* libExpecta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpecta.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93067DA13B2E6D100EA26FF /* Expecta-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Expecta-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E94296F313B42E160038708B /* EXPMatchers+containTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+containTest.m"; sourceTree = "<group>"; };
@@ -445,11 +444,9 @@
 		E942971113B45ADD0038708B /* EXPMatchers+beIdenticalToTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+beIdenticalToTest.m"; sourceTree = "<group>"; };
 		E942971413B45C8D0038708B /* EXPMatchers+beIdenticalTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+beIdenticalTo.h"; sourceTree = "<group>"; };
 		E942971513B45C8E0038708B /* EXPMatchers+beIdenticalTo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+beIdenticalTo.m"; sourceTree = "<group>"; };
-		E95368421521B5FC00AA3B81 /* Expecta.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Expecta.podspec; sourceTree = "<group>"; };
 		E9685DBB13B5E39300ADF2D7 /* ExpectaSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpectaSupport.h; sourceTree = "<group>"; };
 		E9685DBE13B5E5DA00ADF2D7 /* ExpectaSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectaSupport.m; sourceTree = "<group>"; };
 		E969C52213B5FD02006BB8B1 /* EXPFailTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXPFailTest.m; sourceTree = "<group>"; };
-		E9A6BAAE13B7183100950250 /* RDD.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = RDD.md; sourceTree = "<group>"; };
 		E9AA7A5C13CC874F005884E8 /* ExpectaObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectaObject.m; sourceTree = "<group>"; };
 		E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpecta.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9ACDF1713B2DD520010F4D7 /* Expecta-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Expecta-Prefix.pch"; sourceTree = "<group>"; };
@@ -487,8 +484,6 @@
 		E9ACDF7A13B2DEB70010F4D7 /* EXPMatchers+beTruthyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+beTruthyTest.m"; sourceTree = "<group>"; };
 		E9ACDF7B13B2DEB70010F4D7 /* EXPMatchers+equalTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+equalTest.m"; sourceTree = "<group>"; };
 		E9ACDF7C13B2DEB70010F4D7 /* NSValue+ExpectaTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+ExpectaTest.m"; sourceTree = "<group>"; };
-		E9ACDF9413B2DEF30010F4D7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		E9ACDF9513B2DEF30010F4D7 /* README.md */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E9ACDF9713B2E0BB0010F4D7 /* EXPExpect+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPExpect+Test.h"; sourceTree = "<group>"; };
 		E9ACDF9813B2E0BB0010F4D7 /* EXPExpect+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPExpect+Test.m"; sourceTree = "<group>"; };
 		E9ACDF9913B2E0BB0010F4D7 /* FakeTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeTestCase.h; sourceTree = "<group>"; };
@@ -497,7 +492,6 @@
 		E9ACDF9C13B2E0BB0010F4D7 /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
 		E9ACDF9D13B2E0BB0010F4D7 /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
 		E9AFC43913C482D3006B4F2A /* AsynchronousTestingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsynchronousTestingTest.m; sourceTree = "<group>"; };
-		E9B777E814BA316E00D8DC76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		E9BDBAA614BE1CD900102FB5 /* MiscTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiscTest.m; sourceTree = "<group>"; };
 		E9D3DF0D157A7B7E0054978E /* EXPMatchers+raiseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+raiseTest.m"; sourceTree = "<group>"; };
 		E9D3DF11157A7EA30054978E /* EXPMatchers+raise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+raise.m"; sourceTree = "<group>"; };
@@ -553,29 +547,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		908379E41A8B9EE1009844DA /* support */ = {
+		908379E41A8B9EE1009844DA /* Support */ = {
 			isa = PBXGroup;
 			children = (
 				908379DC1A8B98E8009844DA /* Info.plist */,
 			);
-			name = support;
+			name = Support;
 			sourceTree = "<group>";
 		};
 		E9ACDF0113B2DD520010F4D7 = {
 			isa = PBXGroup;
 			children = (
-				E9ACDF3C13B2DDB00010F4D7 /* src */,
-				E9ACDF7213B2DEB70010F4D7 /* test */,
-				E9ACDF0E13B2DD520010F4D7 /* frameworks */,
-				E9ACDF0D13B2DD520010F4D7 /* products */,
-				E95368421521B5FC00AA3B81 /* Expecta.podspec */,
-				E9ACDF9413B2DEF30010F4D7 /* LICENSE */,
-				E9ACDF9513B2DEF30010F4D7 /* README.md */,
-				E9A6BAAE13B7183100950250 /* RDD.md */,
+				E9ACDF3C13B2DDB00010F4D7 /* Expecta */,
+				E9ACDF7213B2DEB70010F4D7 /* Tests */,
+				E9ACDF0D13B2DD520010F4D7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E9ACDF0D13B2DD520010F4D7 /* products */ = {
+		E9ACDF0D13B2DD520010F4D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */,
@@ -585,19 +574,10 @@
 				908379111A8B9660009844DA /* Expecta.framework */,
 				908379791A8B972C009844DA /* Expecta.framework */,
 			);
-			name = products;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		E9ACDF0E13B2DD520010F4D7 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E9B777E414BA314A00D8DC76 /* macosx */,
-				E9B777E614BA315200D8DC76 /* ios */,
-			);
-			name = frameworks;
-			sourceTree = "<group>";
-		};
-		E9ACDF3C13B2DDB00010F4D7 /* src */ = {
+		E9ACDF3C13B2DDB00010F4D7 /* Expecta */ = {
 			isa = PBXGroup;
 			children = (
 				A30575611520BDCD00DA19BD /* EXPBlockDefinedMatcher.h */,
@@ -618,16 +598,16 @@
 				A305755D1520BCCB00DA19BD /* EXPMatcher.h */,
 				E9ACDF4113B2DDC60010F4D7 /* EXPUnsupportedObject.h */,
 				E9ACDF4213B2DDC60010F4D7 /* EXPUnsupportedObject.m */,
-				E9ACDF4313B2DDC60010F4D7 /* matchers */,
+				E9ACDF4313B2DDC60010F4D7 /* Matchers */,
 				E9ACDF5513B2DDC60010F4D7 /* NSObject+Expecta.h */,
 				E9ACDF5613B2DDC60010F4D7 /* NSValue+Expecta.h */,
 				E9ACDF5713B2DDC60010F4D7 /* NSValue+Expecta.m */,
-				908379E41A8B9EE1009844DA /* support */,
+				908379E41A8B9EE1009844DA /* Support */,
 			);
-			path = src;
+			path = Expecta;
 			sourceTree = "<group>";
 		};
-		E9ACDF4313B2DDC60010F4D7 /* matchers */ = {
+		E9ACDF4313B2DDC60010F4D7 /* Matchers */ = {
 			isa = PBXGroup;
 			children = (
 				E9ACDF4413B2DDC60010F4D7 /* EXPMatcherHelpers.h */,
@@ -682,59 +662,59 @@
 				77F622FB182405D80004F628 /* EXPMatchers+respondTo.h */,
 				77F622FC182405D80004F628 /* EXPMatchers+respondTo.m */,
 			);
-			path = matchers;
+			path = Matchers;
 			sourceTree = "<group>";
 		};
-		E9ACDF7213B2DEB70010F4D7 /* test */ = {
+		E9ACDF7213B2DEB70010F4D7 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				E9ACDFA113B2E0CC0010F4D7 /* support */,
-				E9ACDF7413B2DEB70010F4D7 /* matchers */,
-				E9ACDF9613B2E0BB0010F4D7 /* helpers */,
+				E9AFC43913C482D3006B4F2A /* AsynchronousTestingTest.m */,
+				A30575691520C25500DA19BD /* CustomMatcherImplementationsTest.m */,
+				A30575A81520F5FE00DA19BD /* DynamicPredicateMatcherTest.m */,
 				E9ACDF7313B2DEB70010F4D7 /* ExpectationTest.m */,
-				E9ACDF7C13B2DEB70010F4D7 /* NSValue+ExpectaTest.m */,
 				E905B375180B990C0072A07F /* EXPFailTest.h */,
 				E969C52213B5FD02006BB8B1 /* EXPFailTest.m */,
-				E9AFC43913C482D3006B4F2A /* AsynchronousTestingTest.m */,
+				E9ACDF9613B2E0BB0010F4D7 /* Helpers */,
+				E9ACDF7413B2DEB70010F4D7 /* Matchers */,
 				E9BDBAA614BE1CD900102FB5 /* MiscTest.m */,
-				A30575A81520F5FE00DA19BD /* DynamicPredicateMatcherTest.m */,
-				A30575691520C25500DA19BD /* CustomMatcherImplementationsTest.m */,
+				E9ACDF7C13B2DEB70010F4D7 /* NSValue+ExpectaTest.m */,
+				E9ACDFA113B2E0CC0010F4D7 /* Support */,
 			);
-			path = test;
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		E9ACDF7413B2DEB70010F4D7 /* matchers */ = {
+		E9ACDF7413B2DEB70010F4D7 /* Matchers */ = {
 			isa = PBXGroup;
 			children = (
-				770D4421187B29E00031D46C /* EXPMatchers+endWithTest.m */,
+				E9D3DF1A157A8AC10054978E /* EXPMatchers+beCloseToTest.m */,
+				E9ACDF7513B2DEB70010F4D7 /* EXPMatchers+beFalsyTest.m */,
 				770D441D187B299E0031D46C /* EXPMatchers+beginWithTest.m */,
-				27B6192F182F4DF30075C95F /* EXPMatchers+postNotificationTest.m */,
-				61740D841425689A00091DDF /* EXPMatchers+beInTheRangeOfTest.m */,
+				4913B4D01411E2DA00040ECB /* EXPMatchers+beGreaterThanOrEqualToTest.m */,
+				4913B4C61411E01A00040ECB /* EXPMatchers+beGreaterThanTest.m */,
 				E942971113B45ADD0038708B /* EXPMatchers+beIdenticalToTest.m */,
 				E9ACDF7613B2DEB70010F4D7 /* EXPMatchers+beInstanceOfTest.m */,
+				61740D841425689A00091DDF /* EXPMatchers+beInTheRangeOfTest.m */,
 				E9ACDF7713B2DEB70010F4D7 /* EXPMatchers+beKindOfTest.m */,
+				AEBA779414055CA2001690B6 /* EXPMatchers+beLessThanOrEqualToTest.m */,
+				AE0E76FB13FF37D6009AF5D8 /* EXPMatchers+beLessThanTest.m */,
 				E9ACDF7813B2DEB70010F4D7 /* EXPMatchers+beNilTest.m */,
 				E9ACDF7913B2DEB70010F4D7 /* EXPMatchers+beSubclassOfTest.m */,
-				541B02B01805E24C000DA87C /* EXPMatchers+conformToTest.m */,
+				54C6B1F5180CAD5100E13146 /* EXPMatchers+beSupersetOfTest.m */,
 				E9ACDF7A13B2DEB70010F4D7 /* EXPMatchers+beTruthyTest.m */,
-				E9ACDF7513B2DEB70010F4D7 /* EXPMatchers+beFalsyTest.m */,
+				541B02B01805E24C000DA87C /* EXPMatchers+conformToTest.m */,
+				E94296F313B42E160038708B /* EXPMatchers+containTest.m */,
+				770D4421187B29E00031D46C /* EXPMatchers+endWithTest.m */,
 				E9ACDF7B13B2DEB70010F4D7 /* EXPMatchers+equalTest.m */,
+				63B349E215135EB100C955DC /* EXPMatchers+haveCountOfTest.m */,
+				27B6192F182F4DF30075C95F /* EXPMatchers+postNotificationTest.m */,
 				E9D3DF0D157A7B7E0054978E /* EXPMatchers+raiseTest.m */,
 				2546A96116629DF70078E044 /* EXPMatchers+raiseWithReasonTest.m */,
-				E94296F313B42E160038708B /* EXPMatchers+containTest.m */,
-				54C6B1F5180CAD5100E13146 /* EXPMatchers+beSupersetOfTest.m */,
-				63B349E215135EB100C955DC /* EXPMatchers+haveCountOfTest.m */,
-				4913B4C61411E01A00040ECB /* EXPMatchers+beGreaterThanTest.m */,
-				4913B4D01411E2DA00040ECB /* EXPMatchers+beGreaterThanOrEqualToTest.m */,
-				AE0E76FB13FF37D6009AF5D8 /* EXPMatchers+beLessThanTest.m */,
-				AEBA779414055CA2001690B6 /* EXPMatchers+beLessThanOrEqualToTest.m */,
-				E9D3DF1A157A8AC10054978E /* EXPMatchers+beCloseToTest.m */,
 				77F6231C182418F10004F628 /* EXPMatchers+respondToTest.m */,
 			);
-			path = matchers;
+			path = Matchers;
 			sourceTree = "<group>";
 		};
-		E9ACDF9613B2E0BB0010F4D7 /* helpers */ = {
+		E9ACDF9613B2E0BB0010F4D7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				E9ACDF9713B2E0BB0010F4D7 /* EXPExpect+Test.h */,
@@ -745,31 +725,15 @@
 				E9ACDF9C13B2E0BB0010F4D7 /* Fixtures.m */,
 				E9ACDF9D13B2E0BB0010F4D7 /* TestHelper.h */,
 			);
-			path = helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
-		E9ACDFA113B2E0CC0010F4D7 /* support */ = {
+		E9ACDFA113B2E0CC0010F4D7 /* Support */ = {
 			isa = PBXGroup;
 			children = (
 				908379E51A8B9F13009844DA /* Test-Info.plist */,
 			);
-			path = support;
-			sourceTree = "<group>";
-		};
-		E9B777E414BA314A00D8DC76 /* macosx */ = {
-			isa = PBXGroup;
-			children = (
-				E930679913B2E22A00EA26FF /* Foundation.framework */,
-			);
-			name = macosx;
-			sourceTree = "<group>";
-		};
-		E9B777E614BA315200D8DC76 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				E9B777E814BA316E00D8DC76 /* Foundation.framework */,
-			);
-			name = ios;
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1092,7 +1056,7 @@
 				en,
 			);
 			mainGroup = E9ACDF0113B2DD520010F4D7;
-			productRefGroup = E9ACDF0D13B2DD520010F4D7 /* products */;
+			productRefGroup = E9ACDF0D13B2DD520010F4D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1417,7 +1381,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = src/Info.plist;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Expecta/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1435,7 +1401,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = src/Info.plist;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Expecta/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1453,7 +1421,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = src/Info.plist;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Expecta/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1471,7 +1441,9 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = src/Info.plist;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Expecta/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
@@ -1489,7 +1461,9 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = src/Info.plist;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Expecta/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
@@ -1507,7 +1481,9 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = src/Info.plist;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Expecta/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
@@ -1525,8 +1501,8 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				INFOPLIST_FILE = "test/support/Test-Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Support/Test-Info.plist";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -1545,8 +1521,8 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				INFOPLIST_FILE = "test/support/Test-Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Support/Test-Info.plist";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -1583,10 +1559,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/Private";
 				PRODUCT_NAME = Expecta;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
 			};
 			name = Test;
 		};
@@ -1595,11 +1571,13 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INSTALL_PATH = /;
+				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/Private";
 				PRODUCT_NAME = Expecta;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
 			name = Test;
@@ -1613,8 +1591,8 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				INFOPLIST_FILE = "test/support/Test-Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Support/Test-Info.plist";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -1634,8 +1612,8 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				INFOPLIST_FILE = "test/support/Test-Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Support/Test-Info.plist";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -1651,11 +1629,13 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INSTALL_PATH = /;
+				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/Private";
 				PRODUCT_NAME = Expecta;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
 			name = Debug;
@@ -1665,11 +1645,13 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INSTALL_PATH = /;
+				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/Private";
 				PRODUCT_NAME = Expecta;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
 			name = Release;
@@ -1683,8 +1665,8 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				INFOPLIST_FILE = "test/support/Test-Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Support/Test-Info.plist";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -1705,8 +1687,8 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				INFOPLIST_FILE = "test/support/Test-Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Support/Test-Info.plist";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -1761,10 +1743,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/Private";
 				PRODUCT_NAME = Expecta;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
 			};
 			name = Debug;
 		};
@@ -1772,10 +1754,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Expecta-Prefix.pch";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Expecta/Expecta-Prefix.pch";
+				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/Private";
 				PRODUCT_NAME = Expecta;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
 			};
 			name = Release;
 		};
