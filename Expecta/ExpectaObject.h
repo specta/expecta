@@ -5,6 +5,7 @@
 #define EXPMatcherInterface(matcherName, matcherArguments) _EXPMatcherInterface(matcherName, matcherArguments)
 #define EXPMatcherImplementationBegin(matcherName, matcherArguments) _EXPMatcherImplementationBegin(matcherName, matcherArguments)
 #define EXPMatcherImplementationEnd _EXPMatcherImplementationEnd
+#define EXPMatcherAliasImplementation(newMatcherName, oldMatcherName, matcherArguments) _EXPMatcherAliasImplementation(newMatcherName, oldMatcherName, matcherArguments)
 
 @interface Expecta : NSObject
 

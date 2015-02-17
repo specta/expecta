@@ -59,6 +59,15 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
 } \
 @end
 
+#define _EXPMatcherAliasImplementation(newMatcherName, oldMatcherName, matcherArguments) \
+EXPFixCategoriesBug(EXPMatcher##newMatcherName##Matcher); \
+@implementation EXPExpect (newMatcherName##Matcher) \
+@dynamic newMatcherName;\
+- (void(^) matcherArguments) newMatcherName { \
+  return [self oldMatcherName]; \
+}\
+@end
+
 #ifdef __cplusplus
 }
 #endif

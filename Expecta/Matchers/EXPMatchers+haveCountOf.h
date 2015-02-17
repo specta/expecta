@@ -1,10 +1,10 @@
 #import "Expecta.h"
 
-EXPMatcherInterface(haveCountOf, (NSUInteger expected));
+EXPMatcherInterface(haveCountOf,   (NSUInteger expected));
+EXPMatcherInterface(haveCount,     (NSUInteger expected));
+EXPMatcherInterface(haveACountOf,  (NSUInteger expected));
+EXPMatcherInterface(haveLength,    (NSUInteger expected));
+EXPMatcherInterface(haveLengthOf,  (NSUInteger expected));
+EXPMatcherInterface(haveALengthOf, (NSUInteger expected));
 
-#define haveCount     haveCountOf
-#define haveACountOf  haveCountOf
-#define haveLength    haveCountOf
-#define haveLengthOf  haveCountOf
-#define haveALengthOf haveCountOf
-#define beEmpty()     haveCountOf(0)
+#define beEmpty() haveCountOf(0)

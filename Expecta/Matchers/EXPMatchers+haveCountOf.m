@@ -34,3 +34,9 @@ EXPMatcherImplementationBegin(haveCountOf, (NSUInteger expected)) {
   });
 }
 EXPMatcherImplementationEnd
+
+EXPMatcherAliasImplementation(haveCount,     haveCountOf, (NSUInteger expected));
+EXPMatcherAliasImplementation(haveACountOf,  haveCountOf, (NSUInteger expected));
+EXPMatcherAliasImplementation(haveLength,    haveCountOf, (NSUInteger expected));
+EXPMatcherAliasImplementation(haveLengthOf,  haveCountOf, (NSUInteger expected));
+EXPMatcherAliasImplementation(haveALengthOf, haveCountOf, (NSUInteger expected));

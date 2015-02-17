@@ -25,3 +25,5 @@ EXPMatcherImplementationBegin(beSubclassOf, (Class expected)) {
   });
 }
 EXPMatcherImplementationEnd
+
+EXPMatcherAliasImplementation(beASubclassOf, beSubclassOf, (Class expected));

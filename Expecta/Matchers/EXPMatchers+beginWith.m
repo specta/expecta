@@ -47,3 +47,5 @@ EXPMatcherImplementationBegin(beginWith, (id expected)) {
   });
 }
 EXPMatcherImplementationEnd
+
+EXPMatcherAliasImplementation(startWith, beginWith, (id expected));

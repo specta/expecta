@@ -105,4 +105,8 @@
   assertFail(test_expect(object).notTo.beginWith(sampleSet), ([NSString stringWithFormat:@"<NSObject: %p> and {(Bar, 1, baz)} are not instances of one of NSString, NSArray, or NSOrderedSet", object]));
 }
 
+- (void)test_startWith {
+  assertPass(test_expect(@"Foobar").startWith(@"Foo"));
+}
+
 @end
