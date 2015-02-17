@@ -1,3 +1,7 @@
+Next
+======
+Fix potential selector conflicts [paulsamuels]
+
 v0.3.2
 ======
 * Adds support for Xcode/Apple LLVM 5.1, which means turning off Garbage Collection support [tonyarnold]
