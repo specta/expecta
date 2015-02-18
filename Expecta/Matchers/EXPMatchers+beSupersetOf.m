@@ -7,9 +7,14 @@ EXPMatcherImplementationBegin(beSupersetOf, (id subset)) {
   // For some instances the isKindOfClass: method returns false, even though
   // they are both actually dictionaries. e.g. Comparing a NSCFDictionary and a
   // NSDictionary.
-  BOOL bothAreDictionaries = [actual isKindOfClass:[NSDictionary class]] && [subset isKindOfClass:[NSDictionary class]];
+  // Or in cases when you compare NSMutableArray (which implementation is __NSArrayM:NSMutableArray:NSArray)
+  // and NSArray (which implementation is __NSArrayI:NSArray)
+  BOOL bothAreIdenticalCollectionClasses = ([actual isKindOfClass:[NSDictionary class]] && [subset isKindOfClass:[NSDictionary class]]) ||
+        ([actual isKindOfClass:[NSArray class]] && [subset isKindOfClass:[NSArray class]]) ||
+        ([actual isKindOfClass:[NSSet class]] && [subset isKindOfClass:[NSSet class]]) ||
+        ([actual isKindOfClass:[NSOrderedSet class]] && [subset isKindOfClass:[NSOrderedSet class]]);
 
-  BOOL classMatches = bothAreDictionaries || [subset isKindOfClass:[actual class]];
+  BOOL classMatches = bothAreIdenticalCollectionClasses || [subset isKindOfClass:[actual class]];
 
   prerequisite(^BOOL{
     return actualIsCompatible && !subsetIsNil && classMatches;
