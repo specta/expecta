@@ -78,7 +78,7 @@ You can setup Expecta using [Carthage](https://github.com/Carthage/Carthage), [C
 
 > `expect(x).to.equal(y);` compares objects or primitives x and y and passes if they are identical (==) or equivalent isEqual:).
 
-> `expect(x).to.beIdenticalTo(y);` compares objects x and y and passes if they are identical and have the same memory ddress.
+> `expect(x).to.beIdenticalTo(y);` compares objects x and y and passes if they are identical and have the same memory address.
 
 > `expect(x).to.beNil();` passes if x is nil.
 
@@ -88,17 +88,17 @@ You can setup Expecta using [Carthage](https://github.com/Carthage/Carthage), [C
 
 > `expect(x).to.contain(y);` passes if an instance of NSArray or NSString x contains y.
 
-> `expect(x).to.beSupersetOf(y);` passes if an instance of NSArray, NSSet, NSDictionary or NSOrderedSet x contains all lements of y.
+> `expect(x).to.beSupersetOf(y);` passes if an instance of NSArray, NSSet, NSDictionary or NSOrderedSet x contains all elements of y.
 
-> `expect(x).to.haveCountOf(y);` passes if an instance of NSArray, NSSet, NSDictionary or NSString x has a count or length f y.
+> `expect(x).to.haveCountOf(y);` passes if an instance of NSArray, NSSet, NSDictionary or NSString x has a count or length of y.
 
 > `expect(x).to.beEmpty();` passes if an instance of NSArray, NSSet, NSDictionary or NSString x has a count or length of .
 
 > `expect(x).to.beInstanceOf([Foo class]);` passes if x is an instance of a class Foo.
 
-> `expect(x).to.beKindOf([Foo class]);` passes if x is an instance of a class Foo or if x is an instance of any class that nherits from the class Foo.
+> `expect(x).to.beKindOf([Foo class]);` passes if x is an instance of a class Foo or if x is an instance of any class that inherits from the class Foo.
 
-> `expect([Foo class]).to.beSubclassOf([Bar class]);` passes if the class Foo is a subclass of the class Bar or if it is dentical to the class Bar. Use beKindOf() for class clusters.
+> `expect([Foo class]).to.beSubclassOf([Bar class]);` passes if the class Foo is a subclass of the class Bar or if it is identical to the class Bar. Use beKindOf() for class clusters.
 
 > `expect(x).to.beLessThan(y);` passes if `x` is less than `y`.
 
@@ -114,7 +114,7 @@ You can setup Expecta using [Carthage](https://github.com/Carthage/Carthage), [C
 
 > `expect(x).to.beCloseToWithin(y, z);` passes if `x` is close to `y` within `z`.
 
-> `expect(^{ /* code */ }).to.raise(@"ExceptionName");` passes if a given block of code raises an exception named ExceptionName`.
+> `expect(^{ /* code */ }).to.raise(@"ExceptionName");` passes if a given block of code raises an exception named `ExceptionName`.
 
 > `expect(^{ /* code */ }).to.raiseAny();` passes if a given block of code raises any exception.
 
@@ -124,7 +124,7 @@ You can setup Expecta using [Carthage](https://github.com/Carthage/Carthage), [C
 
 > `expect(^{ /* code */ }).to.notify(@"NotificationName");` passes if a given block of code generates an NSNotification amed `NotificationName`.
 
-> `expect(^{ /* code */ }).to.notify(notification);` passes if a given block of code generates an NSNotification equal to he passed `notification`.
+> `expect(^{ /* code */ }).to.notify(notification);` passes if a given block of code generates an NSNotification equal to the passed `notification`.
 
 > `expect(x).to.beginWith(y);` passes if an instance of NSString, NSArray, or NSOrderedSet `x` begins with `y`. Also liased by `startWith`
 
