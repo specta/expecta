@@ -14,7 +14,7 @@ def execute(command, stdout=nil)
 end
 
 def test(scheme)
-  execute "xcrun xcodebuild -project #{PROJECT} -scheme #{scheme} -configuration #{CONFIGURATION} test SYMROOT=build | xcpretty -c && exit ${PIPESTATUS[0]}"
+  execute "xcrun xcodebuild -derivedDataPath build SYMROOT=build -project #{PROJECT} -scheme #{scheme} -configuration #{CONFIGURATION} test | xcpretty -c && exit ${PIPESTATUS[0]}"
 end
 
 def ios_simulator_destination
