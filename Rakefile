@@ -31,7 +31,7 @@ def build(scheme, sdk, product)
     end
   end
   execute "xcrun xcodebuild -derivedDataPath build SYMROOT=build -project #{PROJECT} -scheme #{scheme} -sdk #{sdk} #{destination} -configuration #{CONFIGURATION} | xcpretty -c && exit ${PIPESTATUS[0]}"
-  "Expecta/build/#{build_dir}/#{product}"
+  "build/#{build_dir}/#{product}"
 end
 
 def build_framework(scheme, sdk)
