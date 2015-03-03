@@ -36,7 +36,7 @@ def lipo(bin1, bin2, output)
 end
 
 def clean(scheme)
-  execute "xcrun xcodebuild -project #{PROJECT} -scheme #{scheme} clean"
+  execute "xcrun xcodebuild -project #{PROJECT} -scheme #{scheme} clean -derivedDataPath build -SYMROOT=build"
 end
 
 def puts_green(str)
