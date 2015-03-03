@@ -21,6 +21,10 @@ def ios_simulator_destination
   "-destination 'platform=iOS Simulator,name=iPhone 5,OS=latest'"
 end
 
+def code_signing_identity
+  ENV['EXP_CODE_SIGNING_IDENTITY'] || 'iPhone Developer'
+end
+
 def build(scheme, sdk, product)
   destination = ''
   build_dir = CONFIGURATION
@@ -94,7 +98,7 @@ task :build => :clean do |t|
   lipo(ios_static_lib, ios_sim_static_lib, ios_univ_static_lib)
 
   puts_green "\n=== CODESIGN iOS FRAMEWORK ==="
-  execute "xcrun codesign --force --sign 'iPhone Developer' --resource-rules='#{ios_univ_framework}'/ResourceRules.plist '#{ios_univ_framework}'"
+  execute "xcrun codesign --force --sign \"#{code_signing_identity}\" '#{ios_univ_framework}'"
 
   puts_green "\n=== COPY PRODUCTS ==="
   execute "yes | rm -rf Products"
