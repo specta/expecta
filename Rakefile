@@ -17,12 +17,20 @@ def test(scheme)
   execute "xcrun xcodebuild -project #{PROJECT} -scheme #{scheme} -configuration #{CONFIGURATION} test SYMROOT=build | xcpretty -c && exit ${PIPESTATUS[0]}"
 end
 
+def ios_simulator_destination
+  "-destination 'platform=iOS Simulator,name=iPhone 5,OS=latest'"
+end
+
 def build(scheme, sdk, product)
+  destination = ''
   build_dir = CONFIGURATION
   if sdk != 'macosx'
     build_dir = "#{CONFIGURATION}-#{sdk}"
+    if sdk == 'iphonesimulator'
+      destination = ios_simulator_destination
+    end
   end
-  execute "xcrun xcodebuild -derivedDataPath build SYMROOT=build -project #{PROJECT} -scheme #{scheme} -sdk #{sdk} -configuration #{CONFIGURATION}"
+  execute "xcrun xcodebuild -derivedDataPath build SYMROOT=build -project #{PROJECT} -scheme #{scheme} -sdk #{sdk} #{destination} -configuration #{CONFIGURATION} | xcpretty -c && exit ${PIPESTATUS[0]}"
   "Expecta/build/#{build_dir}/#{product}"
 end
 
