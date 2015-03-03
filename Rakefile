@@ -14,13 +14,28 @@ def execute(command, stdout=nil)
 end
 
 def test(scheme)
-  execute "xcodebuild -project #{PROJECT} -scheme #{scheme} -configuration #{CONFIGURATION} test SYMROOT=build | xcpretty -c && exit ${PIPESTATUS[0]}"
+  execute "xcrun xcodebuild -derivedDataPath build SYMROOT=build -project #{PROJECT} -scheme #{scheme} -configuration #{CONFIGURATION} test | xcpretty -c && exit ${PIPESTATUS[0]}"
+end
+
+def ios_simulator_destination
+  "-destination 'platform=iOS Simulator,name=iPhone 5,OS=latest'"
+end
+
+def code_signing_identity
+  ENV['EXP_CODE_SIGNING_IDENTITY'] || 'iPhone Developer'
 end
 
 def build(scheme, sdk, product)
-  execute "xcodebuild -project #{PROJECT} -scheme #{scheme} -sdk #{sdk} -configuration #{CONFIGURATION} SYMROOT=build"
-  build_dir = "#{CONFIGURATION}#{sdk == 'macosx' ? '' : "-#{sdk}"}"
-  "Expecta/build/#{build_dir}/#{product}"
+  destination = ''
+  build_dir = CONFIGURATION
+  if sdk != 'macosx'
+    build_dir = "#{CONFIGURATION}-#{sdk}"
+    if sdk == 'iphonesimulator'
+      destination = ios_simulator_destination
+    end
+  end
+  execute "xcrun xcodebuild -derivedDataPath build SYMROOT=build -project #{PROJECT} -scheme #{scheme} -sdk #{sdk} #{destination} -configuration #{CONFIGURATION} | xcpretty -c && exit ${PIPESTATUS[0]}"
+  "build/#{build_dir}/#{product}"
 end
 
 def build_framework(scheme, sdk)
@@ -32,11 +47,7 @@ def build_static_lib(scheme, sdk)
 end
 
 def lipo(bin1, bin2, output)
-  execute "lipo -create '#{bin1}' '#{bin2}' -output '#{output}'"
-end
-
-def clean(scheme)
-  execute "xcodebuild -project #{PROJECT} -scheme #{scheme} clean"
+  execute "xcrun lipo -create '#{bin1}' '#{bin2}' -output '#{output}'"
 end
 
 def puts_green(str)
@@ -45,14 +56,15 @@ end
 
 desc 'Run tests'
 task :test do |t|
-  execute "xcodebuild test -project #{PROJECT} -scheme Expecta"
+  execute "xcrun xcodebuild test -project #{PROJECT} -scheme Expecta"
 end
 
 desc 'clean'
 task :clean do |t|
   puts_green '=== CLEAN ==='
-  clean('Expecta')
-  clean('Expecta-iOS')
+  execute 'rm -rf build'
+  execute 'rm -rf Expecta/build'
+  execute 'rm -rf Expecta/Products'
 end
 
 desc 'build'
@@ -67,7 +79,6 @@ task :build => :clean do |t|
   ios_sim_static_lib = build_static_lib('libExpecta-iOS', 'iphonesimulator')
   ios_static_lib     = build_static_lib('libExpecta-iOS', 'iphoneos')
 
-  osx_build_path = Pathname.new(osx_framework).parent.to_s
   ios_build_path = Pathname.new(ios_framework).parent.to_s
   ios_univ_build_path = "Expecta/build/#{CONFIGURATION}-ios-universal"
 
@@ -86,7 +97,7 @@ task :build => :clean do |t|
   lipo(ios_static_lib, ios_sim_static_lib, ios_univ_static_lib)
 
   puts_green "\n=== CODESIGN iOS FRAMEWORK ==="
-  execute "/usr/bin/codesign --force --sign 'iPhone Developer' --resource-rules='#{ios_univ_framework}'/ResourceRules.plist '#{ios_univ_framework}'"
+  execute "xcrun codesign --force --sign \"#{code_signing_identity}\" '#{ios_univ_framework}'"
 
   puts_green "\n=== COPY PRODUCTS ==="
   execute "yes | rm -rf Products"
@@ -96,7 +107,7 @@ task :build => :clean do |t|
   execute "cp -a #{osx_static_lib} Products/osx"
   execute "cp -a #{ios_univ_framework} Products/ios"
   execute "cp -a #{ios_univ_static_lib} Products/ios"
-  execute "cp -a #{osx_build_path}/usr/local/include/* Products"
+  execute "cp -a #{osx_framework}/Headers/* Products"
   puts "\n** BUILD SUCCEEDED **"
 end
 
