@@ -79,7 +79,6 @@ task :build => :clean do |t|
   ios_sim_static_lib = build_static_lib('libExpecta-iOS', 'iphonesimulator')
   ios_static_lib     = build_static_lib('libExpecta-iOS', 'iphoneos')
 
-  osx_build_path = Pathname.new(osx_framework).parent.to_s
   ios_build_path = Pathname.new(ios_framework).parent.to_s
   ios_univ_build_path = "Expecta/build/#{CONFIGURATION}-ios-universal"
 
@@ -108,7 +107,7 @@ task :build => :clean do |t|
   execute "cp -a #{osx_static_lib} Products/osx"
   execute "cp -a #{ios_univ_framework} Products/ios"
   execute "cp -a #{ios_univ_static_lib} Products/ios"
-  execute "cp -a #{osx_build_path}/usr/local/include/* Products"
+  execute "cp -a #{osx_framework}/Headers/* Products"
   puts "\n** BUILD SUCCEEDED **"
 end
 
