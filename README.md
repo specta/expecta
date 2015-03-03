@@ -12,7 +12,7 @@ A matcher framework for Objective-C and Cocoa.
 The main advantage of using Expecta over other matcher frameworks is that you do not have to specify the data types. Also, the syntax of Expecta matchers is much more readable and does not suffer from parenthesitis.
 
 ```objective-c
-expect(@"foo").to.equal(@"foo"); // `to` is a syntatic sugar and can be safely omitted.
+expect(@"foo").to.equal(@"foo"); // `to` is a syntactic sugar and can be safely omitted.
 expect(foo).notTo.equal(1);
 expect([bar isBar]).to.equal(YES);
 expect(baz).to.equal(3.14159);
