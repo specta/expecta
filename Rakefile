@@ -18,8 +18,11 @@ def test(scheme)
 end
 
 def build(scheme, sdk, product)
+  build_dir = CONFIGURATION
+  if sdk != 'macosx'
+    build_dir = "#{CONFIGURATION}-#{sdk}"
+  end
   execute "xcrun xcodebuild -derivedDataPath build SYMROOT=build -project #{PROJECT} -scheme #{scheme} -sdk #{sdk} -configuration #{CONFIGURATION}"
-  build_dir = "#{CONFIGURATION}#{sdk == 'macosx' ? '' : "-#{sdk}"}"
   "Expecta/build/#{build_dir}/#{product}"
 end
 
