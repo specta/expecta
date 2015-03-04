@@ -57,11 +57,11 @@ You can setup Expecta using [Carthage](https://github.com/Carthage/Carthage), [C
 1. Clone Expecta from Github.
 2. Run `rake` in your project directory to build the frameworks and libraries.
 3. Add a Cocoa or Cocoa Touch Unit Testing Bundle target to your Xcode project if you don't already have one.
-4. For **OS X projects**, copy and add `Specta.framework` in the `build/Release` folder to your project's test target.
+4. For **OS X projects**, copy and add `Expecta.framework` in the `build/Release` folder to your project's test target.
 
-   For **iOS projects**, copy and add `Specta.framework` in the `build/Release-ios-universal` folder to your project's test target.
+   For **iOS projects**, copy and add `Expecta.framework` in the `build/Release-ios-universal` folder to your project's test target.
    
-   You can also use `libSpecta.a` if you prefer to link Expecta as a static library — iOS 7.x and below require this.
+   You can also use `libExpecta.a` if you prefer to link Expecta as a static library — iOS 7.x and below require this.
    
 6. Add `-ObjC` and `-all_load` to the **Other Linker Flags** build setting for the test target in your Xcode project.
 7. You can now use Expecta in your test classes by adding the following import:
