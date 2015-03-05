@@ -7,6 +7,10 @@ CONFIGURATION = 'Release'
 NO_COLOR= "\033[0m"
 GREEN_COLOR = "\033[32;01m"
 
+def xcpretty_available
+  `gem list xcpretty -i`.chomp == 'true'
+end
+
 def execute(command, stdout=nil)
   puts "Running #{command}..."
   command += " > #{stdout}" if stdout
@@ -14,7 +18,11 @@ def execute(command, stdout=nil)
 end
 
 def test(scheme)
-  execute "xcrun xcodebuild -derivedDataPath build SYMROOT=build -project #{PROJECT} -scheme #{scheme} -configuration #{CONFIGURATION} test | xcpretty -c && exit ${PIPESTATUS[0]}"
+  cmd = "xcrun xcodebuild -derivedDataPath build SYMROOT=build -project #{PROJECT} -scheme #{scheme} -configuration #{CONFIGURATION} test"
+  if xcpretty_available
+    cmd = "#{cmd} | xcpretty -c && exit ${PIPESTATUS[0]}"
+  end
+  execute cmd
 end
 
 def ios_simulator_destination
@@ -34,7 +42,11 @@ def build(scheme, sdk, product)
       destination = ios_simulator_destination
     end
   end
-  execute "xcrun xcodebuild -derivedDataPath build SYMROOT=build -project #{PROJECT} -scheme #{scheme} -sdk #{sdk} #{destination} -configuration #{CONFIGURATION} | xcpretty -c && exit ${PIPESTATUS[0]}"
+  cmd = "xcrun xcodebuild -derivedDataPath build SYMROOT=build -project #{PROJECT} -scheme #{scheme} -sdk #{sdk} #{destination} -configuration #{CONFIGURATION}"
+  if xcpretty_available
+    cmd = "#{cmd} | xcpretty -c && exit ${PIPESTATUS[0]}"
+  end
+  execute cmd
   "build/#{build_dir}/#{product}"
 end
 
