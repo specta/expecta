@@ -30,6 +30,16 @@
     return NO;
 }
 
+- (NSUInteger)hash
+{
+    NSUInteger prime = 31;
+    NSUInteger hash = 0;
+    for (int i=0; i<self.size; i++) {
+        hash = prime * hash + (NSUInteger)self.values[i];
+    }
+    return hash;
+}
+
 - (NSString *)description {
     if (self.size == 2) {
         return [NSString stringWithFormat:@"Float tuple: {%f, %f}", self.values[0], self.values[1]];
