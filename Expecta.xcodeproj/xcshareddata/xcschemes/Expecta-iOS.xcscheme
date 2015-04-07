@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E93067D913B2E6D100EA26FF"
+               BlueprintIdentifier = "3A0A59911AD441CB003DA3E4"
                BuildableName = "Expecta-iOSTests.xctest"
                BlueprintName = "Expecta-iOSTests"
                ReferencedContainer = "container:Expecta.xcodeproj">

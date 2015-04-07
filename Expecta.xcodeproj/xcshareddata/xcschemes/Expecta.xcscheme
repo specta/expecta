@@ -20,20 +20,6 @@
                ReferencedContainer = "container:Expecta.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9C4416F817FF3F4A00978F09"
-               BuildableName = "ExpectaTests.xctest"
-               BlueprintName = "ExpectaTests"
-               ReferencedContainer = "container:Expecta.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -46,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9C4416F817FF3F4A00978F09"
+               BlueprintIdentifier = "3A0A59601AD4418C003DA3E4"
                BuildableName = "ExpectaTests.xctest"
                BlueprintName = "ExpectaTests"
                ReferencedContainer = "container:Expecta.xcodeproj">

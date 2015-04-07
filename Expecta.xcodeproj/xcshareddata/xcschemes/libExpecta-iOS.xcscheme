@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E93067D913B2E6D100EA26FF"
-               BuildableName = "Expecta-iOSTests.xctest"
-               BlueprintName = "Expecta-iOSTests"
+               BuildableName = "libExpecta-iOSTests.xctest"
+               BlueprintName = "libExpecta-iOSTests"
                ReferencedContainer = "container:Expecta.xcodeproj">
             </BuildableReference>
          </TestableReference>
