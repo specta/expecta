@@ -89,6 +89,7 @@
 		3A0A59B51AD441CB003DA3E4 /* EXPMatchers+raiseWithReasonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2546A96116629DF70078E044 /* EXPMatchers+raiseWithReasonTest.m */; };
 		3A0A59B61AD441CB003DA3E4 /* EXPMatchers+beSupersetOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6B1F5180CAD5100E13146 /* EXPMatchers+beSupersetOfTest.m */; };
 		3A0A59C31AD441E1003DA3E4 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908379111A8B9660009844DA /* Expecta.framework */; };
+		3A0A59C51AD44AAA003DA3E4 /* Expecta.framework in Embed Framework */ = {isa = PBXBuildFile; fileRef = 908379111A8B9660009844DA /* Expecta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4913B4C81411E01A00040ECB /* EXPMatchers+beGreaterThanTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4913B4C61411E01A00040ECB /* EXPMatchers+beGreaterThanTest.m */; };
 		4913B4CC1411E18A00040ECB /* EXPMatchers+beGreaterThan.h in Headers */ = {isa = PBXBuildFile; fileRef = 4913B4CA1411E18A00040ECB /* EXPMatchers+beGreaterThan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4913B4CD1411E18A00040ECB /* EXPMatchers+beGreaterThan.h in Headers */ = {isa = PBXBuildFile; fileRef = 4913B4CA1411E18A00040ECB /* EXPMatchers+beGreaterThan.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -462,6 +463,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3A0A59C41AD44A87003DA3E4 /* Embed Framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3A0A59C51AD44AAA003DA3E4 /* Expecta.framework in Embed Framework */,
+			);
+			name = "Embed Framework";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2546A95A16629D4F0078E044 /* EXPMatchers+raiseWithReason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+raiseWithReason.h"; sourceTree = "<group>"; };
 		2546A95B16629D4F0078E044 /* EXPMatchers+raiseWithReason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+raiseWithReason.m"; sourceTree = "<group>"; };
@@ -506,7 +521,7 @@
 		908379DC1A8B98E8009844DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		908379DD1A8B990A009844DA /* Expecta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Expecta.h; sourceTree = "<group>"; };
 		908379E51A8B9F13009844DA /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
-		9C4416F917FF3F4A00978F09 /* ExpectaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpectaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C4416F917FF3F4A00978F09 /* ExpectaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ExpectaTests.xctest; path = libExpectaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A305755D1520BCCB00DA19BD /* EXPMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPMatcher.h; sourceTree = "<group>"; };
 		A30575611520BDCD00DA19BD /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPBlockDefinedMatcher.h; sourceTree = "<group>"; };
 		A30575621520BDCE00DA19BD /* EXPBlockDefinedMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXPBlockDefinedMatcher.m; sourceTree = "<group>"; };
@@ -524,7 +539,7 @@
 		E1EB1BC213BEA1BE00E4C93B /* EXPFloatTuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXPFloatTuple.m; sourceTree = "<group>"; };
 		E905B375180B990C0072A07F /* EXPFailTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPFailTest.h; sourceTree = "<group>"; };
 		E93067CE13B2E6D100EA26FF /* libExpecta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpecta.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E93067DA13B2E6D100EA26FF /* Expecta-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Expecta-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E93067DA13B2E6D100EA26FF /* Expecta-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Expecta-iOSTests.xctest"; path = "libExpecta-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E94296F313B42E160038708B /* EXPMatchers+containTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+containTest.m"; sourceTree = "<group>"; };
 		E94296F613B430DE0038708B /* EXPMatchers+contain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+contain.h"; sourceTree = "<group>"; };
 		E94296F713B430DF0038708B /* EXPMatchers+contain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+contain.m"; sourceTree = "<group>"; };
@@ -1053,6 +1068,7 @@
 				3A0A59B71AD441CB003DA3E4 /* Frameworks */,
 				3A0A59B91AD441CB003DA3E4 /* Resources */,
 				3A0A59BA1AD441CB003DA3E4 /* ShellScript */,
+				3A0A59C41AD44A87003DA3E4 /* Embed Framework */,
 			);
 			buildRules = (
 			);
