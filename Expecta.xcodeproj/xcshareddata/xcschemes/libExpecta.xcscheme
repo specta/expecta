@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C4416F817FF3F4A00978F09"
-               BuildableName = "ExpectaTests.xctest"
-               BlueprintName = "ExpectaTests"
+               BuildableName = "libExpectaTests.xctest"
+               BlueprintName = "libExpectaTests"
                ReferencedContainer = "container:Expecta.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C4416F817FF3F4A00978F09"
-               BuildableName = "ExpectaTests.xctest"
-               BlueprintName = "ExpectaTests"
+               BuildableName = "libExpectaTests.xctest"
+               BlueprintName = "libExpectaTests"
                ReferencedContainer = "container:Expecta.xcodeproj">
             </BuildableReference>
          </TestableReference>
