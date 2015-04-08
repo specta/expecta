@@ -1,6 +1,39 @@
 #import "TestHelper.h"
 #import "EXPFailTest.h"
 
+@interface EXPExpectFailTest : XCTestCase
+@property (nonatomic, copy) NSString *fileName;
+@property (nonatomic, copy) NSString *errorDescription;
+@property (assign) NSUInteger lineNumber;
+@end
+
+@implementation EXPExpectFailTest
+
+// This test is dependent on the LOC with the expect_fail on
+static NSInteger EXPFailTestLine = 28;
+
+- (void)recordFailureWithDescription:(NSString *)description inFile:(NSString *)filePath atLine:(NSUInteger)lineNumber expected:(BOOL)expected
+{
+    if (lineNumber != EXPFailTestLine) {
+        [super recordFailureWithDescription:description inFile:filePath atLine:lineNumber expected:expected];
+    } else {
+        self.fileName = filePath;
+        self.lineNumber = lineNumber;
+        self.errorDescription = description;
+    }
+}
+
+- (void)test_ExpectFailToFail
+{
+    expect_fail(@"Expect Fail to Fail");
+
+    assertEqualObjects(self.errorDescription, @"Expect Fail to Fail");
+    assertTrue([self.fileName hasSuffix:@"EXPFailTest.m"]);
+    assertEqualObjects(@(self.lineNumber), @(EXPFailTestLine));
+}
+
+@end
+
 @implementation TestCaseClassWithoutFailMethod
 
 - (void)fail {
@@ -75,5 +108,6 @@
     assertEquals(testCase.expected, NO);
     [testCase release];
 }
+
 
 @end

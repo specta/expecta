@@ -7,6 +7,9 @@
 #define EXPMatcherImplementationEnd _EXPMatcherImplementationEnd
 #define EXPMatcherAliasImplementation(newMatcherName, oldMatcherName, matcherArguments) _EXPMatcherAliasImplementation(newMatcherName, oldMatcherName, matcherArguments)
 
+#define EXP_expect_fail(message) EXPFail(self, __LINE__, __FILE__, message)
+
+
 @interface Expecta : NSObject
 
 + (NSTimeInterval)asynchronousTestTimeout;
