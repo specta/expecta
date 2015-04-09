@@ -12,4 +12,4 @@ FOUNDATION_EXPORT const unsigned char ExpectaVersionString[];
 
 // Enable shorthand by default
 #define expect(...) EXP_expect((__VA_ARGS__))
-#define expect_fail(...) EXP_expect_fail((__VA_ARGS__))
+#define failure(...) EXP_failure((__VA_ARGS__))

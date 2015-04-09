@@ -9,7 +9,7 @@
 
 @implementation EXPExpectFailTest
 
-// This test is dependent on the LOC with the expect_fail on
+// This test is dependent on the LOC with the failure on
 static NSInteger EXPFailTestLine = 28;
 
 - (void)recordFailureWithDescription:(NSString *)description inFile:(NSString *)filePath atLine:(NSUInteger)lineNumber expected:(BOOL)expected
@@ -25,7 +25,7 @@ static NSInteger EXPFailTestLine = 28;
 
 - (void)test_ExpectFailToFail
 {
-    expect_fail(@"Expect Fail to Fail");
+    failure(@"Expect Fail to Fail");
 
     assertEqualObjects(self.errorDescription, @"Expect Fail to Fail");
     assertTrue([self.fileName hasSuffix:@"EXPFailTest.m"]);
