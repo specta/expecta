@@ -130,6 +130,7 @@ You can setup Expecta using [Carthage](https://github.com/Carthage/Carthage), [C
 
 > `expect(x).to.endWith(y);` passes if an instance of NSString, NSArray, or NSOrderedSet `x` ends with `y`.
 
+
 ## Inverting Matchers
 
 Every matcher's criteria can be inverted by prepending `.notTo` or `.toNot`:
@@ -169,6 +170,13 @@ describe(@"Foo", ^{
   });
 });
 ```
+
+## Forced Failing
+
+You can fail a test by using the `failure` attribute. This can be used to test branching.
+
+> `failure(@"This should not happen");` outright fails a test.
+
 
 ## Writing New Matchers
 

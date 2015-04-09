@@ -1,9 +1,15 @@
 Next
 ======
-Fix potential selector conflicts [paulsamuels]
+
+v0.4.0
+======
+
+* Adds `failure` syntax to force a test fail [orta]
+* Fix potential selector conflicts [paulsamuels]
 
 v0.3.2
 ======
+
 * Adds support for Xcode/Apple LLVM 5.1, which means turning off Garbage Collection support [tonyarnold]
 * Raises minimum deployment targets to iOS 5.x and OS X 10.7 [tonyarnold]
 * Renamed `postNotification` to `notify` (with backwards compatability [gfontenot]
