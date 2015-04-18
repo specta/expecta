@@ -1,6 +1,8 @@
 Next
 ======
 
+* Adds support for `match` for regular expressions [yomajkel]
+
 v0.4.0
 ======
 
