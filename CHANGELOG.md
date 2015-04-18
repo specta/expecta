@@ -1,7 +1,10 @@
-Next
+Master
+=====
+
+v0.4.1
 ======
 
-* Adds support for `match` for regular expressions [yomajkel]
+* Adds support for `match` for regular expressions [yomajkel] + [ashfurrow]
 
 v0.4.0
 ======
