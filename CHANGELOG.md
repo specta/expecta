@@ -1,8 +1,23 @@
-v0.3.0
+Next
 ======
+
+* Adds support for `match` for regular expressions [yomajkel]
+
+v0.4.0
+======
+
+* Adds `failure` syntax to force a test fail [orta]
+* Fix potential selector conflicts [paulsamuels]
+
+v0.3.2
+======
+
 * Adds support for Xcode/Apple LLVM 5.1, which means turning off Garbage Collection support [tonyarnold]
 * Raises minimum deployment targets to iOS 5.x and OS X 10.7 [tonyarnold]
-
+* Renamed `postNotification` to `notify` (with backwards compatability [gfontenot]
+* `notify` equality isn't based on raw pointer equals [gfontenot]
+* NSDecimalNumber & NSNumber comparison fixes [rolandkakonyi]
+* Added support for `.after(2.5)` to allow a forced timeout [iabudiab]
 
 v0.2.2
 ======
