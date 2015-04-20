@@ -1,6 +1,11 @@
 Master
 =====
 
+v0.4.2
+======
+
+* Fixes public header properties for EXPMatchers.h [robb]
+
 v0.4.1
 ======
 
