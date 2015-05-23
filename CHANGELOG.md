@@ -1,6 +1,14 @@
 Master
 =====
 
+v1.0.1
+=====
+* Included EXPMatchers+match headers in public files [tonyarnold]
+
+v1.0.0
+====== 
+* No changes
+
 v0.4.2
 ======
 
