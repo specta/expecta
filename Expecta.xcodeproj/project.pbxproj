@@ -111,8 +111,8 @@
 		54C6B1F3180CA74E00E13146 /* EXPMatchers+beSupersetOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6B1EF180CA74E00E13146 /* EXPMatchers+beSupersetOf.m */; };
 		5E14C1411AE2E254008E6F55 /* EXPMatchers+match.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E14C13F1AE2E254008E6F55 /* EXPMatchers+match.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5E14C1421AE2E254008E6F55 /* EXPMatchers+match.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E14C13F1AE2E254008E6F55 /* EXPMatchers+match.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5E14C1431AE2E254008E6F55 /* EXPMatchers+match.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E14C13F1AE2E254008E6F55 /* EXPMatchers+match.h */; };
-		5E14C1441AE2E254008E6F55 /* EXPMatchers+match.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E14C13F1AE2E254008E6F55 /* EXPMatchers+match.h */; };
+		5E14C1431AE2E254008E6F55 /* EXPMatchers+match.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E14C13F1AE2E254008E6F55 /* EXPMatchers+match.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E14C1441AE2E254008E6F55 /* EXPMatchers+match.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E14C13F1AE2E254008E6F55 /* EXPMatchers+match.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5E14C1451AE2E254008E6F55 /* EXPMatchers+match.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E14C1401AE2E254008E6F55 /* EXPMatchers+match.m */; };
 		5E14C1461AE2E254008E6F55 /* EXPMatchers+match.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E14C1401AE2E254008E6F55 /* EXPMatchers+match.m */; };
 		5E14C1471AE2E254008E6F55 /* EXPMatchers+match.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E14C1401AE2E254008E6F55 /* EXPMatchers+match.m */; };
@@ -994,7 +994,6 @@
 				E9685DBD13B5E39300ADF2D7 /* ExpectaSupport.h in Headers */,
 				61740D8B14256B2500091DDF /* EXPMatchers+beInTheRangeOf.h in Headers */,
 				AE0E76FF13FF3840009AF5D8 /* EXPMatchers+beLessThan.h in Headers */,
-				5E14C1441AE2E254008E6F55 /* EXPMatchers+match.h in Headers */,
 				AEBA779B14055E9D001690B6 /* EXPMatchers+beLessThanOrEqualTo.h in Headers */,
 				E1EB1BC413BEA1BE00E4C93B /* EXPDoubleTuple.h in Headers */,
 				E1EB1BC813BEA1BE00E4C93B /* EXPFloatTuple.h in Headers */,
@@ -1010,6 +1009,7 @@
 				770D441A187B29830031D46C /* EXPMatchers+beginWith.h in Headers */,
 				770D4428187B2A170031D46C /* EXPMatchers+endWith.h in Headers */,
 				E95368911521C58D00AA3B81 /* EXPDefines.h in Headers */,
+				5E14C1441AE2E254008E6F55 /* EXPMatchers+match.h in Headers */,
 				77F622FE182405D80004F628 /* EXPMatchers+respondTo.h in Headers */,
 				908379E11A8B99A2009844DA /* Expecta.h in Headers */,
 			);
@@ -1040,7 +1040,6 @@
 				61740D8A14256B2500091DDF /* EXPMatchers+beInTheRangeOf.h in Headers */,
 				AE0E76F813FF3732009AF5D8 /* EXPMatchers+beLessThan.h in Headers */,
 				AEBA779A14055E9D001690B6 /* EXPMatchers+beLessThanOrEqualTo.h in Headers */,
-				5E14C1431AE2E254008E6F55 /* EXPMatchers+match.h in Headers */,
 				4913B4CC1411E18A00040ECB /* EXPMatchers+beGreaterThan.h in Headers */,
 				4913B4D51411E45800040ECB /* EXPMatchers+beGreaterThanOrEqualTo.h in Headers */,
 				E1EB1BC313BEA1BE00E4C93B /* EXPDoubleTuple.h in Headers */,
@@ -1056,6 +1055,7 @@
 				770D4419187B29830031D46C /* EXPMatchers+beginWith.h in Headers */,
 				770D4427187B2A170031D46C /* EXPMatchers+endWith.h in Headers */,
 				E95368921521C58D00AA3B81 /* EXPDefines.h in Headers */,
+				5E14C1431AE2E254008E6F55 /* EXPMatchers+match.h in Headers */,
 				77F622FD182405D80004F628 /* EXPMatchers+respondTo.h in Headers */,
 				908379E01A8B999B009844DA /* Expecta.h in Headers */,
 			);
