@@ -46,7 +46,7 @@ You can setup Expecta using [Carthage](https://github.com/Carthage/Carthage), [C
 	end
 
 	target :MyAppTests do
-	  pod 'Expecta', '~> 0.2.4'
+	  pod 'Expecta', '~> 1.0.0'
 	end
 	```
 	
