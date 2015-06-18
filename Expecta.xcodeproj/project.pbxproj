@@ -82,7 +82,7 @@
 		77F62300182405D80004F628 /* EXPMatchers+respondTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F622FC182405D80004F628 /* EXPMatchers+respondTo.m */; };
 		77F6231E182418F10004F628 /* EXPMatchers+respondToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F6231C182418F10004F628 /* EXPMatchers+respondToTest.m */; };
 		77F6231F182418F10004F628 /* EXPMatchers+respondToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F6231C182418F10004F628 /* EXPMatchers+respondToTest.m */; };
-		7D58DC4919273DA7006190A6 /* EXPMatchers+match.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D58DC4719273DA7006190A6 /* EXPMatchers+match.h */; };
+		7D58DC4919273DA7006190A6 /* EXPMatchers+match.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D58DC4719273DA7006190A6 /* EXPMatchers+match.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D58DC4A19273DA7006190A6 /* EXPMatchers+match.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D58DC4719273DA7006190A6 /* EXPMatchers+match.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D58DC4B19273DA7006190A6 /* EXPMatchers+match.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D58DC4819273DA7006190A6 /* EXPMatchers+match.m */; };
 		7D58DC4C19273DA7006190A6 /* EXPMatchers+match.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D58DC4819273DA7006190A6 /* EXPMatchers+match.m */; };
