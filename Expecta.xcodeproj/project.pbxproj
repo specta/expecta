@@ -548,7 +548,7 @@
 		908379DC1A8B98E8009844DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		908379DD1A8B990A009844DA /* Expecta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Expecta.h; sourceTree = "<group>"; };
 		908379E51A8B9F13009844DA /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
-		9C4416F917FF3F4A00978F09 /* ExpectaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ExpectaTests.xctest; path = libExpectaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C4416F917FF3F4A00978F09 /* libExpectaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = libExpectaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A305755D1520BCCB00DA19BD /* EXPMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPMatcher.h; sourceTree = "<group>"; };
 		A30575611520BDCD00DA19BD /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPBlockDefinedMatcher.h; sourceTree = "<group>"; };
 		A30575621520BDCE00DA19BD /* EXPBlockDefinedMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXPBlockDefinedMatcher.m; sourceTree = "<group>"; };
@@ -569,7 +569,7 @@
 		E1EB1BC213BEA1BE00E4C93B /* EXPFloatTuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXPFloatTuple.m; sourceTree = "<group>"; };
 		E905B375180B990C0072A07F /* EXPFailTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPFailTest.h; sourceTree = "<group>"; };
 		E93067CE13B2E6D100EA26FF /* libExpecta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpecta.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E93067DA13B2E6D100EA26FF /* Expecta-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Expecta-iOSTests.xctest"; path = "libExpecta-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E93067DA13B2E6D100EA26FF /* libExpecta-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "libExpecta-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E94296F313B42E160038708B /* EXPMatchers+containTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+containTest.m"; sourceTree = "<group>"; };
 		E94296F613B430DE0038708B /* EXPMatchers+contain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+contain.h"; sourceTree = "<group>"; };
 		E94296F713B430DF0038708B /* EXPMatchers+contain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+contain.m"; sourceTree = "<group>"; };
@@ -717,8 +717,8 @@
 			children = (
 				E9ACDF0C13B2DD520010F4D7 /* libExpecta.a */,
 				E93067CE13B2E6D100EA26FF /* libExpecta.a */,
-				E93067DA13B2E6D100EA26FF /* Expecta-iOSTests.xctest */,
-				9C4416F917FF3F4A00978F09 /* ExpectaTests.xctest */,
+				E93067DA13B2E6D100EA26FF /* libExpecta-iOSTests.xctest */,
+				9C4416F917FF3F4A00978F09 /* libExpectaTests.xctest */,
 				908379111A8B9660009844DA /* Expecta.framework */,
 				908379791A8B972C009844DA /* Expecta.framework */,
 				3A0A598C1AD4418C003DA3E4 /* ExpectaTests.xctest */,
@@ -1175,7 +1175,7 @@
 			);
 			name = libExpectaTests;
 			productName = "Expecta XCTests";
-			productReference = 9C4416F917FF3F4A00978F09 /* ExpectaTests.xctest */;
+			productReference = 9C4416F917FF3F4A00978F09 /* libExpectaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E93067CD13B2E6D100EA26FF /* libExpecta-iOS */ = {
@@ -1211,7 +1211,7 @@
 			);
 			name = "libExpecta-iOSTests";
 			productName = "Expecta-iOSTests";
-			productReference = E93067DA13B2E6D100EA26FF /* Expecta-iOSTests.xctest */;
+			productReference = E93067DA13B2E6D100EA26FF /* libExpecta-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E9ACDF0B13B2DD520010F4D7 /* libExpecta */ = {

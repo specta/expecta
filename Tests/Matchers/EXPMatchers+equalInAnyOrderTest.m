@@ -30,6 +30,12 @@
   assertFail(test_expect(array).equalInAnyOrder(@[@"foo"]), (@"expected (foo, bar, baz) to be equal in any order to (foo)"));
 }
 
+- (void)test_same_elements_different_count {
+  NSArray *multipleSameElements = @[@1,@1,@2];
+  assertFail(test_expect(multipleSameElements).equalInAnyOrder(@[@1,@2]), (@"expected (1, 1, 2) to be equal in any order to (1, 2)"));
+  assertPass(test_expect(multipleSameElements).notTo.equalInAnyOrder(@[@1,@2]));
+}
+
 - (void)test_toNot_equal_object {
   assertPass(test_expect(array).notTo.equalInAnyOrder(@[@"foo"]));
   assertFail(test_expect(array).notTo.equalInAnyOrder(outOfOrderArray), (@"expected (foo, bar, baz) to not be equal in any order to (bar, foo, baz)"));
