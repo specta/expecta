@@ -12,12 +12,10 @@ EXPMatcherImplementationBegin(equalInAnyOrder, (id expected)) {
   match(^BOOL{
     if(!actualIsCompatible) return NO;
 
-    NSSet *actualSet = [NSSet setWithArray:actual];
-    NSSet *expectedSet = [NSSet setWithArray:expected];
+    NSCountedSet *actualSet = [NSCountedSet setWithArray:actual];
+    NSCountedSet *expectedSet = [NSCountedSet setWithArray:expected];
 
-    if (![actualSet isEqualToSet:expectedSet]) return NO;
-
-    return YES;
+    return [actualSet isEqualToSet:expectedSet];
   });
 
   failureMessageForTo(^NSString *{
