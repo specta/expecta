@@ -1,4 +1,4 @@
-#import "EXPMatchers+equalsInAnyOrder.h"
+#import "EXPMatchers+equalInAnyOrder.h"
 
 EXPMatcherImplementationBegin(equalInAnyOrder, (id expected)) {
   BOOL actualIsCompatible = [actual isKindOfClass:[NSArray class]];
