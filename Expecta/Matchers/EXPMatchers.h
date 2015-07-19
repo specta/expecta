@@ -1,5 +1,6 @@
 #import "EXPMatchers+beNil.h"
 #import "EXPMatchers+equal.h"
+#import "EXPMatchers+equalsInAnyOrder.h"
 #import "EXPMatchers+beInstanceOf.h"
 #import "EXPMatchers+beKindOf.h"
 #import "EXPMatchers+beSubclassOf.h"
