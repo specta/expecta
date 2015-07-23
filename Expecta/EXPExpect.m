@@ -42,6 +42,7 @@
 
 - (void)dealloc
 {
+  [_actualBlock release];
   _actualBlock = nil;
   [super dealloc];
 }
