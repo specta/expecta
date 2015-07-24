@@ -1,5 +1,6 @@
-Master
+v1.0.2
 =====
+* Fixed a memory leak in the `expect()` block [dhardiman]
 
 v1.0.1
 =====
