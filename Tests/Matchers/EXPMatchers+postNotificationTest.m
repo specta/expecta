@@ -55,7 +55,7 @@
   }).to.notify([NSNotification notificationWithName:@"testNotification1" object:object]));
 
   assertPass(test_expect(^{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
       [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationName" object:nil];
     });
   }).will.postNotification(@"NotificationName"));
