@@ -1,3 +1,7 @@
+v1.0.3
+=====
+* Fixed an Xcode 7 deprecation warning [iosdev-republicofapps]
+
 v1.0.2
 =====
 * Fixed a memory leak in the `expect()` block [dhardiman]
@@ -7,7 +11,7 @@ v1.0.1
 * Included EXPMatchers+match headers in public files [tonyarnold]
 
 v1.0.0
-====== 
+======
 * No changes
 
 v0.4.2
@@ -87,4 +91,3 @@ v0.1.0
 * toBeInTheRangeOf matcher [joncooper]
 * Line-number highlighting in XCode [twobitlabs]
 * Supports float/double tuples (e.g. CGPoint, CGRect) [kseebaldt]
-
