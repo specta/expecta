@@ -6,7 +6,10 @@
 #import "EXPBlockDefinedMatcher.h"
 #import <libkern/OSAtomic.h>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
 @implementation EXPExpect
+#pragma clang diagnostic pop
 
 @dynamic
   actual,
@@ -177,7 +180,10 @@
 
 @end
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
 @implementation EXPDynamicPredicateMatcher
+#pragma clang diagnostic pop
 
 - (instancetype)initWithExpectation:(EXPExpect *)expectation selector:(SEL)selector
 {
