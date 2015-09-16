@@ -1,3 +1,7 @@
+v1.0.4
+=====
+* If descriptions match in an .equal() show the classes [orta + jorystiefel]
+
 v1.0.3
 =====
 * Fixed an Xcode 7 deprecation warning [iosdev-republicofapps]

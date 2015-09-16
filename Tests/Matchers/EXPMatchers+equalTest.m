@@ -250,4 +250,10 @@ typedef struct SomeFloatPairPair {
     assertPass(test_expect(a).equal(b));
 }
 
+- (void)test_duplicated_descriptions_provide_more_context {
+    NSURL *url = [NSURL URLWithString:@"http://hello.world"];
+    assertFail(test_expect(@"http://hello.world").equal(url), @"expected (NSURL): http://hello.world, got (__NSCFConstantString): http://hello.world");
+}
+
+
 @end
