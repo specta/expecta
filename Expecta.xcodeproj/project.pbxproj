@@ -587,7 +587,7 @@
 		E9ACDF5013B2DDC60010F4D7 /* EXPMatchers+beTruthy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+beTruthy.h"; sourceTree = "<group>"; };
 		E9ACDF5113B2DDC60010F4D7 /* EXPMatchers+beTruthy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+beTruthy.m"; sourceTree = "<group>"; };
 		E9ACDF5213B2DDC60010F4D7 /* EXPMatchers+equal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+equal.h"; sourceTree = "<group>"; };
-		E9ACDF5313B2DDC60010F4D7 /* EXPMatchers+equal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+equal.m"; sourceTree = "<group>"; };
+		E9ACDF5313B2DDC60010F4D7 /* EXPMatchers+equal.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+equal.m"; sourceTree = "<group>"; tabWidth = 2; };
 		E9ACDF5413B2DDC60010F4D7 /* EXPMatchers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPMatchers.h; sourceTree = "<group>"; };
 		E9ACDF5513B2DDC60010F4D7 /* NSObject+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Expecta.h"; sourceTree = "<group>"; };
 		E9ACDF5613B2DDC60010F4D7 /* NSValue+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+Expecta.h"; sourceTree = "<group>"; };
