@@ -8,6 +8,34 @@
 }
 @end
 
+@interface ExpectedObject : NSObject
+
++ (NSUInteger)instanceCount;
+
+@end
+
+@implementation ExpectedObject
+
+- (instancetype)init {
+  if (self = [super init]) {
+    ++_instanceCount;
+  }
+  return self;
+}
+
+- (void)dealloc {
+  --_instanceCount;
+  [super dealloc];
+}
+
+static NSUInteger _instanceCount;
+
++ (NSUInteger)instanceCount {
+  return _instanceCount;
+}
+
+@end
+
 @implementation ExpectationTest
 
 - (void)test_expect {
@@ -196,6 +224,15 @@
   expect(yesBool).to.equal(yesBOOL);
   expect(yesBOOL).to.equal(yesInt);
   expect(yesInt).to.equal(yesNSNum);
+}
+
+- (void)test_expect_memory_management {
+  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+  ExpectedObject *object = [[[ExpectedObject alloc] init] autorelease];
+  expect(object).to.equal(object);
+  [pool drain];
+
+  assertEquals([ExpectedObject instanceCount], 0);
 }
 
 @end
