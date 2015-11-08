@@ -23,4 +23,5 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.7'
 
   s.frameworks   = 'Foundation', 'XCTest'
+  s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
 end
