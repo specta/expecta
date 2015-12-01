@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'Expecta'
-  s.version  = '1.0.3'
+  s.version  = '1.0.5'
   s.license  = { :type => 'MIT', :file => 'LICENSE' }
   s.summary  = 'A matcher framework for Objective-C & Cocoa.'
   s.homepage = 'http://github.com/petejkim/expecta'
@@ -21,6 +21,8 @@ Pod::Spec.new do |s|
   s.requires_arc = false
   s.ios.deployment_target = '5.1.1'
   s.osx.deployment_target = '10.7'
+  s.tvos.deployment_target = '9.0'
 
   s.frameworks   = 'Foundation', 'XCTest'
+  s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
 end

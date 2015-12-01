@@ -1,3 +1,10 @@
+v1.0.5
+=====
+* Disables Bitcode on the Podspec  [jonakyd]
+* Assign actual value to a strong variable in EXP_expect [StatusReport]
+* Avoid holding matcher in the thread dictionary after matching. [StatusReport]
+* Adds tvOS to the Podspec [orta]
+
 v1.0.4
 =====
 * If descriptions match in an .equal() show the classes [orta + jorystiefel]
