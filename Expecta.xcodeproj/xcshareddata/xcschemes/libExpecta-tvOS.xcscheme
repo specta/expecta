@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "90B7C32D1BDF327B00ABAD55"
-               BuildableName = "liblibExpecta-tvOS.a"
+               BuildableName = "libExpecta.a"
                BlueprintName = "libExpecta-tvOS"
                ReferencedContainer = "container:Expecta.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "90B7C32D1BDF327B00ABAD55"
-            BuildableName = "liblibExpecta-tvOS.a"
+            BuildableName = "libExpecta.a"
             BlueprintName = "libExpecta-tvOS"
             ReferencedContainer = "container:Expecta.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "90B7C32D1BDF327B00ABAD55"
-            BuildableName = "liblibExpecta-tvOS.a"
+            BuildableName = "libExpecta.a"
             BlueprintName = "libExpecta-tvOS"
             ReferencedContainer = "container:Expecta.xcodeproj">
          </BuildableReference>
@@ -84,7 +84,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "90B7C32D1BDF327B00ABAD55"
-            BuildableName = "liblibExpecta-tvOS.a"
+            BuildableName = "libExpecta.a"
             BlueprintName = "libExpecta-tvOS"
             ReferencedContainer = "container:Expecta.xcodeproj">
          </BuildableReference>
