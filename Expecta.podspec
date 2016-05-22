@@ -19,10 +19,11 @@ Pod::Spec.new do |s|
   s.source_files = 'Expecta/**/*.{h,m}'
 
   s.requires_arc = false
-  s.ios.deployment_target = '5.1.1'
-  s.osx.deployment_target = '10.7'
+  s.ios.deployment_target = '6.0'
+  s.osx.deployment_target = '10.8'
   s.tvos.deployment_target = '9.0'
 
   s.frameworks   = 'Foundation', 'XCTest'
   s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
+  s.user_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(PLATFORM_DIR)/Developer/Library/Frameworks' }
 end
