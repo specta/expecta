@@ -11,6 +11,12 @@ def xcpretty_available
   `gem list xcpretty -i`.chomp == 'true'
 end
 
+def code_sign_identity
+  ENV["CODE_SIGN_IDENTITY"] ||
+    ENV['EXP_CODE_SIGNING_IDENTITY'] ||
+    'iPhone Developer'
+end
+
 def execute(command, stdout=nil)
   puts "Running #{command}..."
   command += " > #{stdout}" if stdout
@@ -27,10 +33,6 @@ end
 
 def ios_simulator_destination
   "-destination 'platform=iOS Simulator,name=iPhone 5,OS=latest'"
-end
-
-def code_signing_identity
-  ENV['EXP_CODE_SIGNING_IDENTITY'] || 'iPhone Developer'
 end
 
 def build(scheme, sdk, product)
@@ -109,7 +111,7 @@ task :build => :clean do |t|
   lipo(ios_static_lib, ios_sim_static_lib, ios_univ_static_lib)
 
   puts_green "\n=== CODESIGN iOS FRAMEWORK ==="
-  execute "xcrun codesign --force --sign \"#{code_signing_identity}\" '#{ios_univ_framework}'"
+  execute "xcrun codesign --force --sign \"#{code_sign_identity}\" '#{ios_univ_framework}'"
 
   puts_green "\n=== COPY PRODUCTS ==="
   execute "yes | rm -rf Products"
