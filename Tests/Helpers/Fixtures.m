@@ -8,4 +8,5 @@
 
 @implementation Baz
 + (void)bazClassMethod {}
+- (void)bazInstanceMethod {}
 @end

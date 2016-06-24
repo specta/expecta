@@ -10,4 +10,5 @@
 
 @interface Baz : NSObject <Protocol>
 + (void)bazClassMethod;
+- (void)bazInstanceMethod;
 @end
