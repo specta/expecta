@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowedTypes</key>
+	<array>
+		<string>public.objective-c-source</string>
+	</array>
+	<key>Platforms</key>
+	<array>
+		<string>com.apple.platform.iphoneos</string>
+	</array>
+	<key>Description</key>
+	<string>An Objective-C class implementing the base Specta/Expecta spec structure.</string>
+	<key>Kind</key>
+	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
+	<key>MainTemplateFile</key>
+	<string>___FILEBASENAME___.m</string>
+	<key>Options</key>
+    <array>
+        <dict>
+            <key>Default</key>
+            <string></string>
+            <key>Description</key>
+            <string>What class would you like to test?</string>
+            <key>Identifier</key>
+            <string>classToTest</string>
+            <key>Name</key>
+            <string>Spec for</string>
+            <key>Required</key>
+            <true/>
+            <key>NotPersisted</key>
+            <true/>
+            <key>Type</key>
+            <string>text</string>
+        </dict>
+        <dict>
+            <key>Default</key>
+            <string>___VARIABLE_classToTest:identifier___Spec</string>
+            <key>Identifier</key>
+            <string>productName</string>
+            <key>Type</key>
+            <string>static</string>
+        </dict>
+    </array>
+</dict>
+</plist>
