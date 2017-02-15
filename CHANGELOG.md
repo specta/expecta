@@ -17,6 +17,10 @@ v1.0.2
 =====
 * Fixed a memory leak in the `expect()` block [dhardiman]
 
+v1.0.2
+=====
+* Added support for equalsInAnyOrder matcher [jmburges]
+
 v1.0.1
 =====
 * Included EXPMatchers+match headers in public files [tonyarnold]

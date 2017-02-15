@@ -20,6 +20,8 @@ Expecta is framework-agnostic: it works well with XCTest and XCTest-compatible t
 
 > `expect(x).to.equal(y);` compares objects or primitives x and y and passes if they are identical (==) or equivalent isEqual:).
 
+> `expect(x).to.equalInAnyOrder(y);` pass if an instance of NSArray x is equal to an instance of NSArray y, in any order
+
 > `expect(x).to.beIdenticalTo(y);` compares objects x and y and passes if they are identical and have the same memory address.
 
 > `expect(x).to.beNil();` passes if x is nil.
