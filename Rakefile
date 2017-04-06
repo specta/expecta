@@ -19,7 +19,7 @@ end
 
 def execute(command, stdout=nil)
   puts "Running #{command}..."
-  command= " > #{stdout}" if stdout
+  command += " > #{stdout}" if stdout
   system(command) or raise "** BUILD FAILED **"
 end
 
