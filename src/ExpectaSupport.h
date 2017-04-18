@@ -37,7 +37,6 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
 - (void(^) matcherArguments) matcherName { \
   EXPBlockDefinedMatcher *matcher = [[EXPBlockDefinedMatcher alloc] init]; \
   [[[NSThread currentThread] threadDictionary] setObject:matcher forKey:@"EXP_currentMatcher"]; \
-  __block id actual = self.actual; \
   __block void (^prerequisite)(EXPBoolBlock block) = ^(EXPBoolBlock block) { EXP_prerequisite(block); }; \
   __block void (^match)(EXPBoolBlock block) = ^(EXPBoolBlock block) { EXP_match(block); }; \
   __block void (^failureMessageForTo)(EXPStringBlock block) = ^(EXPStringBlock block) { EXP_failureMessageForTo(block); }; \
@@ -48,7 +47,7 @@ EXPFixCategoriesBug(EXPMatcher##matcherName##Matcher); \
 
 #define _EXPMatcherImplementationEnd \
     } \
-    [self applyMatcher:matcher to:&actual]; \
+    [self applyMatcher:matcher]; \
   } copy]; \
   _EXP_release(matcher); \
   return _EXP_autorelease(matcherBlock); \

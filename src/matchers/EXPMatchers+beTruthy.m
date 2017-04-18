@@ -2,7 +2,7 @@
 #import "EXPMatcherHelpers.h"
 
 EXPMatcherImplementationBegin(beTruthy, (void)) {
-  match(^BOOL{
+  match(^BOOL(id actual){
     if([actual isKindOfClass:[NSNumber class]]) {
       return !![(NSNumber *)actual boolValue];
     } else if([actual isKindOfClass:[NSValue class]]) {
@@ -13,11 +13,11 @@ EXPMatcherImplementationBegin(beTruthy, (void)) {
     return !!actual;
   });
 
-  failureMessageForTo(^NSString *{
+  failureMessageForTo(^NSString *(id actual){
     return [NSString stringWithFormat:@"expected: a truthy value, got: %@, which is falsy", EXPDescribeObject(actual)];
   });
 
-  failureMessageForNotTo(^NSString *{
+  failureMessageForNotTo(^NSString *(id actual){
     return [NSString stringWithFormat:@"expected: a non-truthy value, got: %@, which is truthy", EXPDescribeObject(actual)];
   });
 }
