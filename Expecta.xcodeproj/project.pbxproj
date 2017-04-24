@@ -336,6 +336,7 @@
 		A30575661520BDCE00DA19BD /* EXPBlockDefinedMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A30575621520BDCE00DA19BD /* EXPBlockDefinedMatcher.m */; };
 		A305756F1520C5B400DA19BD /* CustomMatcherImplementationsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A30575691520C25500DA19BD /* CustomMatcherImplementationsTest.m */; };
 		A30575AB1520F61500DA19BD /* DynamicPredicateMatcherTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A30575A81520F5FE00DA19BD /* DynamicPredicateMatcherTest.m */; };
+		AD12A20D1EAE4BA000CA3A3A /* EXPMatchers+conformToTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 541B02B01805E24C000DA87C /* EXPMatchers+conformToTest.m */; };
 		ADCD455F1E9650BC006C8106 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADCD45561E9650BC006C8106 /* Expecta.framework */; };
 		ADCD456F1E9651FB006C8106 /* EXPDoubleTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EB1BC013BEA1BE00E4C93B /* EXPDoubleTuple.m */; };
 		ADCD45701E9651FB006C8106 /* EXPFloatTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EB1BC213BEA1BE00E4C93B /* EXPFloatTuple.m */; };
@@ -1852,6 +1853,7 @@
 				ADCD45D51E9651FB006C8106 /* EXPMatchers+containTest.m in Sources */,
 				ADCD45D61E9651FB006C8106 /* EXPMatchers+beginWithTest.m in Sources */,
 				ADCD45D71E9651FB006C8106 /* EXPMatchers+beLessThanTest.m in Sources */,
+				AD12A20D1EAE4BA000CA3A3A /* EXPMatchers+conformToTest.m in Sources */,
 				ADCD45D81E9651FB006C8106 /* EXPMatchers+beCloseToTest.m in Sources */,
 				ADCD45D91E9651FB006C8106 /* EXPMatchers+beSupersetOfTest.m in Sources */,
 			);
