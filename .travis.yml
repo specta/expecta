@@ -37,8 +37,8 @@ script:
 
     # Build and Test for Debug
     - |
-      xcodebuild build-for-testing -configuration Debug -enableCodeCoverage YES -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" | xcpretty
-      xcodebuild test-without-building -configuration Debug -enableCodeCoverage YES -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" | xcpretty
+      xcodebuild build-for-testing -configuration Debug -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" | xcpretty
+      xcodebuild test-without-building -configuration Debug -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" | xcpretty
 
     # Build and Test for Release
     - |
