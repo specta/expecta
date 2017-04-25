@@ -89,7 +89,6 @@
 		3A0A59B51AD441CB003DA3E4 /* EXPMatchers+raiseWithReasonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2546A96116629DF70078E044 /* EXPMatchers+raiseWithReasonTest.m */; };
 		3A0A59B61AD441CB003DA3E4 /* EXPMatchers+beSupersetOfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C6B1F5180CAD5100E13146 /* EXPMatchers+beSupersetOfTest.m */; };
 		3A0A59C31AD441E1003DA3E4 /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908379111A8B9660009844DA /* Expecta.framework */; };
-		3A0A59C51AD44AAA003DA3E4 /* Expecta.framework in Embed Framework */ = {isa = PBXBuildFile; fileRef = 908379111A8B9660009844DA /* Expecta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4913B4C81411E01A00040ECB /* EXPMatchers+beGreaterThanTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4913B4C61411E01A00040ECB /* EXPMatchers+beGreaterThanTest.m */; };
 		4913B4CC1411E18A00040ECB /* EXPMatchers+beGreaterThan.h in Headers */ = {isa = PBXBuildFile; fileRef = 4913B4CA1411E18A00040ECB /* EXPMatchers+beGreaterThan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4913B4CD1411E18A00040ECB /* EXPMatchers+beGreaterThan.h in Headers */ = {isa = PBXBuildFile; fileRef = 4913B4CA1411E18A00040ECB /* EXPMatchers+beGreaterThan.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -590,20 +589,6 @@
 			remoteInfo = "Expecta-iOS";
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		3A0A59C41AD44A87003DA3E4 /* Embed Framework */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3A0A59C51AD44AAA003DA3E4 /* Expecta.framework in Embed Framework */,
-			);
-			name = "Embed Framework";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2546A95A16629D4F0078E044 /* EXPMatchers+raiseWithReason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+raiseWithReason.h"; sourceTree = "<group>"; };
@@ -1270,8 +1255,6 @@
 				3A0A59941AD441CB003DA3E4 /* Sources */,
 				3A0A59B71AD441CB003DA3E4 /* Frameworks */,
 				3A0A59B91AD441CB003DA3E4 /* Resources */,
-				3A0A59BA1AD441CB003DA3E4 /* ShellScript */,
-				3A0A59C41AD44A87003DA3E4 /* Embed Framework */,
 			);
 			buildRules = (
 			);
@@ -1397,7 +1380,6 @@
 				E93067D513B2E6D100EA26FF /* Sources */,
 				E93067D613B2E6D100EA26FF /* Frameworks */,
 				E93067D713B2E6D100EA26FF /* Resources */,
-				E93067D813B2E6D100EA26FF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1539,35 +1521,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3A0A59BA1AD441CB003DA3E4 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		E93067D813B2E6D100EA26FF /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A0A59631AD4418C003DA3E4 /* Sources */ = {
