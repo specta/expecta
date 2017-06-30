@@ -1,3 +1,8 @@
+v1.0.6
+====
+* Xcode 9 warning fixes [spekke]
+* respondTo matcher checks for instancesRespondToSelector: too [dchohfi]
+
 v1.0.5
 =====
 * Disables Bitcode on the Podspec  [jonakyd]
