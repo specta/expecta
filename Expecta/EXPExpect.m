@@ -5,7 +5,6 @@
 #import "EXPMatcher.h"
 #import "EXPBlockDefinedMatcher.h"
 #import <stdatomic.h>
-#import <libkern/OSAtomic.h>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-designated-initializers"
