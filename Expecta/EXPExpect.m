@@ -4,6 +4,7 @@
 #import "EXPUnsupportedObject.h"
 #import "EXPMatcher.h"
 #import "EXPBlockDefinedMatcher.h"
+#import <stdatomic.h>
 #import <libkern/OSAtomic.h>
 
 #pragma clang diagnostic push
@@ -125,7 +126,7 @@
             break;
           }
           [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.01]];
-          OSMemoryBarrier();
+          atomic_thread_fence(memory_order_seq_cst);
           *actual = self.actual;
         }
       } else {
