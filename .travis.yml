@@ -1,6 +1,45 @@
+os: osx
+osx_image: xcode8.3
+
 language: objective-c
-osx_image: xcode611
+
+before_install:
+    - gem install xcpretty -N --no-ri --no-rdoc
+
+env:
+  global:
+  - PROJECT=Expecta.xcodeproj
+  - IOS_SCHEME="Expecta-iOS"
+  - IOS_SCHEME_STATIC="libExpecta-iOS"
+  - MACOS_SCHEME="Expecta"
+  - MACOS_SCHEME_STATIC="libExpecta"
+  - TVOS_SCHEME="Expecta-tvOS"
+
+  - IOS_SDK=iphonesimulator10.3
+  - MACOS_SDK=macosx10.12
+  - TVOS_SDK=appletvsimulator10.2
+
+  matrix:
+      - SCHEME="$IOS_SCHEME" SDK="$IOS_SDK" DESTINATION="OS=10.3,name=iPhone 7"
+      - SCHEME="$IOS_SCHEME_STATIC" SDK="$IOS_SDK" DESTINATION="OS=10.3,name=iPhone 7"
+
+      - SCHEME="$MACOS_SCHEME" SDK="$MACOS_SDK" DESTINATION="arch=x86_64"
+      - SCHEME="$MACOS_SCHEME_STATIC" SDK="$MACOS_SDK" DESTINATION="arch=x86_64"
+
+      - SCHEME="$TVOS_SCHEME" SDK="$TVOS_SDK" DESTINATION="OS=10.0,name=Apple TV 1080p"
 
 script:
-  - rake clean
-  - Tests/Support/objc-build-scripts/cibuild
+    - set -o pipefail
+    - xcodebuild -version
+    - xcodebuild -showsdks
+    - instruments -s devices
+
+    # Build and Test for Debug
+    - |
+      xcodebuild build-for-testing -configuration Debug -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" | xcpretty
+      xcodebuild test-without-building -configuration Debug -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" | xcpretty
+
+    # Build and Test for Release
+    - |
+      xcodebuild build-for-testing -configuration Release -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" | xcpretty
+      xcodebuild test-without-building -configuration Release -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" | xcpretty
