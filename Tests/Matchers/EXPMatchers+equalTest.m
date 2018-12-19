@@ -166,8 +166,8 @@
 }
 
 - (void)test_equal_block {
-  void (^block)() = ^{};
-  void (^block2)() = ^{};
+  void (^block)(void) = ^{};
+  void (^block2)(void) = ^{};
   assertPass(test_expect(block).equal(block));
   assertPass(test_expect(block).toNot.equal(block2));
 }

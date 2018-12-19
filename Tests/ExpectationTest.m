@@ -180,7 +180,7 @@ static NSUInteger _instanceCount;
 }
 
 - (void)test_expect_block {
-  void (^b)() = ^{};
+  void (^b)(void) = ^{};
   void (^b2)(int a) = ^(int a) {};
   assertEqualObjects(expect(b).actual, b);
   assertEqualObjects(expect(b2).actual, b2);
