@@ -16,6 +16,9 @@
 
 @implementation ExpectedObject
 
+// This method is declared to prevent "undeclared selector" compiler warnings
+- (void)foo {}
+
 - (instancetype)init {
   if (self = [super init]) {
     ++_instanceCount;
