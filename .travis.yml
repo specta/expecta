@@ -5,6 +5,6 @@ xcode_project: Expecta.xcodeproj
 matrix:
   include:
     - xcode_scheme: Expecta
-      xcode_sdk: macosx10.14
+      xcode_destination: platform=macOS
     - xcode_scheme: Expecta-iOS
-      xcode_sdk: iphonesimulator12.1
+      xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone X
