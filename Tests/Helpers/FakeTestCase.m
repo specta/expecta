@@ -7,7 +7,7 @@
                               inFile:(NSString *)filename
                               atLine:(NSUInteger)lineNumber
                             expected:(BOOL)expected {
-    [NSException raise:description format:nil];
+    [NSException raise:description format:@""];
 }
 
 @end

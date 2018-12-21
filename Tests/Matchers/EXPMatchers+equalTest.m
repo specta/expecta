@@ -7,6 +7,11 @@
 
 @implementation EXPMatchers_equalTest
 
+// These methods are declared to prevent "undeclared selector" compiler warnings
+- (void)foo {}
+- (void)bar {}
+- (void)bar:(id)arg {}
+
 - (void)test_equal_nil {
   assertPass(test_expect(nil).equal(nil));
   assertFail(test_expect(@"foo").equal(nil), @"expected: nil/null, got: foo");
@@ -166,8 +171,8 @@
 }
 
 - (void)test_equal_block {
-  void (^block)() = ^{};
-  void (^block2)() = ^{};
+  void (^block)(void) = ^{};
+  void (^block2)(void) = ^{};
   assertPass(test_expect(block).equal(block));
   assertPass(test_expect(block).toNot.equal(block2));
 }

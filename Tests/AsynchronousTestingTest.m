@@ -5,7 +5,7 @@
 
 @implementation AsynchronousTestingTest
 
-- (void)performBlock:(void(^)())block {
+- (void)performBlock:(void(^)(void))block {
   block();
 }
 

@@ -13,6 +13,7 @@
   NSString *_expected;
 }
 
+- (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithExpected:(NSString *)expected NS_DESIGNATED_INITIALIZER;
 
 @end

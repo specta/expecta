@@ -7,11 +7,11 @@
 
 - (void)test_raise {
   assertPass(test_expect(^{
-    [NSException raise:@"TestException" format:nil];
+    [NSException raise:@"TestException" format:@""];
   }).to.raiseAny());
 
   assertPass(test_expect(^{
-    [NSException raise:@"TestException" format:nil];
+    [NSException raise:@"TestException" format:@""];
   }).to.raise(@"TestException"));
 
   assertFail(test_expect(^{
@@ -26,11 +26,11 @@
 
 - (void)test_toNot_raise {
   assertFail(test_expect(^{
-    [NSException raise:@"TestException" format:nil];
+    [NSException raise:@"TestException" format:@""];
   }).notTo.raiseAny(), @"expected: no exception, got: TestException");
 
   assertFail(test_expect(^{
-    [NSException raise:@"TestException" format:nil];
+    [NSException raise:@"TestException" format:@""];
   }).notTo.raise(@"TestException"), @"expected: not TestException, got: TestException");
 
   assertPass(test_expect(^{
