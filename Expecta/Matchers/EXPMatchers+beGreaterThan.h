@@ -1,4 +1,4 @@
-#import "Expecta.h"
+#import <Expecta/Expecta.h>
 
 EXPMatcherInterface(_beGreaterThan, (id expected));
 EXPMatcherInterface(beGreaterThan, (id expected));

@@ -1,5 +1,5 @@
-#import "EXPExpect.h"
-#import "EXPBlockDefinedMatcher.h"
+#import <Expecta/EXPExpect.h>
+#import <Expecta/EXPBlockDefinedMatcher.h>
 
 #ifdef __cplusplus
 extern "C" {

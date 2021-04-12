@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "EXPMatcher.h"
-#import "EXPDefines.h"
+#import <Expecta/EXPMatcher.h>
+#import <Expecta/EXPDefines.h>
 
 @interface EXPExpect : NSObject {
   EXPIdBlock _actualBlock;

@@ -1,4 +1,4 @@
-#import "Expecta.h"
+#import <Expecta/Expecta.h>
 
 EXPMatcherInterface(haveCountOf,   (NSUInteger expected));
 EXPMatcherInterface(haveCount,     (NSUInteger expected));

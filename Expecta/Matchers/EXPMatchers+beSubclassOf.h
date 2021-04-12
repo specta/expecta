@@ -1,4 +1,4 @@
-#import "Expecta.h"
+#import <Expecta/Expecta.h>
 
 EXPMatcherInterface(beSubclassOf,  (Class expected));
 EXPMatcherInterface(beASubclassOf, (Class expected));

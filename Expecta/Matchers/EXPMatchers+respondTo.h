@@ -1,3 +1,3 @@
-#import "Expecta.h"
+#import <Expecta/Expecta.h>
 
 EXPMatcherInterface(respondTo, (SEL expected));
