@@ -1,4 +1,4 @@
-#import "Expecta.h"
+#import <Expecta/Expecta.h>
 
 EXPMatcherInterface(_beInTheRangeOf, (id expectedLowerBound, id expectedUpperBound));
 EXPMatcherInterface(beInTheRangeOf, (id expectedLowerBound, id expectedUpperBound));

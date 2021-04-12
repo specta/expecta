@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <XCTest/XCTest.h>
 #define EXP_SHORTHAND
-#import "Expecta.h"
+#import <Expecta/Expecta.h>
 #import "FakeTestCase.h"
 #import "EXPExpect+Test.h"
 #import "Fixtures.h"

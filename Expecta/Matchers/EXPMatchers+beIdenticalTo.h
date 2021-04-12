@@ -1,4 +1,4 @@
-#import "Expecta.h"
+#import <Expecta/Expecta.h>
 
 EXPMatcherInterface(_beIdenticalTo, (void *expected));
 EXPMatcherInterface(beIdenticalTo, (void *expected)); // to aid code completion
